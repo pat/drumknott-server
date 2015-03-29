@@ -11,3 +11,7 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore Sphinx files
+config/*.sphinx.conf
+db/sphinx
