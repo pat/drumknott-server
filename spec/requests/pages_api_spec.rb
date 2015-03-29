@@ -44,4 +44,20 @@ RSpec.describe 'Pages API', :type => :request do
       expect(sorbet.content).to eq('Not gelato')
     end
   end
+
+  describe 'POST /:site/pages/clear' do
+    it 'deletes all pages attached to the site' do
+      waffles  = site.pages.create!(
+        :name => 'Waffles', :content => 'All the waffles', :path => '/waffles'
+      )
+      pancakes = site.pages.create!(
+        :name => 'Pancakes', :content => 'And crêpes', :path => '/pancakes'
+      )
+
+      post "/api/v1/#{site.name}/pages/clear", {},
+        {'HTTP_AUTHENTICATION' => site.key}
+
+      expect(site.pages.count).to be_zero
+    end
+  end
 end
