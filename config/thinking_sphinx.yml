@@ -5,3 +5,4 @@ test:
   html_strip: 1
 production:
   html_strip: 1
+  version: 2.1.8
