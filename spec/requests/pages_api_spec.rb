@@ -38,8 +38,6 @@ RSpec.describe 'Pages API', :type => :request do
         {:name => "Sorbet", :path => "/sorbet", :content => "Not gelato"}},
         {'HTTP_AUTHENTICATION' => site.key}
 
-      puts json.inspect
-
       sorbet.reload
       expect(sorbet.content).to eq('Not gelato')
     end
