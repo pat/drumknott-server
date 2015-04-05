@@ -117,6 +117,7 @@ GEM
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rack-timeout (0.2.4)
     rails (4.2.0)
       actionmailer (= 4.2.0)
       actionpack (= 4.2.0)
@@ -217,6 +218,7 @@ DEPENDENCIES
   mysql2 (= 0.3.18)
   pg
   puma
+  rack-timeout
   rails (= 4.2.0)
   rails_12factor
   rspec-rails
