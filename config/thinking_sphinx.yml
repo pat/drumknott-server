@@ -1,2 +1,7 @@
+development:
+  html_strip: 1
 test:
   mysql41: 9328
+  html_strip: 1
+production:
+  html_strip: 1
