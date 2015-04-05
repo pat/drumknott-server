@@ -1,8 +1,8 @@
 class Drumknott
   constructor: (@name) ->
-  search: (query, success) ->
+  search: (options = {}, success) ->
     $.get(
-      "http://drumknottsearch.com/api/v1/#{@name}/pages", query: query
+      "http://drumknottsearch.com/api/v1/#{@name}/pages", options
     ).done(success)
 
 window.Drumknott = Drumknott
