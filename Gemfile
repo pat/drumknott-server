@@ -22,6 +22,7 @@ gem 'sliver-rails',
   branch: 'master',
   ref:    '60761785d8'
 gem 'thinking-sphinx', '3.1.3'
+gem 'flying-sphinx',   '1.2.0'
 
 group :development, :test do
   gem 'byebug'
