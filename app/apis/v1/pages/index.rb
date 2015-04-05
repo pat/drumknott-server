@@ -4,6 +4,11 @@ class V1::Pages::Index < Sliver::Rails::Action
   end
 
   def call
+    response.headers = {
+      'Access-Control-Allow-Origin'   => '*',
+      'Access-Control-Request-Method' => 'GET'
+    }
+
     response.body = {
       :results  => pages.collect { |page| page_to_hash(page) },
       :page     => page,
