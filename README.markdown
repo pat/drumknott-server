@@ -1,4 +1,4 @@
-## Utterson
+## Drumknott
 
 Simple Rails app that provides a search backend for Jekyll sites.
 
@@ -8,5 +8,5 @@ Please note that this project is released with [a Contributor Code of Conduct](h
 
 ## Licence
 
-Copyright (c) 2015, Utterson is developed and maintained by Pat Allan, and is
+Copyright (c) 2015, Drumknott is developed and maintained by Pat Allan, and is
 released under the open MIT Licence.
