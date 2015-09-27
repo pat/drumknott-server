@@ -13,6 +13,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 gem 'devise',          '3.5.2'
+gem 'formtastic',      '3.1.3'
 gem 'haml',            '4.0.7'
 gem 'mysql2',          '0.3.18'
 gem 'sliver-rails',    '0.2.0'
