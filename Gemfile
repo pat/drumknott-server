@@ -13,6 +13,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 gem 'devise',          '3.5.2'
+gem 'haml',            '4.0.7'
 gem 'mysql2',          '0.3.18'
 gem 'sliver-rails',    '0.2.0'
 gem 'thinking-sphinx', '3.1.4'
@@ -23,6 +24,10 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'spring'
   gem 'web-console', '~> 2.0'
+end
+
+group :test do
+  gem 'capybara', '2.5.0'
 end
 
 group :production do
