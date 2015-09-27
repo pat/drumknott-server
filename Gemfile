@@ -14,7 +14,7 @@ gem 'turbolinks'
 
 gem 'mysql2',          '0.3.18'
 gem 'sliver-rails',    '0.2.0'
-gem 'thinking-sphinx', '3.1.3'
+gem 'thinking-sphinx', '3.1.4'
 gem 'flying-sphinx',   '1.2.0'
 
 group :development, :test do
