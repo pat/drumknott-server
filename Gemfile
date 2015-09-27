@@ -12,6 +12,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 
+gem 'devise',          '3.5.2'
 gem 'mysql2',          '0.3.18'
 gem 'sliver-rails',    '0.2.0'
 gem 'thinking-sphinx', '3.1.4'
