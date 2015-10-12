@@ -16,6 +16,29 @@ ActiveRecord::Schema.define(version: 20151012153956) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "duties_activity_records", force: :cascade do |t|
+    t.string   "name",                               null: false
+    t.integer  "duty_record_id",                     null: false
+    t.integer  "position",                           null: false
+    t.string   "status",         default: "pending", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "failures",       default: "[]"
+  end
+
+  add_index "duties_activity_records", ["duty_record_id"], name: "index_duties_activity_records_on_duty_record_id", using: :btree
+  add_index "duties_activity_records", ["name"], name: "index_duties_activity_records_on_name", using: :btree
+
+  create_table "duties_duty_records", force: :cascade do |t|
+    t.string   "name",                      null: false
+    t.text     "data",       default: "{}"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "duties_duty_records", ["created_at"], name: "index_duties_duty_records_on_created_at", order: {"created_at"=>:desc}, using: :btree
+  add_index "duties_duty_records", ["name"], name: "index_duties_duty_records_on_name", using: :btree
+
   create_table "pages", force: :cascade do |t|
     t.integer  "site_id",    null: false
     t.string   "name",       null: false
