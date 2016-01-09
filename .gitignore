@@ -16,3 +16,5 @@
 # Ignore Sphinx files
 config/*.sphinx.conf
 db/sphinx
+
+.env.test
