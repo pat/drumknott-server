@@ -22,6 +22,7 @@ gem 'haml',            '4.0.7'
 gem 'mysql2',          '0.3.18'
 gem 'sliver-rails',    '0.2.0'
 gem 'stripe',          '~> 1.32.1'
+gem 'stripe_event',    '~> 1.5.0'
 gem 'thinking-sphinx', '3.1.4'
 gem 'flying-sphinx',   '1.2.0'
 

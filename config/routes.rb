@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   mount V1.new => '/api/v1'
 
+  mount StripeEvent::Engine, at: '/hooks/stripe'
+
   namespace :my do
     resources :sites
   end

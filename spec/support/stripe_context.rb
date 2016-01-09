@@ -15,6 +15,8 @@ class StripeContext
   end
 
   def set_up_site(site)
+    site.reload # so user is up-to-date.
+
     customer     = Stripe::Customer.retrieve site.user.stripe_customer_id
     subscription = customer.subscriptions.create :plan => ENV['STRIPE_PLAN_ID']
 
