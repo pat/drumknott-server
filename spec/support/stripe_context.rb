@@ -14,6 +14,20 @@ class StripeContext
     }).id
   end
 
+  def set_up_site(site)
+    customer     = Stripe::Customer.retrieve site.user.stripe_customer_id
+    subscription = customer.subscriptions.create :plan => ENV['STRIPE_PLAN_ID']
+
+    site.update_attributes! :stripe_subscription_id => subscription.id
+  end
+
+  def set_up_user(user)
+    customer = Stripe::Customer.create email: user.email
+
+    customer.sources.create :source => card_token
+    user.update_attributes! :stripe_customer_id => customer.id
+  end
+
   private
 
   attr_reader :cassette
