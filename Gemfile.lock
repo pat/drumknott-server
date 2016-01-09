@@ -134,6 +134,7 @@ GEM
       json
       websocket (~> 1.0)
     rack (1.6.4)
+    rack-pratchett (0.1.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rack-timeout (0.2.4)
@@ -273,6 +274,7 @@ DEPENDENCIES
   mysql2 (= 0.3.18)
   pg
   puma (= 2.14.0)
+  rack-pratchett (~> 0.1.1)
   rack-timeout
   rails (= 4.2.4)
   rails_12factor
