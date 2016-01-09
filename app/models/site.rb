@@ -1,8 +1,10 @@
 class Site < ActiveRecord::Base
+  belongs_to :user
+  has_many :pages, :dependent => :destroy
+
   validates :name, :presence => true, :uniqueness => true
   validates :key,  :presence => true, :uniqueness => true
-
-  has_many :pages, :dependent => :destroy
+  validates :user, :presence => true
 
   before_validation :set_key, :on => :create
 
