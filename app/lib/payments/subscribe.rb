@@ -16,7 +16,7 @@ class Payments::Subscribe
         :status                 => subscription.status
       )
     rescue => error
-      raise error unless Bugsnag.configuration.should_notify?
+      raise error if Rails.env.development?
 
       Bugsnag.notify error, :user => {
         :id    => user.id,
