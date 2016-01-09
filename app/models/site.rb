@@ -10,6 +10,10 @@ class Site < ActiveRecord::Base
 
   scope :order_by_name, lambda { order :name => :asc }
 
+  def accessible?
+    status == 'active' || status == 'past_due'
+  end
+
   private
 
   def set_key

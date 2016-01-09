@@ -13,12 +13,22 @@ class V1::Pages::Index < Sliver::Rails::Action
       :results  => pages.collect { |page| page_to_hash(page) },
       :page     => page,
       :per_page => per_page,
-      :pages    => pages.page_count,
-      :total    => pages.total_count
+      :pages    => page_count,
+      :total    => total_count,
+      :error    => error
     }
   end
 
   private
+
+  def error
+    error? ?
+      'Site is not active. Please log in to check your account status.' : nil
+  end
+
+  def error?
+    !site.accessible?
+  end
 
   def page
     params.fetch('page', 1).to_i
@@ -31,7 +41,13 @@ class V1::Pages::Index < Sliver::Rails::Action
     }
   end
 
+  def page_count
+    error? ? 0 : pages.page_count
+  end
+
   def pages
+    return [] if error?
+
     @pages ||= site.pages.search params['query'],
       :page => page
   end
@@ -42,5 +58,9 @@ class V1::Pages::Index < Sliver::Rails::Action
 
   def site
     @site ||= Site.find_by :name => path_params['site']
+  end
+
+  def total_count
+    error? ? 0 : pages.total_count
   end
 end

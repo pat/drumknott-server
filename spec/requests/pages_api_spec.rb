@@ -5,18 +5,31 @@ RSpec.describe 'Pages API', :type => :request do
   let(:json) { JSON.parse response.body }
 
   describe 'GET /:site/pages' do
-    it 'returns pages matching the given query for the specified site' do
-      waffles  = site.pages.create!(
+    before :each do
+      site.pages.create!(
         :name => 'Waffles', :content => 'All the waffles', :path => '/waffles'
       )
-      pancakes = site.pages.create!(
+      site.pages.create!(
         :name => 'Pancakes', :content => 'And crêpes', :path => '/pancakes'
       )
+    end
 
+    it 'returns pages matching the given query for the specified site' do
       get "/api/v1/#{site.name}/pages", :query => 'pancakes'
 
       expect(json['total']).to eq(1)
       expect(json['results'].first['name']).to eq('Pancakes')
+    end
+
+    it 'returns no matches and an error for inactive sites' do
+      site.update_attributes :status => 'failure'
+
+      get "/api/v1/#{site.name}/pages", :query => 'pancakes'
+
+      expect(json['total']).to eq(0)
+      expect(json['error']).to eq(
+        'Site is not active. Please log in to check your account status.'
+      )
     end
   end
 
