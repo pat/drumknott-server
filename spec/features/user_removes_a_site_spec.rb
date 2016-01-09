@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe 'Removing sites', type: :feature do
+RSpec.describe 'Removing sites', :type => :feature do
   let(:user) { User.make! }
-  let(:site) { Site.make! user: user }
+  let(:site) { Site.make! :user => user }
 
   before :each do
     sign_in_as user
