@@ -8,6 +8,8 @@ class Site < ActiveRecord::Base
 
   before_validation :set_key, :on => :create
 
+  scope :order_by_name, lambda { order :name => :asc }
+
   private
 
   def set_key

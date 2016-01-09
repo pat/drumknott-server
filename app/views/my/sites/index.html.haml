@@ -1,0 +1,20 @@
+%h2 Sites
+
+- if sites.any?
+  %table
+    %thead
+      %tr
+        %th Name
+        %th API Key
+        %th Status
+        %th
+    %tbody
+      - sites.each do |site|
+        %tr
+          %td= link_to site.name, my_site_path(site)
+          %td= site.key
+          %td= site.status
+
+%h3 Add New Site
+
+= render 'form'
