@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Pages API', :type => :request do
-  let(:site) { Site.create! :name => 'test' }
+  let(:site) { Site.make! :name => 'test' }
   let(:json) { JSON.parse response.body }
 
   describe 'GET /:site/pages' do
