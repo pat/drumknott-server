@@ -12,3 +12,7 @@ development:
 test:
   <<: *default
   database: drumknott_test
+
+production:
+  url:  <%= ENV["DATABASE_URL"] %>
+  pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
