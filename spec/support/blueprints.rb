@@ -1,8 +1,9 @@
 require 'machinist/active_record'
 
 Site.blueprint do
-  name { "site#{sn}" }
-  user { object.user || User.make! }
+  name   { "site#{sn}" }
+  user   { object.user || User.make! }
+  status { 'active' }
 end
 
 User.blueprint do
