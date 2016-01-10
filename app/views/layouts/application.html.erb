@@ -14,8 +14,8 @@
     <nav>
       <ul class="<%= section %>">
         <li class="home"><a href="/">Home</a></li>
-        <li class="sites"><%= link_to 'Sites', my_sites_path %></li>
         <% if user_signed_in? %>
+          <li class="sites"><%= link_to 'Sites', my_sites_path %></li>
           <li><%= link_to 'Log out', destroy_user_session_path, :method => :delete %></li>
         <% else %>
           <li><%= link_to 'Sign up', new_user_registration_path %></li>
