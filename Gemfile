@@ -19,6 +19,7 @@ gem 'decent_exposure', '2.3.2'
 gem 'formtastic',      '3.1.3'
 gem 'rack-pratchett',  '~> 0.1.1'
 gem 'haml',            '4.0.7'
+gem 'newrelic_rpm',    '~> 3.14.1.311'
 gem 'mysql2',          '0.3.18'
 gem 'sinatra',         '~> 1.4.6', :require => nil
 gem 'sliver-rails',    '0.2.0'
