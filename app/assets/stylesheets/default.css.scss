@@ -1,0 +1,405 @@
+$offwhite: #fafafa;
+$blue: #009595;
+$brand_blue: #d0dbe1;
+
+html {
+  height: 100%;
+}
+body {
+  font-family: Calluna, Georgia, serif;
+  line-height: 1.5;
+  font-size: 22px;
+  font-weight: normal;
+  color: rgba(#000, .8);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border-bottom: 5px solid $brand_blue;
+  box-sizing: border-box;
+  min-height: 100%;
+}
+section {
+  margin: 0 auto 60px;
+  max-width: 700px;
+  padding: 0 23px;
+  overflow: hidden;
+}
+p {
+  margin: 1.5em 0;
+}
+a {
+  color: $blue;
+}
+h1,h2,h3 {
+  font-family: 'Museo Slab', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  line-height: 1.2;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+h1 {
+  font-size: 1.75em;
+}
+h2 {
+  font-size: 1.5em;
+  margin: 1.5em 0 1em 0;
+}
+h3 {
+  font-size: 1.15em;
+  margin: 1.2em 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  &.max-width {
+    width: 100%;
+  }
+}
+figure {
+  margin: 1em 0;
+  text-align: center;
+}
+figcaption {
+  margin: 1em 0;
+  font-family: 'Calluna Italic';
+  color: rgba(#000, .5);
+  font-size: .85em;
+  a { color: inherit }
+}
+strong {
+  font-family: 'Calluna Bold';
+}
+em {
+  font-family: 'Calluna Italic';
+}
+hr {
+  border: none;
+  display: block;
+  height: 1px;
+  background: rgba(#000, .15);
+  margin: 50px auto;
+  width: 100px;
+}
+// center tweets / video
+// iframe {
+//   display: block !important;
+//   max-width: 100%;
+//   margin-left: auto !important;
+//   margin-right: auto !important;
+// }
+blockquote {
+  border-left: 3px solid rgba(#000, .8);
+  font-family: 'Calluna Italic';
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.01rem;
+  margin-left: -23px;
+  padding-bottom: 3px;
+  padding-left: 20px;
+  a { color: inherit }
+  p {
+    margin: 0 0 1em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  cite {
+    font-size: .85em;
+    color: rgba(#000, .5);
+  }
+}
+ul.list {
+  list-style-type: disc;
+  margin: 1em 0;
+  padding: 0;
+  li {
+    margin: 0 0 .5em 20px;
+    padding-left: 0;
+  }
+}
+table {
+  margin: 0 -10px;
+  font-size: 16px;
+}
+th {
+  font-family: 'Museo Sans Bold';
+  padding: 0 10px 10px;
+  white-space: nowrap;
+}
+td {
+  font-family: 'Museo Sans';
+  padding: 10px;
+  border-bottom: 1px solid rgba(#000 ,.1);
+  tr:last-child & {
+    border-bottom: none;
+  }
+}
+header {
+  text-align: center;
+}
+nav {
+  border-bottom: 1px solid rgba(#000, .15);
+  font-size: 18px;
+  font-family: 'Museo Sans', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  ul {
+    max-width: 728px;
+    overflow: hidden;
+    margin: 0 auto -1.5px;
+  }
+  li {
+    float: left;
+    border-bottom: 2px solid transparent;
+    margin: 0 14px;
+  }
+  a {
+    color: rgba(#000, .6);
+    text-decoration: none;
+    float: left;
+    padding: 24px 0 20px;
+  }
+  .home .home,
+  .account .account,
+  .sites .sites,
+  .invoices .invoices {
+    border-bottom-color: rgba(#000, .8);
+    a {
+      color: rgba(#000, .8);
+      font-family: 'Museo Sans Bold', Helvetica, Arial, sans-serif;
+    }
+  }
+}
+.date {
+  color: rgba(#000, .5);
+  font-size: .85em;
+}
+.content {
+  ul {
+    list-style-type: disc;
+    margin: 1.5em 0;
+    padding: 0;
+  }
+  li {
+    margin: 0 0 .5em 20px;
+    padding-left: 0;
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+pre {
+  margin: 1.5em -22px;
+  background: $offwhite;
+  font-family: "Monaco", "Courier", monospace;
+}
+code {
+  font-family: "Monaco", "Courier", monospace;
+  font-size: 0.75em;
+  margin-right: 0.2em;
+  display: inline-block;
+
+  $grey: rgba(#000, .5);
+  $green: #690;
+  $pink: #dd4a68;
+  .comment {
+    color: $grey;
+  }
+  &.html, &.svg, &.haml {
+    .tag, .punctuation {
+      color: $blue;
+    }
+    .string, .attr-value, .boolean {
+      color: $green;
+    }
+  }
+  &.css {
+    color: $green;
+    .selector, .punctuation, .atrule {
+      color: #fff;
+    }
+    .property {
+      color: $pink;
+    }
+  }
+  &.js {
+    color: #fff;
+    .keyword {
+      color: $pink;
+    }
+    .string, .number, .boolean {
+      color: $green;
+    }
+  }
+  &.coffee {
+    .var, .arrow {
+      color: $pink;
+    }
+    .string {
+      color: $green;
+    }
+  }
+  &.ruby {
+    .keyword, .const {
+      color: $pink;
+    }
+    .boolean, .string, .number, .symbol {
+      color: $green;
+    }
+  }
+}
+pre code {
+  display: block;
+  overflow: auto;
+  margin: 0;
+  padding: 22px;
+  background: $offwhite;
+  line-height: 1.6363em;
+}
+
+footer {
+  font-size: .85em;
+  text-align: center;
+  color: rgba(#000, .6);
+  border-top: 1px solid rgba(#000, .1);
+  margin: 4em auto 0;
+  padding: 2em 0;
+  max-width: 700px;
+  a {
+    color: inherit
+  }
+  a.license {
+    display: block;
+  }
+}
+
+.next-posts {
+  font-size: .85em;
+  text-align: center;
+  color: rgba(#000, .6);
+  margin: 0;
+  a {
+    color: inherit
+  }
+}
+
+.label {
+  font-size: 16px;
+  font-family: 'Museo Sans', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+  color: rgba(#000, .5);
+}
+
+#search {
+  span, input {
+    float: left;
+  }
+
+  span {
+    min-width: 18%;
+    display: inline-block;
+    margin-bottom: 1em;
+  }
+
+  input[type="text"] {
+    width: 40%;
+    font-size: 16px;
+    font-family: 'Museo Sans', Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+  }
+
+  input[type="submit"] {
+    width: 18%;
+    margin-top: 0.3em;
+    margin-left: 2%;
+    font-size: 16px;
+    font-family: 'Museo Sans', Helvetica, Arial, sans-serif;
+  }
+
+  .next {
+    max-width: 100%;
+    min-width: 90%;
+    display: inline-block;
+    text-align: right;
+  }
+}
+
+.pagination {
+  * {
+    margin: 0 2px;
+  }
+  a {
+    text-decoration: none;
+    color: rgba(#000, .5);
+  }
+  em {
+    color: rgba(#000, .9);
+  }
+}
+
+.comments {
+  font-size: .8em;
+  p {
+    margin: 1em 0;
+  }
+  a { color: inherit }
+}
+.comment-author {
+  font-weight: bold;
+  margin: 1.5em 0;
+}
+
+#results {
+  clear: left;
+
+  li.loading {
+    font-family: 'Calluna Italic';
+  }
+}
+
+#paperclips {
+  background: $brand_blue;
+  text-align: center;
+
+  h1:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    display: block;
+    background-image: image-url('paperclips.png');
+    width: 700px;
+    height: 140px;
+    margin: 0 auto;
+
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+  }
+
+  h1 {
+    overflow: auto;
+    position: relative;
+    max-width: 690px;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    padding: 0.75em 0;
+    z-index: 0;
+    color: $offwhite;
+    text-shadow:
+      -2px -2px 0 #000,
+      2px -2px 0 #000,
+      -2px 2px 0 #000,
+      2px 2px 0 #000;
+  }
+}

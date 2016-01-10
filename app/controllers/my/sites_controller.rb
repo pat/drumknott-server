@@ -1,6 +1,7 @@
 class My::SitesController < My::ApplicationController
-  expose(:sites) { current_user.sites.order_by_name }
-  expose(:site)  { site_in_context }
+  expose(:section) { 'sites' }
+  expose(:sites)   { current_user.sites.order_by_name }
+  expose(:site)    { site_in_context }
 
   def create
     if site.save
