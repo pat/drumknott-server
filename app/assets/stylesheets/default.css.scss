@@ -30,7 +30,7 @@ a {
   color: $blue;
 }
 h1,h2,h3 {
-  font-family: 'Museo Slab', Helvetica, Arial, sans-serif;
+  font-family: 'Museo-Slab', Helvetica, Arial, sans-serif;
   font-weight: normal;
   line-height: 1.2;
   a {
@@ -62,16 +62,16 @@ figure {
 }
 figcaption {
   margin: 1em 0;
-  font-family: 'Calluna Italic';
+  font-family: 'Calluna-Italic';
   color: rgba(#000, .5);
   font-size: .85em;
   a { color: inherit }
 }
 strong {
-  font-family: 'Calluna Bold';
+  font-family: 'Calluna-Bold';
 }
 em {
-  font-family: 'Calluna Italic';
+  font-family: 'Calluna-Italic';
 }
 hr {
   border: none;
@@ -90,7 +90,7 @@ hr {
 // }
 blockquote {
   border-left: 3px solid rgba(#000, .8);
-  font-family: 'Calluna Italic';
+  font-family: 'Calluna-Italic';
   font-style: normal;
   font-weight: normal;
   letter-spacing: 0.01rem;
@@ -123,12 +123,12 @@ table {
   font-size: 16px;
 }
 th {
-  font-family: 'Museo Sans Bold';
+  font-family: 'Museo-Sans-Bold';
   padding: 0 10px 10px;
   white-space: nowrap;
 }
 td {
-  font-family: 'Museo Sans';
+  font-family: 'Museo-Sans';
   padding: 10px;
   border-bottom: 1px solid rgba(#000 ,.1);
   tr:last-child & {
@@ -141,7 +141,7 @@ header {
 nav {
   border-bottom: 1px solid rgba(#000, .15);
   font-size: 18px;
-  font-family: 'Museo Sans', Helvetica, Arial, sans-serif;
+  font-family: 'Museo-Sans', Helvetica, Arial, sans-serif;
   font-weight: normal;
   ul {
     max-width: 728px;
@@ -166,7 +166,7 @@ nav {
     border-bottom-color: rgba(#000, .8);
     a {
       color: rgba(#000, .8);
-      font-family: 'Museo Sans Bold', Helvetica, Arial, sans-serif;
+      font-family: 'Museo-Sans-Bold', Helvetica, Arial, sans-serif;
     }
   }
 }
@@ -286,7 +286,7 @@ footer {
 
 .label {
   font-size: 16px;
-  font-family: 'Museo Sans', Helvetica, Arial, sans-serif;
+  font-family: 'Museo-Sans', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   margin-bottom: 1em;
   color: rgba(#000, .5);
@@ -306,7 +306,7 @@ footer {
   input[type="text"] {
     width: 40%;
     font-size: 16px;
-    font-family: 'Museo Sans', Helvetica, Arial, sans-serif;
+    font-family: 'Museo-Sans', Helvetica, Arial, sans-serif;
     line-height: 1.5;
   }
 
@@ -315,7 +315,7 @@ footer {
     margin-top: 0.3em;
     margin-left: 2%;
     font-size: 16px;
-    font-family: 'Museo Sans', Helvetica, Arial, sans-serif;
+    font-family: 'Museo-Sans', Helvetica, Arial, sans-serif;
   }
 
   .next {
@@ -355,7 +355,7 @@ footer {
   clear: left;
 
   li.loading {
-    font-family: 'Calluna Italic';
+    font-family: 'Calluna-Italic';
   }
 }
 
