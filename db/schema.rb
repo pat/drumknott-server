@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160109044133) do
+ActiveRecord::Schema.define(version: 20160109231824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,19 @@ ActiveRecord::Schema.define(version: 20160109044133) do
 
   add_index "duties_duty_records", ["created_at"], name: "index_duties_duty_records_on_created_at", order: {"created_at"=>:desc}, using: :btree
   add_index "duties_duty_records", ["name"], name: "index_duties_duty_records_on_name", using: :btree
+
+  create_table "invoices", force: :cascade do |t|
+    t.integer  "user_id",                        null: false
+    t.string   "stripe_invoice_id",              null: false
+    t.datetime "invoiced_at",                    null: false
+    t.json     "data",              default: {}, null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  add_index "invoices", ["stripe_invoice_id"], name: "index_invoices_on_stripe_invoice_id", unique: true, using: :btree
+  add_index "invoices", ["user_id", "invoiced_at"], name: "index_invoices_on_user_id_and_invoiced_at", order: {"invoiced_at"=>:desc}, using: :btree
+  add_index "invoices", ["user_id"], name: "index_invoices_on_user_id", using: :btree
 
   create_table "pages", force: :cascade do |t|
     t.integer  "site_id",    null: false
