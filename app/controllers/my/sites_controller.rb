@@ -13,6 +13,15 @@ class My::SitesController < My::ApplicationController
     end
   end
 
+  def update
+    if site.update_attributes site_params
+      redirect_to my_site_path(site),
+        :notice => 'The site details have been updated successfully.'
+    else
+      render :edit
+    end
+  end
+
   def destroy
     site.update_attributes! :status => 'deleting'
     CancelSiteWorker.perform_async site.id

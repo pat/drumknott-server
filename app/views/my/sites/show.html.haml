@@ -1,3 +1,5 @@
 %h2 Site #{site.name}
 
+= render :partial => 'form'
+
 = link_to 'Cancel and Delete', my_site_path(site), :method => :delete, :data => {:confirm => 'This will cancel your subscription and delete all site data. Are you sure?'} unless site.status == 'deleting'
