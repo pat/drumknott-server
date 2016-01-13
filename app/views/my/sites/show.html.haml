@@ -1,5 +1,14 @@
 %h2 Site #{site.name}
 
+%p The API key for this site is <strong><code>#{site.key}</code></strong>.
+%p Please do not share this key with anyone, it is your private authentication for updating your site's data. If you think your key has been compromised, you can #{ link_to 'generate a new key', regenerate_my_site_path(site), :method => :post }.
+
+%h3 Update Site
+
 = render :partial => 'form'
+
+%p If you change your site's name, make sure you update any credentials on your Jekyll site, including references in your Javascript code that make calls to Drumknott's Search API.
+
+%h3 Remove Site
 
 = link_to 'Cancel and Delete', my_site_path(site), :method => :delete, :data => {:confirm => 'This will cancel your subscription and delete all site data. Are you sure?'} unless site.status == 'deleting'

@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     get '/dashboard' => 'dashboard#index', :as => :dashboard
 
     resource :account
-    resources :sites
+    resources :sites do
+      member { post :regenerate }
+    end
   end
 end

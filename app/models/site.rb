@@ -14,6 +14,10 @@ class Site < ActiveRecord::Base
     status == 'active' || status == 'past_due'
   end
 
+  def reset_key!
+    update_attributes! :key => SecureRandom.hex(16)
+  end
+
   private
 
   def set_key
