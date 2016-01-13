@@ -15,6 +15,7 @@
       <ul class="<%= section %>">
         <li class="home"><a href="/">Home</a></li>
         <% if user_signed_in? %>
+          <li class="dashboard"><%= link_to 'Dashboard', my_dashboard_path %></li>
           <li class="sites"><%= link_to 'Sites', my_sites_path %></li>
           <li><%= link_to 'Log out', destroy_user_session_path, :method => :delete %></li>
         <% else %>

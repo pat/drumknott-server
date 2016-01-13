@@ -12,9 +12,12 @@ Rails.application.routes.draw do
 
   mount V1.new => '/api/v1'
 
-  mount StripeEvent::Engine, at: '/hooks/stripe'
+  mount StripeEvent::Engine, :at => '/hooks/stripe'
 
   namespace :my do
+    get '/dashboard' => 'dashboard#index', :as => :dashboard
+
+    resource :account
     resources :sites
   end
 end
