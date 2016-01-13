@@ -18,9 +18,9 @@ class Payments::Hooks::InvoiceUpdated
 
   def invoice
     @invoice ||= user.invoices.find_by(
-      :stripe_invoice_id => object.customer
+      :stripe_invoice_id => object.id
     ) || user.invoices.create(
-      :stripe_invoice_id => object.customer,
+      :stripe_invoice_id => object.id,
       :invoiced_at       => Time.zone.at(object.date)
     )
   end
