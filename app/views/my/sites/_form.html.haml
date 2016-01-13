@@ -1,6 +1,6 @@
 = semantic_form_for [:my, site] do |form|
   = form.inputs do
-    = form.input :name
+    = form.input :name, :hint => 'Names can only contain lowercase letters, numbers, dashes and underscores.'
 
   - if site.persisted?
     = form.actions do
