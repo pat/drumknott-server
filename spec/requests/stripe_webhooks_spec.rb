@@ -67,4 +67,27 @@ RSpec.describe 'Stripe Webhooks', :type => :request do
       expect(user.invoices.count).to eq(1)
     end
   end
+
+  it 'sends an email when a payment fails' do |example|
+    stripe_cassette(example) do |cassette|
+      cassette.set_up_user user, '4000000000000341'
+      cassette.set_up_site site, :trial_end => 3.seconds.from_now.to_i
+
+      ActionMailer::Base.deliveries.clear
+
+      sleep 360 if cassette.recording?
+
+      customer = Stripe::Customer.retrieve user.stripe_customer_id
+      invoice  = customer.invoices.detect { |invoice| invoice.total > 0 }
+      expect { invoice.pay }.to raise_error(Stripe::CardError)
+
+      event = Stripe::Event.all.detect { |event|
+        event.type == 'invoice.payment_failed'
+      }
+
+      post '/hooks/stripe', id: event.id
+
+      expect(ActionMailer::Base.deliveries.count).to eq(1)
+    end
+  end
 end

@@ -1,0 +1,21 @@
+%p Hi there,
+
+%p Your subscription payment for site #{@site.name} on Drumknott failed.
+
+- if @invoice.data['next_payment_attempt'].present?
+  %p The next attempt to charge your card will be #{Time.zone.at(@invoice.data['next_payment_attempt'])}.
+
+  %p= link_to 'Update card details', my_dashboard_url
+- else
+  %p There will be no further attempts against your card. Your site data can no longer be used for search requests.
+
+  %p= link_to 'View site details', my_site_url(@site)
+
+%p If you have any questions or feedback, just hit reply and get in touch.
+
+%p Kind regards,
+
+%p
+  Pat Allan
+  %br/
+  Drumknott

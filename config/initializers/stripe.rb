@@ -11,5 +11,5 @@ StripeEvent.configure do |events|
   events.subscribe 'invoice.created',           Payments::Hooks::InvoiceUpdated
   events.subscribe 'invoice.updated',           Payments::Hooks::InvoiceUpdated
   events.subscribe 'invoice.payment_succeeded', Payments::Hooks::InvoiceUpdated
-  events.subscribe 'invoice.payment_failed',    Payments::Hooks::InvoiceUpdated
+  events.subscribe 'invoice.payment_failed',    Payments::Hooks::PaymentFailed
 end
