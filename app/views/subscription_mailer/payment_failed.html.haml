@@ -1,6 +1,6 @@
 %p Hi there,
 
-%p Your subscription payment for site #{@site.name} on Drumknott failed.
+%p Your subscription payment for site <strong>#{@site.name}</strong> on Drumknott failed.
 
 - if @invoice.data['next_payment_attempt'].present?
   %p The next attempt to charge your card will be #{Time.zone.at(@invoice.data['next_payment_attempt'])}.
