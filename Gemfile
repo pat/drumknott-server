@@ -17,12 +17,12 @@ gem 'bugsnag',         '~> 3.0.0'
 gem 'devise',          '3.5.2'
 gem 'decent_exposure', '2.3.2'
 gem 'formtastic',      '3.1.3'
-gem 'rack-pratchett',  '~> 0.1.1'
 gem 'haml',            '4.0.7'
 gem 'newrelic_rpm',    '~> 3.14.1.311'
 gem 'mysql2',          '0.3.18'
 gem 'prawn',           '~> 2.0.2'
 gem 'prawn-table',     '~> 0.2.2'
+gem 'rack-pratchett',  '~> 0.1.1'
 gem 'sinatra',         '~> 1.4.6', :require => nil
 gem 'sliver-rails',    '0.2.0'
 gem 'stripe',          '~> 1.32.1'
@@ -47,5 +47,5 @@ end
 
 group :production do
   gem 'rails_12factor'
-  gem 'rack-timeout'
+  gem 'rack-timeout', '~> 0.3.2'
 end
