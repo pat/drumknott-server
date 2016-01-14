@@ -1,7 +1,7 @@
 class My::InvoicesController < My::ApplicationController
   expose(:section)  { 'invoices' }
-  expose(:invoices) { current_user.invoices }
-  expose(:invoice)  { invoices.find params[:id] }
+  expose(:invoices) { current_user.invoices.page(page) }
+  expose(:invoice)  { current_user.invoices.find params[:id] }
 
   def show
     respond_to do |format|
@@ -13,6 +13,10 @@ class My::InvoicesController < My::ApplicationController
   end
 
   private
+
+  def page
+    params[:page] ? params[:page].to_i : 1
+  end
 
   def pdf
     InvoiceAsPdf.new invoice

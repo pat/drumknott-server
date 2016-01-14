@@ -17,5 +17,7 @@
           %td= link_to invoice.site.name, my_site_path(invoice.site)
           %td= number_to_currency(invoice.data['total'] / 100.0)
           %td= invoice.data['paid'] ? 'Paid' : 'Unpaid'
+
+  = paginate invoices
 - else
   %p You do not have any invoices at this point.
