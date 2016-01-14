@@ -23,6 +23,7 @@ gem 'mysql2',          '0.3.18'
 gem 'prawn',           '~> 2.0.2'
 gem 'prawn-table',     '~> 0.2.2'
 gem 'rack-pratchett',  '~> 0.1.1'
+gem 'rack-timeout',    '~> 0.3.2'
 gem 'sinatra',         '~> 1.4.6', :require => nil
 gem 'sliver-rails',    '0.2.0'
 gem 'stripe',          '~> 1.32.1'
@@ -47,5 +48,4 @@ end
 
 group :production do
   gem 'rails_12factor'
-  gem 'rack-timeout', '~> 0.3.2'
 end
