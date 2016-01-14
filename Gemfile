@@ -21,6 +21,8 @@ gem 'rack-pratchett',  '~> 0.1.1'
 gem 'haml',            '4.0.7'
 gem 'newrelic_rpm',    '~> 3.14.1.311'
 gem 'mysql2',          '0.3.18'
+gem 'prawn',           '~> 2.0.2'
+gem 'prawn-table',     '~> 0.2.2'
 gem 'sinatra',         '~> 1.4.6', :require => nil
 gem 'sliver-rails',    '0.2.0'
 gem 'stripe',          '~> 1.32.1'
