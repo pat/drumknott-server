@@ -9,6 +9,7 @@
 
 %p If you change your site's name, make sure you update any credentials on your Jekyll site, including references in your Javascript code that make calls to Drumknott's Search API.
 
-%h3 Remove Site
+- unless site.status == 'deleting'
+  %h3 Remove Site
 
-= link_to 'Cancel and Delete', my_site_path(site), :method => :delete, :data => {:confirm => 'This will cancel your subscription and delete all site data. Are you sure?'} unless site.status == 'deleting'
+  = link_to 'Cancel and Delete', my_site_path(site), :method => :delete, :data => {:confirm => 'This will cancel your subscription and delete all site data. Are you sure?'}
