@@ -26,8 +26,10 @@ Invoice From:
     move_down 10
     create_body
     move_down 10
-    text "Total amount listed includes 10% GST."
+    text "Total amount listed includes 10% GST." if invoice.user.country == 'AU'
     text "#{ENV['INVOICE_REFERENCE_LABEL']}: #{ENV['INVOICE_REFERENCE']}"
+    text "For questions, support and feedback, please email <link href=\"mailto:hello@drumknottsearch.com\">hello@drumknottsearch.com</link>.",
+      :inline_format => true
   end
 
   def set_fonts

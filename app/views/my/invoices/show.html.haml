@@ -50,5 +50,7 @@
 
     %tr.footer
       %td{:rowspan => 2}
-        %p Total amount listed includes 10% GST.
+        - if current_user.country == 'AU'
+          %p Total amount listed includes 10% GST.
         %p #{ENV['INVOICE_REFERENCE_LABEL']}: #{ENV['INVOICE_REFERENCE']}
+        %p For questions, support and feedback, please email #{ link_to 'hello@drumknottsearch.com', 'mailto:hello@drumknottsearch.com' }.
