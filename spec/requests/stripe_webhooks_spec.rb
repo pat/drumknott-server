@@ -68,6 +68,30 @@ RSpec.describe 'Stripe Webhooks', :type => :request do
     end
   end
 
+  it 'sends an email when a payment succeeds' do |example|
+    stripe_cassette(example) do |cassette|
+      cassette.set_up_user user
+      cassette.set_up_site site
+
+      ActionMailer::Base.deliveries.clear
+
+      customer = Stripe::Customer.retrieve user.stripe_customer_id
+      invoice  = customer.invoices.detect { |invoice| invoice.total > 0 }
+
+      event = Stripe::Event.all.detect { |event|
+        event.type == 'invoice.created'
+      }
+      post '/hooks/stripe', id: event.id
+      event = Stripe::Event.all.detect { |event|
+        event.type == 'invoice.payment_succeeded'
+      }
+      post '/hooks/stripe', id: event.id
+      post '/hooks/stripe', id: event.id
+
+      expect(ActionMailer::Base.deliveries.count).to eq(1)
+    end
+  end
+
   it 'sends an email when a payment fails' do |example|
     stripe_cassette(example) do |cassette|
       cassette.set_up_user user, '4000000000000341'

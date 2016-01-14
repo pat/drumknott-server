@@ -10,6 +10,8 @@ class Payments::Hooks::InvoiceUpdated
   def call
     invoice.data_will_change!
     invoice.update_attributes :data => object.to_hash
+
+    PaymentSucceededWorker.perform_async invoice.id if object.paid
   end
 
   private

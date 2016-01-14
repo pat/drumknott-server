@@ -5,6 +5,10 @@ class Invoice < ActiveRecord::Base
   validates :stripe_invoice_id, :presence => true, :uniqueness => true
   validates :invoiced_at,       :presence => true
 
+  def sent?
+    sent_at.present?
+  end
+
   def site
     @site ||= user.sites.find_by(
       :stripe_subscription_id => data['lines']['data'].first['id']
