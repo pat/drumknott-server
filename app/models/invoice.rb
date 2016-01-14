@@ -5,6 +5,8 @@ class Invoice < ActiveRecord::Base
   validates :stripe_invoice_id, :presence => true, :uniqueness => true
   validates :invoiced_at,       :presence => true
 
+  scope :order_by_date, lambda { order :invoiced_at => :desc }
+
   def sent?
     sent_at.present?
   end
