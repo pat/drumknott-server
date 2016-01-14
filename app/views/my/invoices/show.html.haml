@@ -44,10 +44,6 @@
         %td
         %td Discount: #{ number_to_currency(invoice.data['discount'].to_i / 100.0) }
 
-    %tr.subtotal
-      %td
-      %td Tax: #{ number_to_currency(invoice.data['tax'].to_i / 100.0) }
-
     %tr.total
       %td
       %td Total: #{ number_to_currency(invoice.data['total'] / 100.0) }

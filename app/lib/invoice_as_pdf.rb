@@ -115,7 +115,6 @@ Status: #{ invoice.data['paid'] ? 'Paid' : 'Due' }
   def totals
     data = [
       ['', "Subtotal: #{ to_currency invoice.data['subtotal'] }"],
-      ['', "Tax: #{ to_currency invoice.data['tax'].to_i }"],
       ['', "Total: #{ to_currency invoice.data['total'] }"]
     ]
 
