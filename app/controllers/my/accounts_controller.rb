@@ -7,7 +7,7 @@ class My::AccountsController < My::ApplicationController
       UpdateCustomerWorker.perform_async current_user.id if email_changed
 
       redirect_to my_dashboard_path,
-        :notice => "Your email address has been updated."
+        :notice => "Your account details have been updated."
     else
       render 'edit'
     end
@@ -16,6 +16,6 @@ class My::AccountsController < My::ApplicationController
   private
 
   def user_params
-    params.fetch(:user, {}).permit :email
+    params.fetch(:user, {}).permit :email, :country
   end
 end
