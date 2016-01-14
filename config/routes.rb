@@ -21,5 +21,6 @@ Rails.application.routes.draw do
     resources :sites do
       member { post :regenerate }
     end
+    resources :invoices, only: [:index, :show]
   end
 end

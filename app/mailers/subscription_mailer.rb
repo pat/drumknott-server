@@ -4,9 +4,7 @@ class SubscriptionMailer < ::ActionMailer::Base
   def payment_failed(invoice)
     @invoice = invoice
     @user    = invoice.user
-    @site    = invoice.user.sites.find_by(
-      :stripe_subscription_id => invoice.data['lines']['data'].first['id']
-    )
+    @site    = invoice.site
 
     mail(
       :to      => @user.email,

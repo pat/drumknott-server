@@ -1,0 +1,19 @@
+%h2 Invoices
+
+- if invoices.any?
+  %table
+    %thead
+      %tr
+        %th Number
+        %th Date
+        %th Amount
+        %th Status
+    %tbody
+      - invoices.each do |invoice|
+        %tr
+          %td= link_to invoice_number(invoice), my_invoice_path(invoice)
+          %td= invoice.invoiced_at
+          %td= number_to_currency(invoice.data['total'] / 100.0)
+          %td= invoice.data['paid'] ? 'Paid' : 'Unpaid'
+- else
+  %p You do not have any invoices at this point.

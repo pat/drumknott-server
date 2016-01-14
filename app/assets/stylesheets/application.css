@@ -13,5 +13,6 @@
  *= require reset
  *= require fonts
  *= require default
+ *= require invoices
  *= require_self
  */

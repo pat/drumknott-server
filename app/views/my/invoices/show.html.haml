@@ -1,0 +1,60 @@
+%p= link_to 'Return to list of invoices', my_invoices_path
+
+.invoice-box
+  %table{:cellpadding => 0, :cellspacing => 0}
+    %tr.top
+      %td{:colspan => 2}
+        %table
+          %tr
+            %td.title
+              %h2 Drumknott
+            %td
+              Invoice #: #{ invoice_number invoice }
+              %br/
+              Created: #{ invoice.invoiced_at.to_formatted_s :date_only }
+              %br/
+              For #{ invoice.user.email }
+              %br/
+              Status: #{ invoice.data['paid'] ? 'Paid' : 'Due' }
+
+    %tr.information
+      %td{:colspan => 2}
+        %table
+          %tr
+            %td
+              Invoice From:
+              %br/
+              Pat Allan
+              %br/
+              Drumknott Search
+              %br/
+              802/115 Swanston St
+              %br/
+              Melbourne, Victoria
+              %br/
+              Australia 3000
+
+    %tr.heading
+      %td Item
+      %td Amount
+    - invoice.data['lines']['data'].each do |line|
+      %tr{:class => line_class_for(invoice.data['lines']['data'], line)}
+        %td Monthly subscription for #{ invoice.site.name }
+        %td= number_to_currency(line['amount'] / 100.0)
+
+    %tr.subtotal.first
+      %td
+      %td Subtotal: #{ number_to_currency(invoice.data['subtotal'] / 100.0) }
+
+    - if invoice.data['discount'].to_i > 0
+      %tr.subtotal
+        %td
+        %td Discount: #{ number_to_currency(invoice.data['discount'].to_i / 100.0) }
+
+    %tr.subtotal
+      %td
+      %td Tax: #{ number_to_currency(invoice.data['tax'].to_i / 100.0) }
+
+    %tr.total
+      %td
+      %td Total: #{ number_to_currency(invoice.data['total'] / 100.0) }
