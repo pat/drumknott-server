@@ -6,6 +6,7 @@
       %tr
         %th Number
         %th Date
+        %th Site
         %th Amount
         %th Status
     %tbody
@@ -13,6 +14,7 @@
         %tr
           %td= link_to invoice_number(invoice), my_invoice_path(invoice)
           %td= invoice.invoiced_at
+          %td= link_to invoice.site.name, my_site_path(invoice.site)
           %td= number_to_currency(invoice.data['total'] / 100.0)
           %td= invoice.data['paid'] ? 'Paid' : 'Unpaid'
 - else
