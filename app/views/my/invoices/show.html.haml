@@ -47,3 +47,8 @@
     %tr.total
       %td
       %td Total: #{ number_to_currency(invoice.data['total'] / 100.0) }
+
+    %tr.footer
+      %td{:rowspan => 2}
+        %p Total amount listed includes 10% GST.
+        %p #{ENV['INVOICE_REFERENCE_LABEL']}: #{ENV['INVOICE_REFERENCE']}

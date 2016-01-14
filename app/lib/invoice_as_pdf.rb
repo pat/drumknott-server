@@ -25,6 +25,9 @@ Invoice From:
     create_header
     move_down 10
     create_body
+    move_down 10
+    text "Total amount listed includes 10% GST."
+    text "#{ENV['INVOICE_REFERENCE_LABEL']}: #{ENV['INVOICE_REFERENCE']}"
   end
 
   def set_fonts
