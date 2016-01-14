@@ -4,11 +4,7 @@ class InvoiceAsPdf < Prawn::Document
 
   FROM_ADDRESS = <<-TEXT
 Invoice From:
-Pat Allan
-Drumknott Search
-802/115 Swanston St
-Melbourne, Victoria
-Australia 3000
+#{ENV['INVOICE_FROM']}
   TEXT
 
   def initialize(invoice)

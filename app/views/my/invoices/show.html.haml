@@ -25,15 +25,7 @@
             %td
               Invoice From:
               %br/
-              Pat Allan
-              %br/
-              Drumknott Search
-              %br/
-              802/115 Swanston St
-              %br/
-              Melbourne, Victoria
-              %br/
-              Australia 3000
+              = ENV['INVOICE_FROM'].gsub("\n", "<br />").html_safe
 
     %tr.heading
       %td Item
