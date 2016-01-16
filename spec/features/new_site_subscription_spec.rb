@@ -15,6 +15,9 @@ RSpec.describe 'Creating a new site subscription' do
       expect(subscription).to be_present
       expect(subscription.plan.id).to eq(ENV['STRIPE_PLAN_ID'])
       expect(site.status).to eq('active')
+
+      site.user.reload
+      expect(site.user.cache['card']['last4']).to eq('4242')
     end
   end
 

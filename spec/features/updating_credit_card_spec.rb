@@ -17,6 +17,9 @@ RSpec.describe 'Updating credit card' do
 
       customer = Stripe::Customer.retrieve user.stripe_customer_id
       expect(customer.sources.first.last4).to eq('4444')
+
+      user.reload
+      expect(user.cache['card']['last4']).to eq('4444')
     end
   end
 

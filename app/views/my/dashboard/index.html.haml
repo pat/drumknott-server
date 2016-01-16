@@ -1,4 +1,13 @@
+%h2 Account Details
+
 = render :partial => 'my/accounts/form'
+
+%h2 Credit Card
+
+- if current_user.cache['card']
+  %p The card on file ends with #{current_user.cache['card']['last4']}, and expires at #{current_user.cache['card']['exp_month']}/#{current_user.cache['card']['exp_year']}.
+- else
+  %p You currently have no credit card attached to your account. Please use the button below to add new card details.
 
 = form_tag change_card_my_account_path, method: :put do |form|
   %script{'src'        => 'https://checkout.stripe.com/checkout.js',
