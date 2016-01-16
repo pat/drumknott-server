@@ -1,0 +1,50 @@
+.formtastic input[type=text],
+.formtastic input[type=email],
+.formtastic select {
+  font-family: Calluna, Georgia, serif;
+  font-size: 90%;
+}
+
+.button,
+.formtastic .button,
+.formtastic .button_action .button {
+  min-width: 140px;
+  text-align: center;
+  font-family: "Museo Sans", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 22px;
+  display: inline-block;
+  padding: 10px 30px 10px;
+  border-radius: 3px;
+  border: 2px solid #d5d5de;
+  white-space: nowrap;
+  -webkit-appearance: none;
+  background: #BCC8E2;
+  border-color: #A3AEC4;
+  color: #333;
+  cursor: pointer;
+}
+
+.button:hover,
+.formtastic .button:hover,
+.formtastic .button_action .button:hover {
+  background: #A5B0C7;
+  border-color: #9FA9BF;
+  color: #000;
+}
+
+.formtastic abbr[title=required] {
+  display: none;
+}
+
+.formtastic .input {
+  margin-bottom: 0;
+}
+
+.formtastic fieldset.actions {
+  margin-top: 1em;
+}
+
+.formtastic .input .inline-hints {
+  font-size: 75%;
+}

@@ -12,7 +12,9 @@
  *
  *= require reset
  *= require fonts
+ *= require formtastic
  *= require default
  *= require invoices
+ *= require forms
  *= require_self
  */
