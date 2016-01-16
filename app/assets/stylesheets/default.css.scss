@@ -274,58 +274,6 @@ footer {
   }
 }
 
-.next-posts {
-  font-size: .85em;
-  text-align: center;
-  color: rgba(#000, .6);
-  margin: 0;
-  a {
-    color: inherit
-  }
-}
-
-.label {
-  font-size: 16px;
-  font-family: 'Museo-Sans', Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  margin-bottom: 1em;
-  color: rgba(#000, .5);
-}
-
-#search {
-  span, input {
-    float: left;
-  }
-
-  span {
-    min-width: 18%;
-    display: inline-block;
-    margin-bottom: 1em;
-  }
-
-  input[type="text"] {
-    width: 40%;
-    font-size: 16px;
-    font-family: 'Museo-Sans', Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-  }
-
-  input[type="submit"] {
-    width: 18%;
-    margin-top: 0.3em;
-    margin-left: 2%;
-    font-size: 16px;
-    font-family: 'Museo-Sans', Helvetica, Arial, sans-serif;
-  }
-
-  .next {
-    max-width: 100%;
-    min-width: 90%;
-    display: inline-block;
-    text-align: right;
-  }
-}
-
 .pagination {
   margin-top: 1em;
   text-align: center;
