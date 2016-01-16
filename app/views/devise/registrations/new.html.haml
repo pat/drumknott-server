@@ -9,6 +9,6 @@
     = form.input :password
     = form.input :password_confirmation
   = form.actions do
-    = form.action :submit, :as => :button, :label => 'Sign up'
+    = form.action :submit, :as => :button, :label => 'Sign up', :button_html => {:class => 'button primary'}
 
 = render "devise/shared/links"

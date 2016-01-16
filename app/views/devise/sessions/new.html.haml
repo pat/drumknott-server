@@ -1,0 +1,12 @@
+%h2 Log in
+
+= semantic_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |form|
+  = form.inputs do
+    = form.input :email
+    = form.input :password
+    - if devise_mapping.rememberable?
+      = form.input :remember_me
+  = form.actions do
+    = form.action :submit, :as => :button, :label => 'Log in', :button_html => {:class => 'button primary'}
+
+= render "devise/shared/links"

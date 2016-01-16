@@ -3,4 +3,4 @@
     = form.input :email
     = form.input :country, :as => :country, :priority_countries => [], :hint => 'Required to handle billing correctly.'
   = form.actions do
-    = form.action :submit, :as => :button, :label => 'Update', button_html: {class: 'button primary'}
+    = form.action :submit, :as => :button, :label => 'Update', :button_html => {:class => 'button primary'}

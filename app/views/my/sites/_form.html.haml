@@ -4,7 +4,7 @@
 
   - if site.persisted?
     = form.actions do
-      = form.action :submit, :as => :button, button_html: {class: 'button primary'}
+      = form.action :submit, :as => :button, :button_html => {:class => 'button primary'}
   - else
     %script{'src'        => 'https://checkout.stripe.com/checkout.js',
       'class'            => 'stripe-button',
