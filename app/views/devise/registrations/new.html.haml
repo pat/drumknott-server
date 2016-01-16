@@ -1,0 +1,14 @@
+%h2 Sign up
+
+= semantic_form_for resource, as: resource_name, url: registration_path(resource_name) do |form|
+  = devise_error_messages!
+
+  = form.inputs do
+    = form.input :email
+    = form.input :country, :as => :country, :priority_countries => [], :hint => 'Required to handle billing correctly.'
+    = form.input :password
+    = form.input :password_confirmation
+  = form.actions do
+    = form.action :submit, :as => :button, :label => 'Sign up'
+
+= render "devise/shared/links"
