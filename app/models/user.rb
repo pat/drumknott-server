@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   has_many :sites,    :dependent => :destroy
   has_many :invoices, :dependent => :destroy
+
+  validates :country, :presence => true
 end
