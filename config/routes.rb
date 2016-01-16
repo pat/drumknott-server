@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   namespace :my do
     get '/dashboard' => 'dashboard#index', :as => :dashboard
 
-    resource :account
+    resource :account do
+      member { put :change_card }
+    end
     resources :sites do
       member { post :regenerate }
     end

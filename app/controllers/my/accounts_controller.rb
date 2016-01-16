@@ -13,6 +13,13 @@ class My::AccountsController < My::ApplicationController
     end
   end
 
+  def change_card
+    UpdateCardWorker.perform_async current_user.id, params[:stripeToken]
+
+    redirect_to my_dashboard_path,
+      :notice => "Your credit card is being updated."
+  end
+
   private
 
   def user_params

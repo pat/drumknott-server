@@ -29,11 +29,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 09 Jan 2016 07:05:35 GMT
+      - Sat, 16 Jan 2016 02:27:31 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '851'
+      - '2821'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -47,7 +47,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7ge5yokzSn04Sb
+      - req_7jCBrFkkJRZ2lE
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -59,12 +59,12 @@ http_interactions:
           "object": "list",
           "data": [
             {
-              "id": "cus_7ge36IOc2UWWQp",
+              "id": "cus_7jCBSlcgmQJrlG",
               "object": "customer",
               "account_balance": 0,
-              "created": 1452323054,
-              "currency": null,
-              "default_source": null,
+              "created": 1452911242,
+              "currency": "usd",
+              "default_source": "card_17TjmfKmEW6wqTn5U1J9hTkk",
               "delinquent": false,
               "description": null,
               "discount": null,
@@ -74,17 +74,77 @@ http_interactions:
               "shipping": null,
               "sources": {
                 "object": "list",
-                "data": [],
+                "data": [
+                  {
+                    "id": "card_17TjmfKmEW6wqTn5U1J9hTkk",
+                    "object": "card",
+                    "address_city": null,
+                    "address_country": null,
+                    "address_line1": null,
+                    "address_line1_check": null,
+                    "address_line2": null,
+                    "address_state": null,
+                    "address_zip": null,
+                    "address_zip_check": null,
+                    "brand": "Visa",
+                    "country": "US",
+                    "customer": "cus_7jCBSlcgmQJrlG",
+                    "cvc_check": "pass",
+                    "dynamic_last4": null,
+                    "exp_month": 1,
+                    "exp_year": 2018,
+                    "fingerprint": "fJA9T7VsmVzC26CG",
+                    "funding": "credit",
+                    "last4": "4242",
+                    "metadata": {},
+                    "name": null,
+                    "tokenization_method": null
+                  }
+                ],
                 "has_more": false,
-                "total_count": 0,
-                "url": "/v1/customers/cus_7ge36IOc2UWWQp/sources"
+                "total_count": 1,
+                "url": "/v1/customers/cus_7jCBSlcgmQJrlG/sources"
               },
               "subscriptions": {
                 "object": "list",
-                "data": [],
+                "data": [
+                  {
+                    "id": "sub_7jCBx2lEivuiwI",
+                    "object": "subscription",
+                    "application_fee_percent": null,
+                    "cancel_at_period_end": false,
+                    "canceled_at": null,
+                    "current_period_end": 1455589646,
+                    "current_period_start": 1452911246,
+                    "customer": "cus_7jCBSlcgmQJrlG",
+                    "discount": null,
+                    "ended_at": null,
+                    "metadata": {},
+                    "plan": {
+                      "id": "drumknott",
+                      "object": "plan",
+                      "amount": 300,
+                      "created": 1452911240,
+                      "currency": "usd",
+                      "interval": "month",
+                      "interval_count": 1,
+                      "livemode": false,
+                      "metadata": {},
+                      "name": "Drumknott Test",
+                      "statement_descriptor": null,
+                      "trial_period_days": null
+                    },
+                    "quantity": 1,
+                    "start": 1452911246,
+                    "status": "active",
+                    "tax_percent": null,
+                    "trial_end": null,
+                    "trial_start": null
+                  }
+                ],
                 "has_more": false,
-                "total_count": 0,
-                "url": "/v1/customers/cus_7ge36IOc2UWWQp/subscriptions"
+                "total_count": 1,
+                "url": "/v1/customers/cus_7jCBSlcgmQJrlG/subscriptions"
               }
             }
           ],
@@ -92,10 +152,10 @@ http_interactions:
           "url": "/v1/customers"
         }
     http_version: 
-  recorded_at: Sat, 09 Jan 2016 07:05:35 GMT
+  recorded_at: Sat, 16 Jan 2016 02:27:31 GMT
 - request:
     method: delete
-    uri: https://api.stripe.com/v1/customers/cus_7ge36IOc2UWWQp
+    uri: https://api.stripe.com/v1/customers/cus_7jCBSlcgmQJrlG
     body:
       encoding: US-ASCII
       string: ''
@@ -122,7 +182,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 09 Jan 2016 07:05:37 GMT
+      - Sat, 16 Jan 2016 02:27:32 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -140,7 +200,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7ge5y5BdWGuHli
+      - req_7jCB9SMosCyU0p
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -150,10 +210,10 @@ http_interactions:
       string: |
         {
           "deleted": true,
-          "id": "cus_7ge36IOc2UWWQp"
+          "id": "cus_7jCBSlcgmQJrlG"
         }
     http_version: 
-  recorded_at: Sat, 09 Jan 2016 07:05:37 GMT
+  recorded_at: Sat, 16 Jan 2016 02:27:33 GMT
 - request:
     method: get
     uri: https://api.stripe.com/v1/coupons
@@ -183,7 +243,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 09 Jan 2016 07:05:38 GMT
+      - Sat, 16 Jan 2016 02:27:34 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -201,7 +261,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7ge5a8LXjh9y8F
+      - req_7jCBbARvnOLENQ
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -216,7 +276,7 @@ http_interactions:
           "url": "/v1/coupons"
         }
     http_version: 
-  recorded_at: Sat, 09 Jan 2016 07:05:38 GMT
+  recorded_at: Sat, 16 Jan 2016 02:27:34 GMT
 - request:
     method: get
     uri: https://api.stripe.com/v1/plans
@@ -246,7 +306,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 09 Jan 2016 07:05:39 GMT
+      - Sat, 16 Jan 2016 02:27:35 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -264,7 +324,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7ge5SQw10I6Fjv
+      - req_7jCB6YKipQbDJQ
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -279,7 +339,7 @@ http_interactions:
               "id": "drumknott",
               "object": "plan",
               "amount": 300,
-              "created": 1452323051,
+              "created": 1452911240,
               "currency": "usd",
               "interval": "month",
               "interval_count": 1,
@@ -294,7 +354,7 @@ http_interactions:
           "url": "/v1/plans"
         }
     http_version: 
-  recorded_at: Sat, 09 Jan 2016 07:05:39 GMT
+  recorded_at: Sat, 16 Jan 2016 02:27:35 GMT
 - request:
     method: delete
     uri: https://api.stripe.com/v1/plans/drumknott
@@ -324,7 +384,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 09 Jan 2016 07:05:40 GMT
+      - Sat, 16 Jan 2016 02:27:36 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -342,7 +402,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7ge5AUNiKpfpfo
+      - req_7jCBWDwuqkJvBF
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -355,7 +415,7 @@ http_interactions:
           "id": "drumknott"
         }
     http_version: 
-  recorded_at: Sat, 09 Jan 2016 07:05:40 GMT
+  recorded_at: Sat, 16 Jan 2016 02:27:36 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/plans
@@ -387,7 +447,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 09 Jan 2016 07:05:41 GMT
+      - Sat, 16 Jan 2016 02:27:38 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -405,7 +465,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7ge5rtrKFbxX6W
+      - req_7jCBwCgUPQWTS0
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -417,7 +477,7 @@ http_interactions:
           "id": "drumknott",
           "object": "plan",
           "amount": 300,
-          "created": 1452323141,
+          "created": 1452911257,
           "currency": "usd",
           "interval": "month",
           "interval_count": 1,
@@ -428,7 +488,7 @@ http_interactions:
           "trial_period_days": null
         }
     http_version: 
-  recorded_at: Sat, 09 Jan 2016 07:05:41 GMT
+  recorded_at: Sat, 16 Jan 2016 02:27:38 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/tokens
@@ -460,7 +520,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 09 Jan 2016 07:05:43 GMT
+      - Sat, 16 Jan 2016 02:27:39 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -478,7 +538,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7ge5roKYEfLAt1
+      - req_7jCBrvDWesDiar
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -487,10 +547,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_17RGnDKmEW6wqTn509q5nSl9",
+          "id": "tok_17TjmxKmEW6wqTn5KStDQpGY",
           "object": "token",
           "card": {
-            "id": "card_17RGnDKmEW6wqTn5a2NoLTzH",
+            "id": "card_17TjmxKmEW6wqTn5fReQjE0Y",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -514,13 +574,13 @@ http_interactions:
             "tokenization_method": null
           },
           "client_ip": "118.209.178.50",
-          "created": 1452323143,
+          "created": 1452911259,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Sat, 09 Jan 2016 07:05:43 GMT
+  recorded_at: Sat, 16 Jan 2016 02:27:39 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/customers
@@ -552,7 +612,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 09 Jan 2016 07:05:44 GMT
+      - Sat, 16 Jan 2016 02:27:40 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -570,7 +630,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7ge5FPtQCpzAQe
+      - req_7jCBlbUIJVKjBm
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -579,10 +639,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "cus_7ge5ZIVaJUEabf",
+          "id": "cus_7jCBRCxemM7KrM",
           "object": "customer",
           "account_balance": 0,
-          "created": 1452323144,
+          "created": 1452911260,
           "currency": null,
           "default_source": null,
           "delinquent": false,
@@ -597,24 +657,24 @@ http_interactions:
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/customers/cus_7ge5ZIVaJUEabf/sources"
+            "url": "/v1/customers/cus_7jCBRCxemM7KrM/sources"
           },
           "subscriptions": {
             "object": "list",
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/customers/cus_7ge5ZIVaJUEabf/subscriptions"
+            "url": "/v1/customers/cus_7jCBRCxemM7KrM/subscriptions"
           }
         }
     http_version: 
-  recorded_at: Sat, 09 Jan 2016 07:05:44 GMT
+  recorded_at: Sat, 16 Jan 2016 02:27:40 GMT
 - request:
     method: post
-    uri: https://api.stripe.com/v1/customers/cus_7ge5ZIVaJUEabf/sources
+    uri: https://api.stripe.com/v1/customers/cus_7jCBRCxemM7KrM
     body:
       encoding: US-ASCII
-      string: source=tok_17RGnDKmEW6wqTn509q5nSl9
+      string: source=tok_17TjmxKmEW6wqTn5KStDQpGY
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -640,7 +700,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 09 Jan 2016 07:05:46 GMT
+      - Sat, 16 Jan 2016 02:27:42 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -658,7 +718,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7ge5vqgNzo2FBD
+      - req_7jCBRh46u4f5aP
       Stripe-Version:
       - '2015-10-16'
     body:
@@ -673,10 +733,10 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Sat, 09 Jan 2016 07:05:46 GMT
+  recorded_at: Sat, 16 Jan 2016 02:27:42 GMT
 - request:
     method: get
-    uri: https://api.stripe.com/v1/customers/cus_7ge5ZIVaJUEabf
+    uri: https://api.stripe.com/v1/customers/cus_7jCBRCxemM7KrM
     body:
       encoding: US-ASCII
       string: ''
@@ -703,7 +763,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 09 Jan 2016 07:05:48 GMT
+      - Sat, 16 Jan 2016 02:27:43 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -721,7 +781,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7ge5YSUKEY5mJs
+      - req_7jCBrDzIlgU29U
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -730,10 +790,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "cus_7ge5ZIVaJUEabf",
+          "id": "cus_7jCBRCxemM7KrM",
           "object": "customer",
           "account_balance": 0,
-          "created": 1452323144,
+          "created": 1452911260,
           "currency": null,
           "default_source": null,
           "delinquent": false,
@@ -748,16 +808,16 @@ http_interactions:
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/customers/cus_7ge5ZIVaJUEabf/sources"
+            "url": "/v1/customers/cus_7jCBRCxemM7KrM/sources"
           },
           "subscriptions": {
             "object": "list",
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/customers/cus_7ge5ZIVaJUEabf/subscriptions"
+            "url": "/v1/customers/cus_7jCBRCxemM7KrM/subscriptions"
           }
         }
     http_version: 
-  recorded_at: Sat, 09 Jan 2016 07:05:48 GMT
+  recorded_at: Sat, 16 Jan 2016 02:27:43 GMT
 recorded_with: VCR 3.0.1

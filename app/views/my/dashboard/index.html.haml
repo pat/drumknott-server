@@ -1,1 +1,14 @@
 = render :partial => 'my/accounts/form'
+
+= form_tag change_card_my_account_path, method: :put do |form|
+  %script{'src'        => 'https://checkout.stripe.com/checkout.js',
+    'class'            => 'stripe-button',
+    'data-key'         => ENV['STRIPE_PUBLISHABLE_KEY'],
+    'data-name'        => 'Drumknott',
+    'data-label'       => 'Update Credit Card',
+    'data-description' => 'Update your credit card details',
+    'data-panel-label' => 'Update',
+    'data-locale'      => 'auto',
+    'data-currency'    => 'USD',
+    'data-email'       => current_user.email}
+

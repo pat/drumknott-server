@@ -8,9 +8,7 @@ class Payments::SetCard
   end
 
   def call
-    source = customer.sources.create :source => token
-
-    customer.default_source = source.id
+    customer.source = token
     customer.save
   end
 
