@@ -1,0 +1,11 @@
+language: ruby
+rvm:
+- 2.2.2
+before_install:
+- gem update --system
+- gem install bundler
+before_script:
+- openssl aes-256-cbc -K $encrypted_b0ee5f2fe3a6_key -iv $encrypted_b0ee5f2fe3a6_iv -in .env.test.enc -out .env.test -d
+- psql -c 'create database drumknott_test;' -U postgres >/dev/null
+script: bundle exec rake
+sudo: false
