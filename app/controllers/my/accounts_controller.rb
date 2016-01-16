@@ -13,6 +13,14 @@ class My::AccountsController < My::ApplicationController
     end
   end
 
+  def destroy
+    DeleteAccountWorker.perform_async current_user.id
+
+    sign_out :user
+
+    redirect_to root_path, :notice => "We are now cancelling your subscriptions and deleting your data, and will email you once it is done."
+  end
+
   def change_card
     UpdateCardWorker.perform_async current_user.id, params[:stripeToken]
 
