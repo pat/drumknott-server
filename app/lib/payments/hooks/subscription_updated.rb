@@ -9,6 +9,8 @@ class Payments::Hooks::SubscriptionUpdated
 
   def call
     site.update_attributes! :status => subscription.status
+
+    UpdateSiteCache.call site, subscription
   end
 
   private
@@ -16,6 +18,6 @@ class Payments::Hooks::SubscriptionUpdated
   attr_reader :subscription
 
   def site
-    Site.find_by :stripe_subscription_id => subscription.id
+    @site ||= Site.find_by :stripe_subscription_id => subscription.id
   end
 end

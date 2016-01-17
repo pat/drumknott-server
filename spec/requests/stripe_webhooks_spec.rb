@@ -24,6 +24,9 @@ RSpec.describe 'Stripe Webhooks', :type => :request do
 
       site.reload
       expect(site.status).to eq('active')
+      expect(site.cache['current_period_end']).to eq(
+        subscription.current_period_end
+      )
     end
   end
 

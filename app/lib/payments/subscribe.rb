@@ -15,6 +15,7 @@ class Payments::Subscribe
         :stripe_subscription_id => subscription.id,
         :status                 => subscription.status
       )
+      UpdateSiteCache.call site, subscription
     rescue => error
       raise error if Rails.env.development?
 
