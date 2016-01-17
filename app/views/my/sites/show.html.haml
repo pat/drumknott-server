@@ -3,6 +3,9 @@
 %p The API key for this site is <strong><code>#{site.key}</code></strong>.
 %p Please do not share this key with anyone, it is your private authentication for updating your site's data. If you think your key has been compromised, you can #{ link_to 'generate a new key', regenerate_my_site_path(site), :method => :post }.
 
+- if site.cache['current_period_end']
+  %p The current billing cycle finishes at #{ Time.zone.at site.cache['current_period_end'] }, and you will be billed for the next month shortly after that.
+
 %h3 Update Site
 
 = render :partial => 'form'
