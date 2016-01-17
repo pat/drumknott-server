@@ -5,7 +5,7 @@
     = form.input :email
     = form.input :password
     - if devise_mapping.rememberable?
-      = form.input :remember_me
+      = form.input :remember_me, :as => :boolean
   = form.actions do
     = form.action :submit, :as => :button, :label => 'Log in', :button_html => {:class => 'button primary'}
 
