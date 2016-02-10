@@ -1,3 +1,8 @@
 %h2 Add New Site
 
+%p Each site costs $3.00 USD per month.
+
+- unless require_credit_card?(site)
+  %p The credit card on file (ending in #{current_user.cache['card']['last4']}) will be used for this subscription.
+
 = render 'form'
