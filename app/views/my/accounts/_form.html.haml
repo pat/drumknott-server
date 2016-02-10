@@ -4,3 +4,12 @@
     = form.input :country, :as => :country, :priority_countries => [], :hint => 'Required to handle billing correctly.'
   = form.actions do
     = form.action :submit, :as => :button, :label => 'Update', :button_html => {:class => 'button primary'}
+
+%h3 Change Password
+
+= semantic_form_for current_user, :url => my_account_path do |form|
+  = form.inputs do
+    = form.input :password, :label => 'New Password'
+    = form.input :password_confirmation
+  = form.actions do
+    = form.action :submit, :as => :button, :label => 'Change Password', :button_html => {:class => 'button primary'}

@@ -10,7 +10,7 @@ RSpec.describe 'Update user details', :type => :feature do
   it 'updates the email address' do
     visit my_dashboard_path
 
-    fill_in 'Email', with: 'pat@drumknottsearch.com'
+    fill_in 'Email', :with => 'pat@drumknottsearch.com'
     click_button 'Update'
 
     user.reload
@@ -22,7 +22,7 @@ RSpec.describe 'Update user details', :type => :feature do
       cassette.set_up_user user
       visit my_dashboard_path
 
-      fill_in 'Email', with: 'pat@drumknottsearch.com'
+      fill_in 'Email', :with => 'pat@drumknottsearch.com'
       click_button 'Update'
 
       user.reload
@@ -31,5 +31,20 @@ RSpec.describe 'Update user details', :type => :feature do
       customer = Stripe::Customer.retrieve user.stripe_customer_id
       expect(customer.email).to eq('pat@drumknottsearch.com')
     end
+  end
+
+  it 'changes password' do
+    visit my_dashboard_path
+
+    fill_in 'New Password',     :with => 'wossname'
+    fill_in 'Confirm Password', :with => 'wossname'
+    click_button 'Change Password'
+
+    fill_in 'Email',    with: user.email
+    fill_in 'Password', with: 'wossname'
+    click_button 'Log in'
+
+    expect(page).to have_content('Signed in successfully')
+    expect(page).to have_content('Log out')
   end
 end

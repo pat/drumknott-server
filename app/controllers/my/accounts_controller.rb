@@ -31,6 +31,7 @@ class My::AccountsController < My::ApplicationController
   private
 
   def user_params
-    params.fetch(:user, {}).permit :email, :country
+    params.fetch(:user, {}).permit :email, :country, :password,
+      :password_confirmation
   end
 end
