@@ -32,6 +32,8 @@ class StripeContext
 
     customer.sources.create :source => card_token(card)
     user.update_attributes! :stripe_customer_id => customer.id
+
+    UpdateUserCache.call user, customer.refresh
   end
 
   private
