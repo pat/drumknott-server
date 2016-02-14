@@ -5,7 +5,7 @@ class My::SitesController < My::ApplicationController
 
   def create
     if site.save
-      SubscribeSiteWorker.perform_async site.id, params[:stripeToken]
+      SubscribeSiteWorker.perform_async site.id, params[:stripe_token]
 
       redirect_to my_sites_path
     else

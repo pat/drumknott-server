@@ -1,18 +1,35 @@
-= semantic_form_for [:my, site] do |form|
+%script{:src => 'https://checkout.stripe.com/checkout.js'}
+= semantic_form_for [:my, site], :html => {:id => 'site_form'} do |form|
   = form.inputs do
     = form.input :name, :hint => 'Names can only contain lowercase letters, numbers, dashes and underscores.'
+    = hidden_field_tag :stripe_token
+  = form.actions do
+    = form.action :submit, :as => :button, :button_html => {:class => 'button primary', :id => 'submit_site'}
+  - if require_credit_card?(site)
+    :javascript
+      var handler = StripeCheckout.configure({
+        key:    '#{ENV['STRIPE_PUBLISHABLE_KEY']}',
+        locale: 'auto',
+        token:  function(token) {
+          console.log(token);
+          $('#stripe_token').val(token.id);
+          $('#site_form').submit();
+          setTimeout(function() { $('submit_site').disable() }, 100);
+        }
+      });
 
-  - if site.persisted?
-    = form.actions do
-      = form.action :submit, :as => :button, :button_html => {:class => 'button primary'}
-  - else
-    %script{'src'        => 'https://checkout.stripe.com/checkout.js',
-      'class'            => 'stripe-button',
-      'data-key'         => ENV['STRIPE_PUBLISHABLE_KEY'],
-      'data-name'        => 'Drumknott',
-      'data-label'       => 'Subscribe via Credit Card',
-      'data-description' => 'Monthly subscription ($3.00)',
-      'data-panel-label' => 'Subscribe',
-      'data-locale'      => 'auto',
-      'data-currency'    => 'USD',
-      'data-email'       => current_user.email}
+      $('#submit_site').on('click', function(e) {
+        handler.open({
+          name:        'Drumknott',
+          description: 'Monthly subscription ($3.00)',
+          amount:       300,
+          panelLabel:   'Subscribe',
+          currency:     'USD',
+          email:        '#{current_user.email}'
+        });
+        e.preventDefault();
+      });
+
+      $(window).on('popstate', function() {
+        handler.close();
+      });
