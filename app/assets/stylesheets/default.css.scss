@@ -29,7 +29,7 @@ p {
 a {
   color: $blue;
 }
-h1,h2,h3 {
+h1,h2,h3,h4 {
   font-family: 'Museo-Slab', Helvetica, Arial, sans-serif;
   font-weight: normal;
   line-height: 1.2;
@@ -48,6 +48,10 @@ h2 {
 h3 {
   font-size: 1.15em;
   margin: 1.2em 0;
+}
+h4 {
+  font-size: 1em;
+  margin: 1em 0;
 }
 img {
   max-width: 100%;
@@ -160,6 +164,7 @@ nav {
     padding: 24px 0 20px;
   }
   .home .home,
+  .documentation .documentation,
   .dashboard .dashboard,
   .sites .sites,
   .invoices .invoices {
@@ -216,15 +221,11 @@ code {
   }
   &.css {
     color: $green;
-    .selector, .punctuation, .atrule {
-      color: #fff;
-    }
     .property {
       color: $pink;
     }
   }
   &.js {
-    color: #fff;
     .keyword {
       color: $pink;
     }

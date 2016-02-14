@@ -14,6 +14,7 @@
     <nav>
       <ul class="<%= section %>">
         <li class="home"><a href="/">Home</a></li>
+        <li class="documentation"><%= link_to 'Documentation', documentation_path %></li>
         <% if user_signed_in? %>
           <li class="dashboard"><%= link_to 'Dashboard', my_dashboard_path %></li>
           <li class="sites"><%= link_to 'Sites', my_sites_path %></li>

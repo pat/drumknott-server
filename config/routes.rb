@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'welcome#index'
+  get '/documentation' => 'welcome#documentation'
 
   mount V1.new => '/api/v1'
 
