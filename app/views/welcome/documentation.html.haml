@@ -1,12 +1,12 @@
 %h2 Documentation
 
-There are two key parts to using Drumknott on your Jekyll site: adding the relevant Javascript and HTML to have a search form on your site, and uploading your page data to the Drumknott API to ensure your search has results to return.
+%p There are two key parts to using Drumknott on your Jekyll site: adding the relevant Javascript and HTML to have a search form on your site, and uploading your page data to the Drumknott API to ensure your search has results to return.
 
 %h3 The Javascript
 
-No matter how you choose to use Drumknott, you'll want to have two Javascript files included wherever you want your search form. The first is perhaps something you're already using: <a href="http://jquery.com">jQuery</a>. The second is Drumknott's own Javascript file (required to allow cross-domain search requests to Drumknott's API).
+%p No matter how you choose to use Drumknott, you'll want to have two Javascript files included wherever you want your search form. The first is perhaps something you're already using: <a href="http://jquery.com">jQuery</a>. The second is Drumknott's own Javascript file (required to allow cross-domain search requests to Drumknott's API).
 
-You'll need to add jQuery to your site if you haven't already, and then add the following to your HTML - probably within your head tag.
+%p You'll need to add jQuery to your site if you haven't already, and then add the following to your HTML - probably within your head tag.
 
 .highlighter-rouge
   %pre.highlight
@@ -17,7 +17,7 @@ You'll need to add jQuery to your site if you haven't already, and then add the 
 
 %h4 Adding a search form
 
-If you don't even want to think about the HTML for the form, the fully embeddable version can be used via some Javascript from Drumknott. Please note that this has an additional dependency on <a href="https://medialize.github.io/URI.js/">URI.js</a> and, like jQuery, you'll need to add this to your site yourself.
+%p If you don't even want to think about the HTML for the form, the fully embeddable version can be used via some Javascript from Drumknott. Please note that this has an additional dependency on <a href="https://medialize.github.io/URI.js/">URI.js</a> and, like jQuery, you'll need to add this to your site yourself.
 
 .highlighter-rouge
   %pre.highlight
@@ -32,11 +32,11 @@ If you don't even want to think about the HTML for the form, the fully embeddabl
           search.embed();
         </script>
 
-Of course, the provided HTML markup and CSS may not be what you want, and the next section covers the minimal Javascript required to connect everything up yourself.
+%p Of course, the provided HTML markup and CSS may not be what you want, and the next section covers the minimal Javascript required to connect everything up yourself.
 
 %h4 Manually querying the API
 
-If you'd rather create your own form/interface and then make requests to Drumknott's API to populate search results, you can do that using the following Javascript code:
+%p If you'd rather create your own form/interface and then make requests to Drumknott's API to populate search results, you can do that using the following Javascript code:
 
 .highlighter-rouge
   %pre.highlight
@@ -50,7 +50,7 @@ If you'd rather create your own form/interface and then make requests to Drumkno
 
 %h3 Uploading page data
 
-As well as having a form sending through search requests to the Drumknott API, you'll also need to send your page data through so Drumknott can return relevant results. This is done via the <a href="https://github.com/pat/drumknott"><code>drumknott</code></a> gem, which you can add to your Gemfile:
+%p As well as having a form sending through search requests to the Drumknott API, you'll also need to send your page data through so Drumknott can return relevant results. This is done via the <a href="https://github.com/pat/drumknott"><code>drumknott</code></a> gem, which you can add to your Gemfile:
 
 .highlighter-rouge
   %pre.highlight
@@ -59,7 +59,7 @@ As well as having a form sending through search requests to the Drumknott API, y
         # Gemfile
         gem 'drumknott', '~> 0.1.1'
 
-Once this is installed, you will have access to the <code>drumknott</code> CLI tool which allows both saving your credentials locally and uploading your page data:
+%p Once this is installed, you will have access to the <code>drumknott</code> CLI tool which allows both saving your credentials locally and uploading your page data:
 
 .highlighter-rouge
   %pre.highlight
@@ -68,9 +68,9 @@ Once this is installed, you will have access to the <code>drumknott</code> CLI t
         drumknott keys SITE_NAME SITE_KEY
         drumknott refresh
 
-The <code>keys</code> command will save your credentials in a file named <code>.drumknott</code> file to your current directory. Do <em>not</em> commit this file to source control.
+%p The <code>keys</code> command will save your credentials in a file named <code>.drumknott</code> file to your current directory. Do <em>not</em> commit this file to source control.
 
-If you'd rather not have those credentials saved, you can supply them when running the refresh command as environment variables:
+%p If you'd rather not have those credentials saved, you can supply them when running the refresh command as environment variables:
 
 .highlighter-rouge
   %pre.highlight
@@ -78,7 +78,7 @@ If you'd rather not have those credentials saved, you can supply them when runni
       :escaped
         drumknott refresh DRUMKNOTT_NAME=SITE_NAME DRUMKNOTT_KEY=SITE_KEY
 
-And that's it: Drumknott will have stored your page details, and your search queries will now return results. Keep in mind you'll need to run this command every time your site's content is updated.
+%p And that's it: Drumknott will have stored your page details, and your search queries will now return results. Keep in mind you'll need to run this command every time your site's content is updated.
 
 %h3 API
 
