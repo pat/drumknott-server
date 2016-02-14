@@ -315,38 +315,14 @@ footer {
   background: $brand_blue;
   text-align: center;
 
-  h1:before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-
-    display: block;
-    background-image: image-url('paperclips.png');
-    width: 700px;
-    height: 140px;
-    margin: 0 auto;
-
-    -webkit-filter: blur(2px);
-    -moz-filter: blur(2px);
-    -o-filter: blur(2px);
-    -ms-filter: blur(2px);
-    filter: blur(2px);
-  }
-
   h1 {
-    overflow: auto;
-    position: relative;
+    background-image: image-url('paperclips.png');
     max-width: 690px;
     border-left: 5px solid black;
     border-right: 5px solid black;
-    width: auto;
     display: block;
     margin: 0 auto;
     padding: 0.75em 0;
-    z-index: 0;
     color: $offwhite;
     text-shadow:
       -2px -2px 0 #000,
