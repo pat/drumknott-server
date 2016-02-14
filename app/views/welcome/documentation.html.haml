@@ -12,7 +12,7 @@ You'll need to add jQuery to your site if you haven't already, and then add the 
   %pre.highlight
     %code.html
       :escaped
-          <script type="text/javascript" src="/javascripts/jquery.js"></script>
+        <script type="text/javascript" src="/javascripts/jquery.js"></script>
         <script type="text/javascript" src="https://drumknottsearch.com/drumknott-#{external_javascript_version}.js"></script>
 
 %h4 Adding a search form
@@ -23,7 +23,7 @@ If you don't even want to think about the HTML for the form, the fully embeddabl
   %pre.highlight
     %code.html
       :escaped
-          <!-- Put this with your other script tags -->
+        <!-- Put this with your other script tags -->
         <script type="text/javascript" src="/javascripts/uri.js"></script>
 
         <!-- Within your body tag, wherever you want the form to appear. -->
@@ -42,7 +42,7 @@ If you'd rather create your own form/interface and then make requests to Drumkno
   %pre.highlight
     %code.js
       :escaped
-          drumknott = new Drumknott('my-site-name');
+        drumknott = new Drumknott('my-site-name');
         drumknott.search({query: "keywords", page: 1}, function(data) {
           // loop through data.results - each has name and path values,
           // and display search results as you wish.
@@ -56,7 +56,7 @@ As well as having a form sending through search requests to the Drumknott API, y
   %pre.highlight
     %code.ruby
       :escaped
-          # Gemfile
+        # Gemfile
         gem 'drumknott', '~> 0.1.1'
 
 Once this is installed, you will have access to the <code>drumknott</code> CLI tool which allows both saving your credentials locally and uploading your page data:
@@ -65,7 +65,7 @@ Once this is installed, you will have access to the <code>drumknott</code> CLI t
   %pre.highlight
     %code.shell
       :escaped
-          drumknott keys SITE_NAME SITE_KEY
+        drumknott keys SITE_NAME SITE_KEY
         drumknott refresh
 
 The <code>keys</code> command will save your credentials in a file named <code>.drumknott</code> file to your current directory. Do <em>not</em> commit this file to source control.
@@ -76,6 +76,6 @@ If you'd rather not have those credentials saved, you can supply them when runni
   %pre.highlight
     %code.shell
       :escaped
-          drumknott refresh DRUMKNOTT_NAME=SITE_NAME DRUMKNOTT_KEY=SITE_KEY
+        drumknott refresh DRUMKNOTT_NAME=SITE_NAME DRUMKNOTT_KEY=SITE_KEY
 
 And that's it: Drumknott will have stored your page details, and your search queries will now return results. Keep in mind you'll need to run this command every time your site's content is updated.
