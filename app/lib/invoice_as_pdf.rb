@@ -126,8 +126,9 @@ Status: #{ invoice.data['paid'] ? 'Paid' : 'Due' }
       ['', "Total: #{ to_currency invoice.data['total'] }"]
     ]
 
-    if invoice.data['discount'].to_i > 0
-      data.insert 1, ['', "Discount: #{ to_currency invoice.data['discount'] }"]
+    discount = invoice.data['subtotal'] - invoice.data['total']
+    if discount > 0
+      data.insert 1, ['', "Discount: #{ to_currency discount }"]
     end
 
     data
