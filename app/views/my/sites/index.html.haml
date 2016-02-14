@@ -12,7 +12,10 @@
         %tr
           %td= link_to site.name, my_site_path(site)
           %td= site.key
-          %td= site.status
+          %td
+            = site.status
+            - if site.status == 'pending'
+              = link_to 'refresh', my_sites_path
 
 %h3 Add New Site
 
