@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   get '/documentation' => 'welcome#documentation'
+  get '/privacy'       => 'welcome#privacy'
+  get '/terms'         => 'welcome#terms'
 
   mount V1.new => '/api/v1'
 
