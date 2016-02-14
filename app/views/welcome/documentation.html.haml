@@ -80,6 +80,99 @@ If you'd rather not have those credentials saved, you can supply them when runni
 
 And that's it: Drumknott will have stored your page details, and your search queries will now return results. Keep in mind you'll need to run this command every time your site's content is updated.
 
+%h3 API
+
+%p If you want to use the API directly yourself, you're certainly welcome to. There are three endpoints to use:
+
+%h4 Updating page details
+
+%pre
+  %code
+    PUT https://drumknottsearch.com/api/v1/SITE_NAME/pages
+
+%p You will need to send your site's API key through as the value of the <code>AUTHENTICATION</code> request header, and the <code>Content-Type</code> header should be <code>application/json</code>. The body parameters need to be a JSON object with a single attribute <code>page</code>, which in turn has a JSON object of three attributes:
+
+%ul.list
+  %li
+    %code name
+    The page's title.
+  %li
+    %code path
+    The path (without domain) to the page.
+  %li
+    %code content
+    The rendered content of the page.
+
+%p This request needs to be made for every page in your site that you wish to be searchable.
+
+%pre
+  %code
+    :escaped
+      curl -X PUT \
+        -H "AUTHENTICATION: SITE_API_KEY" \
+        -H "Content-Type: application/json" \
+        -d '{"page":{"name":"Blog Post","path":"/2016/01/01/blog-post.html","content":"<h1>Blog Post</h1>"}}' \
+        https://drumknottsearch.com/api/v1/SITE_NAME/pages
+
+%h4 Clearing existing page details
+
+%pre
+  %code
+    POST https://drumknottsearch.com/api/v1/SITE_NAME/pages/clear
+
+%p If you wish to clear out your existing data before updating each page, you can do so with this endpoint. You will need to send your site's API key through as the value of the <code>AUTHENTICATION</code> request header. No body or other headers are required.
+
+%pre
+  %code
+    :escaped
+      curl -X POST \
+        -H "AUTHENTICATION: SITE_API_KEY" \
+        https://drumknottsearch.com/api/v1/SITE_NAME/pages/clear
+
+%h4 Searching pages
+
+%pre
+  %code
+    GET https://drumknottsearch.com/api/v1/SITE_NAME/pages
+
+%p This unauthenticated request will return search results for the given query. The allowed parameters are:
+
+%ul.list
+  %li
+    %code query
+    The search query.
+  %li
+    %code page
+    The paginated page of results (if not provided, defaults to 1).
+  %li
+    %code per_page
+    The number of paginated results per page (if not provided, defaults to 20).
+
+%p The result will be a JSON object with the following attributes:
+
+%ul.list
+  %li
+    %code results
+    an array of search results as JSON objects with name and path attributes.
+  %li
+    %code page
+    The paginated page of results.
+  %li
+    %code per_page
+    The number of paginated results per page.
+  %li
+    %code pages
+    The total number of pages available for this query.
+  %li
+    %code total
+    The total number of results available for this query.
+  %li
+    %code error
+    An error message if your site is not active.
+
+%pre
+  %code
+    curl https://drumknottsearch.com/api/v1/SITE_NAME/pages?query=pancakes&page=1
 
 %h3 Credits
 
