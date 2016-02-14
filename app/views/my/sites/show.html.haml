@@ -6,6 +6,17 @@
 - if site.cache['current_period_end']
   %p The current billing cycle finishes at #{ Time.zone.at site.cache['current_period_end'] }, and you will be billed for the next month shortly after that.
 
+- case site.status
+- when 'pending'
+  %h4 Status: Pending
+  %p Payment is being processed for this site. Hang tight, and perhaps #{ link_to 'refresh', my_site_path(site) } in a minute?
+- when 'failure'
+  %h4 Status: Payments Failed
+  %p Payments have failed to be collected for this site, and it is no longer active.
+- when 'past_due'
+  %h4 Status: Past Due
+  %p A payment has failed to be collected for this site. If you need to update your credit card details, that can be done on #{ link_to 'the dashboard', my_dashboard_path }.
+
 %h3 Update Site
 
 = render :partial => 'form'
