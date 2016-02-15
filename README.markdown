@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/pat/drumknott-server.png?branch=master)](https://travis-ci.org/pat/drumknott-server)
 
-A simple Rails app that provides a search backend for Jekyll sites. It's available as a (cheap!) paid service if you wish at [drumknottsearch.com](https://drumknottsearch.com), but you can fire up your own instance if you wish.
+A simple Rails app that provides a search backend for Jekyll sites. It's available as a (cheap!) paid service at [drumknottsearch.com](https://drumknottsearch.com), but you can fire up your own instance if you wish.
 
 It expects both PostgreSQL, Redis and Sphinx to be available, and you'll need to run both a web process (currently Puma) and a worker process (Sidekiq). Stripe is used for payment processing, and Mandrill for email delivery.
 
