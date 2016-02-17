@@ -17,6 +17,9 @@ class V1::Pages::Index < Sliver::Rails::Action
       :total    => total_count,
       :error    => error
     }
+  rescue ActiveRecord::RecordNotFound
+    response.status = 404
+    response.body   = {:error => 'Site does not exist'}
   end
 
   private
@@ -57,7 +60,7 @@ class V1::Pages::Index < Sliver::Rails::Action
   end
 
   def site
-    @site ||= Site.find_by :name => path_params['site']
+    @site ||= Site.find_by! :name => path_params['site']
   end
 
   def total_count

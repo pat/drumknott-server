@@ -31,6 +31,13 @@ RSpec.describe 'Pages API', :type => :request do
         'Site is not active. Please log in to check your account status.'
       )
     end
+
+    it 'returns a 404 when the site does not exist' do
+      get '/api/v1/SITE_NAME/pages', :query => 'pancakes'
+
+      expect(response.status).to eq(404)
+      expect(json['error']).to eq('Site does not exist')
+    end
   end
 
   describe 'PUT /:site/pages' do
