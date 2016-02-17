@@ -1,4 +1,5 @@
 development:
+  mysql41: 9310
   html_strip: 1
   charset_type: utf-8
 test:
