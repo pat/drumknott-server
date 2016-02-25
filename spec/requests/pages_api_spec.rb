@@ -61,6 +61,20 @@ RSpec.describe 'Pages API', :type => :request do
       sorbet.reload
       expect(sorbet.content).to eq('Not gelato')
     end
+
+    it 'activates an existing deactivated page' do
+      sorbet = site.pages.create!(
+        :name => 'Sorbet', :path => '/sorbet', :content => 'Just sorbet',
+        :deactivated_at => 1.day.ago
+      )
+
+      put "/api/v1/#{site.name}/pages", {:page =>
+        {:name => "Sorbet", :path => "/sorbet", :content => "Not gelato"}},
+        {'HTTP_AUTHENTICATION' => site.key}
+
+      sorbet.reload
+      expect(sorbet).to_not be_deactivated
+    end
   end
 
   describe 'POST /:site/pages/clear' do

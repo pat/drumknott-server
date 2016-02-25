@@ -8,9 +8,11 @@ class V1::Pages::Update < Sliver::Rails::Action
   end
 
   def call
-    page            = site.pages.find_by_path page_params[:path]
-    page.attributes = page_params
-    response.body   = page_params
+    page                = site.pages.find_by_path page_params[:path]
+    page.attributes     = page_params
+    page.deactivated_at = nil
+
+    response.body       = page_params
 
     response.body[:errors] = page.errors.full_messages unless page.save
   end
