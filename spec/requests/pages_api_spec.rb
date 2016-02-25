@@ -64,7 +64,7 @@ RSpec.describe 'Pages API', :type => :request do
   end
 
   describe 'POST /:site/pages/clear' do
-    it 'deletes all pages attached to the site' do
+    it 'marks all pages attached to the site as deactivated' do
       waffles  = site.pages.create!(
         :name => 'Waffles', :content => 'All the waffles', :path => '/waffles'
       )
@@ -75,7 +75,11 @@ RSpec.describe 'Pages API', :type => :request do
       post "/api/v1/#{site.name}/pages/clear", {},
         {'HTTP_AUTHENTICATION' => site.key}
 
-      expect(site.pages.count).to be_zero
+      waffles.reload
+      pancakes.reload
+
+      expect(waffles).to be_deactivated
+      expect(pancakes).to be_deactivated
     end
   end
 end

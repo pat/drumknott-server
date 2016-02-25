@@ -8,7 +8,7 @@ class V1::Pages::Clear < Sliver::Rails::Action
   end
 
   def call
-    site.pages.each &:destroy
+    site.pages.update_all :deactivated_at => Time.current
 
     response.body = {'status' => 'OK'}
   end

@@ -10,4 +10,8 @@ class Page < ActiveRecord::Base
   def self.find_by_path(path)
     find_by(:path => path) || new(:path => path)
   end
+
+  def deactivated?
+    deactivated_at.present?
+  end
 end

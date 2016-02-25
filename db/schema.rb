@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160117005458) do
+ActiveRecord::Schema.define(version: 20160225055153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,14 +54,16 @@ ActiveRecord::Schema.define(version: 20160117005458) do
   add_index "invoices", ["user_id"], name: "index_invoices_on_user_id", using: :btree
 
   create_table "pages", force: :cascade do |t|
-    t.integer  "site_id",    null: false
-    t.string   "name",       null: false
-    t.string   "path",       null: false
+    t.integer  "site_id",        null: false
+    t.string   "name",           null: false
+    t.string   "path",           null: false
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.datetime "deactivated_at"
   end
 
+  add_index "pages", ["deactivated_at"], name: "index_pages_on_deactivated_at", using: :btree
   add_index "pages", ["site_id", "path"], name: "index_pages_on_site_id_and_path", unique: true, using: :btree
   add_index "pages", ["site_id"], name: "index_pages_on_site_id", using: :btree
 
