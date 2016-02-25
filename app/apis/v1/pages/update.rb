@@ -26,11 +26,4 @@ class V1::Pages::Update < Sliver::Rails::Action
   def page_params
     params.fetch(:page, {}).permit :name, :path, :content
   end
-
-  def page_to_hash(page)
-    {
-      :name => page.name,
-      :path => page.path
-    }
-  end
 end
