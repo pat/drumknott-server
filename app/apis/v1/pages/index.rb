@@ -52,6 +52,7 @@ class V1::Pages::Index < Sliver::Rails::Action
     return [] if error?
 
     @pages ||= site.pages.search params['query'],
+      :with => {:deactivated_at => 0},
       :page => page
   end
 

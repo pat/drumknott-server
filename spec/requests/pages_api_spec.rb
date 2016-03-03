@@ -21,6 +21,16 @@ RSpec.describe 'Pages API', :type => :request do
       expect(json['results'].first['name']).to eq('Pancakes')
     end
 
+    it 'does not return deactivated pages' do
+      site.pages.find_by(:name => 'Pancakes').update_attributes(
+        :deactivated_at => 1.minute.ago
+      )
+
+      get "/api/v1/#{site.name}/pages", :query => 'pancakes'
+
+      expect(json['total']).to eq(0)
+    end
+
     it 'returns no matches and an error for inactive sites' do
       site.update_attributes :status => 'failure'
 
