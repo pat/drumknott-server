@@ -9,9 +9,9 @@ RSpec.describe 'Removing sites', :type => :feature do
   end
 
   it 'cancels the subscription' do |example|
-    stripe_cassette(example) do |cassette|
-      cassette.set_up_user user
-      cassette.set_up_site site
+    assisted_cassette(example) do |assistant|
+      assistant.set_up_user user
+      assistant.set_up_site site
 
       visit my_site_path(site)
       click_link 'Cancel and Delete'

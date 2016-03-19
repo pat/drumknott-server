@@ -18,8 +18,8 @@ RSpec.describe 'Update user details', :type => :feature do
   end
 
   it 'updates the email address on Stripe' do |example|
-    stripe_cassette(example) do |cassette|
-      cassette.set_up_user user
+    assisted_cassette(example) do |assistant|
+      assistant.set_up_user user
       visit my_dashboard_path
 
       fill_in 'Email', :with => 'pat@drumknottsearch.com'

@@ -1,8 +1,8 @@
-class StripeContext
-  delegate :recording?, :to => :cassette
+class StripeAssistant
+  delegate :recording?, :to => :vcr_cassette
 
-  def initialize(cassette)
-    @cassette = cassette
+  def initialize(vcr_cassette)
+    @vcr_cassette = vcr_cassette
   end
 
   def card_token(card = '4242424242424242')
@@ -36,7 +36,29 @@ class StripeContext
     UpdateUserCache.call user, customer.refresh
   end
 
+  def setup
+    clear
+    create_plan
+  end
+
   private
 
-  attr_reader :cassette
+  attr_reader :vcr_cassette
+
+  def clear
+    Stripe::Customer.all.each &:delete
+    Stripe::Coupon.all.each &:delete
+    Stripe::Plan.all.each &:delete
+  end
+
+  def create_plan
+    Stripe::Plan.create(
+      :id             => ENV['STRIPE_PLAN_ID'],
+      :amount         => 3_00,
+      :currency       => 'USD',
+      :interval       => 'month',
+      :interval_count => 1,
+      :name           => 'Drumknott Test'
+    )
+  end
 end

@@ -5,11 +5,11 @@ RSpec.describe 'Stripe Webhooks', :type => :request do
   let(:site) { Site.make! :user => user }
 
   it 'updates site statuses when subscriptions change' do |example|
-    stripe_cassette(example) do |cassette|
+    assisted_cassette(example) do |assistant|
       site.update_attributes :status => 'pending'
 
-      cassette.set_up_user user
-      cassette.set_up_site site
+      assistant.set_up_user user
+      assistant.set_up_site site
 
       customer     = Stripe::Customer.retrieve user.stripe_customer_id
       subscription = customer.subscriptions.retrieve site.stripe_subscription_id
@@ -31,9 +31,9 @@ RSpec.describe 'Stripe Webhooks', :type => :request do
   end
 
   it 'updates site statuses when subscriptions are cancelled' do |example|
-    stripe_cassette(example) do |cassette|
-      cassette.set_up_user user
-      cassette.set_up_site site
+    assisted_cassette(example) do |assistant|
+      assistant.set_up_user user
+      assistant.set_up_site site
 
       customer     = Stripe::Customer.retrieve user.stripe_customer_id
       subscription = customer.subscriptions.retrieve site.stripe_subscription_id
@@ -52,9 +52,9 @@ RSpec.describe 'Stripe Webhooks', :type => :request do
   end
 
   it 'stores invoices when they are created' do |example|
-    stripe_cassette(example) do |cassette|
-      cassette.set_up_user user
-      cassette.set_up_site site
+    assisted_cassette(example) do |assistant|
+      assistant.set_up_user user
+      assistant.set_up_site site
 
       event = Stripe::Event.all.detect { |event|
         event.type == 'invoice.created'
@@ -72,9 +72,9 @@ RSpec.describe 'Stripe Webhooks', :type => :request do
   end
 
   it 'sends an email when a payment succeeds' do |example|
-    stripe_cassette(example) do |cassette|
-      cassette.set_up_user user
-      cassette.set_up_site site
+    assisted_cassette(example) do |assistant|
+      assistant.set_up_user user
+      assistant.set_up_site site
 
       ActionMailer::Base.deliveries.clear
 
@@ -96,13 +96,13 @@ RSpec.describe 'Stripe Webhooks', :type => :request do
   end
 
   it 'sends an email when a payment fails' do |example|
-    stripe_cassette(example) do |cassette|
-      cassette.set_up_user user, '4000000000000341'
-      cassette.set_up_site site, :trial_end => 3.seconds.from_now.to_i
+    assisted_cassette(example) do |assistant|
+      assistant.set_up_user user, '4000000000000341'
+      assistant.set_up_site site, :trial_end => 3.seconds.from_now.to_i
 
       ActionMailer::Base.deliveries.clear
 
-      sleep 360 if cassette.recording?
+      sleep 360 if assistant.recording?
 
       customer = Stripe::Customer.retrieve user.stripe_customer_id
       invoice  = customer.invoices.detect { |invoice| invoice.total > 0 }

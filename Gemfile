@@ -45,6 +45,8 @@ group :test do
   gem 'capybara',  '2.5.0'
   gem 'machinist', '~> 2.0'
   gem 'vcr',       '~> 3.0.1'
+  gem 'vcr_assistant', '~> 0.1.0',
+    :require => 'vcr_assistant/rspec'
   gem 'webmock',   '~> 1.22.5'
 end
 

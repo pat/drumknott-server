@@ -4,8 +4,8 @@ RSpec.describe 'Creating a new site subscription', :type => :feature do
   let(:site) { Site.make! }
 
   it 'creates a new Stripe subscription' do |example|
-    stripe_cassette(example) do |cassette|
-      SubscribeSiteWorker.perform_async site.id, cassette.card_token
+    assisted_cassette(example) do |assistant|
+      SubscribeSiteWorker.perform_async site.id, assistant.card_token
 
       site.reload
 
@@ -22,9 +22,9 @@ RSpec.describe 'Creating a new site subscription', :type => :feature do
   end
 
   it 'handles cards with no credit' do |example|
-    stripe_cassette(example) do |cassette|
+    assisted_cassette(example) do |assistant|
       SubscribeSiteWorker.perform_async site.id,
-        cassette.card_token('4000000000000002')
+        assistant.card_token('4000000000000002')
 
       site.reload
 
@@ -40,8 +40,8 @@ RSpec.describe 'Creating a new site subscription', :type => :feature do
     user = User.make!
     sign_in_as user
 
-    stripe_cassette(example) do |cassette|
-      cassette.set_up_user user
+    assisted_cassette(example) do |assistant|
+      assistant.set_up_user user
 
       visit my_sites_path
       fill_in 'Name', :with => 'mysite'

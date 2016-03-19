@@ -9,9 +9,9 @@ RSpec.describe 'Viewing invoices', :type => :feature do
   end
 
   it 'views list and detail' do |example|
-    stripe_cassette(example) do |cassette|
-      cassette.set_up_user user
-      cassette.set_up_site site
+    assisted_cassette(example) do |assistant|
+      assistant.set_up_user user
+      assistant.set_up_site site
 
       event = Stripe::Event.all.detect { |event|
         event.type == 'invoice.created'

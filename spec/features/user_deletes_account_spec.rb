@@ -9,9 +9,9 @@ RSpec.describe 'Deleting account', :type => :feature do
   end
 
   it 'removes all data' do |example|
-    stripe_cassette(example) do |cassette|
-      cassette.set_up_user user
-      cassette.set_up_site site
+    assisted_cassette(example) do |assistant|
+      assistant.set_up_user user
+      assistant.set_up_site site
 
       ActionMailer::Base.deliveries.clear
 
