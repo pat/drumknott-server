@@ -42,6 +42,7 @@ group :development, :test do
   gem 'dotenv-rails', '~> 2.0.2'
   gem 'rspec-rails'
   gem 'spring'
+  gem 'thinking-sphinx-ports', '~> 0.1.0'
 end
 
 group :test do
