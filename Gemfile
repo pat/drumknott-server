@@ -30,7 +30,7 @@ gem 'sinatra',         '~> 1.4.6', :require => nil
 gem 'sliver-rails',    '0.2.0'
 gem 'stripe',          '~> 1.32.1'
 gem 'stripe_event',    '~> 1.5.0'
-gem 'thinking-sphinx', '3.1.4'
+gem 'thinking-sphinx', '3.3.0'
 gem 'flying-sphinx',   '1.2.0'
 
 group :development do
