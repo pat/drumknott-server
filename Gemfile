@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.3.1'
+ruby '2.4.0'
 
-gem 'rails',   '4.2.7.1'
+gem 'rails',   '4.2.8'
 gem 'pg'
 gem 'puma',    '3.6.0'
 gem 'sidekiq', '3.3.4'
@@ -20,13 +20,13 @@ gem 'decent_exposure', '2.3.2'
 gem 'formtastic',      '3.1.3'
 gem 'haml',            '4.0.7'
 gem 'kaminari',        '~> 0.16.3'
-gem 'newrelic_rpm',    '~> 3.14.1.311'
+gem 'newrelic_rpm',    '~> 4.0.0.332'
 gem 'mysql2',          '0.3.18'
 gem 'prawn',           '~> 2.0.2'
 gem 'prawn-table',     '~> 0.2.2'
 gem 'rack-pratchett',  '~> 0.1.1'
 gem 'rack-timeout',    '~> 0.3.2'
-gem 'sinatra',         '~> 1.4.6', :require => nil
+gem 'sinatra',         '~> 1.4.8', :require => nil
 gem 'sliver-rails',    '0.2.0'
 gem 'stripe',          '~> 1.32.1'
 gem 'stripe_event',    '~> 1.5.0'
@@ -47,11 +47,14 @@ end
 
 group :test do
   gem 'capybara',  '2.5.0'
-  gem 'machinist', '~> 2.0'
+  gem 'machinist', '~> 2.0',
+    :git    => 'https://github.com/pat/machinist.git',
+    :branch => 'master',
+    :ref    => 'ff04f1a92d'
   gem 'vcr',       '~> 3.0.1'
   gem 'vcr_assistant', '~> 0.1.1',
     :require => 'vcr_assistant/rspec'
-  gem 'webmock',   '~> 1.22.5'
+  gem 'webmock',   '~> 2.3.2'
 end
 
 group :production do
