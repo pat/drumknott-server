@@ -32,5 +32,11 @@ module Drumknott
     config.active_record.raise_in_transactional_callbacks = true
 
     config.middleware.use Rack::Pratchett
+    config.middleware.insert 0, Rack::Rewrite do
+      r301 %r{.*}, "https://#{ENV['DOMAIN_NAME']}$&",
+        :if => Proc.new { |rack_env|
+          rack_env['SERVER_NAME'] == "www.#{ENV['DOMAIN_NAME']}"
+        }
+    end if ENV['DOMAIN_NAME']
   end
 end

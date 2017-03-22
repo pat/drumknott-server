@@ -25,6 +25,7 @@ gem 'mysql2',          '0.3.18'
 gem 'prawn',           '~> 2.0.2'
 gem 'prawn-table',     '~> 0.2.2'
 gem 'rack-pratchett',  '~> 0.1.1'
+gem 'rack-rewrite',    '~> 1.5.1'
 gem 'rack-timeout',    '~> 0.3.2'
 gem 'sinatra',         '~> 1.4.8', :require => nil
 gem 'sliver-rails',    '0.2.0'
