@@ -1,13 +1,23 @@
 language: ruby
 rvm: 2.4.0
 addons:
-  postgresql: "9.3"
+  postgresql: '9.3'
 before_install:
 - gem update --system
 - gem install bundler
-- openssl aes-256-cbc -K $encrypted_b0ee5f2fe3a6_key -iv $encrypted_b0ee5f2fe3a6_iv -in .env.test.enc -out .env.test -d
+- openssl aes-256-cbc -K $encrypted_b0ee5f2fe3a6_key -iv $encrypted_b0ee5f2fe3a6_iv
+  -in .env.test.enc -out .env.test -d
 before_script:
 - psql -c 'create database drumknott_test;' -U postgres >/dev/null
 - bundle exec rake db:migrate RAILS_ENV=test
 script: bundle exec rake
 sudo: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: fdMIQxjEnQqvLKnMMPtFeB8KM7OVGF/sb4dBpC99mI2GztcCHT0iHjnoHuiLTFfBg+Q1jSBVLDp+x/dKZnSbX4RvfjOQhR4fCdvzKFdZ0FYXtLgzJnPMEk05N0UsoxyaHTYF/hzoS86lWwiSnq2okXsmwpU0WU8KbOoB78isbmw=
+  app:
+    master: drumknott
+  run:
+  - "rake db:migrate"
+  - restart
