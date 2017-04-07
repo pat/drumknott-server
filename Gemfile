@@ -13,7 +13,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 
-gem 'bugsnag',         '~> 3.0.0'
+gem 'bugsnag',         '~> 5.3.0'
 gem 'country_select',  '~> 2.5.1'
 gem 'devise',          '3.5.2'
 gem 'decent_exposure', '2.3.2'
