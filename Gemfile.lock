@@ -43,14 +43,13 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.5.0)
+    addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
     arel (6.0.4)
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bugsnag (3.0.0)
-      json (~> 1.7, >= 1.7.7)
+    bugsnag (5.3.0)
     builder (3.2.3)
     byebug (9.0.6)
     capybara (2.5.0)
@@ -296,7 +295,7 @@ GEM
     turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (3.1.10)
+    uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
@@ -312,7 +311,7 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
-    webmock (2.3.2)
+    webmock (3.0.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
@@ -324,7 +323,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bugsnag (~> 3.0.0)
+  bugsnag (~> 5.3.0)
   byebug
   capybara (= 2.5.0)
   coffee-rails (~> 4.1.0)
@@ -364,7 +363,7 @@ DEPENDENCIES
   vcr (~> 3.0.1)
   vcr_assistant (~> 0.1.1)
   web-console (~> 2.0)
-  webmock (~> 2.3.2)
+  webmock (~> 3.0.0)
 
 RUBY VERSION
    ruby 2.4.0p0
