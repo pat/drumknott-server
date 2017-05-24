@@ -59,9 +59,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    coffee-rails (4.1.1)
+    coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.1.x)
+      railties (>= 4.0.0)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -153,7 +153,7 @@ GEM
     pusher-client (0.6.2)
       json
       websocket (~> 1.0)
-    rack (1.6.6)
+    rack (1.6.8)
     rack-pratchett (0.1.1)
     rack-protection (1.5.3)
       rack
@@ -302,7 +302,7 @@ DEPENDENCIES
   bugsnag (~> 5.3.0)
   byebug
   capybara (= 2.14.0)
-  coffee-rails (~> 4.1.0)
+  coffee-rails (~> 4.2.2)
   country_select (~> 2.5.1)
   decent_exposure (= 2.3.2)
   devise (= 4.3.0)
