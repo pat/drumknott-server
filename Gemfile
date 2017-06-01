@@ -4,7 +4,7 @@ ruby '2.4.1'
 
 gem 'rails',   '4.2.8'
 gem 'pg'
-gem 'puma',    '3.6.0'
+gem 'puma',    '3.9.0'
 gem 'sidekiq', '5.0.0'
 
 gem 'sass-rails', '~> 5.0'
