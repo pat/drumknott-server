@@ -1,7 +1,6 @@
 class Page < ApplicationRecord
   belongs_to :site
 
-  validates :site, :presence => true
   validates :name, :presence => true
   validates :path, :presence => true, :uniqueness => {:scope => :site_id}
 

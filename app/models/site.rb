@@ -5,7 +5,6 @@ class Site < ApplicationRecord
   validates :name, :presence => true, :uniqueness => true,
     :format => {:with => /\A[a-z0-9\-_]+\z/}
   validates :key,  :presence => true, :uniqueness => true
-  validates :user, :presence => true
 
   before_validation :set_key, :on => :create
 
