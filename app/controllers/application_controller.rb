@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   expose(:section) { 'home' }
 
-  before_filter :configure_permitted_parameters, :if => :devise_controller?
+  before_action :configure_permitted_parameters, :if => :devise_controller?
 
   protected
 
