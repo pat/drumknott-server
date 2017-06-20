@@ -20,7 +20,7 @@ RSpec.describe 'Stripe Webhooks', :type => :request do
         event.type == 'customer.subscription.updated'
       }
 
-      post '/hooks/stripe', id: event.id
+      post '/hooks/stripe', :params => {:id => event.id}
 
       site.reload
       expect(site.status).to eq('active')
@@ -44,7 +44,7 @@ RSpec.describe 'Stripe Webhooks', :type => :request do
         event.type == 'customer.subscription.deleted'
       }
 
-      post '/hooks/stripe', id: event.id
+      post '/hooks/stripe', :params => {:id => event.id}
 
       site.reload
       expect(site.status).to eq('canceled')
@@ -60,12 +60,12 @@ RSpec.describe 'Stripe Webhooks', :type => :request do
         event.type == 'invoice.created'
       }
 
-      post '/hooks/stripe', id: event.id
+      post '/hooks/stripe', :params => {:id => event.id}
 
       invoice = user.invoices.first
       expect(invoice).to be_present
 
-      post '/hooks/stripe', id: event.id
+      post '/hooks/stripe', :params => {:id => event.id}
 
       expect(user.invoices.count).to eq(1)
     end
@@ -84,12 +84,12 @@ RSpec.describe 'Stripe Webhooks', :type => :request do
       event = Stripe::Event.all.detect { |event|
         event.type == 'invoice.created'
       }
-      post '/hooks/stripe', id: event.id
+      post '/hooks/stripe', :params => {:id => event.id}
       event = Stripe::Event.all.detect { |event|
         event.type == 'invoice.payment_succeeded'
       }
-      post '/hooks/stripe', id: event.id
-      post '/hooks/stripe', id: event.id
+      post '/hooks/stripe', :params => {:id => event.id}
+      post '/hooks/stripe', :params => {:id => event.id}
 
       expect(ActionMailer::Base.deliveries.count).to eq(1)
     end
@@ -112,7 +112,7 @@ RSpec.describe 'Stripe Webhooks', :type => :request do
         event.type == 'invoice.payment_failed'
       }
 
-      post '/hooks/stripe', id: event.id
+      post '/hooks/stripe', :params => {:id => event.id}
 
       expect(ActionMailer::Base.deliveries.count).to eq(1)
     end

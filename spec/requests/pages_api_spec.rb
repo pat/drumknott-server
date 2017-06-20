@@ -15,7 +15,7 @@ RSpec.describe 'Pages API', :type => :request do
     end
 
     it 'returns pages matching the given query for the specified site' do
-      get "/api/v1/#{site.name}/pages", :query => 'pancakes'
+      get "/api/v1/#{site.name}/pages", :params => {:query => 'pancakes'}
 
       expect(json['total']).to eq(1)
       expect(json['results'].first['name']).to eq('Pancakes')
@@ -26,7 +26,7 @@ RSpec.describe 'Pages API', :type => :request do
         :deactivated_at => 1.minute.ago
       )
 
-      get "/api/v1/#{site.name}/pages", :query => 'pancakes'
+      get "/api/v1/#{site.name}/pages", :params => {:query => 'pancakes'}
 
       expect(json['total']).to eq(0)
     end
@@ -34,7 +34,7 @@ RSpec.describe 'Pages API', :type => :request do
     it 'returns no matches and an error for inactive sites' do
       site.update_attributes :status => 'failure'
 
-      get "/api/v1/#{site.name}/pages", :query => 'pancakes'
+      get "/api/v1/#{site.name}/pages", :params => {:query => 'pancakes'}
 
       expect(json['total']).to eq(0)
       expect(json['error']).to eq(
@@ -43,7 +43,7 @@ RSpec.describe 'Pages API', :type => :request do
     end
 
     it 'returns a 404 when the site does not exist' do
-      get '/api/v1/SITE_NAME/pages', :query => 'pancakes'
+      get '/api/v1/SITE_NAME/pages', :params => {:query => 'pancakes'}
 
       expect(response.status).to eq(404)
       expect(json['error']).to eq('Site does not exist')
@@ -52,9 +52,9 @@ RSpec.describe 'Pages API', :type => :request do
 
   describe 'PUT /:site/pages' do
     it 'creates a new page if the details are not yet in the system' do
-      put "/api/v1/#{site.name}/pages", {:page =>
+      put "/api/v1/#{site.name}/pages", :params => {:page =>
         {:name => "Gelato", :path => "/gelato", :contents => "All the gelato"}},
-        {'HTTP_AUTHENTICATION' => site.key}
+        :headers => {'HTTP_AUTHENTICATION' => site.key}
 
       expect(site.pages.find_by_path('/gelato')).to be_present
     end
@@ -64,9 +64,9 @@ RSpec.describe 'Pages API', :type => :request do
         :name => 'Sorbet', :path => '/sorbet', :content => 'Just sorbet'
       )
 
-      put "/api/v1/#{site.name}/pages", {:page =>
+      put "/api/v1/#{site.name}/pages", :params => {:page =>
         {:name => "Sorbet", :path => "/sorbet", :content => "Not gelato"}},
-        {'HTTP_AUTHENTICATION' => site.key}
+        :headers => {'HTTP_AUTHENTICATION' => site.key}
 
       sorbet.reload
       expect(sorbet.content).to eq('Not gelato')
@@ -78,9 +78,9 @@ RSpec.describe 'Pages API', :type => :request do
         :deactivated_at => 1.day.ago
       )
 
-      put "/api/v1/#{site.name}/pages", {:page =>
+      put "/api/v1/#{site.name}/pages", :params => {:page =>
         {:name => "Sorbet", :path => "/sorbet", :content => "Not gelato"}},
-        {'HTTP_AUTHENTICATION' => site.key}
+        :headers => {'HTTP_AUTHENTICATION' => site.key}
 
       sorbet.reload
       expect(sorbet).to_not be_deactivated
@@ -96,8 +96,8 @@ RSpec.describe 'Pages API', :type => :request do
         :name => 'Pancakes', :content => 'And crêpes', :path => '/pancakes'
       )
 
-      post "/api/v1/#{site.name}/pages/clear", {},
-        {'HTTP_AUTHENTICATION' => site.key}
+      post "/api/v1/#{site.name}/pages/clear",
+        :headers => {'HTTP_AUTHENTICATION' => site.key}
 
       waffles.reload
       pancakes.reload
