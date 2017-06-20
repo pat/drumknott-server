@@ -1,4 +1,4 @@
-class Page < ActiveRecord::Base
+class Page < ApplicationRecord
   belongs_to :site
 
   validates :site, :presence => true
