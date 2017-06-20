@@ -1,5 +1,5 @@
 # This migration comes from duties (originally 1)
-class CreateDutiesAndActivities < ActiveRecord::Migration
+class CreateDutiesAndActivities < ActiveRecord::Migration[4.2]
   def change
     create_table :duties_duty_records do |t|
       t.string  :name,    null: false
