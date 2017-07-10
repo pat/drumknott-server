@@ -140,7 +140,7 @@ GEM
     minitest (5.10.2)
     multi_json (1.12.1)
     multipart-post (2.0.0)
-    mysql2 (0.4.7)
+    mysql2 (0.4.8)
     netrc (0.11.0)
     newrelic_rpm (4.2.0.334)
     nio4r (2.1.0)
@@ -321,7 +321,7 @@ DEPENDENCIES
   jquery-rails
   kaminari (~> 0.16.3)
   machinist (~> 2.0)!
-  mysql2 (= 0.4.7)
+  mysql2 (= 0.4.8)
   newrelic_rpm (~> 4.2.0.334)
   pg
   prawn (~> 2.0.2)
