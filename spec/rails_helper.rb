@@ -10,6 +10,10 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |file| require file }
 
 ActiveRecord::Migration.maintain_test_schema!
 
+if ENV["SPHINX_BIN"]
+  ThinkingSphinx::Configuration.instance.controller.bin_path = ENV['SPHINX_BIN']
+end
+
 RSpec.configure do |config|
   config.use_transactional_fixtures = true
 

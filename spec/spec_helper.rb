@@ -15,7 +15,3 @@ RSpec.configure do |config|
 
   Kernel.srand config.seed
 end
-
-if ENV["SPHINX_BIN"]
-  ThinkingSphinx::Configuration.instance.controller.bin_path = ENV['SPHINX_BIN']
-end
