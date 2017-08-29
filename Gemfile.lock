@@ -140,7 +140,7 @@ GEM
     multi_json (1.12.1)
     multipart-post (2.0.0)
     mysql2 (0.4.9)
-    newrelic_rpm (4.2.0.334)
+    newrelic_rpm (4.4.0.336)
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
@@ -312,7 +312,7 @@ DEPENDENCIES
   kaminari (~> 0.16.3)
   machinist (~> 2.0)!
   mysql2 (= 0.4.9)
-  newrelic_rpm (~> 4.2.0.334)
+  newrelic_rpm (~> 4.4.0.336)
   pg
   prawn (~> 2.0.2)
   prawn-table (~> 0.2.2)
