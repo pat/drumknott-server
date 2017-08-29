@@ -30,7 +30,7 @@ gem 'rack-timeout',    '~> 0.3.2'
 gem 'sliver-rails',    '0.2.0'
 gem 'stripe',          '~> 3.3.0'
 gem 'stripe_event',    '~> 1.7.0'
-gem 'thinking-sphinx', '3.3.0'
+gem 'thinking-sphinx', '3.4.1'
 gem 'flying-sphinx',   '1.2.0'
 
 group :development do
