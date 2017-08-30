@@ -246,7 +246,7 @@ GEM
       sprockets (>= 3.0.0)
     stripe (3.3.1)
       faraday (~> 0.9)
-    stripe_event (1.7.0)
+    stripe_event (1.8.0)
       activesupport (>= 3.1)
       stripe (>= 1.6, < 4.0)
     temple (0.8.0)
@@ -328,7 +328,7 @@ DEPENDENCIES
   sliver-rails (= 0.2.0)
   spring
   stripe (~> 3.3.0)
-  stripe_event (~> 1.7.0)
+  stripe_event (~> 1.8.0)
   thinking-sphinx (= 3.4.1)
   thinking-sphinx-ports (~> 0.1.0)
   turbolinks
