@@ -108,7 +108,7 @@ GEM
       actionpack (>= 3.2.13)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
-    haml (5.0.2)
+    haml (5.0.3)
       temple (>= 0.8.0)
       tilt
     hashdiff (0.3.2)
@@ -307,7 +307,7 @@ DEPENDENCIES
   dotenv-rails (~> 2.2.1)
   flying-sphinx (= 1.2.0)
   formtastic (~> 3.1.3)
-  haml (= 5.0.2)
+  haml (= 5.0.3)
   jquery-rails
   kaminari (~> 0.16.3)
   machinist (~> 2.0)!
