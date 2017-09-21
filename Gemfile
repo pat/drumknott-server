@@ -14,7 +14,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 gem 'bugsnag',         '~> 5.3.0'
-gem 'country_select',  '~> 2.5.1'
+gem 'country_select',  '~> 3.1.1'
 gem 'devise',          '4.3.0'
 gem 'decent_exposure', '~> 3.0'
 gem 'formtastic',      '~> 3.1.3'
