@@ -31,7 +31,7 @@ gem 'sliver-rails',    '0.2.0'
 gem 'stripe',          '~> 3.3.0'
 gem 'stripe_event',    '~> 1.8.0'
 gem 'thinking-sphinx', '3.4.1'
-gem 'flying-sphinx',   '1.2.0'
+gem 'flying-sphinx',   '1.2.1'
 
 group :development do
   gem 'byebug'
