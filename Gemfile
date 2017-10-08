@@ -54,7 +54,7 @@ group :test do
   gem 'vcr',       '~> 3.0.1'
   gem 'vcr_assistant', '~> 0.1.1',
     :require => 'vcr_assistant/rspec'
-  gem 'webmock',   '~> 3.0.1'
+  gem 'webmock',   '~> 3.1.0'
 end
 
 group :production do
