@@ -12,10 +12,10 @@ class V1::Pages::Clear < Sliver::Rails::Action
   def call
     site.pages.update_all :deactivated_at => Time.current
 
-    response.body = {'status' => 'OK'}
+    response.body = {"status" => "OK"}
   end
 
   def site
-    @site ||= Site.find_by :name => path_params['site']
+    @site ||= Site.find_by :name => path_params["site"]
   end
 end

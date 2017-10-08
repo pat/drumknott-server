@@ -27,7 +27,7 @@ class Payments::Subscribe
       }
 
       site.update_attributes!(
-        :status         => 'failure',
+        :status         => "failure",
         :status_message => error.message
       )
     end
@@ -45,7 +45,7 @@ class Payments::Subscribe
 
   def subscription
     @subscription ||= customer.subscriptions.create(
-      :plan => ENV['STRIPE_PLAN_ID']
+      :plan => ENV["STRIPE_PLAN_ID"]
     )
   end
 end

@@ -2,7 +2,7 @@
 
 module ApplicationHelper
   def external_javascript_version
-    File.read(Rails.root.join('public', 'VERSION')).strip
+    File.read(Rails.root.join("public", "VERSION")).strip
   end
 
   def require_credit_card?(site)

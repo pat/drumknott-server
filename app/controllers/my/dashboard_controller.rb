@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 class My::DashboardController < My::ApplicationController
-  expose(:section) { 'dashboard' }
+  expose(:section) { "dashboard" }
 end

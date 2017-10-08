@@ -11,7 +11,7 @@ class My::AccountsController < My::ApplicationController
       redirect_to my_dashboard_path,
         :notice => "Your account details have been updated."
     else
-      render 'edit'
+      render "edit"
     end
   end
 

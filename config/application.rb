@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'boot'
+require_relative "boot"
 
 require "rails/all"
 
@@ -26,10 +26,10 @@ module Drumknott
 
     config.middleware.use Rack::Pratchett
     config.middleware.insert 0, Rack::Rewrite do
-      r301 %r{.*}, "https://#{ENV['DOMAIN_NAME']}$&",
+      r301 %r{.*}, "https://#{ENV["DOMAIN_NAME"]}$&",
         :if => Proc.new { |rack_env|
-          rack_env['SERVER_NAME'] == "www.#{ENV['DOMAIN_NAME']}"
+          rack_env["SERVER_NAME"] == "www.#{ENV["DOMAIN_NAME"]}"
         }
-    end if ENV['DOMAIN_NAME']
+    end if ENV["DOMAIN_NAME"]
   end
 end

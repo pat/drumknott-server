@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe 'Deleting account', :type => :feature do
+RSpec.describe "Deleting account", :type => :feature do
   let(:user) { User.make! }
   let(:site) { Site.make! :user => user }
 
@@ -10,7 +10,7 @@ RSpec.describe 'Deleting account', :type => :feature do
     sign_in_as user
   end
 
-  it 'removes all data' do |example|
+  it "removes all data" do |example|
     assisted_cassette(example) do |assistant|
       assistant.set_up_user user
       assistant.set_up_site site
@@ -18,7 +18,7 @@ RSpec.describe 'Deleting account', :type => :feature do
       ActionMailer::Base.deliveries.clear
 
       visit my_dashboard_path
-      click_link 'Close'
+      click_link "Close"
 
       customer = Stripe::Customer.retrieve user.stripe_customer_id
       expect(customer.subscriptions.count).to be_zero

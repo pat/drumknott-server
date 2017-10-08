@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe 'Signing in', type: :feature do
-  let(:user) { User.create! email: 'pat@tuckerapp.com', password: 'mysecret' }
+RSpec.describe "Signing in", type: :feature do
+  let(:user) { User.create! email: "pat@tuckerapp.com", password: "mysecret" }
 
-  it 'via email and password' do
+  it "via email and password" do
     visit root_path
-    click_link 'Log in'
+    click_link "Log in"
 
-    fill_in 'Email',    with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Log in'
+    fill_in "Email",    with: user.email
+    fill_in "Password", with: user.password
+    click_button "Log in"
 
-    expect(page).to have_content('Signed in successfully')
-    expect(page).to have_content('Log out')
+    expect(page).to have_content("Signed in successfully")
+    expect(page).to have_content("Log out")
   end
 end

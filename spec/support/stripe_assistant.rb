@@ -7,14 +7,14 @@ class StripeAssistant
     @vcr_cassette = vcr_cassette
   end
 
-  def card_token(card = '4242424242424242')
-    return 'tok_non_live_example' unless recording?
+  def card_token(card = "4242424242424242")
+    return "tok_non_live_example" unless recording?
 
     Stripe::Token.create(:card => {
       :number    => card,
       :exp_month => 1,
       :exp_year  => (Time.current.year + 2),
-      :cvc       => '123'
+      :cvc       => "123"
     }).id
   end
 
@@ -23,13 +23,13 @@ class StripeAssistant
 
     customer     = Stripe::Customer.retrieve site.user.stripe_customer_id
     subscription = customer.subscriptions.create(
-      {:plan => ENV['STRIPE_PLAN_ID']}.merge(subscription_attributes)
+      {:plan => ENV["STRIPE_PLAN_ID"]}.merge(subscription_attributes)
     )
 
     site.update_attributes! :stripe_subscription_id => subscription.id
   end
 
-  def set_up_user(user, card = '4242424242424242')
+  def set_up_user(user, card = "4242424242424242")
     customer = Stripe::Customer.create email: user.email
 
     customer.sources.create :source => card_token(card)
@@ -55,12 +55,12 @@ class StripeAssistant
 
   def create_plan
     Stripe::Plan.create(
-      :id             => ENV['STRIPE_PLAN_ID'],
+      :id             => ENV["STRIPE_PLAN_ID"],
       :amount         => 3_00,
-      :currency       => 'USD',
-      :interval       => 'month',
+      :currency       => "USD",
+      :interval       => "month",
       :interval_count => 1,
-      :name           => 'Drumknott Test'
+      :name           => "Drumknott Test"
     )
   end
 end

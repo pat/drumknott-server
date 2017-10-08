@@ -13,7 +13,7 @@ class Site < ApplicationRecord
   scope :order_by_name, lambda { order :name => :asc }
 
   def accessible?
-    status == 'active' || status == 'past_due'
+    status == "active" || status == "past_due"
   end
 
   def reset_key!

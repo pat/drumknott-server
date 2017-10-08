@@ -5,7 +5,7 @@ class CreateDutiesAndActivities < ActiveRecord::Migration[4.2]
   def change
     create_table :duties_duty_records do |t|
       t.string  :name,    null: false
-      t.text    :data,    default: '{}'
+      t.text    :data,    default: "{}"
       t.timestamps
     end
 
@@ -16,7 +16,7 @@ class CreateDutiesAndActivities < ActiveRecord::Migration[4.2]
       t.string  :name,           null: false
       t.integer :duty_record_id, null: false
       t.integer :position,       null: false
-      t.string  :status,         null: false, default: 'pending'
+      t.string  :status,         null: false, default: "pending"
       t.timestamps
     end
 

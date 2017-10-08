@@ -9,7 +9,7 @@ class Page < ApplicationRecord
   after_save ThinkingSphinx::RealTime.callback_for(:page)
 
   scope :deactivated_long_ago, lambda {
-    where 'deactivated_at IS NOT NULL AND deactivated_at < ?', 1.day.ago
+    where "deactivated_at IS NOT NULL AND deactivated_at < ?", 1.day.ago
   }
 
   def self.find_by_path(path)

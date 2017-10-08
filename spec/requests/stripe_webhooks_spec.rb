@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe 'Stripe Webhooks', :type => :request do
+RSpec.describe "Stripe Webhooks", :type => :request do
   let(:user) { User.make! }
   let(:site) { Site.make! :user => user }
 
-  it 'updates site statuses when subscriptions change' do |example|
+  it "updates site statuses when subscriptions change" do |example|
     assisted_cassette(example) do |assistant|
-      site.update_attributes :status => 'pending'
+      site.update_attributes :status => "pending"
 
       assistant.set_up_user user
       assistant.set_up_site site
@@ -19,20 +19,20 @@ RSpec.describe 'Stripe Webhooks', :type => :request do
 
       event = Stripe::Event.all.detect { |event|
         event.data.object.id == subscription.id &&
-        event.type == 'customer.subscription.updated'
+        event.type == "customer.subscription.updated"
       }
 
-      post '/hooks/stripe', :params => {:id => event.id}
+      post "/hooks/stripe", :params => {:id => event.id}
 
       site.reload
-      expect(site.status).to eq('active')
-      expect(site.cache['current_period_end']).to eq(
+      expect(site.status).to eq("active")
+      expect(site.cache["current_period_end"]).to eq(
         subscription.current_period_end
       )
     end
   end
 
-  it 'updates site statuses when subscriptions are cancelled' do |example|
+  it "updates site statuses when subscriptions are cancelled" do |example|
     assisted_cassette(example) do |assistant|
       assistant.set_up_user user
       assistant.set_up_site site
@@ -43,37 +43,37 @@ RSpec.describe 'Stripe Webhooks', :type => :request do
 
       event = Stripe::Event.all.detect { |event|
         event.data.object.id == subscription.id &&
-        event.type == 'customer.subscription.deleted'
+        event.type == "customer.subscription.deleted"
       }
 
-      post '/hooks/stripe', :params => {:id => event.id}
+      post "/hooks/stripe", :params => {:id => event.id}
 
       site.reload
-      expect(site.status).to eq('canceled')
+      expect(site.status).to eq("canceled")
     end
   end
 
-  it 'stores invoices when they are created' do |example|
+  it "stores invoices when they are created" do |example|
     assisted_cassette(example) do |assistant|
       assistant.set_up_user user
       assistant.set_up_site site
 
       event = Stripe::Event.all.detect { |event|
-        event.type == 'invoice.created'
+        event.type == "invoice.created"
       }
 
-      post '/hooks/stripe', :params => {:id => event.id}
+      post "/hooks/stripe", :params => {:id => event.id}
 
       invoice = user.invoices.first
       expect(invoice).to be_present
 
-      post '/hooks/stripe', :params => {:id => event.id}
+      post "/hooks/stripe", :params => {:id => event.id}
 
       expect(user.invoices.count).to eq(1)
     end
   end
 
-  it 'sends an email when a payment succeeds' do |example|
+  it "sends an email when a payment succeeds" do |example|
     assisted_cassette(example) do |assistant|
       assistant.set_up_user user
       assistant.set_up_site site
@@ -84,22 +84,22 @@ RSpec.describe 'Stripe Webhooks', :type => :request do
       invoice  = customer.invoices.detect { |invoice| invoice.total > 0 }
 
       event = Stripe::Event.all.detect { |event|
-        event.type == 'invoice.created'
+        event.type == "invoice.created"
       }
-      post '/hooks/stripe', :params => {:id => event.id}
+      post "/hooks/stripe", :params => {:id => event.id}
       event = Stripe::Event.all.detect { |event|
-        event.type == 'invoice.payment_succeeded'
+        event.type == "invoice.payment_succeeded"
       }
-      post '/hooks/stripe', :params => {:id => event.id}
-      post '/hooks/stripe', :params => {:id => event.id}
+      post "/hooks/stripe", :params => {:id => event.id}
+      post "/hooks/stripe", :params => {:id => event.id}
 
       expect(ActionMailer::Base.deliveries.count).to eq(1)
     end
   end
 
-  it 'sends an email when a payment fails' do |example|
+  it "sends an email when a payment fails" do |example|
     assisted_cassette(example) do |assistant|
-      assistant.set_up_user user, '4000000000000341'
+      assistant.set_up_user user, "4000000000000341"
       assistant.set_up_site site, :trial_end => 3.seconds.from_now.to_i
 
       ActionMailer::Base.deliveries.clear
@@ -111,10 +111,10 @@ RSpec.describe 'Stripe Webhooks', :type => :request do
       expect { invoice.pay }.to raise_error(Stripe::CardError)
 
       event = Stripe::Event.all.detect { |event|
-        event.type == 'invoice.payment_failed'
+        event.type == "invoice.payment_failed"
       }
 
-      post '/hooks/stripe', :params => {:id => event.id}
+      post "/hooks/stripe", :params => {:id => event.id}
 
       expect(ActionMailer::Base.deliveries.count).to eq(1)
     end

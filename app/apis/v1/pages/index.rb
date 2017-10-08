@@ -7,8 +7,8 @@ class V1::Pages::Index < Sliver::Rails::Action
 
   def call
     response.headers = {
-      'Access-Control-Allow-Origin'   => '*',
-      'Access-Control-Request-Method' => 'GET'
+      "Access-Control-Allow-Origin"   => "*",
+      "Access-Control-Request-Method" => "GET"
     }
 
     response.body = {
@@ -21,14 +21,14 @@ class V1::Pages::Index < Sliver::Rails::Action
     }
   rescue ActiveRecord::RecordNotFound
     response.status = 404
-    response.body   = {:error => 'Site does not exist'}
+    response.body   = {:error => "Site does not exist"}
   end
 
   private
 
   def error
     error? ?
-      'Site is not active. Please log in to check your account status.' : nil
+      "Site is not active. Please log in to check your account status." : nil
   end
 
   def error?
@@ -36,7 +36,7 @@ class V1::Pages::Index < Sliver::Rails::Action
   end
 
   def page
-    params.fetch('page', 1).to_i
+    params.fetch("page", 1).to_i
   end
 
   def page_to_hash(page)
@@ -53,18 +53,18 @@ class V1::Pages::Index < Sliver::Rails::Action
   def pages
     return [] if error?
 
-    @pages ||= site.pages.search ThinkingSphinx::Query.escape(params['query']),
+    @pages ||= site.pages.search ThinkingSphinx::Query.escape(params["query"]),
       :with     => {:deactivated_at => 0},
       :page     => page,
       :per_page => per_page
   end
 
   def per_page
-    params.fetch('per_page', 20).to_i
+    params.fetch("per_page", 20).to_i
   end
 
   def site
-    @site ||= Site.find_by! :name => path_params['site']
+    @site ||= Site.find_by! :name => path_params["site"]
   end
 
   def total_count

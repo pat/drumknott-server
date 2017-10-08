@@ -20,7 +20,7 @@ class V1::Pages::Update < Sliver::Rails::Action
   end
 
   def site
-    @site ||= Site.find_by :name => path_params['site']
+    @site ||= Site.find_by :name => path_params["site"]
   end
 
   private

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe 'Updating sites', :type => :feature do
+RSpec.describe "Updating sites", :type => :feature do
   let(:user) { User.make! }
   let(:site) { Site.make! user: user }
 
@@ -10,21 +10,21 @@ RSpec.describe 'Updating sites', :type => :feature do
     sign_in_as user
   end
 
-  it 'updates site name' do
+  it "updates site name" do
     visit my_site_path(site)
 
-    fill_in 'Name', with: 'new-name'
-    click_button 'Update Site'
+    fill_in "Name", with: "new-name"
+    click_button "Update Site"
 
     site.reload
-    expect(site.name).to eq('new-name')
+    expect(site.name).to eq("new-name")
   end
 
-  it 'regenerates the site key' do
+  it "regenerates the site key" do
     old_key = site.key
 
     visit my_site_path(site)
-    click_link 'generate a new key'
+    click_link "generate a new key"
 
     new_key = site.reload.key
     expect(new_key).to be_present
