@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class V1::Pages::Index < Sliver::Rails::Action
   def self.processors
     [Sliver::Rails::Processors::JSONProcessor]

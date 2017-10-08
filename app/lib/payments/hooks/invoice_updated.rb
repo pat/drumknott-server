@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Payments::Hooks::InvoiceUpdated
   def self.call(event)
     new(event.data.object).call

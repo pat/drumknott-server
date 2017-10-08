@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   def external_javascript_version
     File.read(Rails.root.join('public', 'VERSION')).strip

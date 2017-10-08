@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class My::InvoicesController < My::ApplicationController
   expose(:section)  { 'invoices' }
   expose(:invoices) { current_user.invoices.order_by_date.page(page) }

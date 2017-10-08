@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module InvoicesHelper
   def invoice_number(invoice)
     invoice.id.to_s.rjust 6, '0'

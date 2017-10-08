@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UpdateUserCache
   def self.call(user, customer = nil)
     new(user, customer).call

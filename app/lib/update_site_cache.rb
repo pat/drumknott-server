@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UpdateSiteCache
   def self.call(site, subscription = nil)
     new(site, subscription).call

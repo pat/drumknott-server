@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class My::SitesController < My::ApplicationController
   expose(:section) { 'sites' }
   expose(:sites)   { current_user.sites.order_by_name }

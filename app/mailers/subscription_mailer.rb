@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SubscriptionMailer < ::ActionMailer::Base
   include InvoicesHelper
 

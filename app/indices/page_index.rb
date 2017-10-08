@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ThinkingSphinx::Index.define :page, :with => :real_time do
   indexes name, content
 

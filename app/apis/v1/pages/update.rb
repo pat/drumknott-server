@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class V1::Pages::Update < Sliver::Rails::Action
   def self.guards
     [V1::Guards::AuthenticationGuard]

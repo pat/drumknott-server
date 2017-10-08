@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This migration comes from duties (originally 1)
 class CreateDutiesAndActivities < ActiveRecord::Migration[4.2]
   def change

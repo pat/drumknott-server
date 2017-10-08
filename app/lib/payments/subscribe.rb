@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Payments::Subscribe
   def self.call(site, token)
     new(site, token).call

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class InvoiceAsPdf < Prawn::Document
   include ActionView::Helpers::NumberHelper
   include InvoicesHelper

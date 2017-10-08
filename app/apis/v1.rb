@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class V1 < Sliver::API
   def initialize
     super do |api|

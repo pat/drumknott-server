@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class StripeAssistant
   delegate :recording?, :to => :vcr_cassette
 

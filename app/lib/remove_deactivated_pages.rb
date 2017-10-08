@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RemoveDeactivatedPages
   def self.call
     new.call

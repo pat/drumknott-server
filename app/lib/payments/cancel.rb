@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Payments::Cancel
   def self.call(site)
     new(site).call

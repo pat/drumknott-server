@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Payments::SetCard
   def self.call(customer, token)
     new(customer, token).call

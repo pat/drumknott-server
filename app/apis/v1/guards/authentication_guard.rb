@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class V1::Guards::AuthenticationGuard < Sliver::Hook
   def continue?
     site && site.key == request.env['HTTP_AUTHENTICATION']

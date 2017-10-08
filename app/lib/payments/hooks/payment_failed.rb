@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Payments::Hooks::PaymentFailed
   def self.call(event)
     new(event.data.object).call

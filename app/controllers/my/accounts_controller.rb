@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class My::AccountsController < My::ApplicationController
   def update
     current_user.attributes = user_params
