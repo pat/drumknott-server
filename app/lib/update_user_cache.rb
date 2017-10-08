@@ -13,7 +13,7 @@ class UpdateUserCache
   def call
     user.cache_will_change!
     user.cache["card"] = customer.sources.first.to_hash.slice(
-      *%i[ last4 exp_month exp_year ]
+      %i[ last4 exp_month exp_year ]
     )
     user.save!
   end

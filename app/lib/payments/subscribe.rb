@@ -18,7 +18,7 @@ class Payments::Subscribe
       :status                 => subscription.status
     )
     UpdateSiteCache.call site, subscription
-  rescue => error
+  rescue StandardError => error
     raise error if Rails.env.development?
 
     Bugsnag.notify error, :user => {

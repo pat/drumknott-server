@@ -8,6 +8,10 @@ AllCops:
 Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
+Lint/UselessAccessModifier:
+  MethodCreatingMethods:
+    - delegate
+
 Metrics/LineLength:
   Exclude:
     - 'config/initializers/devise.rb'
