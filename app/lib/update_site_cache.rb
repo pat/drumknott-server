@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class UpdateSiteCache
+  CACHED_KEYS = %i[ current_period_start current_period_end ].freeze
+
   def self.call(site, subscription = nil)
     new(site, subscription).call
   end
@@ -12,9 +14,7 @@ class UpdateSiteCache
 
   def call
     site.cache_will_change!
-    site.cache = subscription.to_hash.slice(
-      %i[ current_period_start current_period_end ]
-    )
+    site.cache = subscription.to_hash.slice(*CACHED_KEYS)
     site.save!
   end
 

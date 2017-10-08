@@ -19,7 +19,7 @@ class Payments::Subscribe
     raise error if Rails.env.development?
 
     notify error
-    mark_as_failed
+    mark_as_failed_with error
   end
 
   private
@@ -32,14 +32,14 @@ class Payments::Subscribe
     @customer ||= Payments::GetCustomer.call user
   end
 
-  def mark_as_failed
+  def mark_as_failed_with(error)
     site.update_attributes!(
       :status         => "failure",
       :status_message => error.message
     )
   end
 
-  def notifiy(error)
+  def notify(error)
     Bugsnag.notify error, :user => {
       :id    => user.id,
       :email => user.email

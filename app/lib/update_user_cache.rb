@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class UpdateUserCache
+  CACHED_KEYS = %i[ last4 exp_month exp_year ].freeze
+
   def self.call(user, customer = nil)
     new(user, customer).call
   end
@@ -12,9 +14,7 @@ class UpdateUserCache
 
   def call
     user.cache_will_change!
-    user.cache["card"] = customer.sources.first.to_hash.slice(
-      %i[ last4 exp_month exp_year ]
-    )
+    user.cache["card"] = customer.sources.first.to_hash.slice(*CACHED_KEYS)
     user.save!
   end
 

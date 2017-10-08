@@ -11,7 +11,7 @@ class V1::Pages::Index < Sliver::Rails::Action
   end
 
   def call
-    response.headers = HEADERS
+    response.headers = HEADERS.dup
     response.body    = paginated_results
   rescue ActiveRecord::RecordNotFound
     response.status = 404
