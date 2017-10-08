@@ -30,7 +30,7 @@ class StripeAssistant
   end
 
   def set_up_user(user, card = "4242424242424242")
-    customer = Stripe::Customer.create email: user.email
+    customer = Stripe::Customer.create :email => user.email
 
     customer.sources.create :source => card_token(card)
     user.update_attributes! :stripe_customer_id => customer.id

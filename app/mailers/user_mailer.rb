@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UserMailer < ActionMailer::Base
-  default from: "Drumknott <hello@drumknottsearch.com>"
+  default :from => "Drumknott <hello@drumknottsearch.com>"
 
   def deleted(email)
     mail(

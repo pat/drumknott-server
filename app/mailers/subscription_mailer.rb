@@ -3,7 +3,7 @@
 class SubscriptionMailer < ::ActionMailer::Base
   include InvoicesHelper
 
-  default from: "Drumknott <hello@drumknottsearch.com>"
+  default :from => "Drumknott <hello@drumknottsearch.com>"
 
   def payment_failed(invoice)
     @invoice = invoice

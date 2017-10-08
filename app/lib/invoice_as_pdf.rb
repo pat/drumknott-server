@@ -48,7 +48,7 @@ Invoice From:
       }
     )
 
-    font "Museo Sans", size: 10
+    font "Museo Sans", :size => 10
     default_leading 5
   end
 
@@ -57,7 +57,7 @@ Invoice From:
       [
         ["Drumknott", metadata],
         [FROM_ADDRESS, ""]
-      ], width: bounds.width
+      ], :width => bounds.width
     ) do
       cells.border_width = 0.0
 
@@ -84,7 +84,7 @@ Status: #{ invoice.data["paid"] ? "Paid" : "Due" }
   def create_body
     summary_rows = (items.length + 1)..-1
 
-    table body_items, width: bounds.width do
+    table body_items, :width => bounds.width do
       cells.padding       = 8
       cells.borders       = [:bottom]
       cells.border_width  = 0.2

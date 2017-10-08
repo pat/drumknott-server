@@ -9,10 +9,10 @@ module Sliver::NewRelic
   def call(environment)
     request = ::Rack::Request.new environment
     trace_options = {
-      category: :rack,
-      path:     "#{name}/call",
-      request:  request,
-      params:   request.params
+      :category => :rack,
+      :path     => "#{name}/call",
+      :request  => request,
+      :params   => request.params
     }
     perform_action_with_newrelic_trace(trace_options) { super }
   end

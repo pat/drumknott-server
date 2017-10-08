@@ -42,8 +42,8 @@ RSpec.describe "Update user details", :type => :feature do
     fill_in "Confirm Password", :with => "wossname"
     click_button "Change Password"
 
-    fill_in "Email",    with: user.email
-    fill_in "Password", with: "wossname"
+    fill_in "Email",    :with => user.email
+    fill_in "Password", :with => "wossname"
     click_button "Log in"
 
     expect(page).to have_content("Signed in successfully")

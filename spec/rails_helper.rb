@@ -22,7 +22,7 @@ RSpec.configure do |config|
   config.before :each do |example|
     if example.metadata[:type] == :request
       ThinkingSphinx::Test.init
-      ThinkingSphinx::Test.start index: false
+      ThinkingSphinx::Test.start :index => false
     end
 
     ThinkingSphinx::Configuration.instance.settings["real_time_callbacks"] =

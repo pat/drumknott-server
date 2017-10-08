@@ -9,7 +9,7 @@ class My::InvoicesController < My::ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        send_data pdf.render, filename: "invoice_#{invoice.id}.pdf"
+        send_data pdf.render, :filename => "invoice_#{invoice.id}.pdf"
       end
     end
   end
