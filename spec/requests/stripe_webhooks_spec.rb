@@ -17,12 +17,12 @@ RSpec.describe "Stripe Webhooks", :type => :request do
       subscription = customer.subscriptions.retrieve site.stripe_subscription_id
       subscription.delete :at_period_end => true
 
-      event = Stripe::Event.all.detect { |event|
+      update_event = Stripe::Event.all.detect { |event|
         event.data.object.id == subscription.id &&
         event.type == "customer.subscription.updated"
       }
 
-      post "/hooks/stripe", :params => {:id => event.id}
+      post "/hooks/stripe", :params => {:id => update_event.id}
 
       site.reload
       expect(site.status).to eq("active")
@@ -41,12 +41,12 @@ RSpec.describe "Stripe Webhooks", :type => :request do
       subscription = customer.subscriptions.retrieve site.stripe_subscription_id
       subscription.delete
 
-      event = Stripe::Event.all.detect { |event|
+      delete_event = Stripe::Event.all.detect { |event|
         event.data.object.id == subscription.id &&
         event.type == "customer.subscription.deleted"
       }
 
-      post "/hooks/stripe", :params => {:id => event.id}
+      post "/hooks/stripe", :params => {:id => delete_event.id}
 
       site.reload
       expect(site.status).to eq("canceled")
@@ -58,16 +58,16 @@ RSpec.describe "Stripe Webhooks", :type => :request do
       assistant.set_up_user user
       assistant.set_up_site site
 
-      event = Stripe::Event.all.detect { |event|
+      creation_event = Stripe::Event.all.detect { |event|
         event.type == "invoice.created"
       }
 
-      post "/hooks/stripe", :params => {:id => event.id}
+      post "/hooks/stripe", :params => {:id => creation_event.id}
 
       invoice = user.invoices.first
       expect(invoice).to be_present
 
-      post "/hooks/stripe", :params => {:id => event.id}
+      post "/hooks/stripe", :params => {:id => creation_event.id}
 
       expect(user.invoices.count).to eq(1)
     end
@@ -81,17 +81,17 @@ RSpec.describe "Stripe Webhooks", :type => :request do
       ActionMailer::Base.deliveries.clear
 
       customer = Stripe::Customer.retrieve user.stripe_customer_id
-      invoice  = customer.invoices.detect { |invoice| invoice.total > 0 }
+      customer.invoices.detect { |invoice| invoice.total > 0 }
 
-      event = Stripe::Event.all.detect { |event|
+      creation_event = Stripe::Event.all.detect { |event|
         event.type == "invoice.created"
       }
-      post "/hooks/stripe", :params => {:id => event.id}
-      event = Stripe::Event.all.detect { |event|
+      post "/hooks/stripe", :params => {:id => creation_event.id}
+      payment_event = Stripe::Event.all.detect { |event|
         event.type == "invoice.payment_succeeded"
       }
-      post "/hooks/stripe", :params => {:id => event.id}
-      post "/hooks/stripe", :params => {:id => event.id}
+      post "/hooks/stripe", :params => {:id => payment_event.id}
+      post "/hooks/stripe", :params => {:id => payment_event.id}
 
       expect(ActionMailer::Base.deliveries.count).to eq(1)
     end
@@ -106,15 +106,15 @@ RSpec.describe "Stripe Webhooks", :type => :request do
 
       sleep 360 if assistant.recording?
 
-      customer = Stripe::Customer.retrieve user.stripe_customer_id
-      invoice  = customer.invoices.detect { |invoice| invoice.total > 0 }
-      expect { invoice.pay }.to raise_error(Stripe::CardError)
+      customer       = Stripe::Customer.retrieve user.stripe_customer_id
+      unpaid_invoice = customer.invoices.detect { |invoice| invoice.total > 0 }
+      expect { unpaid_invoice.pay }.to raise_error(Stripe::CardError)
 
-      event = Stripe::Event.all.detect { |event|
+      failure_event = Stripe::Event.all.detect { |event|
         event.type == "invoice.payment_failed"
       }
 
-      post "/hooks/stripe", :params => {:id => event.id}
+      post "/hooks/stripe", :params => {:id => failure_event.id}
 
       expect(ActionMailer::Base.deliveries.count).to eq(1)
     end
