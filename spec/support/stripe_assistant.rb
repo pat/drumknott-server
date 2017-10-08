@@ -48,9 +48,9 @@ class StripeAssistant
   attr_reader :vcr_cassette
 
   def clear
-    Stripe::Customer.all.each &:delete
-    Stripe::Coupon.all.each &:delete
-    Stripe::Plan.all.each &:delete
+    Stripe::Customer.all.each(&:delete)
+    Stripe::Coupon.all.each(&:delete)
+    Stripe::Plan.all.each(&:delete)
   end
 
   def create_plan

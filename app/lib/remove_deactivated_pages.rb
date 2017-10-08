@@ -6,6 +6,6 @@ class RemoveDeactivatedPages
   end
 
   def call
-    Page.deactivated_long_ago.find_each &:destroy
+    Page.deactivated_long_ago.find_each(&:destroy)
   end
 end

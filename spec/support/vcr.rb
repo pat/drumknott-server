@@ -5,6 +5,6 @@ VCR.configure do |config|
   config.hook_into :webmock
 end
 
-VCRAssistant.assistant = lambda { |label, vcr_cassette|
+VCRAssistant.assistant = lambda { |_label, vcr_cassette|
   StripeAssistant.new vcr_cassette
 }
