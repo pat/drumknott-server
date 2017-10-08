@@ -9,6 +9,7 @@ end
 require "rspec/rails"
 require "sidekiq/testing/inline"
 require "webmock/rspec"
+require "vcr_assistant/rspec"
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |file| require file }
 
