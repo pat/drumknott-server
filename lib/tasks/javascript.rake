@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :javascript do
   task :release do
     version = File.read(Rails.root.join("public", "VERSION")).strip
