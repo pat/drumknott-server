@@ -13,23 +13,13 @@ class Payments::Subscribe
   def call
     Payments::SetCard.call customer, token if token.present?
 
-    site.update_attributes!(
-      :stripe_subscription_id => subscription.id,
-      :status                 => subscription.status
-    )
-    UpdateSiteCache.call site, subscription
+    update_status
+    update_cache
   rescue StandardError => error
     raise error if Rails.env.development?
 
-    Bugsnag.notify error, :user => {
-      :id    => user.id,
-      :email => user.email
-    }
-
-    site.update_attributes!(
-      :status         => "failure",
-      :status_message => error.message
-    )
+    notify error
+    mark_as_failed
   end
 
   private
@@ -42,9 +32,34 @@ class Payments::Subscribe
     @customer ||= Payments::GetCustomer.call user
   end
 
+  def mark_as_failed
+    site.update_attributes!(
+      :status         => "failure",
+      :status_message => error.message
+    )
+  end
+
+  def notifiy(error)
+    Bugsnag.notify error, :user => {
+      :id    => user.id,
+      :email => user.email
+    }
+  end
+
   def subscription
     @subscription ||= customer.subscriptions.create(
       :plan => ENV["STRIPE_PLAN_ID"]
+    )
+  end
+
+  def update_cache
+    UpdateSiteCache.call site, subscription
+  end
+
+  def update_status
+    site.update_attributes!(
+      :stripe_subscription_id => subscription.id,
+      :status                 => subscription.status
     )
   end
 end
