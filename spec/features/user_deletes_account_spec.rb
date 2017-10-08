@@ -27,4 +27,3 @@ RSpec.describe "Deleting account", :type => :feature do
     end
   end
 end
-

@@ -7,7 +7,7 @@ class CreatePages < ActiveRecord::Migration[4.2]
       t.string  :name,    :null => false
       t.string  :path,    :null => false
       t.text    :content
-      t.timestamps        :null => false
+      t.timestamps :null => false
     end
 
     add_index :pages, :site_id

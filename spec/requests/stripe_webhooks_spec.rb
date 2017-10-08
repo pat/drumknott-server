@@ -19,7 +19,7 @@ RSpec.describe "Stripe Webhooks", :type => :request do
 
       update_event = Stripe::Event.all.detect { |event|
         event.data.object.id == subscription.id &&
-        event.type == "customer.subscription.updated"
+          event.type == "customer.subscription.updated"
       }
 
       post "/hooks/stripe", :params => {:id => update_event.id}
@@ -43,7 +43,7 @@ RSpec.describe "Stripe Webhooks", :type => :request do
 
       delete_event = Stripe::Event.all.detect { |event|
         event.data.object.id == subscription.id &&
-        event.type == "customer.subscription.deleted"
+          event.type == "customer.subscription.deleted"
       }
 
       post "/hooks/stripe", :params => {:id => delete_event.id}

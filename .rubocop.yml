@@ -1,13 +1,15 @@
 inherit_from:
   - https://gist.githubusercontent.com/pat/ba3b8ffb1901bfe5439b460943b6b019/raw/.rubocop.yml
 
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
 Style/ClassAndModuleChildren:
   Enabled: false
 
 Style/Documentation:
   Enabled: false
-
-Style/HashSyntax:
-  EnforcedStyle: hash_rockets
-  Exclude:
-    - 'db/schema.rb'

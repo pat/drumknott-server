@@ -54,8 +54,12 @@ RSpec.describe "Pages API", :type => :request do
 
   describe "PUT /:site/pages" do
     it "creates a new page if the details are not yet in the system" do
-      put "/api/v1/#{site.name}/pages", :params => {:page =>
-        {:name => "Gelato", :path => "/gelato", :contents => "All the gelato"}},
+      put "/api/v1/#{site.name}/pages",
+        :params => {
+          :page => {
+            :name => "Gelato", :path => "/gelato", :contents => "All the gelato"
+          }
+        },
         :headers => {"HTTP_AUTHENTICATION" => site.key}
 
       expect(site.pages.find_by_path("/gelato")).to be_present
@@ -66,8 +70,12 @@ RSpec.describe "Pages API", :type => :request do
         :name => "Sorbet", :path => "/sorbet", :content => "Just sorbet"
       )
 
-      put "/api/v1/#{site.name}/pages", :params => {:page =>
-        {:name => "Sorbet", :path => "/sorbet", :content => "Not gelato"}},
+      put "/api/v1/#{site.name}/pages",
+        :params => {
+          :page => {
+            :name => "Sorbet", :path => "/sorbet", :content => "Not gelato"
+          }
+        },
         :headers => {"HTTP_AUTHENTICATION" => site.key}
 
       sorbet.reload
@@ -76,12 +84,18 @@ RSpec.describe "Pages API", :type => :request do
 
     it "activates an existing deactivated page" do
       sorbet = site.pages.create!(
-        :name => "Sorbet", :path => "/sorbet", :content => "Just sorbet",
+        :name           => "Sorbet",
+        :path           => "/sorbet",
+        :content        => "Just sorbet",
         :deactivated_at => 1.day.ago
       )
 
-      put "/api/v1/#{site.name}/pages", :params => {:page =>
-        {:name => "Sorbet", :path => "/sorbet", :content => "Not gelato"}},
+      put "/api/v1/#{site.name}/pages",
+        :params => {
+          :page => {
+            :name => "Sorbet", :path => "/sorbet", :content => "Not gelato"
+          }
+        },
         :headers => {"HTTP_AUTHENTICATION" => site.key}
 
       sorbet.reload
@@ -91,7 +105,7 @@ RSpec.describe "Pages API", :type => :request do
 
   describe "POST /:site/pages/clear" do
     it "marks all pages attached to the site as deactivated" do
-      waffles  = site.pages.create!(
+      waffles = site.pages.create!(
         :name => "Waffles", :content => "All the waffles", :path => "/waffles"
       )
       pancakes = site.pages.create!(

@@ -4,7 +4,8 @@ source "https://rubygems.org"
 
 ruby "2.4.2"
 
-gem "rails",   "5.1.4"
+gem "rails", "5.1.4"
+
 gem "pg"
 gem "puma",    "3.10.0"
 gem "sidekiq", "5.0.5"

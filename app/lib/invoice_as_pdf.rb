@@ -4,9 +4,9 @@ class InvoiceAsPdf < Prawn::Document
   include ActionView::Helpers::NumberHelper
   include InvoicesHelper
 
-  FROM_ADDRESS = <<-TEXT
-Invoice From:
-#{ENV["INVOICE_FROM"]}
+  FROM_ADDRESS = <<~TEXT
+    Invoice From:
+    #{ENV["INVOICE_FROM"]}
   TEXT
 
   def initialize(invoice)
@@ -73,11 +73,11 @@ Invoice From:
   end
 
   def metadata
-    <<-TEXT
-Invoice #: #{ invoice_number invoice }
-Created: #{ invoice.invoiced_at.to_formatted_s :date_only }
-For #{ invoice.user.email }
-Status: #{ invoice.data["paid"] ? "Paid" : "Due" }
+    <<~TEXT
+      Invoice #: #{invoice_number invoice}
+      Created: #{invoice.invoiced_at.to_formatted_s :date_only}
+      For #{invoice.user.email}
+      Status: #{invoice.data["paid"] ? "Paid" : "Due"}
     TEXT
   end
 
@@ -101,7 +101,7 @@ Status: #{ invoice.data["paid"] ? "Paid" : "Due" }
       row(0).border_color = "000000"
 
       row(-1).borders      = [:top]
-      row(-1).border_width  = 0.5
+      row(-1).border_width = 0.5
       row(-1).font_style   = :bold
       row(-1).border_color = "000000"
     end
@@ -116,7 +116,7 @@ Status: #{ invoice.data["paid"] ? "Paid" : "Due" }
       ["Item", "Amount"]
     ] + items.collect { |line|
       [
-        "Monthly subscription for #{ invoice.site.name }",
+        "Monthly subscription for #{invoice.site.name}",
         to_currency(line["amount"])
       ]
     } + totals
@@ -124,13 +124,13 @@ Status: #{ invoice.data["paid"] ? "Paid" : "Due" }
 
   def totals
     data = [
-      ["", "Subtotal: #{ to_currency invoice.data["subtotal"] }"],
-      ["", "Total: #{ to_currency invoice.data["total"] }"]
+      ["", "Subtotal: #{to_currency invoice.data["subtotal"]}"],
+      ["", "Total: #{to_currency invoice.data["total"]}"]
     ]
 
     discount = invoice.data["subtotal"] - invoice.data["total"]
     if discount > 0
-      data.insert 1, ["", "Discount: #{ to_currency discount }"]
+      data.insert 1, ["", "Discount: #{to_currency discount}"]
     end
 
     data

@@ -10,12 +10,14 @@ class StripeAssistant
   def card_token(card = "4242424242424242")
     return "tok_non_live_example" unless recording?
 
-    Stripe::Token.create(:card => {
-      :number    => card,
-      :exp_month => 1,
-      :exp_year  => (Time.current.year + 2),
-      :cvc       => "123"
-    }).id
+    Stripe::Token.create(
+      :card => {
+        :number    => card,
+        :exp_month => 1,
+        :exp_year  => (Time.current.year + 2),
+        :cvc       => "123"
+      }
+    ).id
   end
 
   def set_up_site(site, subscription_attributes = {})
