@@ -34,7 +34,9 @@ class My::SitesController < My::ApplicationController
   def regenerate
     site.reset_key!
 
-    redirect_to my_site_path(site), :notice => "Your site's API key has been regenerated. Please update any stored credentials accordingly."
+    redirect_to my_site_path(site),
+      :notice => "Your site's API key has been regenerated. Please update " \
+        "any stored credentials accordingly."
   end
 
   private

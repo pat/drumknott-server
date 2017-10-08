@@ -8,6 +8,11 @@ AllCops:
 Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
+Metrics/LineLength:
+  Exclude:
+    - 'config/initializers/devise.rb'
+    - 'config/initializers/formtastic.rb'
+
 Style/ClassAndModuleChildren:
   Enabled: false
 

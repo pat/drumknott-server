@@ -33,7 +33,9 @@ class InvoiceAsPdf < Prawn::Document
     if invoice.user.country == "AU"
       text "Total amount listed includes 10% GST for Australian customers."
     end
-    text "For questions, support and feedback, please email <link href=\"mailto:hello@drumknottsearch.com\">hello@drumknottsearch.com</link>.",
+    text "For questions, support and feedback, please email " \
+      "<link href=\"mailto:hello@drumknottsearch.com\">" \
+      "hello@drumknottsearch.com</link>.",
       :inline_format => true
   end
 
