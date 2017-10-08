@@ -294,7 +294,7 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
-    webmock (3.0.1)
+    webmock (3.1.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
@@ -348,7 +348,7 @@ DEPENDENCIES
   vcr (~> 3.0.1)
   vcr_assistant (~> 0.1.1)
   web-console (~> 2.0)
-  webmock (~> 3.0.1)
+  webmock (~> 3.1.0)
 
 RUBY VERSION
    ruby 2.4.2p198
