@@ -27,8 +27,9 @@ class V1::Pages::Index < Sliver::Rails::Action
   private
 
   def error
-    error? ?
-      "Site is not active. Please log in to check your account status." : nil
+    return nil unless error?
+
+    "Site is not active. Please log in to check your account status."
   end
 
   def error?

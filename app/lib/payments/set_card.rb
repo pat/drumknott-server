@@ -6,7 +6,8 @@ class Payments::SetCard
   end
 
   def initialize(customer, token)
-    @customer, @token = customer, token
+    @customer = customer
+    @token    = token
   end
 
   def call

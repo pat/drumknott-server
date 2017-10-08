@@ -17,10 +17,10 @@ RSpec.describe "Stripe Webhooks", :type => :request do
       subscription = customer.subscriptions.retrieve site.stripe_subscription_id
       subscription.delete :at_period_end => true
 
-      update_event = Stripe::Event.all.detect { |event|
+      update_event = Stripe::Event.all.detect do |event|
         event.data.object.id == subscription.id &&
           event.type == "customer.subscription.updated"
-      }
+      end
 
       post "/hooks/stripe", :params => {:id => update_event.id}
 
@@ -41,10 +41,10 @@ RSpec.describe "Stripe Webhooks", :type => :request do
       subscription = customer.subscriptions.retrieve site.stripe_subscription_id
       subscription.delete
 
-      delete_event = Stripe::Event.all.detect { |event|
+      delete_event = Stripe::Event.all.detect do |event|
         event.data.object.id == subscription.id &&
           event.type == "customer.subscription.deleted"
-      }
+      end
 
       post "/hooks/stripe", :params => {:id => delete_event.id}
 
@@ -58,9 +58,9 @@ RSpec.describe "Stripe Webhooks", :type => :request do
       assistant.set_up_user user
       assistant.set_up_site site
 
-      creation_event = Stripe::Event.all.detect { |event|
+      creation_event = Stripe::Event.all.detect do |event|
         event.type == "invoice.created"
-      }
+      end
 
       post "/hooks/stripe", :params => {:id => creation_event.id}
 
@@ -83,13 +83,13 @@ RSpec.describe "Stripe Webhooks", :type => :request do
       customer = Stripe::Customer.retrieve user.stripe_customer_id
       customer.invoices.detect { |invoice| invoice.total > 0 }
 
-      creation_event = Stripe::Event.all.detect { |event|
+      creation_event = Stripe::Event.all.detect do |event|
         event.type == "invoice.created"
-      }
+      end
       post "/hooks/stripe", :params => {:id => creation_event.id}
-      payment_event = Stripe::Event.all.detect { |event|
+      payment_event = Stripe::Event.all.detect do |event|
         event.type == "invoice.payment_succeeded"
-      }
+      end
       post "/hooks/stripe", :params => {:id => payment_event.id}
       post "/hooks/stripe", :params => {:id => payment_event.id}
 
@@ -110,9 +110,9 @@ RSpec.describe "Stripe Webhooks", :type => :request do
       unpaid_invoice = customer.invoices.detect { |invoice| invoice.total > 0 }
       expect { unpaid_invoice.pay }.to raise_error(Stripe::CardError)
 
-      failure_event = Stripe::Event.all.detect { |event|
+      failure_event = Stripe::Event.all.detect do |event|
         event.type == "invoice.payment_failed"
-      }
+      end
 
       post "/hooks/stripe", :params => {:id => failure_event.id}
 

@@ -13,3 +13,9 @@ Style/ClassAndModuleChildren:
 
 Style/Documentation:
   Enabled: false
+
+Style/Lambda:
+  EnforcedStyle: lambda
+
+Style/MultilineIfModifier:
+  Enabled: false

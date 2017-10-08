@@ -6,13 +6,14 @@ class UpdateSiteCache
   end
 
   def initialize(site, subscription)
-    @site, @subscription = site, subscription
+    @site         = site
+    @subscription = subscription
   end
 
   def call
     site.cache_will_change!
     site.cache = subscription.to_hash.slice(
-      *%i( current_period_start current_period_end )
+      *%i[ current_period_start current_period_end ]
     )
     site.save!
   end

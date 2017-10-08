@@ -11,6 +11,6 @@ class CreatePages < ActiveRecord::Migration[4.2]
     end
 
     add_index :pages, :site_id
-    add_index :pages, [:site_id, :path], :unique => true
+    add_index :pages, %i[ site_id path ], :unique => true
   end
 end

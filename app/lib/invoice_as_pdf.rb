@@ -113,13 +113,17 @@ class InvoiceAsPdf < Prawn::Document
 
   def body_items
     [
-      ["Item", "Amount"]
-    ] + items.collect { |line|
+      %w[ Item Amount ]
+    ] + item_lines + totals
+  end
+
+  def item_lines
+    items.collect do |line|
       [
         "Monthly subscription for #{invoice.site.name}",
         to_currency(line["amount"])
       ]
-    } + totals
+    end
   end
 
   def totals
@@ -129,7 +133,7 @@ class InvoiceAsPdf < Prawn::Document
     ]
 
     discount = invoice.data["subtotal"] - invoice.data["total"]
-    if discount > 0
+    if discount.positive?
       data.insert 1, ["", "Discount: #{to_currency discount}"]
     end
 

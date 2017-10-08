@@ -6,31 +6,30 @@ class Payments::Subscribe
   end
 
   def initialize(site, token)
-    @site, @token = site, token
+    @site  = site
+    @token = token
   end
 
   def call
-    begin
-      Payments::SetCard.call customer, token if token.present?
+    Payments::SetCard.call customer, token if token.present?
 
-      site.update_attributes!(
-        :stripe_subscription_id => subscription.id,
-        :status                 => subscription.status
-      )
-      UpdateSiteCache.call site, subscription
-    rescue => error
-      raise error if Rails.env.development?
+    site.update_attributes!(
+      :stripe_subscription_id => subscription.id,
+      :status                 => subscription.status
+    )
+    UpdateSiteCache.call site, subscription
+  rescue => error
+    raise error if Rails.env.development?
 
-      Bugsnag.notify error, :user => {
-        :id    => user.id,
-        :email => user.email
-      }
+    Bugsnag.notify error, :user => {
+      :id    => user.id,
+      :email => user.email
+    }
 
-      site.update_attributes!(
-        :status         => "failure",
-        :status_message => error.message
-      )
-    end
+    site.update_attributes!(
+      :status         => "failure",
+      :status_message => error.message
+    )
   end
 
   private

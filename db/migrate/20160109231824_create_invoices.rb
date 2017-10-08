@@ -12,7 +12,7 @@ class CreateInvoices < ActiveRecord::Migration[4.2]
 
     add_index :invoices, :user_id
     add_index :invoices, :stripe_invoice_id, :unique => true
-    add_index :invoices, [:user_id, :invoiced_at],
+    add_index :invoices, %i[ user_id invoiced_at ],
       :order => {:invoiced_at => :desc}
   end
 end
