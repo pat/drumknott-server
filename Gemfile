@@ -27,6 +27,7 @@ gem 'prawn-table',     '~> 0.2.2'
 gem 'rack-pratchett',  '~> 0.1.1'
 gem 'rack-rewrite',    '~> 1.5.1'
 gem 'rack-timeout',    '~> 0.3.2'
+gem "rubocop",         "~> 0.50.0"
 gem 'sliver-rails',    '0.2.0'
 gem 'stripe',          '~> 3.4.1'
 gem 'stripe_event',    '~> 1.8.0'

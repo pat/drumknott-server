@@ -18,3 +18,4 @@ config/*.sphinx.conf
 db/sphinx
 
 .env.test
+.rubocop-*-yml
