@@ -20,7 +20,7 @@ gem "turbolinks"
 gem "uglifier", ">= 1.3.0"
 
 # everything else
-gem "bugsnag",         "~> 5.4.0"
+gem "bugsnag",         "~> 5.5.0"
 gem "country_select",  "~> 3.1.1"
 gem "decent_exposure", "~> 3.0"
 gem "devise",          "4.3.0"
