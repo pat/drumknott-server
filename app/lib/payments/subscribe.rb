@@ -40,10 +40,11 @@ class Payments::Subscribe
   end
 
   def notify(error)
-    Bugsnag.notify error, :user => {
-      :id    => user.id,
-      :email => user.email
-    }
+    Bugsnag.notify error do |report|
+      report.add_tab :user,
+        :id    => user.id,
+        :email => user.email
+    end
   end
 
   def subscription
