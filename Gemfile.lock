@@ -155,7 +155,7 @@ GEM
       i18n (>= 0.6.4, < 0.9)
     multi_json (1.12.2)
     multipart-post (2.0.0)
-    mysql2 (0.4.9)
+    mysql2 (0.4.10)
     newrelic_rpm (4.6.0.338)
     nio4r (2.1.0)
     nokogiri (1.8.1)
