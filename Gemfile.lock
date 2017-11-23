@@ -53,7 +53,7 @@ GEM
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bugsnag (6.1.0)
+    bugsnag (6.1.1)
     builder (3.2.3)
     byebug (9.1.0)
     capybara (2.16.1)
