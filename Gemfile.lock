@@ -99,19 +99,23 @@ GEM
       railties (>= 3.2, < 5.2)
     erubi (1.7.0)
     execjs (2.7.0)
+    ey-hmac (2.2.0)
     faraday (0.13.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
-    flying-sphinx (1.2.1)
+    flying-sphinx (1.3.0)
+      ey-hmac (~> 2.2)
       faraday (>= 0.7)
+      gzipped_tar (~> 0.0.3)
       multi_json (>= 1.3.0)
       pusher-client (~> 0.3)
       riddle (>= 1.5.6)
-      thinking-sphinx
+      thinking-sphinx (>= 1.5.0)
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    gzipped_tar (0.0.3)
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
@@ -223,7 +227,7 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
-    riddle (2.2.0)
+    riddle (2.2.2)
     rspec-core (3.7.0)
       rspec-support (~> 3.7.0)
     rspec-expectations (3.7.0)
@@ -325,7 +329,7 @@ GEM
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
-    websocket (1.2.4)
+    websocket (1.2.5)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -344,7 +348,7 @@ DEPENDENCIES
   decent_exposure (~> 3.0)
   devise (= 4.3.0)
   dotenv-rails (~> 2.2.1)
-  flying-sphinx (= 1.2.1)
+  flying-sphinx (= 1.3.0)
   formtastic (~> 3.1.3)
   haml (= 5.0.4)
   jquery-rails
@@ -382,4 +386,4 @@ RUBY VERSION
    ruby 2.4.2p198
 
 BUNDLED WITH
-   1.16.0.pre.3
+   1.16.0
