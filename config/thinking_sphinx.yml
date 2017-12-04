@@ -10,3 +10,4 @@ production:
   html_strip: 1
   version: 2.1.8
   charset_type: utf-8
+  batch_size: 500
