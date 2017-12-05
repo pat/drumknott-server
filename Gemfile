@@ -24,10 +24,7 @@ gem "bugsnag",         "~> 6.1.0"
 gem "country_select",  "~> 3.1.1"
 gem "decent_exposure", "~> 3.0"
 gem "devise",          "4.3.0"
-gem "flying-sphinx",   "1.3.0",
-  :git    => "https://github.com/flying-sphinx/flying-sphinx.git",
-  :branch => "master",
-  :ref    => "ffc9530a1b" # fix for regenerate calls
+gem "flying-sphinx",   "~> 1.3"
 gem "formtastic",      "~> 3.1.3"
 gem "haml",            "5.0.4"
 gem "kaminari",        "~> 1.1.0"
