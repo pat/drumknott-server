@@ -8,15 +8,15 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
+      - Stripe/v1 RubyBindings/3.9.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
+      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+        x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -29,11 +29,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 12 Jul 2017 22:49:22 GMT
+      - Sun, 10 Dec 2017 02:14:18 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '30153'
+      - '3960'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -42,16 +42,18 @@ http_interactions:
       - GET, POST, HEAD, OPTIONS, DELETE
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Expose-Headers:
+      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_B0vV0gFwH8GX5u
+      - req_uldHC7iLYx2s9v
       Stripe-Version:
-      - '2015-10-16'
+      - '2017-08-15'
       Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
+      - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
@@ -59,16 +61,16 @@ http_interactions:
           "object": "list",
           "data": [
             {
-              "id": "cus_7uAY6wn5xerj9p",
+              "id": "cus_BvAZjzJlsjDpnv",
               "object": "customer",
               "account_balance": 0,
-              "created": 1455442253,
+              "created": 1512871679,
               "currency": "usd",
-              "default_source": "card_7uAYrPqHgEr3Aq",
-              "delinquent": false,
+              "default_source": "card_BvAZBnSn7lMVBk",
+              "delinquent": true,
               "description": null,
               "discount": null,
-              "email": "pat+other1@freelancing-gods.com",
+              "email": "search0006@drumknottsearch.com",
               "livemode": false,
               "metadata": {},
               "shipping": null,
@@ -76,7 +78,7 @@ http_interactions:
                 "object": "list",
                 "data": [
                   {
-                    "id": "card_7uAYrPqHgEr3Aq",
+                    "id": "card_BvAZBnSn7lMVBk",
                     "object": "card",
                     "address_city": null,
                     "address_country": null,
@@ -88,57 +90,59 @@ http_interactions:
                     "address_zip_check": null,
                     "brand": "Visa",
                     "country": "US",
-                    "customer": "cus_7uAY6wn5xerj9p",
+                    "customer": "cus_BvAZjzJlsjDpnv",
                     "cvc_check": "pass",
                     "dynamic_last4": null,
-                    "exp_month": 2,
-                    "exp_year": 2022,
-                    "fingerprint": "DCZbB0jNI6O56OrA",
+                    "exp_month": 1,
+                    "exp_year": 2019,
+                    "fingerprint": "22Vkbw4tr8xDhC2Q",
                     "funding": "credit",
-                    "last4": "4242",
+                    "last4": "0341",
                     "metadata": {},
-                    "name": "pat+other1@freelancing-gods.com",
+                    "name": null,
                     "tokenization_method": null
                   }
                 ],
                 "has_more": false,
                 "total_count": 1,
-                "url": "/v1/customers/cus_7uAY6wn5xerj9p/sources"
+                "url": "/v1/customers/cus_BvAZjzJlsjDpnv/sources"
               },
               "subscriptions": {
                 "object": "list",
                 "data": [
                   {
-                    "id": "sub_7uAis5aQud8ieg",
+                    "id": "sub_BvAZ7FeXDXY9JJ",
                     "object": "subscription",
                     "application_fee_percent": null,
+                    "billing": "charge_automatically",
                     "cancel_at_period_end": false,
                     "canceled_at": null,
-                    "created": 1455442861,
-                    "current_period_end": 1500025261,
-                    "current_period_start": 1497433261,
-                    "customer": "cus_7uAY6wn5xerj9p",
+                    "created": 1512871686,
+                    "current_period_end": 1515550092,
+                    "current_period_start": 1512871692,
+                    "customer": "cus_BvAZjzJlsjDpnv",
                     "discount": null,
                     "ended_at": null,
                     "items": {
                       "object": "list",
                       "data": [
                         {
-                          "id": "si_08UarPkKe4kFpYbdEayfvOca",
+                          "id": "si_BvAZvuqGwC2rO7",
                           "object": "subscription_item",
-                          "created": 1455442862,
+                          "created": 1512871687,
+                          "metadata": {},
                           "plan": {
                             "id": "drumknott",
                             "object": "plan",
                             "amount": 300,
-                            "created": 1452315012,
+                            "created": 1512871678,
                             "currency": "usd",
                             "interval": "month",
                             "interval_count": 1,
                             "livemode": false,
                             "metadata": {},
-                            "name": "Drumknott",
-                            "statement_descriptor": "Drumknott Search",
+                            "name": "Drumknott Test",
+                            "statement_descriptor": null,
                             "trial_period_days": null
                           },
                           "quantity": 1
@@ -146,7 +150,7 @@ http_interactions:
                       ],
                       "has_more": false,
                       "total_count": 1,
-                      "url": "/v1/subscription_items?subscription=sub_7uAis5aQud8ieg"
+                      "url": "/v1/subscription_items?subscription=sub_BvAZ7FeXDXY9JJ"
                     },
                     "livemode": false,
                     "metadata": {},
@@ -154,889 +158,52 @@ http_interactions:
                       "id": "drumknott",
                       "object": "plan",
                       "amount": 300,
-                      "created": 1452315012,
+                      "created": 1512871678,
                       "currency": "usd",
                       "interval": "month",
                       "interval_count": 1,
                       "livemode": false,
                       "metadata": {},
-                      "name": "Drumknott",
-                      "statement_descriptor": "Drumknott Search",
+                      "name": "Drumknott Test",
+                      "statement_descriptor": null,
                       "trial_period_days": null
                     },
                     "quantity": 1,
-                    "start": 1455442861,
-                    "status": "active",
+                    "start": 1512871686,
+                    "status": "past_due",
                     "tax_percent": null,
-                    "trial_end": null,
-                    "trial_start": null
-                  },
-                  {
-                    "id": "sub_7uAYiD1h8qVwiS",
-                    "object": "subscription",
-                    "application_fee_percent": null,
-                    "cancel_at_period_end": false,
-                    "canceled_at": null,
-                    "created": 1455442255,
-                    "current_period_end": 1500024655,
-                    "current_period_start": 1497432655,
-                    "customer": "cus_7uAY6wn5xerj9p",
-                    "discount": null,
-                    "ended_at": null,
-                    "items": {
-                      "object": "list",
-                      "data": [
-                        {
-                          "id": "si_08UuQ5kKe4kFpYbdrHJ74GQR",
-                          "object": "subscription_item",
-                          "created": 1455442256,
-                          "plan": {
-                            "id": "drumknott",
-                            "object": "plan",
-                            "amount": 300,
-                            "created": 1452315012,
-                            "currency": "usd",
-                            "interval": "month",
-                            "interval_count": 1,
-                            "livemode": false,
-                            "metadata": {},
-                            "name": "Drumknott",
-                            "statement_descriptor": "Drumknott Search",
-                            "trial_period_days": null
-                          },
-                          "quantity": 1
-                        }
-                      ],
-                      "has_more": false,
-                      "total_count": 1,
-                      "url": "/v1/subscription_items?subscription=sub_7uAYiD1h8qVwiS"
-                    },
-                    "livemode": false,
-                    "metadata": {},
-                    "plan": {
-                      "id": "drumknott",
-                      "object": "plan",
-                      "amount": 300,
-                      "created": 1452315012,
-                      "currency": "usd",
-                      "interval": "month",
-                      "interval_count": 1,
-                      "livemode": false,
-                      "metadata": {},
-                      "name": "Drumknott",
-                      "statement_descriptor": "Drumknott Search",
-                      "trial_period_days": null
-                    },
-                    "quantity": 1,
-                    "start": 1455442255,
-                    "status": "active",
-                    "tax_percent": null,
-                    "trial_end": null,
-                    "trial_start": null
-                  }
-                ],
-                "has_more": false,
-                "total_count": 2,
-                "url": "/v1/customers/cus_7uAY6wn5xerj9p/subscriptions"
-              }
-            },
-            {
-              "id": "cus_7uAUqwbIIRo3Zb",
-              "object": "customer",
-              "account_balance": 0,
-              "created": 1455442010,
-              "currency": "usd",
-              "default_source": "card_7uAUiqzYKiNXgH",
-              "delinquent": false,
-              "description": null,
-              "discount": null,
-              "email": "pat+other@freelancing-gods.com",
-              "livemode": false,
-              "metadata": {},
-              "shipping": null,
-              "sources": {
-                "object": "list",
-                "data": [
-                  {
-                    "id": "card_7uAUiqzYKiNXgH",
-                    "object": "card",
-                    "address_city": null,
-                    "address_country": null,
-                    "address_line1": null,
-                    "address_line1_check": null,
-                    "address_line2": null,
-                    "address_state": null,
-                    "address_zip": null,
-                    "address_zip_check": null,
-                    "brand": "Visa",
-                    "country": "US",
-                    "customer": "cus_7uAUqwbIIRo3Zb",
-                    "cvc_check": "pass",
-                    "dynamic_last4": null,
-                    "exp_month": 2,
-                    "exp_year": 2022,
-                    "fingerprint": "DCZbB0jNI6O56OrA",
-                    "funding": "credit",
-                    "last4": "4242",
-                    "metadata": {},
-                    "name": "pat+other@freelancing-gods.com",
-                    "tokenization_method": null
+                    "trial_end": 1512871692,
+                    "trial_start": 1512871686
                   }
                 ],
                 "has_more": false,
                 "total_count": 1,
-                "url": "/v1/customers/cus_7uAUqwbIIRo3Zb/sources"
-              },
-              "subscriptions": {
-                "object": "list",
-                "data": [
-                  {
-                    "id": "sub_7uAWcCrIQxSl9Q",
-                    "object": "subscription",
-                    "application_fee_percent": null,
-                    "cancel_at_period_end": false,
-                    "canceled_at": null,
-                    "created": 1455442146,
-                    "current_period_end": 1500024546,
-                    "current_period_start": 1497432546,
-                    "customer": "cus_7uAUqwbIIRo3Zb",
-                    "discount": null,
-                    "ended_at": null,
-                    "items": {
-                      "object": "list",
-                      "data": [
-                        {
-                          "id": "si_08UpBYkKe4kFpYbdq54NsY3c",
-                          "object": "subscription_item",
-                          "created": 1455442147,
-                          "plan": {
-                            "id": "drumknott",
-                            "object": "plan",
-                            "amount": 300,
-                            "created": 1452315012,
-                            "currency": "usd",
-                            "interval": "month",
-                            "interval_count": 1,
-                            "livemode": false,
-                            "metadata": {},
-                            "name": "Drumknott",
-                            "statement_descriptor": "Drumknott Search",
-                            "trial_period_days": null
-                          },
-                          "quantity": 1
-                        }
-                      ],
-                      "has_more": false,
-                      "total_count": 1,
-                      "url": "/v1/subscription_items?subscription=sub_7uAWcCrIQxSl9Q"
-                    },
-                    "livemode": false,
-                    "metadata": {},
-                    "plan": {
-                      "id": "drumknott",
-                      "object": "plan",
-                      "amount": 300,
-                      "created": 1452315012,
-                      "currency": "usd",
-                      "interval": "month",
-                      "interval_count": 1,
-                      "livemode": false,
-                      "metadata": {},
-                      "name": "Drumknott",
-                      "statement_descriptor": "Drumknott Search",
-                      "trial_period_days": null
-                    },
-                    "quantity": 1,
-                    "start": 1455442146,
-                    "status": "active",
-                    "tax_percent": null,
-                    "trial_end": null,
-                    "trial_start": null
-                  }
-                ],
-                "has_more": false,
-                "total_count": 1,
-                "url": "/v1/customers/cus_7uAUqwbIIRo3Zb/subscriptions"
-              }
-            },
-            {
-              "id": "cus_7gbxusFK7twfpI",
-              "object": "customer",
-              "account_balance": 0,
-              "created": 1452315201,
-              "currency": "usd",
-              "default_source": "card_7jCf1VrkRTh1r9",
-              "delinquent": false,
-              "description": null,
-              "discount": null,
-              "email": "pat@freelancing-gods.com",
-              "livemode": false,
-              "metadata": {},
-              "shipping": null,
-              "sources": {
-                "object": "list",
-                "data": [
-                  {
-                    "id": "card_7jCf1VrkRTh1r9",
-                    "object": "card",
-                    "address_city": null,
-                    "address_country": null,
-                    "address_line1": null,
-                    "address_line1_check": null,
-                    "address_line2": null,
-                    "address_state": null,
-                    "address_zip": null,
-                    "address_zip_check": null,
-                    "brand": "MasterCard",
-                    "country": "US",
-                    "customer": "cus_7gbxusFK7twfpI",
-                    "cvc_check": "pass",
-                    "dynamic_last4": null,
-                    "exp_month": 2,
-                    "exp_year": 2022,
-                    "fingerprint": "u2XCpbKocAAd1E7E",
-                    "funding": "credit",
-                    "last4": "4444",
-                    "metadata": {},
-                    "name": "pat@freelancing-gods.com",
-                    "tokenization_method": null
-                  },
-                  {
-                    "id": "card_7gc4SzvHAbSj8w",
-                    "object": "card",
-                    "address_city": null,
-                    "address_country": null,
-                    "address_line1": null,
-                    "address_line1_check": null,
-                    "address_line2": null,
-                    "address_state": null,
-                    "address_zip": null,
-                    "address_zip_check": null,
-                    "brand": "Visa",
-                    "country": "US",
-                    "customer": "cus_7gbxusFK7twfpI",
-                    "cvc_check": "pass",
-                    "dynamic_last4": null,
-                    "exp_month": 2,
-                    "exp_year": 2022,
-                    "fingerprint": "DCZbB0jNI6O56OrA",
-                    "funding": "credit",
-                    "last4": "4242",
-                    "metadata": {},
-                    "name": "pat@freelancing-gods.com",
-                    "tokenization_method": null
-                  }
-                ],
-                "has_more": false,
-                "total_count": 2,
-                "url": "/v1/customers/cus_7gbxusFK7twfpI/sources"
-              },
-              "subscriptions": {
-                "object": "list",
-                "data": [
-                  {
-                    "id": "sub_7uAKpXeXaeSZby",
-                    "object": "subscription",
-                    "application_fee_percent": null,
-                    "cancel_at_period_end": false,
-                    "canceled_at": null,
-                    "created": 1455441382,
-                    "current_period_end": 1500023782,
-                    "current_period_start": 1497431782,
-                    "customer": "cus_7gbxusFK7twfpI",
-                    "discount": null,
-                    "ended_at": null,
-                    "items": {
-                      "object": "list",
-                      "data": [
-                        {
-                          "id": "si_08UsiskKe4kFpYbduwe4YmR5",
-                          "object": "subscription_item",
-                          "created": 1455441383,
-                          "plan": {
-                            "id": "drumknott",
-                            "object": "plan",
-                            "amount": 300,
-                            "created": 1452315012,
-                            "currency": "usd",
-                            "interval": "month",
-                            "interval_count": 1,
-                            "livemode": false,
-                            "metadata": {},
-                            "name": "Drumknott",
-                            "statement_descriptor": "Drumknott Search",
-                            "trial_period_days": null
-                          },
-                          "quantity": 1
-                        }
-                      ],
-                      "has_more": false,
-                      "total_count": 1,
-                      "url": "/v1/subscription_items?subscription=sub_7uAKpXeXaeSZby"
-                    },
-                    "livemode": false,
-                    "metadata": {},
-                    "plan": {
-                      "id": "drumknott",
-                      "object": "plan",
-                      "amount": 300,
-                      "created": 1452315012,
-                      "currency": "usd",
-                      "interval": "month",
-                      "interval_count": 1,
-                      "livemode": false,
-                      "metadata": {},
-                      "name": "Drumknott",
-                      "statement_descriptor": "Drumknott Search",
-                      "trial_period_days": null
-                    },
-                    "quantity": 1,
-                    "start": 1455441382,
-                    "status": "active",
-                    "tax_percent": null,
-                    "trial_end": null,
-                    "trial_start": null
-                  },
-                  {
-                    "id": "sub_7gzofnsHv6g80C",
-                    "object": "subscription",
-                    "application_fee_percent": null,
-                    "cancel_at_period_end": false,
-                    "canceled_at": null,
-                    "created": 1452403945,
-                    "current_period_end": 1502343145,
-                    "current_period_start": 1499664745,
-                    "customer": "cus_7gbxusFK7twfpI",
-                    "discount": null,
-                    "ended_at": null,
-                    "items": {
-                      "object": "list",
-                      "data": [
-                        {
-                          "id": "si_08SjYMkKe4kFpYbdL0qNhjMj",
-                          "object": "subscription_item",
-                          "created": 1452403946,
-                          "plan": {
-                            "id": "drumknott",
-                            "object": "plan",
-                            "amount": 300,
-                            "created": 1452315012,
-                            "currency": "usd",
-                            "interval": "month",
-                            "interval_count": 1,
-                            "livemode": false,
-                            "metadata": {},
-                            "name": "Drumknott",
-                            "statement_descriptor": "Drumknott Search",
-                            "trial_period_days": null
-                          },
-                          "quantity": 1
-                        }
-                      ],
-                      "has_more": false,
-                      "total_count": 1,
-                      "url": "/v1/subscription_items?subscription=sub_7gzofnsHv6g80C"
-                    },
-                    "livemode": false,
-                    "metadata": {},
-                    "plan": {
-                      "id": "drumknott",
-                      "object": "plan",
-                      "amount": 300,
-                      "created": 1452315012,
-                      "currency": "usd",
-                      "interval": "month",
-                      "interval_count": 1,
-                      "livemode": false,
-                      "metadata": {},
-                      "name": "Drumknott",
-                      "statement_descriptor": "Drumknott Search",
-                      "trial_period_days": null
-                    },
-                    "quantity": 1,
-                    "start": 1452403945,
-                    "status": "active",
-                    "tax_percent": null,
-                    "trial_end": null,
-                    "trial_start": null
-                  },
-                  {
-                    "id": "sub_7gc4OokPzO5FeD",
-                    "object": "subscription",
-                    "application_fee_percent": null,
-                    "cancel_at_period_end": false,
-                    "canceled_at": null,
-                    "created": 1452315642,
-                    "current_period_end": 1502254842,
-                    "current_period_start": 1499576442,
-                    "customer": "cus_7gbxusFK7twfpI",
-                    "discount": null,
-                    "ended_at": null,
-                    "items": {
-                      "object": "list",
-                      "data": [
-                        {
-                          "id": "si_08SVzAkKe4kFpYbdPFz1IoPD",
-                          "object": "subscription_item",
-                          "created": 1452315642,
-                          "plan": {
-                            "id": "drumknott",
-                            "object": "plan",
-                            "amount": 300,
-                            "created": 1452315012,
-                            "currency": "usd",
-                            "interval": "month",
-                            "interval_count": 1,
-                            "livemode": false,
-                            "metadata": {},
-                            "name": "Drumknott",
-                            "statement_descriptor": "Drumknott Search",
-                            "trial_period_days": null
-                          },
-                          "quantity": 1
-                        }
-                      ],
-                      "has_more": false,
-                      "total_count": 1,
-                      "url": "/v1/subscription_items?subscription=sub_7gc4OokPzO5FeD"
-                    },
-                    "livemode": false,
-                    "metadata": {},
-                    "plan": {
-                      "id": "drumknott",
-                      "object": "plan",
-                      "amount": 300,
-                      "created": 1452315012,
-                      "currency": "usd",
-                      "interval": "month",
-                      "interval_count": 1,
-                      "livemode": false,
-                      "metadata": {},
-                      "name": "Drumknott",
-                      "statement_descriptor": "Drumknott Search",
-                      "trial_period_days": null
-                    },
-                    "quantity": 1,
-                    "start": 1452315642,
-                    "status": "active",
-                    "tax_percent": null,
-                    "trial_end": null,
-                    "trial_start": null
-                  }
-                ],
-                "has_more": false,
-                "total_count": 3,
-                "url": "/v1/customers/cus_7gbxusFK7twfpI/subscriptions"
-              }
-            },
-            {
-              "id": "cus_7IngbENhC2VWj2",
-              "object": "customer",
-              "account_balance": 0,
-              "created": 1446823488,
-              "currency": null,
-              "default_source": "card_7IngmhVkXZrbaH",
-              "delinquent": false,
-              "description": null,
-              "discount": null,
-              "email": "toby@email.com",
-              "livemode": false,
-              "metadata": {},
-              "shipping": null,
-              "sources": {
-                "object": "list",
-                "data": [
-                  {
-                    "id": "card_7IngmhVkXZrbaH",
-                    "object": "card",
-                    "address_city": null,
-                    "address_country": null,
-                    "address_line1": null,
-                    "address_line1_check": null,
-                    "address_line2": null,
-                    "address_state": null,
-                    "address_zip": null,
-                    "address_zip_check": null,
-                    "brand": "Visa",
-                    "country": "US",
-                    "customer": "cus_7IngbENhC2VWj2",
-                    "cvc_check": "pass",
-                    "dynamic_last4": null,
-                    "exp_month": 12,
-                    "exp_year": 2019,
-                    "fingerprint": "DCZbB0jNI6O56OrA",
-                    "funding": "credit",
-                    "last4": "4242",
-                    "metadata": {},
-                    "name": null,
-                    "tokenization_method": null
-                  }
-                ],
-                "has_more": false,
-                "total_count": 1,
-                "url": "/v1/customers/cus_7IngbENhC2VWj2/sources"
-              },
-              "subscriptions": {
-                "object": "list",
-                "data": [],
-                "has_more": false,
-                "total_count": 0,
-                "url": "/v1/customers/cus_7IngbENhC2VWj2/subscriptions"
-              }
-            },
-            {
-              "id": "cus_7IjgBu4e1mtQkj",
-              "object": "customer",
-              "account_balance": 0,
-              "created": 1446808590,
-              "currency": null,
-              "default_source": "card_7Ijg0nuDODI4jr",
-              "delinquent": false,
-              "description": null,
-              "discount": null,
-              "email": "toby@email.com",
-              "livemode": false,
-              "metadata": {},
-              "shipping": null,
-              "sources": {
-                "object": "list",
-                "data": [
-                  {
-                    "id": "card_7Ijg0nuDODI4jr",
-                    "object": "card",
-                    "address_city": null,
-                    "address_country": null,
-                    "address_line1": null,
-                    "address_line1_check": null,
-                    "address_line2": null,
-                    "address_state": null,
-                    "address_zip": null,
-                    "address_zip_check": null,
-                    "brand": "Visa",
-                    "country": "US",
-                    "customer": "cus_7IjgBu4e1mtQkj",
-                    "cvc_check": "pass",
-                    "dynamic_last4": null,
-                    "exp_month": 12,
-                    "exp_year": 2019,
-                    "fingerprint": "DCZbB0jNI6O56OrA",
-                    "funding": "credit",
-                    "last4": "4242",
-                    "metadata": {},
-                    "name": null,
-                    "tokenization_method": null
-                  }
-                ],
-                "has_more": false,
-                "total_count": 1,
-                "url": "/v1/customers/cus_7IjgBu4e1mtQkj/sources"
-              },
-              "subscriptions": {
-                "object": "list",
-                "data": [],
-                "has_more": false,
-                "total_count": 0,
-                "url": "/v1/customers/cus_7IjgBu4e1mtQkj/subscriptions"
-              }
-            },
-            {
-              "id": "cus_7IRO79TSVZ54el",
-              "object": "customer",
-              "account_balance": 0,
-              "created": 1446740586,
-              "currency": null,
-              "default_source": "card_7IRORskrl2Nyjj",
-              "delinquent": false,
-              "description": null,
-              "discount": null,
-              "email": "toby@email.com",
-              "livemode": false,
-              "metadata": {},
-              "shipping": null,
-              "sources": {
-                "object": "list",
-                "data": [
-                  {
-                    "id": "card_7IRORskrl2Nyjj",
-                    "object": "card",
-                    "address_city": null,
-                    "address_country": null,
-                    "address_line1": null,
-                    "address_line1_check": null,
-                    "address_line2": null,
-                    "address_state": null,
-                    "address_zip": null,
-                    "address_zip_check": null,
-                    "brand": "Visa",
-                    "country": "US",
-                    "customer": "cus_7IRO79TSVZ54el",
-                    "cvc_check": "pass",
-                    "dynamic_last4": null,
-                    "exp_month": 12,
-                    "exp_year": 2019,
-                    "fingerprint": "DCZbB0jNI6O56OrA",
-                    "funding": "credit",
-                    "last4": "4242",
-                    "metadata": {},
-                    "name": null,
-                    "tokenization_method": null
-                  }
-                ],
-                "has_more": false,
-                "total_count": 1,
-                "url": "/v1/customers/cus_7IRO79TSVZ54el/sources"
-              },
-              "subscriptions": {
-                "object": "list",
-                "data": [],
-                "has_more": false,
-                "total_count": 0,
-                "url": "/v1/customers/cus_7IRO79TSVZ54el/subscriptions"
-              }
-            },
-            {
-              "id": "cus_7IRJFLuqh9osvK",
-              "object": "customer",
-              "account_balance": 0,
-              "created": 1446740267,
-              "currency": null,
-              "default_source": "card_7IRJl3KUuWPmlo",
-              "delinquent": false,
-              "description": null,
-              "discount": null,
-              "email": "toby@email.com",
-              "livemode": false,
-              "metadata": {},
-              "shipping": null,
-              "sources": {
-                "object": "list",
-                "data": [
-                  {
-                    "id": "card_7IRJl3KUuWPmlo",
-                    "object": "card",
-                    "address_city": null,
-                    "address_country": null,
-                    "address_line1": null,
-                    "address_line1_check": null,
-                    "address_line2": null,
-                    "address_state": null,
-                    "address_zip": null,
-                    "address_zip_check": null,
-                    "brand": "Visa",
-                    "country": "US",
-                    "customer": "cus_7IRJFLuqh9osvK",
-                    "cvc_check": "pass",
-                    "dynamic_last4": null,
-                    "exp_month": 12,
-                    "exp_year": 2019,
-                    "fingerprint": "DCZbB0jNI6O56OrA",
-                    "funding": "credit",
-                    "last4": "4242",
-                    "metadata": {},
-                    "name": null,
-                    "tokenization_method": null
-                  }
-                ],
-                "has_more": false,
-                "total_count": 1,
-                "url": "/v1/customers/cus_7IRJFLuqh9osvK/sources"
-              },
-              "subscriptions": {
-                "object": "list",
-                "data": [],
-                "has_more": false,
-                "total_count": 0,
-                "url": "/v1/customers/cus_7IRJFLuqh9osvK/subscriptions"
-              }
-            },
-            {
-              "id": "cus_7IRDRgVeA8GsUU",
-              "object": "customer",
-              "account_balance": 0,
-              "created": 1446739913,
-              "currency": null,
-              "default_source": "card_7IRD8JkIKZGNyk",
-              "delinquent": false,
-              "description": null,
-              "discount": null,
-              "email": "toby@email.com",
-              "livemode": false,
-              "metadata": {},
-              "shipping": null,
-              "sources": {
-                "object": "list",
-                "data": [
-                  {
-                    "id": "card_7IRD8JkIKZGNyk",
-                    "object": "card",
-                    "address_city": null,
-                    "address_country": null,
-                    "address_line1": null,
-                    "address_line1_check": null,
-                    "address_line2": null,
-                    "address_state": null,
-                    "address_zip": null,
-                    "address_zip_check": null,
-                    "brand": "Visa",
-                    "country": "US",
-                    "customer": "cus_7IRDRgVeA8GsUU",
-                    "cvc_check": "pass",
-                    "dynamic_last4": null,
-                    "exp_month": 12,
-                    "exp_year": 2019,
-                    "fingerprint": "DCZbB0jNI6O56OrA",
-                    "funding": "credit",
-                    "last4": "4242",
-                    "metadata": {},
-                    "name": null,
-                    "tokenization_method": null
-                  }
-                ],
-                "has_more": false,
-                "total_count": 1,
-                "url": "/v1/customers/cus_7IRDRgVeA8GsUU/sources"
-              },
-              "subscriptions": {
-                "object": "list",
-                "data": [],
-                "has_more": false,
-                "total_count": 0,
-                "url": "/v1/customers/cus_7IRDRgVeA8GsUU/subscriptions"
-              }
-            },
-            {
-              "id": "cus_7IR6GF3ZqljL3p",
-              "object": "customer",
-              "account_balance": 0,
-              "created": 1446739518,
-              "currency": null,
-              "default_source": "card_7IR7cJ7QLwfeTg",
-              "delinquent": false,
-              "description": null,
-              "discount": null,
-              "email": "toby@email.com",
-              "livemode": false,
-              "metadata": {},
-              "shipping": null,
-              "sources": {
-                "object": "list",
-                "data": [
-                  {
-                    "id": "card_7IR7cJ7QLwfeTg",
-                    "object": "card",
-                    "address_city": null,
-                    "address_country": null,
-                    "address_line1": null,
-                    "address_line1_check": null,
-                    "address_line2": null,
-                    "address_state": null,
-                    "address_zip": null,
-                    "address_zip_check": null,
-                    "brand": "Visa",
-                    "country": "US",
-                    "customer": "cus_7IR6GF3ZqljL3p",
-                    "cvc_check": "pass",
-                    "dynamic_last4": null,
-                    "exp_month": 12,
-                    "exp_year": 2019,
-                    "fingerprint": "DCZbB0jNI6O56OrA",
-                    "funding": "credit",
-                    "last4": "4242",
-                    "metadata": {},
-                    "name": null,
-                    "tokenization_method": null
-                  }
-                ],
-                "has_more": false,
-                "total_count": 1,
-                "url": "/v1/customers/cus_7IR6GF3ZqljL3p/sources"
-              },
-              "subscriptions": {
-                "object": "list",
-                "data": [],
-                "has_more": false,
-                "total_count": 0,
-                "url": "/v1/customers/cus_7IR6GF3ZqljL3p/subscriptions"
-              }
-            },
-            {
-              "id": "cus_7IR5PR9Clj7GA5",
-              "object": "customer",
-              "account_balance": 0,
-              "created": 1446739435,
-              "currency": null,
-              "default_source": "card_7IR5J8vgad3yQx",
-              "delinquent": false,
-              "description": null,
-              "discount": null,
-              "email": "toby@email.com",
-              "livemode": false,
-              "metadata": {},
-              "shipping": null,
-              "sources": {
-                "object": "list",
-                "data": [
-                  {
-                    "id": "card_7IR5J8vgad3yQx",
-                    "object": "card",
-                    "address_city": null,
-                    "address_country": null,
-                    "address_line1": null,
-                    "address_line1_check": null,
-                    "address_line2": null,
-                    "address_state": null,
-                    "address_zip": null,
-                    "address_zip_check": null,
-                    "brand": "Visa",
-                    "country": "US",
-                    "customer": "cus_7IR5PR9Clj7GA5",
-                    "cvc_check": "pass",
-                    "dynamic_last4": null,
-                    "exp_month": 12,
-                    "exp_year": 2019,
-                    "fingerprint": "DCZbB0jNI6O56OrA",
-                    "funding": "credit",
-                    "last4": "4242",
-                    "metadata": {},
-                    "name": null,
-                    "tokenization_method": null
-                  }
-                ],
-                "has_more": false,
-                "total_count": 1,
-                "url": "/v1/customers/cus_7IR5PR9Clj7GA5/sources"
-              },
-              "subscriptions": {
-                "object": "list",
-                "data": [],
-                "has_more": false,
-                "total_count": 0,
-                "url": "/v1/customers/cus_7IR5PR9Clj7GA5/subscriptions"
+                "url": "/v1/customers/cus_BvAZjzJlsjDpnv/subscriptions"
               }
             }
           ],
-          "has_more": true,
+          "has_more": false,
           "url": "/v1/customers"
         }
     http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:23 GMT
+  recorded_at: Sun, 10 Dec 2017 02:14:18 GMT
 - request:
     method: delete
-    uri: https://api.stripe.com/v1/customers/cus_7uAY6wn5xerj9p
+    uri: https://api.stripe.com/v1/customers/cus_BvAZjzJlsjDpnv
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
+      - Stripe/v1 RubyBindings/3.9.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
+      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+        x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1049,7 +216,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 12 Jul 2017 22:49:24 GMT
+      - Sun, 10 Dec 2017 02:14:20 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -1062,574 +229,27 @@ http_interactions:
       - GET, POST, HEAD, OPTIONS, DELETE
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Expose-Headers:
+      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_B0vVKQjGabaQD2
+      - req_CrT04UgkijVmHC
       Stripe-Version:
-      - '2015-10-16'
+      - '2017-08-15'
       Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
+      - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
         {
           "deleted": true,
-          "id": "cus_7uAY6wn5xerj9p"
+          "id": "cus_BvAZjzJlsjDpnv"
         }
     http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:25 GMT
-- request:
-    method: delete
-    uri: https://api.stripe.com/v1/customers/cus_7uAUqwbIIRo3Zb
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
-      Authorization:
-      - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
-      Content-Type:
-      - application/x-www-form-urlencoded
-      X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Wed, 12 Jul 2017 22:49:25 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '52'
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Methods:
-      - GET, POST, HEAD, OPTIONS, DELETE
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Max-Age:
-      - '300'
-      Cache-Control:
-      - no-cache, no-store
-      Request-Id:
-      - req_B0vVbizNY2Kn7N
-      Stripe-Version:
-      - '2015-10-16'
-      Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
-    body:
-      encoding: UTF-8
-      string: |
-        {
-          "deleted": true,
-          "id": "cus_7uAUqwbIIRo3Zb"
-        }
-    http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:26 GMT
-- request:
-    method: delete
-    uri: https://api.stripe.com/v1/customers/cus_7gbxusFK7twfpI
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
-      Authorization:
-      - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
-      Content-Type:
-      - application/x-www-form-urlencoded
-      X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Wed, 12 Jul 2017 22:49:27 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '52'
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Methods:
-      - GET, POST, HEAD, OPTIONS, DELETE
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Max-Age:
-      - '300'
-      Cache-Control:
-      - no-cache, no-store
-      Request-Id:
-      - req_B0vVIWI8dm1vMd
-      Stripe-Version:
-      - '2015-10-16'
-      Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
-    body:
-      encoding: UTF-8
-      string: |
-        {
-          "deleted": true,
-          "id": "cus_7gbxusFK7twfpI"
-        }
-    http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:28 GMT
-- request:
-    method: delete
-    uri: https://api.stripe.com/v1/customers/cus_7IngbENhC2VWj2
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
-      Authorization:
-      - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
-      Content-Type:
-      - application/x-www-form-urlencoded
-      X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Wed, 12 Jul 2017 22:49:29 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '52'
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Methods:
-      - GET, POST, HEAD, OPTIONS, DELETE
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Max-Age:
-      - '300'
-      Cache-Control:
-      - no-cache, no-store
-      Request-Id:
-      - req_B0vVoCmYAE9kzc
-      Stripe-Version:
-      - '2015-10-16'
-      Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
-    body:
-      encoding: UTF-8
-      string: |
-        {
-          "deleted": true,
-          "id": "cus_7IngbENhC2VWj2"
-        }
-    http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:29 GMT
-- request:
-    method: delete
-    uri: https://api.stripe.com/v1/customers/cus_7IjgBu4e1mtQkj
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
-      Authorization:
-      - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
-      Content-Type:
-      - application/x-www-form-urlencoded
-      X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Wed, 12 Jul 2017 22:49:30 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '52'
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Methods:
-      - GET, POST, HEAD, OPTIONS, DELETE
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Max-Age:
-      - '300'
-      Cache-Control:
-      - no-cache, no-store
-      Request-Id:
-      - req_B0vVxZSzsgHiH1
-      Stripe-Version:
-      - '2015-10-16'
-      Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
-    body:
-      encoding: UTF-8
-      string: |
-        {
-          "deleted": true,
-          "id": "cus_7IjgBu4e1mtQkj"
-        }
-    http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:31 GMT
-- request:
-    method: delete
-    uri: https://api.stripe.com/v1/customers/cus_7IRO79TSVZ54el
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
-      Authorization:
-      - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
-      Content-Type:
-      - application/x-www-form-urlencoded
-      X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Wed, 12 Jul 2017 22:49:31 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '52'
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Methods:
-      - GET, POST, HEAD, OPTIONS, DELETE
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Max-Age:
-      - '300'
-      Cache-Control:
-      - no-cache, no-store
-      Request-Id:
-      - req_B0vVbnsvZeO1VV
-      Stripe-Version:
-      - '2015-10-16'
-      Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
-    body:
-      encoding: UTF-8
-      string: |
-        {
-          "deleted": true,
-          "id": "cus_7IRO79TSVZ54el"
-        }
-    http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:32 GMT
-- request:
-    method: delete
-    uri: https://api.stripe.com/v1/customers/cus_7IRJFLuqh9osvK
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
-      Authorization:
-      - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
-      Content-Type:
-      - application/x-www-form-urlencoded
-      X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Wed, 12 Jul 2017 22:49:32 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '52'
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Methods:
-      - GET, POST, HEAD, OPTIONS, DELETE
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Max-Age:
-      - '300'
-      Cache-Control:
-      - no-cache, no-store
-      Request-Id:
-      - req_B0vVpRAfyo7KEM
-      Stripe-Version:
-      - '2015-10-16'
-      Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
-    body:
-      encoding: UTF-8
-      string: |
-        {
-          "deleted": true,
-          "id": "cus_7IRJFLuqh9osvK"
-        }
-    http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:33 GMT
-- request:
-    method: delete
-    uri: https://api.stripe.com/v1/customers/cus_7IRDRgVeA8GsUU
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
-      Authorization:
-      - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
-      Content-Type:
-      - application/x-www-form-urlencoded
-      X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Wed, 12 Jul 2017 22:49:33 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '52'
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Methods:
-      - GET, POST, HEAD, OPTIONS, DELETE
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Max-Age:
-      - '300'
-      Cache-Control:
-      - no-cache, no-store
-      Request-Id:
-      - req_B0vVfoQYbXPrTi
-      Stripe-Version:
-      - '2015-10-16'
-      Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
-    body:
-      encoding: UTF-8
-      string: |
-        {
-          "deleted": true,
-          "id": "cus_7IRDRgVeA8GsUU"
-        }
-    http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:34 GMT
-- request:
-    method: delete
-    uri: https://api.stripe.com/v1/customers/cus_7IR6GF3ZqljL3p
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
-      Authorization:
-      - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
-      Content-Type:
-      - application/x-www-form-urlencoded
-      X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Wed, 12 Jul 2017 22:49:34 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '52'
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Methods:
-      - GET, POST, HEAD, OPTIONS, DELETE
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Max-Age:
-      - '300'
-      Cache-Control:
-      - no-cache, no-store
-      Request-Id:
-      - req_B0vVyIwfXVtDQY
-      Stripe-Version:
-      - '2015-10-16'
-      Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
-    body:
-      encoding: UTF-8
-      string: |
-        {
-          "deleted": true,
-          "id": "cus_7IR6GF3ZqljL3p"
-        }
-    http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:35 GMT
-- request:
-    method: delete
-    uri: https://api.stripe.com/v1/customers/cus_7IR5PR9Clj7GA5
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
-      Authorization:
-      - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
-      Content-Type:
-      - application/x-www-form-urlencoded
-      X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Wed, 12 Jul 2017 22:49:36 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '52'
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Methods:
-      - GET, POST, HEAD, OPTIONS, DELETE
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Max-Age:
-      - '300'
-      Cache-Control:
-      - no-cache, no-store
-      Request-Id:
-      - req_B0vVkFDFf5OFuS
-      Stripe-Version:
-      - '2015-10-16'
-      Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
-    body:
-      encoding: UTF-8
-      string: |
-        {
-          "deleted": true,
-          "id": "cus_7IR5PR9Clj7GA5"
-        }
-    http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:37 GMT
+  recorded_at: Sun, 10 Dec 2017 02:14:20 GMT
 - request:
     method: get
     uri: https://api.stripe.com/v1/coupons
@@ -1638,15 +258,15 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
+      - Stripe/v1 RubyBindings/3.9.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
+      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+        x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1659,7 +279,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 12 Jul 2017 22:49:37 GMT
+      - Sun, 10 Dec 2017 02:14:21 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -1672,16 +292,18 @@ http_interactions:
       - GET, POST, HEAD, OPTIONS, DELETE
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Expose-Headers:
+      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_B0vVuPDFUsPj22
+      - req_KJ240Lm7mbuIT3
       Stripe-Version:
-      - '2015-10-16'
+      - '2017-08-15'
       Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
+      - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
@@ -1692,7 +314,7 @@ http_interactions:
           "url": "/v1/coupons"
         }
     http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:38 GMT
+  recorded_at: Sun, 10 Dec 2017 02:14:21 GMT
 - request:
     method: get
     uri: https://api.stripe.com/v1/plans
@@ -1701,15 +323,15 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
+      - Stripe/v1 RubyBindings/3.9.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
+      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+        x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1722,11 +344,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 12 Jul 2017 22:49:38 GMT
+      - Sun, 10 Dec 2017 02:14:22 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '760'
+      - '420'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -1735,16 +357,18 @@ http_interactions:
       - GET, POST, HEAD, OPTIONS, DELETE
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Expose-Headers:
+      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_B0vVrvXVyriegf
+      - req_9DzWbQg5RTG42G
       Stripe-Version:
-      - '2015-10-16'
+      - '2017-08-15'
       Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
+      - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
@@ -1755,27 +379,13 @@ http_interactions:
               "id": "drumknott",
               "object": "plan",
               "amount": 300,
-              "created": 1452315012,
+              "created": 1512871678,
               "currency": "usd",
               "interval": "month",
               "interval_count": 1,
               "livemode": false,
               "metadata": {},
-              "name": "Drumknott",
-              "statement_descriptor": "Drumknott Search",
-              "trial_period_days": null
-            },
-            {
-              "id": "test",
-              "object": "plan",
-              "amount": 10000,
-              "created": 1445464329,
-              "currency": "aud",
-              "interval": "month",
-              "interval_count": 1,
-              "livemode": false,
-              "metadata": {},
-              "name": "RSpec Test",
+              "name": "Drumknott Test",
               "statement_descriptor": null,
               "trial_period_days": null
             }
@@ -1784,7 +394,7 @@ http_interactions:
           "url": "/v1/plans"
         }
     http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:39 GMT
+  recorded_at: Sun, 10 Dec 2017 02:14:23 GMT
 - request:
     method: delete
     uri: https://api.stripe.com/v1/plans/drumknott
@@ -1793,15 +403,15 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
+      - Stripe/v1 RubyBindings/3.9.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
+      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+        x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1814,7 +424,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 12 Jul 2017 22:49:39 GMT
+      - Sun, 10 Dec 2017 02:14:24 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -1827,16 +437,18 @@ http_interactions:
       - GET, POST, HEAD, OPTIONS, DELETE
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Expose-Headers:
+      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_B0vVYlp3Prr91j
+      - req_wxHt41qx0A2nem
       Stripe-Version:
-      - '2015-10-16'
+      - '2017-08-15'
       Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
+      - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
@@ -1845,68 +457,7 @@ http_interactions:
           "id": "drumknott"
         }
     http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:40 GMT
-- request:
-    method: delete
-    uri: https://api.stripe.com/v1/plans/test
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
-      Authorization:
-      - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
-      Content-Type:
-      - application/x-www-form-urlencoded
-      X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Wed, 12 Jul 2017 22:49:40 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '38'
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Methods:
-      - GET, POST, HEAD, OPTIONS, DELETE
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Max-Age:
-      - '300'
-      Cache-Control:
-      - no-cache, no-store
-      Request-Id:
-      - req_B0vVyJelKaWCdi
-      Stripe-Version:
-      - '2015-10-16'
-      Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
-    body:
-      encoding: UTF-8
-      string: |
-        {
-          "deleted": true,
-          "id": "test"
-        }
-    http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:41 GMT
+  recorded_at: Sun, 10 Dec 2017 02:14:24 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/plans
@@ -1915,15 +466,15 @@ http_interactions:
       string: id=drumknott&amount=300&currency=USD&interval=month&interval_count=1&name=Drumknott+Test
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
+      - Stripe/v1 RubyBindings/3.9.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
+      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+        x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -1936,7 +487,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 12 Jul 2017 22:49:41 GMT
+      - Sun, 10 Dec 2017 02:14:25 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -1949,16 +500,18 @@ http_interactions:
       - GET, POST, HEAD, OPTIONS, DELETE
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Expose-Headers:
+      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_B0vVomoO0ameOv
+      - req_LeeKVyItYClhDE
       Stripe-Version:
-      - '2015-10-16'
+      - '2017-08-15'
       Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
+      - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
@@ -1966,7 +519,7 @@ http_interactions:
           "id": "drumknott",
           "object": "plan",
           "amount": 300,
-          "created": 1499899781,
+          "created": 1512872065,
           "currency": "usd",
           "interval": "month",
           "interval_count": 1,
@@ -1977,24 +530,24 @@ http_interactions:
           "trial_period_days": null
         }
     http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:42 GMT
+  recorded_at: Sun, 10 Dec 2017 02:14:25 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/customers
     body:
       encoding: UTF-8
-      string: email=search0020%40drumknottsearch.com
+      string: email=search0007%40drumknottsearch.com
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
+      - Stripe/v1 RubyBindings/3.9.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
+      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+        x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2007,7 +560,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 12 Jul 2017 22:49:42 GMT
+      - Sun, 10 Dec 2017 02:14:27 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -2020,30 +573,32 @@ http_interactions:
       - GET, POST, HEAD, OPTIONS, DELETE
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Expose-Headers:
+      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_B0vV6FqzYcqgX2
+      - req_VUkupAEjGaKe0X
       Stripe-Version:
-      - '2015-10-16'
+      - '2017-08-15'
       Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
+      - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
         {
-          "id": "cus_B0vVIANGuxSpD4",
+          "id": "cus_BvAgvKLSvhURpm",
           "object": "customer",
           "account_balance": 0,
-          "created": 1499899782,
+          "created": 1512872066,
           "currency": null,
           "default_source": null,
           "delinquent": false,
           "description": null,
           "discount": null,
-          "email": "search0020@drumknottsearch.com",
+          "email": "search0007@drumknottsearch.com",
           "livemode": false,
           "metadata": {},
           "shipping": null,
@@ -2052,18 +607,18 @@ http_interactions:
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/customers/cus_B0vVIANGuxSpD4/sources"
+            "url": "/v1/customers/cus_BvAgvKLSvhURpm/sources"
           },
           "subscriptions": {
             "object": "list",
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/customers/cus_B0vVIANGuxSpD4/subscriptions"
+            "url": "/v1/customers/cus_BvAgvKLSvhURpm/subscriptions"
           }
         }
     http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:43 GMT
+  recorded_at: Sun, 10 Dec 2017 02:14:27 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/tokens
@@ -2072,15 +627,15 @@ http_interactions:
       string: card[number]=4242424242424242&card[exp_month]=1&card[exp_year]=2019&card[cvc]=123
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
+      - Stripe/v1 RubyBindings/3.9.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
+      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+        x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2093,11 +648,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 12 Jul 2017 22:49:43 GMT
+      - Sun, 10 Dec 2017 02:14:28 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '757'
+      - '759'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -2106,24 +661,26 @@ http_interactions:
       - GET, POST, HEAD, OPTIONS, DELETE
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Expose-Headers:
+      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_B0vVsdnlpgNuAT
+      - req_EHlvIahfGHqppr
       Stripe-Version:
-      - '2015-10-16'
+      - '2017-08-15'
       Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
+      - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_B0vVAvZQIfXYLR",
+          "id": "tok_BvAglAhqbS3Goo",
           "object": "token",
           "card": {
-            "id": "card_B0vVVo1tIYHwGX",
+            "id": "card_BvAgCsumcXVmSi",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -2146,31 +703,31 @@ http_interactions:
             "name": null,
             "tokenization_method": null
           },
-          "client_ip": "1.152.97.9",
-          "created": 1499899783,
+          "client_ip": "58.7.133.233",
+          "created": 1512872068,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:44 GMT
+  recorded_at: Sun, 10 Dec 2017 02:14:28 GMT
 - request:
     method: post
-    uri: https://api.stripe.com/v1/customers/cus_B0vVIANGuxSpD4/sources
+    uri: https://api.stripe.com/v1/customers/cus_BvAgvKLSvhURpm/sources
     body:
       encoding: UTF-8
-      string: source=tok_B0vVAvZQIfXYLR
+      string: source=tok_BvAglAhqbS3Goo
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
+      - Stripe/v1 RubyBindings/3.9.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
+      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+        x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2183,7 +740,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 12 Jul 2017 22:49:44 GMT
+      - Sun, 10 Dec 2017 02:14:29 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -2196,21 +753,23 @@ http_interactions:
       - GET, POST, HEAD, OPTIONS, DELETE
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Expose-Headers:
+      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_B0vVhVpaqIacrz
+      - req_KLglZdutLdNtHn
       Stripe-Version:
-      - '2015-10-16'
+      - '2017-08-15'
       Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
+      - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
         {
-          "id": "card_B0vVVo1tIYHwGX",
+          "id": "card_BvAgCsumcXVmSi",
           "object": "card",
           "address_city": null,
           "address_country": null,
@@ -2222,7 +781,7 @@ http_interactions:
           "address_zip_check": null,
           "brand": "Visa",
           "country": "US",
-          "customer": "cus_B0vVIANGuxSpD4",
+          "customer": "cus_BvAgvKLSvhURpm",
           "cvc_check": "pass",
           "dynamic_last4": null,
           "exp_month": 1,
@@ -2235,24 +794,24 @@ http_interactions:
           "tokenization_method": null
         }
     http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:45 GMT
+  recorded_at: Sun, 10 Dec 2017 02:14:30 GMT
 - request:
     method: get
-    uri: https://api.stripe.com/v1/customers/cus_B0vVIANGuxSpD4
+    uri: https://api.stripe.com/v1/customers/cus_BvAgvKLSvhURpm
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
+      - Stripe/v1 RubyBindings/3.9.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
+      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+        x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2265,7 +824,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 12 Jul 2017 22:49:45 GMT
+      - Sun, 10 Dec 2017 02:14:30 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -2278,30 +837,32 @@ http_interactions:
       - GET, POST, HEAD, OPTIONS, DELETE
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Expose-Headers:
+      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_B0vVvV2HfZ9NB1
+      - req_U9sIgldOtH8hSb
       Stripe-Version:
-      - '2015-10-16'
+      - '2017-08-15'
       Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
+      - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
         {
-          "id": "cus_B0vVIANGuxSpD4",
+          "id": "cus_BvAgvKLSvhURpm",
           "object": "customer",
           "account_balance": 0,
-          "created": 1499899782,
+          "created": 1512872066,
           "currency": null,
-          "default_source": "card_B0vVVo1tIYHwGX",
+          "default_source": "card_BvAgCsumcXVmSi",
           "delinquent": false,
           "description": null,
           "discount": null,
-          "email": "search0020@drumknottsearch.com",
+          "email": "search0007@drumknottsearch.com",
           "livemode": false,
           "metadata": {},
           "shipping": null,
@@ -2309,7 +870,7 @@ http_interactions:
             "object": "list",
             "data": [
               {
-                "id": "card_B0vVVo1tIYHwGX",
+                "id": "card_BvAgCsumcXVmSi",
                 "object": "card",
                 "address_city": null,
                 "address_country": null,
@@ -2321,7 +882,7 @@ http_interactions:
                 "address_zip_check": null,
                 "brand": "Visa",
                 "country": "US",
-                "customer": "cus_B0vVIANGuxSpD4",
+                "customer": "cus_BvAgvKLSvhURpm",
                 "cvc_check": "pass",
                 "dynamic_last4": null,
                 "exp_month": 1,
@@ -2336,35 +897,35 @@ http_interactions:
             ],
             "has_more": false,
             "total_count": 1,
-            "url": "/v1/customers/cus_B0vVIANGuxSpD4/sources"
+            "url": "/v1/customers/cus_BvAgvKLSvhURpm/sources"
           },
           "subscriptions": {
             "object": "list",
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/customers/cus_B0vVIANGuxSpD4/subscriptions"
+            "url": "/v1/customers/cus_BvAgvKLSvhURpm/subscriptions"
           }
         }
     http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:46 GMT
+  recorded_at: Sun, 10 Dec 2017 02:14:31 GMT
 - request:
     method: get
-    uri: https://api.stripe.com/v1/customers/cus_B0vVIANGuxSpD4
+    uri: https://api.stripe.com/v1/customers/cus_BvAgvKLSvhURpm
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
+      - Stripe/v1 RubyBindings/3.9.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
+      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+        x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2377,7 +938,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 12 Jul 2017 22:49:46 GMT
+      - Sun, 10 Dec 2017 02:14:32 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -2390,30 +951,32 @@ http_interactions:
       - GET, POST, HEAD, OPTIONS, DELETE
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Expose-Headers:
+      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_B0vV840GUpX5Fg
+      - req_30Bcat1JNIYAsr
       Stripe-Version:
-      - '2015-10-16'
+      - '2017-08-15'
       Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
+      - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
         {
-          "id": "cus_B0vVIANGuxSpD4",
+          "id": "cus_BvAgvKLSvhURpm",
           "object": "customer",
           "account_balance": 0,
-          "created": 1499899782,
+          "created": 1512872066,
           "currency": null,
-          "default_source": "card_B0vVVo1tIYHwGX",
+          "default_source": "card_BvAgCsumcXVmSi",
           "delinquent": false,
           "description": null,
           "discount": null,
-          "email": "search0020@drumknottsearch.com",
+          "email": "search0007@drumknottsearch.com",
           "livemode": false,
           "metadata": {},
           "shipping": null,
@@ -2421,7 +984,7 @@ http_interactions:
             "object": "list",
             "data": [
               {
-                "id": "card_B0vVVo1tIYHwGX",
+                "id": "card_BvAgCsumcXVmSi",
                 "object": "card",
                 "address_city": null,
                 "address_country": null,
@@ -2433,7 +996,7 @@ http_interactions:
                 "address_zip_check": null,
                 "brand": "Visa",
                 "country": "US",
-                "customer": "cus_B0vVIANGuxSpD4",
+                "customer": "cus_BvAgvKLSvhURpm",
                 "cvc_check": "pass",
                 "dynamic_last4": null,
                 "exp_month": 1,
@@ -2448,35 +1011,35 @@ http_interactions:
             ],
             "has_more": false,
             "total_count": 1,
-            "url": "/v1/customers/cus_B0vVIANGuxSpD4/sources"
+            "url": "/v1/customers/cus_BvAgvKLSvhURpm/sources"
           },
           "subscriptions": {
             "object": "list",
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/customers/cus_B0vVIANGuxSpD4/subscriptions"
+            "url": "/v1/customers/cus_BvAgvKLSvhURpm/subscriptions"
           }
         }
     http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:47 GMT
+  recorded_at: Sun, 10 Dec 2017 02:14:32 GMT
 - request:
     method: post
-    uri: https://api.stripe.com/v1/customers/cus_B0vVIANGuxSpD4/subscriptions
+    uri: https://api.stripe.com/v1/customers/cus_BvAgvKLSvhURpm/subscriptions
     body:
       encoding: UTF-8
       string: plan=drumknott
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
+      - Stripe/v1 RubyBindings/3.9.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
+      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+        x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2489,11 +1052,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 12 Jul 2017 22:49:48 GMT
+      - Sun, 10 Dec 2017 02:14:34 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1542'
+      - '1593'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -2502,43 +1065,47 @@ http_interactions:
       - GET, POST, HEAD, OPTIONS, DELETE
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Expose-Headers:
+      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_B0vVpsSLCkxHJ7
+      - req_I6tQFu6a43EPvN
       Stripe-Version:
-      - '2015-10-16'
+      - '2017-08-15'
       Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
+      - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
         {
-          "id": "sub_B0vVpZ6bqn0xDs",
+          "id": "sub_BvAgyE0a6EwoDH",
           "object": "subscription",
           "application_fee_percent": null,
+          "billing": "charge_automatically",
           "cancel_at_period_end": false,
           "canceled_at": null,
-          "created": 1499899787,
-          "current_period_end": 1502578187,
-          "current_period_start": 1499899787,
-          "customer": "cus_B0vVIANGuxSpD4",
+          "created": 1512872073,
+          "current_period_end": 1515550473,
+          "current_period_start": 1512872073,
+          "customer": "cus_BvAgvKLSvhURpm",
           "discount": null,
           "ended_at": null,
           "items": {
             "object": "list",
             "data": [
               {
-                "id": "si_0AeteRkKe4kFpYbdbonhh6gn",
+                "id": "si_BvAgQ6nDVmrg8I",
                 "object": "subscription_item",
-                "created": 1499899788,
+                "created": 1512872073,
+                "metadata": {},
                 "plan": {
                   "id": "drumknott",
                   "object": "plan",
                   "amount": 300,
-                  "created": 1499899781,
+                  "created": 1512872065,
                   "currency": "usd",
                   "interval": "month",
                   "interval_count": 1,
@@ -2553,7 +1120,7 @@ http_interactions:
             ],
             "has_more": false,
             "total_count": 1,
-            "url": "/v1/subscription_items?subscription=sub_B0vVpZ6bqn0xDs"
+            "url": "/v1/subscription_items?subscription=sub_BvAgyE0a6EwoDH"
           },
           "livemode": false,
           "metadata": {},
@@ -2561,7 +1128,7 @@ http_interactions:
             "id": "drumknott",
             "object": "plan",
             "amount": 300,
-            "created": 1499899781,
+            "created": 1512872065,
             "currency": "usd",
             "interval": "month",
             "interval_count": 1,
@@ -2572,31 +1139,31 @@ http_interactions:
             "trial_period_days": null
           },
           "quantity": 1,
-          "start": 1499899787,
+          "start": 1512872073,
           "status": "active",
           "tax_percent": null,
           "trial_end": null,
           "trial_start": null
         }
     http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:49 GMT
+  recorded_at: Sun, 10 Dec 2017 02:14:34 GMT
 - request:
     method: get
-    uri: https://api.stripe.com/v1/customers/cus_B0vVIANGuxSpD4
+    uri: https://api.stripe.com/v1/customers/cus_BvAgvKLSvhURpm
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
+      - Stripe/v1 RubyBindings/3.9.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
+      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+        x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2609,11 +1176,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 12 Jul 2017 22:49:49 GMT
+      - Sun, 10 Dec 2017 02:14:35 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '3313'
+      - '3376'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -2622,30 +1189,32 @@ http_interactions:
       - GET, POST, HEAD, OPTIONS, DELETE
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Expose-Headers:
+      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_B0vVnnfBCZ3I7r
+      - req_t4pkSllEHNZmgW
       Stripe-Version:
-      - '2015-10-16'
+      - '2017-08-15'
       Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
+      - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
         {
-          "id": "cus_B0vVIANGuxSpD4",
+          "id": "cus_BvAgvKLSvhURpm",
           "object": "customer",
           "account_balance": 0,
-          "created": 1499899782,
+          "created": 1512872066,
           "currency": "usd",
-          "default_source": "card_B0vVVo1tIYHwGX",
+          "default_source": "card_BvAgCsumcXVmSi",
           "delinquent": false,
           "description": null,
           "discount": null,
-          "email": "search0020@drumknottsearch.com",
+          "email": "search0007@drumknottsearch.com",
           "livemode": false,
           "metadata": {},
           "shipping": null,
@@ -2653,7 +1222,7 @@ http_interactions:
             "object": "list",
             "data": [
               {
-                "id": "card_B0vVVo1tIYHwGX",
+                "id": "card_BvAgCsumcXVmSi",
                 "object": "card",
                 "address_city": null,
                 "address_country": null,
@@ -2665,7 +1234,7 @@ http_interactions:
                 "address_zip_check": null,
                 "brand": "Visa",
                 "country": "US",
-                "customer": "cus_B0vVIANGuxSpD4",
+                "customer": "cus_BvAgvKLSvhURpm",
                 "cvc_check": "pass",
                 "dynamic_last4": null,
                 "exp_month": 1,
@@ -2680,35 +1249,37 @@ http_interactions:
             ],
             "has_more": false,
             "total_count": 1,
-            "url": "/v1/customers/cus_B0vVIANGuxSpD4/sources"
+            "url": "/v1/customers/cus_BvAgvKLSvhURpm/sources"
           },
           "subscriptions": {
             "object": "list",
             "data": [
               {
-                "id": "sub_B0vVpZ6bqn0xDs",
+                "id": "sub_BvAgyE0a6EwoDH",
                 "object": "subscription",
                 "application_fee_percent": null,
+                "billing": "charge_automatically",
                 "cancel_at_period_end": false,
                 "canceled_at": null,
-                "created": 1499899787,
-                "current_period_end": 1502578187,
-                "current_period_start": 1499899787,
-                "customer": "cus_B0vVIANGuxSpD4",
+                "created": 1512872073,
+                "current_period_end": 1515550473,
+                "current_period_start": 1512872073,
+                "customer": "cus_BvAgvKLSvhURpm",
                 "discount": null,
                 "ended_at": null,
                 "items": {
                   "object": "list",
                   "data": [
                     {
-                      "id": "si_0AeteRkKe4kFpYbdbonhh6gn",
+                      "id": "si_BvAgQ6nDVmrg8I",
                       "object": "subscription_item",
-                      "created": 1499899788,
+                      "created": 1512872073,
+                      "metadata": {},
                       "plan": {
                         "id": "drumknott",
                         "object": "plan",
                         "amount": 300,
-                        "created": 1499899781,
+                        "created": 1512872065,
                         "currency": "usd",
                         "interval": "month",
                         "interval_count": 1,
@@ -2723,7 +1294,7 @@ http_interactions:
                   ],
                   "has_more": false,
                   "total_count": 1,
-                  "url": "/v1/subscription_items?subscription=sub_B0vVpZ6bqn0xDs"
+                  "url": "/v1/subscription_items?subscription=sub_BvAgyE0a6EwoDH"
                 },
                 "livemode": false,
                 "metadata": {},
@@ -2731,7 +1302,7 @@ http_interactions:
                   "id": "drumknott",
                   "object": "plan",
                   "amount": 300,
-                  "created": 1499899781,
+                  "created": 1512872065,
                   "currency": "usd",
                   "interval": "month",
                   "interval_count": 1,
@@ -2742,7 +1313,7 @@ http_interactions:
                   "trial_period_days": null
                 },
                 "quantity": 1,
-                "start": 1499899787,
+                "start": 1512872073,
                 "status": "active",
                 "tax_percent": null,
                 "trial_end": null,
@@ -2751,28 +1322,28 @@ http_interactions:
             ],
             "has_more": false,
             "total_count": 1,
-            "url": "/v1/customers/cus_B0vVIANGuxSpD4/subscriptions"
+            "url": "/v1/customers/cus_BvAgvKLSvhURpm/subscriptions"
           }
         }
     http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:50 GMT
+  recorded_at: Sun, 10 Dec 2017 02:14:36 GMT
 - request:
     method: get
-    uri: https://api.stripe.com/v1/customers/cus_B0vVIANGuxSpD4/subscriptions/sub_B0vVpZ6bqn0xDs
+    uri: https://api.stripe.com/v1/customers/cus_BvAgvKLSvhURpm/subscriptions/sub_BvAgyE0a6EwoDH
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
+      - Stripe/v1 RubyBindings/3.9.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
+      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+        x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2785,11 +1356,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 12 Jul 2017 22:49:50 GMT
+      - Sun, 10 Dec 2017 02:14:37 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1542'
+      - '1593'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -2798,43 +1369,47 @@ http_interactions:
       - GET, POST, HEAD, OPTIONS, DELETE
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Expose-Headers:
+      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_B0vVOGyxyGlAHY
+      - req_0CdrVGnxd77bhp
       Stripe-Version:
-      - '2015-10-16'
+      - '2017-08-15'
       Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
+      - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
         {
-          "id": "sub_B0vVpZ6bqn0xDs",
+          "id": "sub_BvAgyE0a6EwoDH",
           "object": "subscription",
           "application_fee_percent": null,
+          "billing": "charge_automatically",
           "cancel_at_period_end": false,
           "canceled_at": null,
-          "created": 1499899787,
-          "current_period_end": 1502578187,
-          "current_period_start": 1499899787,
-          "customer": "cus_B0vVIANGuxSpD4",
+          "created": 1512872073,
+          "current_period_end": 1515550473,
+          "current_period_start": 1512872073,
+          "customer": "cus_BvAgvKLSvhURpm",
           "discount": null,
           "ended_at": null,
           "items": {
             "object": "list",
             "data": [
               {
-                "id": "si_0AeteRkKe4kFpYbdbonhh6gn",
+                "id": "si_BvAgQ6nDVmrg8I",
                 "object": "subscription_item",
-                "created": 1499899788,
+                "created": 1512872073,
+                "metadata": {},
                 "plan": {
                   "id": "drumknott",
                   "object": "plan",
                   "amount": 300,
-                  "created": 1499899781,
+                  "created": 1512872065,
                   "currency": "usd",
                   "interval": "month",
                   "interval_count": 1,
@@ -2849,7 +1424,7 @@ http_interactions:
             ],
             "has_more": false,
             "total_count": 1,
-            "url": "/v1/subscription_items?subscription=sub_B0vVpZ6bqn0xDs"
+            "url": "/v1/subscription_items?subscription=sub_BvAgyE0a6EwoDH"
           },
           "livemode": false,
           "metadata": {},
@@ -2857,7 +1432,7 @@ http_interactions:
             "id": "drumknott",
             "object": "plan",
             "amount": 300,
-            "created": 1499899781,
+            "created": 1512872065,
             "currency": "usd",
             "interval": "month",
             "interval_count": 1,
@@ -2868,31 +1443,31 @@ http_interactions:
             "trial_period_days": null
           },
           "quantity": 1,
-          "start": 1499899787,
+          "start": 1512872073,
           "status": "active",
           "tax_percent": null,
           "trial_end": null,
           "trial_start": null
         }
     http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:51 GMT
+  recorded_at: Sun, 10 Dec 2017 02:14:37 GMT
 - request:
     method: delete
-    uri: https://api.stripe.com/v1/subscriptions/sub_B0vVpZ6bqn0xDs
+    uri: https://api.stripe.com/v1/subscriptions/sub_BvAgyE0a6EwoDH
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
+      - Stripe/v1 RubyBindings/3.9.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
+      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+        x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -2905,11 +1480,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 12 Jul 2017 22:49:51 GMT
+      - Sun, 10 Dec 2017 02:14:38 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1556'
+      - '1607'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -2918,43 +1493,47 @@ http_interactions:
       - GET, POST, HEAD, OPTIONS, DELETE
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Expose-Headers:
+      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_B0vVcDwjzT5qjd
+      - req_ZDoqCwF146vbNa
       Stripe-Version:
-      - '2015-10-16'
+      - '2017-08-15'
       Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
+      - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
         {
-          "id": "sub_B0vVpZ6bqn0xDs",
+          "id": "sub_BvAgyE0a6EwoDH",
           "object": "subscription",
           "application_fee_percent": null,
+          "billing": "charge_automatically",
           "cancel_at_period_end": false,
-          "canceled_at": 1499899791,
-          "created": 1499899787,
-          "current_period_end": 1502578187,
-          "current_period_start": 1499899787,
-          "customer": "cus_B0vVIANGuxSpD4",
+          "canceled_at": 1512872078,
+          "created": 1512872073,
+          "current_period_end": 1515550473,
+          "current_period_start": 1512872073,
+          "customer": "cus_BvAgvKLSvhURpm",
           "discount": null,
-          "ended_at": 1499899791,
+          "ended_at": 1512872078,
           "items": {
             "object": "list",
             "data": [
               {
-                "id": "si_0AeteRkKe4kFpYbdbonhh6gn",
+                "id": "si_BvAgQ6nDVmrg8I",
                 "object": "subscription_item",
-                "created": 1499899788,
+                "created": 1512872073,
+                "metadata": {},
                 "plan": {
                   "id": "drumknott",
                   "object": "plan",
                   "amount": 300,
-                  "created": 1499899781,
+                  "created": 1512872065,
                   "currency": "usd",
                   "interval": "month",
                   "interval_count": 1,
@@ -2969,7 +1548,7 @@ http_interactions:
             ],
             "has_more": false,
             "total_count": 1,
-            "url": "/v1/subscription_items?subscription=sub_B0vVpZ6bqn0xDs"
+            "url": "/v1/subscription_items?subscription=sub_BvAgyE0a6EwoDH"
           },
           "livemode": false,
           "metadata": {},
@@ -2977,7 +1556,7 @@ http_interactions:
             "id": "drumknott",
             "object": "plan",
             "amount": 300,
-            "created": 1499899781,
+            "created": 1512872065,
             "currency": "usd",
             "interval": "month",
             "interval_count": 1,
@@ -2988,14 +1567,14 @@ http_interactions:
             "trial_period_days": null
           },
           "quantity": 1,
-          "start": 1499899787,
+          "start": 1512872073,
           "status": "canceled",
           "tax_percent": null,
           "trial_end": null,
           "trial_start": null
         }
     http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:52 GMT
+  recorded_at: Sun, 10 Dec 2017 02:14:38 GMT
 - request:
     method: get
     uri: https://api.stripe.com/v1/events
@@ -3004,15 +1583,15 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
+      - Stripe/v1 RubyBindings/3.9.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
+      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+        x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -3025,11 +1604,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 12 Jul 2017 22:49:52 GMT
+      - Sun, 10 Dec 2017 02:14:39 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '22573'
+      - '23504'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -3038,16 +1617,18 @@ http_interactions:
       - GET, POST, HEAD, OPTIONS, DELETE
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Expose-Headers:
+      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_B0vVqCRAesW7F8
+      - req_9PhtFSD1uS1YgF
       Stripe-Version:
-      - '2015-10-16'
+      - '2017-08-15'
       Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
+      - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
@@ -3055,35 +1636,37 @@ http_interactions:
           "object": "list",
           "data": [
             {
-              "id": "evt_B0vVrIkNHEUxMb",
+              "id": "evt_BvAgqLQZkPrEDB",
               "object": "event",
-              "api_version": "2015-10-16",
-              "created": 1499899791,
+              "api_version": "2017-08-15",
+              "created": 1512872078,
               "data": {
                 "object": {
-                  "id": "sub_B0vVpZ6bqn0xDs",
+                  "id": "sub_BvAgyE0a6EwoDH",
                   "object": "subscription",
                   "application_fee_percent": null,
+                  "billing": "charge_automatically",
                   "cancel_at_period_end": false,
-                  "canceled_at": 1499899791,
-                  "created": 1499899787,
-                  "current_period_end": 1502578187,
-                  "current_period_start": 1499899787,
-                  "customer": "cus_B0vVIANGuxSpD4",
+                  "canceled_at": 1512872078,
+                  "created": 1512872073,
+                  "current_period_end": 1515550473,
+                  "current_period_start": 1512872073,
+                  "customer": "cus_BvAgvKLSvhURpm",
                   "discount": null,
-                  "ended_at": 1499899791,
+                  "ended_at": 1512872078,
                   "items": {
                     "object": "list",
                     "data": [
                       {
-                        "id": "si_0AeteRkKe4kFpYbdbonhh6gn",
+                        "id": "si_BvAgQ6nDVmrg8I",
                         "object": "subscription_item",
-                        "created": 1499899788,
+                        "created": 1512872073,
+                        "metadata": {},
                         "plan": {
                           "id": "drumknott",
                           "object": "plan",
                           "amount": 300,
-                          "created": 1499899781,
+                          "created": 1512872065,
                           "currency": "usd",
                           "interval": "month",
                           "interval_count": 1,
@@ -3098,7 +1681,7 @@ http_interactions:
                     ],
                     "has_more": false,
                     "total_count": 1,
-                    "url": "/v1/subscription_items?subscription=sub_B0vVpZ6bqn0xDs"
+                    "url": "/v1/subscription_items?subscription=sub_BvAgyE0a6EwoDH"
                   },
                   "livemode": false,
                   "metadata": {},
@@ -3106,7 +1689,7 @@ http_interactions:
                     "id": "drumknott",
                     "object": "plan",
                     "amount": 300,
-                    "created": 1499899781,
+                    "created": 1512872065,
                     "currency": "usd",
                     "interval": "month",
                     "interval_count": 1,
@@ -3117,7 +1700,7 @@ http_interactions:
                     "trial_period_days": null
                   },
                   "quantity": 1,
-                  "start": 1499899787,
+                  "start": 1512872073,
                   "status": "canceled",
                   "tax_percent": null,
                   "trial_end": null,
@@ -3126,39 +1709,44 @@ http_interactions:
               },
               "livemode": false,
               "pending_webhooks": 0,
-              "request": "req_B0vVcDwjzT5qjd",
+              "request": {
+                "id": "req_ZDoqCwF146vbNa",
+                "idempotency_key": null
+              },
               "type": "customer.subscription.deleted"
             },
             {
-              "id": "evt_B0vVyLmzfHIop9",
+              "id": "evt_BvAgicTIO9tCU5",
               "object": "event",
-              "api_version": "2015-10-16",
-              "created": 1499899788,
+              "api_version": "2017-08-15",
+              "created": 1512872074,
               "data": {
                 "object": {
-                  "id": "sub_B0vVpZ6bqn0xDs",
+                  "id": "sub_BvAgyE0a6EwoDH",
                   "object": "subscription",
                   "application_fee_percent": null,
+                  "billing": "charge_automatically",
                   "cancel_at_period_end": false,
                   "canceled_at": null,
-                  "created": 1499899787,
-                  "current_period_end": 1502578187,
-                  "current_period_start": 1499899787,
-                  "customer": "cus_B0vVIANGuxSpD4",
+                  "created": 1512872073,
+                  "current_period_end": 1515550473,
+                  "current_period_start": 1512872073,
+                  "customer": "cus_BvAgvKLSvhURpm",
                   "discount": null,
                   "ended_at": null,
                   "items": {
                     "object": "list",
                     "data": [
                       {
-                        "id": "si_0AeteRkKe4kFpYbdbonhh6gn",
+                        "id": "si_BvAgQ6nDVmrg8I",
                         "object": "subscription_item",
-                        "created": 1499899788,
+                        "created": 1512872073,
+                        "metadata": {},
                         "plan": {
                           "id": "drumknott",
                           "object": "plan",
                           "amount": 300,
-                          "created": 1499899781,
+                          "created": 1512872065,
                           "currency": "usd",
                           "interval": "month",
                           "interval_count": 1,
@@ -3173,7 +1761,7 @@ http_interactions:
                     ],
                     "has_more": false,
                     "total_count": 1,
-                    "url": "/v1/subscription_items?subscription=sub_B0vVpZ6bqn0xDs"
+                    "url": "/v1/subscription_items?subscription=sub_BvAgyE0a6EwoDH"
                   },
                   "livemode": false,
                   "metadata": {},
@@ -3181,7 +1769,7 @@ http_interactions:
                     "id": "drumknott",
                     "object": "plan",
                     "amount": 300,
-                    "created": 1499899781,
+                    "created": 1512872065,
                     "currency": "usd",
                     "interval": "month",
                     "interval_count": 1,
@@ -3192,7 +1780,7 @@ http_interactions:
                     "trial_period_days": null
                   },
                   "quantity": 1,
-                  "start": 1499899787,
+                  "start": 1512872073,
                   "status": "active",
                   "tax_percent": null,
                   "trial_end": null,
@@ -3201,34 +1789,37 @@ http_interactions:
               },
               "livemode": false,
               "pending_webhooks": 0,
-              "request": "req_B0vVpsSLCkxHJ7",
+              "request": {
+                "id": "req_I6tQFu6a43EPvN",
+                "idempotency_key": null
+              },
               "type": "customer.subscription.created"
             },
             {
-              "id": "evt_B0vVUXyy0lYwBd",
+              "id": "evt_BvAgaI815b776x",
               "object": "event",
-              "api_version": "2015-10-16",
-              "created": 1499899788,
+              "api_version": "2017-08-15",
+              "created": 1512872074,
               "data": {
                 "object": {
-                  "id": "ch_B0vVncedoIAQsq",
+                  "id": "ch_BvAgPeBnkbnHH8",
                   "object": "charge",
                   "amount": 300,
                   "amount_refunded": 0,
                   "application": null,
                   "application_fee": null,
-                  "balance_transaction": "txn_B0vVP6jzegMv8u",
+                  "balance_transaction": "txn_BvAg6pxmFEKhH4",
                   "captured": true,
-                  "created": 1499899787,
+                  "created": 1512872073,
                   "currency": "usd",
-                  "customer": "cus_B0vVIANGuxSpD4",
+                  "customer": "cus_BvAgvKLSvhURpm",
                   "description": null,
                   "destination": null,
                   "dispute": null,
                   "failure_code": null,
                   "failure_message": null,
                   "fraud_details": {},
-                  "invoice": "in_B0vVn5PFCCxdZS",
+                  "invoice": "in_BvAg0YJXC779iJ",
                   "livemode": false,
                   "metadata": {},
                   "on_behalf_of": null,
@@ -3249,12 +1840,12 @@ http_interactions:
                     "data": [],
                     "has_more": false,
                     "total_count": 0,
-                    "url": "/v1/charges/ch_B0vVncedoIAQsq/refunds"
+                    "url": "/v1/charges/ch_BvAgPeBnkbnHH8/refunds"
                   },
                   "review": null,
                   "shipping": null,
                   "source": {
-                    "id": "card_B0vVVo1tIYHwGX",
+                    "id": "card_BvAgCsumcXVmSi",
                     "object": "card",
                     "address_city": null,
                     "address_country": null,
@@ -3266,7 +1857,7 @@ http_interactions:
                     "address_zip_check": null,
                     "brand": "Visa",
                     "country": "US",
-                    "customer": "cus_B0vVIANGuxSpD4",
+                    "customer": "cus_BvAgvKLSvhURpm",
                     "cvc_check": "pass",
                     "dynamic_last4": null,
                     "exp_month": 1,
@@ -3286,27 +1877,31 @@ http_interactions:
               },
               "livemode": false,
               "pending_webhooks": 0,
-              "request": "req_B0vVpsSLCkxHJ7",
+              "request": {
+                "id": "req_I6tQFu6a43EPvN",
+                "idempotency_key": null
+              },
               "type": "charge.succeeded"
             },
             {
-              "id": "evt_B0vVfQ6Soqv44K",
+              "id": "evt_BvAgYgHd8V1FDX",
               "object": "event",
-              "api_version": "2015-10-16",
-              "created": 1499899788,
+              "api_version": "2017-08-15",
+              "created": 1512872074,
               "data": {
                 "object": {
-                  "id": "in_B0vVn5PFCCxdZS",
+                  "id": "in_BvAg0YJXC779iJ",
                   "object": "invoice",
                   "amount_due": 300,
                   "application_fee": null,
                   "attempt_count": 0,
                   "attempted": true,
-                  "charge": "ch_B0vVncedoIAQsq",
+                  "billing": "charge_automatically",
+                  "charge": "ch_BvAgPeBnkbnHH8",
                   "closed": true,
                   "currency": "usd",
-                  "customer": "cus_B0vVIANGuxSpD4",
-                  "date": 1499899787,
+                  "customer": "cus_BvAgvKLSvhURpm",
+                  "date": 1512872073,
                   "description": null,
                   "discount": null,
                   "ending_balance": 0,
@@ -3315,7 +1910,7 @@ http_interactions:
                     "object": "list",
                     "data": [
                       {
-                        "id": "sub_B0vVpZ6bqn0xDs",
+                        "id": "sub_BvAgyE0a6EwoDH",
                         "object": "line_item",
                         "amount": 300,
                         "currency": "usd",
@@ -3324,14 +1919,14 @@ http_interactions:
                         "livemode": false,
                         "metadata": {},
                         "period": {
-                          "start": 1499899787,
-                          "end": 1502578187
+                          "start": 1512872073,
+                          "end": 1515550473
                         },
                         "plan": {
                           "id": "drumknott",
                           "object": "plan",
                           "amount": 300,
-                          "created": 1499899781,
+                          "created": 1512872065,
                           "currency": "usd",
                           "interval": "month",
                           "interval_count": 1,
@@ -3344,24 +1939,25 @@ http_interactions:
                         "proration": false,
                         "quantity": 1,
                         "subscription": null,
-                        "subscription_item": "si_0AeteRkKe4kFpYbdbonhh6gn",
+                        "subscription_item": "si_BvAgQ6nDVmrg8I",
                         "type": "subscription"
                       }
                     ],
                     "has_more": false,
                     "total_count": 1,
-                    "url": "/v1/invoices/in_B0vVn5PFCCxdZS/lines"
+                    "url": "/v1/invoices/in_BvAg0YJXC779iJ/lines"
                   },
                   "livemode": false,
                   "metadata": {},
                   "next_payment_attempt": null,
+                  "number": "51f54f4849-0001",
                   "paid": true,
-                  "period_end": 1499899787,
-                  "period_start": 1499899787,
+                  "period_end": 1512872073,
+                  "period_start": 1512872073,
                   "receipt_number": null,
                   "starting_balance": 0,
                   "statement_descriptor": null,
-                  "subscription": "sub_B0vVpZ6bqn0xDs",
+                  "subscription": "sub_BvAgyE0a6EwoDH",
                   "subtotal": 300,
                   "tax": null,
                   "tax_percent": null,
@@ -3371,27 +1967,31 @@ http_interactions:
               },
               "livemode": false,
               "pending_webhooks": 0,
-              "request": "req_B0vVpsSLCkxHJ7",
+              "request": {
+                "id": "req_I6tQFu6a43EPvN",
+                "idempotency_key": null
+              },
               "type": "invoice.payment_succeeded"
             },
             {
-              "id": "evt_B0vV341uUILafA",
+              "id": "evt_BvAgSuMPeHcsei",
               "object": "event",
-              "api_version": "2015-10-16",
-              "created": 1499899788,
+              "api_version": "2017-08-15",
+              "created": 1512872074,
               "data": {
                 "object": {
-                  "id": "in_B0vVn5PFCCxdZS",
+                  "id": "in_BvAg0YJXC779iJ",
                   "object": "invoice",
                   "amount_due": 300,
                   "application_fee": null,
                   "attempt_count": 0,
                   "attempted": true,
-                  "charge": "ch_B0vVncedoIAQsq",
+                  "billing": "charge_automatically",
+                  "charge": "ch_BvAgPeBnkbnHH8",
                   "closed": true,
                   "currency": "usd",
-                  "customer": "cus_B0vVIANGuxSpD4",
-                  "date": 1499899787,
+                  "customer": "cus_BvAgvKLSvhURpm",
+                  "date": 1512872073,
                   "description": null,
                   "discount": null,
                   "ending_balance": 0,
@@ -3400,7 +2000,7 @@ http_interactions:
                     "object": "list",
                     "data": [
                       {
-                        "id": "sub_B0vVpZ6bqn0xDs",
+                        "id": "sub_BvAgyE0a6EwoDH",
                         "object": "line_item",
                         "amount": 300,
                         "currency": "usd",
@@ -3409,14 +2009,14 @@ http_interactions:
                         "livemode": false,
                         "metadata": {},
                         "period": {
-                          "start": 1499899787,
-                          "end": 1502578187
+                          "start": 1512872073,
+                          "end": 1515550473
                         },
                         "plan": {
                           "id": "drumknott",
                           "object": "plan",
                           "amount": 300,
-                          "created": 1499899781,
+                          "created": 1512872065,
                           "currency": "usd",
                           "interval": "month",
                           "interval_count": 1,
@@ -3429,24 +2029,25 @@ http_interactions:
                         "proration": false,
                         "quantity": 1,
                         "subscription": null,
-                        "subscription_item": "si_0AeteRkKe4kFpYbdbonhh6gn",
+                        "subscription_item": "si_BvAgQ6nDVmrg8I",
                         "type": "subscription"
                       }
                     ],
                     "has_more": false,
                     "total_count": 1,
-                    "url": "/v1/invoices/in_B0vVn5PFCCxdZS/lines"
+                    "url": "/v1/invoices/in_BvAg0YJXC779iJ/lines"
                   },
                   "livemode": false,
                   "metadata": {},
                   "next_payment_attempt": null,
+                  "number": "51f54f4849-0001",
                   "paid": true,
-                  "period_end": 1499899787,
-                  "period_start": 1499899787,
+                  "period_end": 1512872073,
+                  "period_start": 1512872073,
                   "receipt_number": null,
                   "starting_balance": 0,
                   "statement_descriptor": null,
-                  "subscription": "sub_B0vVpZ6bqn0xDs",
+                  "subscription": "sub_BvAgyE0a6EwoDH",
                   "subtotal": 300,
                   "tax": null,
                   "tax_percent": null,
@@ -3456,26 +2057,29 @@ http_interactions:
               },
               "livemode": false,
               "pending_webhooks": 0,
-              "request": "req_B0vVpsSLCkxHJ7",
+              "request": {
+                "id": "req_I6tQFu6a43EPvN",
+                "idempotency_key": null
+              },
               "type": "invoice.created"
             },
             {
-              "id": "evt_B0vVHH7WxHPGiN",
+              "id": "evt_BvAgDlC2A17Zqq",
               "object": "event",
-              "api_version": "2015-10-16",
-              "created": 1499899788,
+              "api_version": "2017-08-15",
+              "created": 1512872074,
               "data": {
                 "object": {
-                  "id": "cus_B0vVIANGuxSpD4",
+                  "id": "cus_BvAgvKLSvhURpm",
                   "object": "customer",
                   "account_balance": 0,
-                  "created": 1499899782,
+                  "created": 1512872066,
                   "currency": "usd",
-                  "default_source": "card_B0vVVo1tIYHwGX",
+                  "default_source": "card_BvAgCsumcXVmSi",
                   "delinquent": false,
                   "description": null,
                   "discount": null,
-                  "email": "search0020@drumknottsearch.com",
+                  "email": "search0007@drumknottsearch.com",
                   "livemode": false,
                   "metadata": {},
                   "shipping": null,
@@ -3483,7 +2087,7 @@ http_interactions:
                     "object": "list",
                     "data": [
                       {
-                        "id": "card_B0vVVo1tIYHwGX",
+                        "id": "card_BvAgCsumcXVmSi",
                         "object": "card",
                         "address_city": null,
                         "address_country": null,
@@ -3495,7 +2099,7 @@ http_interactions:
                         "address_zip_check": null,
                         "brand": "Visa",
                         "country": "US",
-                        "customer": "cus_B0vVIANGuxSpD4",
+                        "customer": "cus_BvAgvKLSvhURpm",
                         "cvc_check": "pass",
                         "dynamic_last4": null,
                         "exp_month": 1,
@@ -3510,35 +2114,37 @@ http_interactions:
                     ],
                     "has_more": false,
                     "total_count": 1,
-                    "url": "/v1/customers/cus_B0vVIANGuxSpD4/sources"
+                    "url": "/v1/customers/cus_BvAgvKLSvhURpm/sources"
                   },
                   "subscriptions": {
                     "object": "list",
                     "data": [
                       {
-                        "id": "sub_B0vVpZ6bqn0xDs",
+                        "id": "sub_BvAgyE0a6EwoDH",
                         "object": "subscription",
                         "application_fee_percent": null,
+                        "billing": "charge_automatically",
                         "cancel_at_period_end": false,
                         "canceled_at": null,
-                        "created": 1499899787,
-                        "current_period_end": 1502578187,
-                        "current_period_start": 1499899787,
-                        "customer": "cus_B0vVIANGuxSpD4",
+                        "created": 1512872073,
+                        "current_period_end": 1515550473,
+                        "current_period_start": 1512872073,
+                        "customer": "cus_BvAgvKLSvhURpm",
                         "discount": null,
                         "ended_at": null,
                         "items": {
                           "object": "list",
                           "data": [
                             {
-                              "id": "si_0AeteRkKe4kFpYbdbonhh6gn",
+                              "id": "si_BvAgQ6nDVmrg8I",
                               "object": "subscription_item",
-                              "created": 1499899788,
+                              "created": 1512872073,
+                              "metadata": {},
                               "plan": {
                                 "id": "drumknott",
                                 "object": "plan",
                                 "amount": 300,
-                                "created": 1499899781,
+                                "created": 1512872065,
                                 "currency": "usd",
                                 "interval": "month",
                                 "interval_count": 1,
@@ -3553,7 +2159,7 @@ http_interactions:
                           ],
                           "has_more": false,
                           "total_count": 1,
-                          "url": "/v1/subscription_items?subscription=sub_B0vVpZ6bqn0xDs"
+                          "url": "/v1/subscription_items?subscription=sub_BvAgyE0a6EwoDH"
                         },
                         "livemode": false,
                         "metadata": {},
@@ -3561,7 +2167,7 @@ http_interactions:
                           "id": "drumknott",
                           "object": "plan",
                           "amount": 300,
-                          "created": 1499899781,
+                          "created": 1512872065,
                           "currency": "usd",
                           "interval": "month",
                           "interval_count": 1,
@@ -3572,7 +2178,7 @@ http_interactions:
                           "trial_period_days": null
                         },
                         "quantity": 1,
-                        "start": 1499899787,
+                        "start": 1512872073,
                         "status": "active",
                         "tax_percent": null,
                         "trial_end": null,
@@ -3581,7 +2187,7 @@ http_interactions:
                     ],
                     "has_more": false,
                     "total_count": 1,
-                    "url": "/v1/customers/cus_B0vVIANGuxSpD4/subscriptions"
+                    "url": "/v1/customers/cus_BvAgvKLSvhURpm/subscriptions"
                   }
                 },
                 "previous_attributes": {
@@ -3590,17 +2196,20 @@ http_interactions:
               },
               "livemode": false,
               "pending_webhooks": 0,
-              "request": "req_B0vVpsSLCkxHJ7",
+              "request": {
+                "id": "req_I6tQFu6a43EPvN",
+                "idempotency_key": null
+              },
               "type": "customer.updated"
             },
             {
-              "id": "evt_B0vVmCehIxecNJ",
+              "id": "evt_BvAgebolwWh6rU",
               "object": "event",
-              "api_version": "2015-10-16",
-              "created": 1499899784,
+              "api_version": "2017-08-15",
+              "created": 1512872069,
               "data": {
                 "object": {
-                  "id": "card_B0vVVo1tIYHwGX",
+                  "id": "card_BvAgCsumcXVmSi",
                   "object": "card",
                   "address_city": null,
                   "address_country": null,
@@ -3612,7 +2221,7 @@ http_interactions:
                   "address_zip_check": null,
                   "brand": "Visa",
                   "country": "US",
-                  "customer": "cus_B0vVIANGuxSpD4",
+                  "customer": "cus_BvAgvKLSvhURpm",
                   "cvc_check": "pass",
                   "dynamic_last4": null,
                   "exp_month": 1,
@@ -3627,26 +2236,29 @@ http_interactions:
               },
               "livemode": false,
               "pending_webhooks": 0,
-              "request": "req_B0vVhVpaqIacrz",
+              "request": {
+                "id": "req_KLglZdutLdNtHn",
+                "idempotency_key": null
+              },
               "type": "customer.source.created"
             },
             {
-              "id": "evt_B0vVhMXZDw9Kn8",
+              "id": "evt_BvAgBBZfuiMM5S",
               "object": "event",
-              "api_version": "2015-10-16",
-              "created": 1499899784,
+              "api_version": "2017-08-15",
+              "created": 1512872069,
               "data": {
                 "object": {
-                  "id": "cus_B0vVIANGuxSpD4",
+                  "id": "cus_BvAgvKLSvhURpm",
                   "object": "customer",
                   "account_balance": 0,
-                  "created": 1499899782,
+                  "created": 1512872066,
                   "currency": null,
-                  "default_source": "card_B0vVVo1tIYHwGX",
+                  "default_source": "card_BvAgCsumcXVmSi",
                   "delinquent": false,
                   "description": null,
                   "discount": null,
-                  "email": "search0020@drumknottsearch.com",
+                  "email": "search0007@drumknottsearch.com",
                   "livemode": false,
                   "metadata": {},
                   "shipping": null,
@@ -3654,7 +2266,7 @@ http_interactions:
                     "object": "list",
                     "data": [
                       {
-                        "id": "card_B0vVVo1tIYHwGX",
+                        "id": "card_BvAgCsumcXVmSi",
                         "object": "card",
                         "address_city": null,
                         "address_country": null,
@@ -3666,7 +2278,7 @@ http_interactions:
                         "address_zip_check": null,
                         "brand": "Visa",
                         "country": "US",
-                        "customer": "cus_B0vVIANGuxSpD4",
+                        "customer": "cus_BvAgvKLSvhURpm",
                         "cvc_check": "pass",
                         "dynamic_last4": null,
                         "exp_month": 1,
@@ -3681,14 +2293,14 @@ http_interactions:
                     ],
                     "has_more": false,
                     "total_count": 1,
-                    "url": "/v1/customers/cus_B0vVIANGuxSpD4/sources"
+                    "url": "/v1/customers/cus_BvAgvKLSvhURpm/sources"
                   },
                   "subscriptions": {
                     "object": "list",
                     "data": [],
                     "has_more": false,
                     "total_count": 0,
-                    "url": "/v1/customers/cus_B0vVIANGuxSpD4/subscriptions"
+                    "url": "/v1/customers/cus_BvAgvKLSvhURpm/subscriptions"
                   }
                 },
                 "previous_attributes": {
@@ -3697,26 +2309,29 @@ http_interactions:
               },
               "livemode": false,
               "pending_webhooks": 0,
-              "request": "req_B0vVhVpaqIacrz",
+              "request": {
+                "id": "req_KLglZdutLdNtHn",
+                "idempotency_key": null
+              },
               "type": "customer.updated"
             },
             {
-              "id": "evt_B0vVXWmStxZhFf",
+              "id": "evt_BvAgLzbnFvWuzU",
               "object": "event",
-              "api_version": "2015-10-16",
-              "created": 1499899782,
+              "api_version": "2017-08-15",
+              "created": 1512872066,
               "data": {
                 "object": {
-                  "id": "cus_B0vVIANGuxSpD4",
+                  "id": "cus_BvAgvKLSvhURpm",
                   "object": "customer",
                   "account_balance": 0,
-                  "created": 1499899782,
+                  "created": 1512872066,
                   "currency": null,
                   "default_source": null,
                   "delinquent": false,
                   "description": null,
                   "discount": null,
-                  "email": "search0020@drumknottsearch.com",
+                  "email": "search0007@drumknottsearch.com",
                   "livemode": false,
                   "metadata": {},
                   "shipping": null,
@@ -3725,33 +2340,36 @@ http_interactions:
                     "data": [],
                     "has_more": false,
                     "total_count": 0,
-                    "url": "/v1/customers/cus_B0vVIANGuxSpD4/sources"
+                    "url": "/v1/customers/cus_BvAgvKLSvhURpm/sources"
                   },
                   "subscriptions": {
                     "object": "list",
                     "data": [],
                     "has_more": false,
                     "total_count": 0,
-                    "url": "/v1/customers/cus_B0vVIANGuxSpD4/subscriptions"
+                    "url": "/v1/customers/cus_BvAgvKLSvhURpm/subscriptions"
                   }
                 }
               },
               "livemode": false,
               "pending_webhooks": 0,
-              "request": "req_B0vV6FqzYcqgX2",
+              "request": {
+                "id": "req_VUkupAEjGaKe0X",
+                "idempotency_key": null
+              },
               "type": "customer.created"
             },
             {
-              "id": "evt_B0vVdzgt412L0Q",
+              "id": "evt_BvAgg4srd842kh",
               "object": "event",
-              "api_version": "2015-10-16",
-              "created": 1499899781,
+              "api_version": "2017-08-15",
+              "created": 1512872065,
               "data": {
                 "object": {
                   "id": "drumknott",
                   "object": "plan",
                   "amount": 300,
-                  "created": 1499899781,
+                  "created": 1512872065,
                   "currency": "usd",
                   "interval": "month",
                   "interval_count": 1,
@@ -3764,7 +2382,10 @@ http_interactions:
               },
               "livemode": false,
               "pending_webhooks": 0,
-              "request": "req_B0vVomoO0ameOv",
+              "request": {
+                "id": "req_LeeKVyItYClhDE",
+                "idempotency_key": null
+              },
               "type": "plan.created"
             }
           ],
@@ -3772,24 +2393,24 @@ http_interactions:
           "url": "/v1/events"
         }
     http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:53 GMT
+  recorded_at: Sun, 10 Dec 2017 02:14:40 GMT
 - request:
     method: get
-    uri: https://api.stripe.com/v1/events/evt_B0vVrIkNHEUxMb
+    uri: https://api.stripe.com/v1/events/evt_BvAgqLQZkPrEDB
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.0.2
+      - Stripe/v1 RubyBindings/3.9.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.0.2","lang":"ruby","lang_version":"2.4.1 p111 (2017-03-22)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017;
-        root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64","hostname":"pat.local"}'
+      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+        x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -3802,11 +2423,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 12 Jul 2017 22:49:53 GMT
+      - Sun, 10 Dec 2017 02:14:41 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '2069'
+      - '2173'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -3815,49 +2436,53 @@ http_interactions:
       - GET, POST, HEAD, OPTIONS, DELETE
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Expose-Headers:
+      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_B0vVmqeBH1jsDh
+      - req_I5Syuhd0OW4CeX
       Stripe-Version:
-      - '2015-10-16'
+      - '2017-08-15'
       Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
+      - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
         {
-          "id": "evt_B0vVrIkNHEUxMb",
+          "id": "evt_BvAgqLQZkPrEDB",
           "object": "event",
-          "api_version": "2015-10-16",
-          "created": 1499899791,
+          "api_version": "2017-08-15",
+          "created": 1512872078,
           "data": {
             "object": {
-              "id": "sub_B0vVpZ6bqn0xDs",
+              "id": "sub_BvAgyE0a6EwoDH",
               "object": "subscription",
               "application_fee_percent": null,
+              "billing": "charge_automatically",
               "cancel_at_period_end": false,
-              "canceled_at": 1499899791,
-              "created": 1499899787,
-              "current_period_end": 1502578187,
-              "current_period_start": 1499899787,
-              "customer": "cus_B0vVIANGuxSpD4",
+              "canceled_at": 1512872078,
+              "created": 1512872073,
+              "current_period_end": 1515550473,
+              "current_period_start": 1512872073,
+              "customer": "cus_BvAgvKLSvhURpm",
               "discount": null,
-              "ended_at": 1499899791,
+              "ended_at": 1512872078,
               "items": {
                 "object": "list",
                 "data": [
                   {
-                    "id": "si_0AeteRkKe4kFpYbdbonhh6gn",
+                    "id": "si_BvAgQ6nDVmrg8I",
                     "object": "subscription_item",
-                    "created": 1499899788,
+                    "created": 1512872073,
+                    "metadata": {},
                     "plan": {
                       "id": "drumknott",
                       "object": "plan",
                       "amount": 300,
-                      "created": 1499899781,
+                      "created": 1512872065,
                       "currency": "usd",
                       "interval": "month",
                       "interval_count": 1,
@@ -3872,7 +2497,7 @@ http_interactions:
                 ],
                 "has_more": false,
                 "total_count": 1,
-                "url": "/v1/subscription_items?subscription=sub_B0vVpZ6bqn0xDs"
+                "url": "/v1/subscription_items?subscription=sub_BvAgyE0a6EwoDH"
               },
               "livemode": false,
               "metadata": {},
@@ -3880,7 +2505,7 @@ http_interactions:
                 "id": "drumknott",
                 "object": "plan",
                 "amount": 300,
-                "created": 1499899781,
+                "created": 1512872065,
                 "currency": "usd",
                 "interval": "month",
                 "interval_count": 1,
@@ -3891,7 +2516,7 @@ http_interactions:
                 "trial_period_days": null
               },
               "quantity": 1,
-              "start": 1499899787,
+              "start": 1512872073,
               "status": "canceled",
               "tax_percent": null,
               "trial_end": null,
@@ -3900,9 +2525,12 @@ http_interactions:
           },
           "livemode": false,
           "pending_webhooks": 0,
-          "request": "req_B0vVcDwjzT5qjd",
+          "request": {
+            "id": "req_ZDoqCwF146vbNa",
+            "idempotency_key": null
+          },
           "type": "customer.subscription.deleted"
         }
     http_version: 
-  recorded_at: Wed, 12 Jul 2017 22:49:54 GMT
+  recorded_at: Sun, 10 Dec 2017 02:14:41 GMT
 recorded_with: VCR 3.0.3

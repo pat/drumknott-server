@@ -28,7 +28,7 @@ RSpec.describe "Updating credit card" do
   it "retries failed payments" do |example|
     assisted_cassette(example) do |assistant|
       assistant.set_up_user user, "4000000000000341"
-      assistant.set_up_site site, :trial_end => 3.seconds.from_now.to_i
+      assistant.set_up_site site, :trial_end => 8.seconds.from_now.to_i
 
       customer = Stripe::Customer.retrieve user.stripe_customer_id
       expect(customer.sources.first.last4).to eq("0341")

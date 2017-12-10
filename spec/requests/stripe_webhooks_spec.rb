@@ -100,7 +100,7 @@ RSpec.describe "Stripe Webhooks", :type => :request do
   it "sends an email when a payment fails" do |example|
     assisted_cassette(example) do |assistant|
       assistant.set_up_user user, "4000000000000341"
-      assistant.set_up_site site, :trial_end => 3.seconds.from_now.to_i
+      assistant.set_up_site site, :trial_end => 8.seconds.from_now.to_i
 
       ActionMailer::Base.deliveries.clear
 
