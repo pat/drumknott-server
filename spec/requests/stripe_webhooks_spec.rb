@@ -6,6 +6,20 @@ RSpec.describe "Stripe Webhooks", :type => :request do
   let(:user) { User.make! }
   let(:site) { Site.make! :user => user }
 
+  def post_webhook(event)
+    timestamp = Time.current.to_i.to_s
+    data      = event.to_json
+    signature = OpenSSL::HMAC.hexdigest(
+      OpenSSL::Digest.new("sha256"),
+      StripeEvent.signing_secret,
+      "#{timestamp}.#{data}"
+    )
+
+    post "/hooks/stripe",
+      :params  => data,
+      :headers => {"Stripe-Signature" => "t=#{timestamp}, v1=#{signature}"}
+  end
+
   it "updates site statuses when subscriptions change" do |example|
     assisted_cassette(example) do |assistant|
       site.update_attributes :status => "pending"
@@ -22,7 +36,7 @@ RSpec.describe "Stripe Webhooks", :type => :request do
           event.type == "customer.subscription.updated"
       end
 
-      post "/hooks/stripe", :params => {:id => update_event.id}
+      post_webhook update_event
 
       site.reload
       expect(site.status).to eq("active")
@@ -46,7 +60,7 @@ RSpec.describe "Stripe Webhooks", :type => :request do
           event.type == "customer.subscription.deleted"
       end
 
-      post "/hooks/stripe", :params => {:id => delete_event.id}
+      post_webhook delete_event
 
       site.reload
       expect(site.status).to eq("canceled")
@@ -62,12 +76,12 @@ RSpec.describe "Stripe Webhooks", :type => :request do
         event.type == "invoice.created"
       end
 
-      post "/hooks/stripe", :params => {:id => creation_event.id}
+      post_webhook creation_event
 
       invoice = user.invoices.first
       expect(invoice).to be_present
 
-      post "/hooks/stripe", :params => {:id => creation_event.id}
+      post_webhook creation_event
 
       expect(user.invoices.count).to eq(1)
     end
@@ -86,12 +100,13 @@ RSpec.describe "Stripe Webhooks", :type => :request do
       creation_event = Stripe::Event.all.detect do |event|
         event.type == "invoice.created"
       end
-      post "/hooks/stripe", :params => {:id => creation_event.id}
+      post_webhook creation_event
+
       payment_event = Stripe::Event.all.detect do |event|
         event.type == "invoice.payment_succeeded"
       end
-      post "/hooks/stripe", :params => {:id => payment_event.id}
-      post "/hooks/stripe", :params => {:id => payment_event.id}
+      post_webhook payment_event
+      post_webhook payment_event
 
       expect(ActionMailer::Base.deliveries.count).to eq(1)
     end
@@ -114,7 +129,7 @@ RSpec.describe "Stripe Webhooks", :type => :request do
         event.type == "invoice.payment_failed"
       end
 
-      post "/hooks/stripe", :params => {:id => failure_event.id}
+      post_webhook failure_event
 
       expect(ActionMailer::Base.deliveries.count).to eq(1)
     end
