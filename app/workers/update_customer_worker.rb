@@ -5,7 +5,7 @@ class UpdateCustomerWorker
 
   def perform(user_id)
     user = User.find user_id
-    return unless user.stripe_customer_id.present?
+    return if user.stripe_customer_id.blank?
 
     customer = Stripe::Customer.retrieve user.stripe_customer_id
     customer.email = user.email

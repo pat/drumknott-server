@@ -10,7 +10,9 @@ class V1::Pages::Clear < Sliver::Rails::Action
   end
 
   def call
+    # rubocop:disable Rails/SkipsModelValidations
     site.pages.update_all :deactivated_at => Time.current
+    # rubocop:enable Rails/SkipsModelValidations
 
     response.body = {"status" => "OK"}
   end

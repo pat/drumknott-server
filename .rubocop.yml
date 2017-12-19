@@ -1,6 +1,9 @@
 inherit_from:
   - https://gist.githubusercontent.com/pat/ba3b8ffb1901bfe5439b460943b6b019/raw/.rubocop.yml
 
+Rails:
+  Enabled: true
+
 Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
@@ -16,6 +19,10 @@ Metrics/LineLength:
 Metrics/MethodLength:
   Exclude:
     - 'db/migrate/*.rb'
+
+Rails/DynamicFindBy:
+  Whitelist:
+    - 'find_by_path'
 
 Style/ClassAndModuleChildren:
   Enabled: false
