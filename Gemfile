@@ -61,7 +61,7 @@ group :test do
     :ref    => "ff04f1a92d"
   gem "vcr",           "~> 3.0.1"
   gem "vcr_assistant", "~> 0.1.1"
-  gem "webmock",       "~> 3.1.0"
+  gem "webmock",       "~> 3.2.0"
 end
 
 group :production do
