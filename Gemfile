@@ -8,8 +8,8 @@ ruby "2.5.0"
 gem "rails", "5.1.4"
 
 # core
-gem "pg"
-gem "puma",    "3.10.0"
+gem "pg",      "~> 0.21"
+gem "puma",    "~> 3.10"
 gem "sidekiq", "5.0.5"
 
 # assets gems
@@ -30,20 +30,20 @@ gem "haml",            "5.0.4"
 gem "kaminari",        "~> 1.1.0"
 gem "mysql2",          "~> 0.4.9"
 gem "newrelic_rpm",    "~> 4.7.1.340"
-gem "prawn",           "~> 2.0.2"
+gem "prawn",           "~> 2.0"
 gem "prawn-table",     "~> 0.2.2"
 gem "rack-pratchett",  "~> 0.1.1"
 gem "rack-rewrite",    "~> 1.5.1"
-gem "rack-timeout",    "~> 0.3.2"
+gem "rack-timeout",    "~> 0.3"
 gem "rubocop",         "~> 0.52.0"
-gem "sliver-rails",    "0.2.0"
+gem "sliver-rails",    "~> 0.2.0"
 gem "stripe",          "~> 3.9.0"
 gem "stripe_event",    "~> 2.0.0"
 gem "thinking-sphinx", "3.4.2"
 
 group :development do
   gem "byebug"
-  gem "web-console", "~> 2.0"
+  gem "web-console", "~> 3.5"
 end
 
 group :development, :test do
@@ -59,8 +59,8 @@ group :test do
     :git    => "https://github.com/pat/machinist.git",
     :branch => "master",
     :ref    => "ff04f1a92d"
-  gem "vcr",           "~> 3.0.1"
-  gem "vcr_assistant", "~> 0.1.1"
+  gem "vcr",           "~> 4.0"
+  gem "vcr_assistant", "~> 1.0"
   gem "webmock",       "~> 3.3.0"
 end
 
