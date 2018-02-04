@@ -8,7 +8,7 @@ ruby "2.5.0"
 gem "rails", "5.2.0.rc1"
 
 # core
-gem "pg",      "~> 0.21"
+gem "pg",      "~> 1.0"
 gem "puma",    "~> 3.10"
 gem "sidekiq", "5.1.0"
 
