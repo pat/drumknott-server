@@ -10,7 +10,7 @@ class Payments::Hooks::SubscriptionUpdated
   end
 
   def call
-    site.update_attributes! :status => subscription.status
+    site.update! :status => subscription.status
 
     UpdateSiteCache.call site, subscription
   end

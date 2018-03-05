@@ -21,7 +21,7 @@ class Site < ApplicationRecord
   end
 
   def reset_key!
-    update_attributes! :key => SecureRandom.hex(16)
+    update! :key => SecureRandom.hex(16)
   end
 
   private

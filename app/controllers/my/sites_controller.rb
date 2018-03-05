@@ -16,7 +16,7 @@ class My::SitesController < My::ApplicationController
   end
 
   def update
-    if site.update_attributes site_params
+    if site.update site_params
       redirect_to my_site_path(site),
         :notice => "The site details have been updated successfully."
     else
@@ -25,7 +25,7 @@ class My::SitesController < My::ApplicationController
   end
 
   def destroy
-    site.update_attributes! :status => "deleting"
+    site.update! :status => "deleting"
     CancelSiteWorker.perform_async site.id
 
     redirect_to my_sites_path

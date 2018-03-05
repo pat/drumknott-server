@@ -33,7 +33,7 @@ class Payments::Subscribe
   end
 
   def mark_as_failed_with(error)
-    site.update_attributes!(
+    site.update!(
       :status         => "failure",
       :status_message => error.message
     )
@@ -58,7 +58,7 @@ class Payments::Subscribe
   end
 
   def update_status
-    site.update_attributes!(
+    site.update!(
       :stripe_subscription_id => subscription.id,
       :status                 => subscription.status
     )
