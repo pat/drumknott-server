@@ -28,14 +28,14 @@ class StripeAssistant
       {:plan => ENV["STRIPE_PLAN_ID"]}.merge(subscription_attributes)
     )
 
-    site.update_attributes! :stripe_subscription_id => subscription.id
+    site.update! :stripe_subscription_id => subscription.id
   end
 
   def set_up_user(user, card = "4242424242424242")
     customer = Stripe::Customer.create :email => user.email
 
     customer.sources.create :source => card_token(card)
-    user.update_attributes! :stripe_customer_id => customer.id
+    user.update! :stripe_customer_id => customer.id
 
     UpdateUserCache.call user, customer.refresh
   end

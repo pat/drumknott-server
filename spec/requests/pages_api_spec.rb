@@ -24,7 +24,7 @@ RSpec.describe "Pages API", :type => :request do
     end
 
     it "does not return deactivated pages" do
-      site.pages.find_by(:name => "Pancakes").update_attributes(
+      site.pages.find_by(:name => "Pancakes").update(
         :deactivated_at => 1.minute.ago
       )
 
@@ -34,7 +34,7 @@ RSpec.describe "Pages API", :type => :request do
     end
 
     it "returns no matches and an error for inactive sites" do
-      site.update_attributes :status => "failure"
+      site.update :status => "failure"
 
       get "/api/v1/#{site.name}/pages", :params => {:query => "pancakes"}
 

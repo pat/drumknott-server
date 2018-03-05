@@ -22,7 +22,7 @@ RSpec.describe "Stripe Webhooks", :type => :request do
 
   it "updates site statuses when subscriptions change" do |example|
     assisted_cassette(example) do |assistant|
-      site.update_attributes :status => "pending"
+      site.update :status => "pending"
 
       assistant.set_up_user user
       assistant.set_up_site site

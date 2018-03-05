@@ -14,7 +14,7 @@ class Payments::GetCustomer
       Stripe::Customer.retrieve user.stripe_customer_id
     else
       customer = Stripe::Customer.create :email => user.email
-      user.update_attributes :stripe_customer_id => customer.id
+      user.update :stripe_customer_id => customer.id
 
       customer
     end
