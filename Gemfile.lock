@@ -163,7 +163,7 @@ GEM
       i18n (>= 0.6.4, < 1.0)
     multi_json (1.13.1)
     multipart-post (2.0.0)
-    mysql2 (0.4.10)
+    mysql2 (0.5.0)
     newrelic_rpm (4.8.0.341)
     nio4r (2.3.0)
     nokogiri (1.8.2)
@@ -358,7 +358,7 @@ DEPENDENCIES
   jquery-rails
   kaminari (~> 1.1.0)
   machinist (~> 2.0)!
-  mysql2 (~> 0.4.9)
+  mysql2 (~> 0.5.0)
   newrelic_rpm (~> 4.8.0.341)
   pg (~> 1.0)
   prawn (~> 2.0)
