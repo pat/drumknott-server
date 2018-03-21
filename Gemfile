@@ -5,7 +5,7 @@ source "https://rubygems.org"
 ruby "2.5.0"
 
 # rails
-gem "rails", "5.2.0.rc1"
+gem "rails", "5.2.0.rc2"
 
 # core
 gem "pg",      "~> 1.0"
