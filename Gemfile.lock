@@ -122,7 +122,7 @@ GEM
       temple (>= 0.8.0)
       tilt
     hashdiff (0.3.7)
-    i18n (1.0.0)
+    i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     i18n_data (0.8.0)
     innertube (1.1.0)
