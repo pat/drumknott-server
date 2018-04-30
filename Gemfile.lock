@@ -106,7 +106,7 @@ GEM
     faraday (0.15.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.23)
-    flying-sphinx (2.1.0)
+    flying-sphinx (2.1.1)
       ey-hmac (~> 2.2)
       faraday (>= 0.7)
       gzipped_tar (~> 0.1.1)
