@@ -290,7 +290,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    stripe (3.21.0)
+    stripe (3.22.0)
       faraday (~> 0.10)
     stripe_event (2.1.1)
       activesupport (>= 3.1)
@@ -375,7 +375,7 @@ DEPENDENCIES
   sidekiq (= 5.2.1)
   sliver-rails (~> 0.2.0)
   spring
-  stripe (~> 3.21.0)
+  stripe (~> 3.22.0)
   stripe_event (~> 2.1.1)
   thinking-sphinx (~> 4.0)
   thinking-sphinx-ports (~> 0.1.0)
