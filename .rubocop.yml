@@ -4,6 +4,9 @@ inherit_from:
 Rails:
   Enabled: true
 
+Layout/AlignHash:
+  EnforcedHashRocketStyle: table
+
 Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 

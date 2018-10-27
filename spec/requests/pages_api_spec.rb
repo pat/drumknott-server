@@ -55,7 +55,7 @@ RSpec.describe "Pages API", :type => :request do
   describe "PUT /:site/pages" do
     it "creates a new page if the details are not yet in the system" do
       put "/api/v1/#{site.name}/pages",
-        :params => {
+        :params  => {
           :page => {
             :name => "Gelato", :path => "/gelato", :contents => "All the gelato"
           }
@@ -71,7 +71,7 @@ RSpec.describe "Pages API", :type => :request do
       )
 
       put "/api/v1/#{site.name}/pages",
-        :params => {
+        :params  => {
           :page => {
             :name => "Sorbet", :path => "/sorbet", :content => "Not gelato"
           }
@@ -91,7 +91,7 @@ RSpec.describe "Pages API", :type => :request do
       )
 
       put "/api/v1/#{site.name}/pages",
-        :params => {
+        :params  => {
           :page => {
             :name => "Sorbet", :path => "/sorbet", :content => "Not gelato"
           }
