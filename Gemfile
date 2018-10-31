@@ -37,7 +37,7 @@ gem "rack-rewrite",    "~> 1.5.1"
 gem "rack-timeout",    "~> 0.3"
 gem "rubocop",         "~> 0.60.0"
 gem "sliver-rails",    "~> 0.2.0"
-gem "stripe",          "~> 3.28.0"
+gem "stripe",          "~> 3.29.0"
 gem "stripe_event",    "~> 2.1.1"
 gem "thinking-sphinx", "~> 4.0"
 
