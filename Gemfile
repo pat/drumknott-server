@@ -38,7 +38,7 @@ gem "rack-timeout",    "~> 0.3"
 gem "rubocop",         "~> 0.60.0"
 gem "sliver-rails",    "~> 0.2.0"
 gem "stripe",          "~> 3.31.1"
-gem "stripe_event",    "~> 2.1.1"
+gem "stripe_event",    "~> 2.2.0"
 gem "thinking-sphinx", "~> 4.0"
 
 group :development do
