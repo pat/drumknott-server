@@ -50,6 +50,12 @@ RSpec.describe "Pages API", :type => :request do
       expect(response.status).to eq(404)
       expect(json["error"]).to eq("Site does not exist")
     end
+
+    it "handles nil queries" do
+      get "/api/v1/#{site.name}/pages"
+
+      expect(json["total"]).to eq(2)
+    end
   end
 
   describe "PUT /:site/pages" do

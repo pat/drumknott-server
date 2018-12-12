@@ -48,7 +48,7 @@ class V1::Pages::Index < Sliver::Rails::Action
   def pages
     return [] if error?
 
-    @pages ||= site.pages.search ThinkingSphinx::Query.escape(params["query"]),
+    @pages ||= site.pages.search query,
       :with     => {:deactivated_at => 0},
       :page     => page,
       :per_page => per_page
@@ -67,6 +67,10 @@ class V1::Pages::Index < Sliver::Rails::Action
 
   def per_page
     params.fetch("per_page", 20).to_i
+  end
+
+  def query
+    ThinkingSphinx::Query.escape(params["query"] || "")
   end
 
   def site
