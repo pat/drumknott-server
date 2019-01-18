@@ -56,7 +56,7 @@ GEM
     ast (2.4.0)
     bcrypt (3.1.12)
     bindex (0.5.0)
-    bugsnag (6.10.0)
+    bugsnag (6.11.0)
       concurrent-ruby (~> 1.0)
     builder (3.2.3)
     byebug (10.0.2)
@@ -347,7 +347,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bugsnag (~> 6.10.0)
+  bugsnag (~> 6.11.0)
   byebug
   capybara (= 3.12.0)
   coffee-rails (~> 4.2.2)
