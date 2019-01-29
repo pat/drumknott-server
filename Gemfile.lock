@@ -164,7 +164,7 @@ GEM
     mysql2 (0.5.2)
     net-http-persistent (3.0.0)
       connection_pool (~> 2.2)
-    newrelic_rpm (5.7.0.350)
+    newrelic_rpm (6.0.0.351)
     nio4r (2.3.1)
     nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
@@ -362,7 +362,7 @@ DEPENDENCIES
   kaminari (~> 1.1.0)
   machinist (~> 2.0)!
   mysql2 (~> 0.5.0)
-  newrelic_rpm (~> 5.0)
+  newrelic_rpm (~> 6.0)
   pg (~> 1.0)
   prawn (~> 2.0)
   prawn-table (~> 0.2.2)
