@@ -1,7 +1,7 @@
 %h2 Resend confirmation instructions
 
 = semantic_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :method => :post) do |form|
-  = devise_error_messages!
+  = render "devise/shared/error_messages", resource: resource
 
   = form.inputs do
     = form.input :email, :value => (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
