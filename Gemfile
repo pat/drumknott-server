@@ -13,7 +13,7 @@ gem "puma",    "~> 3.10"
 gem "sidekiq", "5.2.7"
 
 # assets gems
-gem "coffee-rails", "~> 4.2.2"
+gem "coffee-rails", "~> 5.0.0"
 gem "jquery-rails"
 gem "sass-rails", "~> 5.0"
 gem "turbolinks"
