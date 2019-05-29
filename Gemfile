@@ -59,7 +59,7 @@ group :test do
     :git    => "https://github.com/pat/machinist.git",
     :branch => "master",
     :ref    => "ff04f1a92d"
-  gem "vcr",           "~> 4.0"
+  gem "vcr",           "~> 5.0"
   gem "vcr_assistant", "~> 1.0"
   gem "webmock",       "~> 3.5.1"
 end
