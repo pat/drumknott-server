@@ -9,7 +9,7 @@ gem "rails", "5.2.3"
 
 # core
 gem "pg",      "~> 1.0"
-gem "puma",    "~> 3.10"
+gem "puma",    "~> 4.0"
 gem "sidekiq", "5.2.7"
 
 # assets gems
