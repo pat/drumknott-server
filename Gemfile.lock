@@ -256,6 +256,11 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.7)
+    rubocop-performance (1.4.0)
+      rubocop (>= 0.71.0)
+    rubocop-rails (2.1.0)
+      rack (>= 1.1)
+      rubocop (>= 0.72.0)
     ruby-progressbar (1.10.1)
     safe_yaml (1.0.5)
     sass (3.7.4)
@@ -371,6 +376,8 @@ DEPENDENCIES
   rails_12factor
   rspec-rails
   rubocop (~> 0.72.0)
+  rubocop-performance
+  rubocop-rails
   sass-rails (~> 5.0)
   sidekiq (= 5.2.7)
   sliver-rails (~> 0.2.0)
