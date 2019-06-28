@@ -302,7 +302,7 @@ GEM
       activesupport (>= 3.1)
       stripe (>= 2.8, < 5.0)
     temple (0.8.1)
-    thinking-sphinx (4.3.0)
+    thinking-sphinx (4.3.1)
       activerecord (>= 3.1.0)
       builder (>= 2.1.2)
       innertube (>= 1.0.2)
