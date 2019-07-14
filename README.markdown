@@ -1,6 +1,6 @@
 ## Drumknott
 
-[![Build Status](https://travis-ci.org/pat/drumknott-server.png?branch=master)](https://travis-ci.org/pat/drumknott-server)
+[![Build Status](https://travis-ci.org/pat/drumknott-server.svg?branch=master)](https://travis-ci.org/pat/drumknott-server)
 [![Depfu](https://badges.depfu.com/badges/70c52fad3cc57dd77b43ea85f962df65/overview.svg)](https://depfu.com/github/pat/drumknott-server)
 
 A simple Rails app that provides a search backend for Jekyll sites. It's available as a (cheap!) paid service at [drumknottsearch.com](https://drumknottsearch.com), but you can fire up your own instance if you wish.
