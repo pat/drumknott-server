@@ -121,7 +121,7 @@ GEM
     haml (5.1.1)
       temple (>= 0.8.0)
       tilt
-    hashdiff (0.4.0)
+    hashdiff (1.0.0)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     i18n_data (0.8.0)
@@ -335,7 +335,7 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
-    webmock (3.6.0)
+    webmock (3.6.2)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
