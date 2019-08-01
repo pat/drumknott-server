@@ -1,7 +1,10 @@
 language: ruby
 rvm: 2.6.3
 addons:
-  postgresql: '9.3'
+  postgresql: '10.9'
+  apt:
+    packages:
+    - libodbc1
 before_install:
 - pip install --upgrade --user awscli
 - gem update --system
@@ -9,7 +12,7 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_b0ee5f2fe3a6_key -iv $encrypted_b0ee5f2fe3a6_iv
   -in .env.test.enc -out .env.test -d
 before_script:
-- "./bin/loadsphinx 2.2.11"
+- "./bin/loadsphinx 2.2.11 sphinx"
 - psql -c 'create database drumknott_test;' -U postgres >/dev/null
 - bundle exec rake db:migrate RAILS_ENV=test
 script: bundle exec rake
@@ -25,5 +28,4 @@ deploy:
   - restart
 env:
   global:
-  - SPHINX_BIN=ext/sphinx/bin/
   - secure: BhuIt2UYiTqjDjVrPwnHnviXN4usHldLs9kCgWOxBzMYr6ABlX9GIOKwT61VbfuW5vm2X7gMjrmvjtmlNrKFl0EEEznjcDZFs7fLYNvSVWF6oF2NQtV71JJY/bosK8iansgvNTpUYT0bbXhAjlAetnnzYwfL1UjhS/9ZyVjdbc8=
