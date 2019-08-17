@@ -15,7 +15,7 @@ gem "sidekiq", "5.2.7"
 # assets gems
 gem "coffee-rails", "~> 5.0.0"
 gem "jquery-rails"
-gem "sass-rails", "~> 5.0"
+gem "sass-rails", "~> 6.0"
 gem "turbolinks"
 gem "uglifier", ">= 1.3.0"
 
