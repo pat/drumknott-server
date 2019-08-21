@@ -15,6 +15,11 @@ Lint/UselessAccessModifier:
   MethodCreatingMethods:
     - delegate
 
+Metrics/BlockLength:
+  Exclude:
+    - 'config/environments/production.rb'
+    - 'spec/**/*_spec.rb'
+
 Metrics/LineLength:
   Exclude:
     - 'config/initializers/devise.rb'
