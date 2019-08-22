@@ -45,7 +45,7 @@ gem "thinking-sphinx", "~> 4.4"
 
 group :development do
   gem "byebug"
-  gem "web-console", "~> 3.5"
+  gem "web-console", "~> 4.0"
 end
 
 group :development, :test do
