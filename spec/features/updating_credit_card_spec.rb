@@ -36,7 +36,8 @@ RSpec.describe "Updating credit card" do
       sleep 360 if assistant.recording?
 
       customer    = Stripe::Customer.retrieve user.stripe_customer_id
-      outstanding = customer.invoices.detect { |invoice| invoice.total > 0 }
+      outstanding = Stripe::Invoice.list(:customer => customer.id).
+        detect { |invoice| invoice.total > 0 }
       expect { outstanding.pay }.to raise_error(Stripe::CardError)
 
       UpdateCardWorker.perform_async user.id,
