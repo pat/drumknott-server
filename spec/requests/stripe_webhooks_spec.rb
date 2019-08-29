@@ -31,7 +31,7 @@ RSpec.describe "Stripe Webhooks", :type => :request do
       subscription = customer.subscriptions.retrieve site.stripe_subscription_id
       subscription.delete :at_period_end => true
 
-      update_event = Stripe::Event.all.detect do |event|
+      update_event = Stripe::Event.list.detect do |event|
         event.data.object.id == subscription.id &&
           event.type == "customer.subscription.updated"
       end
@@ -55,7 +55,7 @@ RSpec.describe "Stripe Webhooks", :type => :request do
       subscription = customer.subscriptions.retrieve site.stripe_subscription_id
       subscription.delete
 
-      delete_event = Stripe::Event.all.detect do |event|
+      delete_event = Stripe::Event.list.detect do |event|
         event.data.object.id == subscription.id &&
           event.type == "customer.subscription.deleted"
       end
@@ -72,7 +72,7 @@ RSpec.describe "Stripe Webhooks", :type => :request do
       assistant.set_up_user user
       assistant.set_up_site site
 
-      creation_event = Stripe::Event.all.detect do |event|
+      creation_event = Stripe::Event.list.detect do |event|
         event.type == "invoice.created"
       end
 
@@ -94,15 +94,18 @@ RSpec.describe "Stripe Webhooks", :type => :request do
 
       ActionMailer::Base.deliveries.clear
 
-      customer = Stripe::Customer.retrieve user.stripe_customer_id
-      customer.invoices.detect { |invoice| invoice.total > 0 }
+      customer    = Stripe::Customer.retrieve user.stripe_customer_id
+      outstanding = Stripe::Invoice.list(:customer => customer.id).
+        detect { |invoice| invoice.total > 0 }
 
-      creation_event = Stripe::Event.all.detect do |event|
+      expect(outstanding).to be_present
+
+      creation_event = Stripe::Event.list.detect do |event|
         event.type == "invoice.created"
       end
       post_webhook creation_event
 
-      payment_event = Stripe::Event.all.detect do |event|
+      payment_event = Stripe::Event.list.detect do |event|
         event.type == "invoice.payment_succeeded"
       end
       post_webhook payment_event
@@ -122,10 +125,11 @@ RSpec.describe "Stripe Webhooks", :type => :request do
       sleep 360 if assistant.recording?
 
       customer       = Stripe::Customer.retrieve user.stripe_customer_id
-      unpaid_invoice = customer.invoices.detect { |invoice| invoice.total > 0 }
+      unpaid_invoice = Stripe::Invoice.list(:customer => customer.id).
+        detect { |invoice| invoice.total > 0 }
       expect { unpaid_invoice.pay }.to raise_error(Stripe::CardError)
 
-      failure_event = Stripe::Event.all.detect do |event|
+      failure_event = Stripe::Event.list.detect do |event|
         event.type == "invoice.payment_failed"
       end
 

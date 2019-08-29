@@ -15,7 +15,7 @@ RSpec.describe "Viewing invoices", :type => :feature do
       assistant.set_up_user user
       assistant.set_up_site site
 
-      creation_event = Stripe::Event.all.detect do |event|
+      creation_event = Stripe::Event.list.detect do |event|
         event.type == "invoice.created"
       end
       Payments::Hooks::InvoiceUpdated.call creation_event
