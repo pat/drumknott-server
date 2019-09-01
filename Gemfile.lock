@@ -198,7 +198,7 @@ GEM
       websocket (~> 1.0)
     rack (2.0.7)
     rack-pratchett (0.1.1)
-    rack-protection (2.0.6)
+    rack-protection (2.0.7)
       rack
     rack-rewrite (1.5.1)
     rack-test (1.1.0)
@@ -284,11 +284,11 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    sidekiq (5.2.7)
-      connection_pool (~> 2.2, >= 2.2.2)
-      rack (>= 1.5.0)
-      rack-protection (>= 1.5.0)
-      redis (>= 3.3.5, < 5)
+    sidekiq (6.0.0)
+      connection_pool (>= 2.2.2)
+      rack (>= 2.0.0)
+      rack-protection (>= 2.0.0)
+      redis (>= 4.1.0)
     sixarm_ruby_unaccent (1.2.0)
     sliver (0.2.4)
       rack (>= 1.5.2)
@@ -388,7 +388,7 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   sass-rails (~> 6.0)
-  sidekiq (= 5.2.7)
+  sidekiq (= 6.0.0)
   sliver-rails (~> 0.2.0)
   spring
   stripe (~> 5.1.0)
