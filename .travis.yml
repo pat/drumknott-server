@@ -1,5 +1,5 @@
 language: ruby
-rvm: 2.6.4
+rvm: 2.6.5
 addons:
   postgresql: '10'
   apt:
