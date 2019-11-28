@@ -11,7 +11,7 @@ require "sidekiq/testing/inline"
 require "webmock/rspec"
 require "vcr_assistant/rspec"
 
-Dir[Rails.root.join("spec", "support", "**", "*.rb")].each do |file|
+Dir[Rails.root.join("spec/support/**/*.rb")].each do |file|
   require file
 end
 
