@@ -5,10 +5,10 @@ require:
   - rubocop-performance
   - rubocop-rails
 
-Layout/AlignHash:
+Layout/HashAlignment:
   EnforcedHashRocketStyle: table
 
-Layout/AlignParameters:
+Layout/ParameterAlignment:
   EnforcedStyle: with_fixed_indentation
 
 Lint/UselessAccessModifier:
