@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   namespace :my do
     get "/dashboard" => "dashboard#index", :as => :dashboard
 
-    resource :account do
+    resource :account, :only => %i[ edit update destroy ] do
       member { put :change_card }
     end
     resources :sites do
