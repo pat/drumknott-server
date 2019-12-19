@@ -8,6 +8,11 @@ require:
 Layout/HashAlignment:
   EnforcedHashRocketStyle: table
 
+Layout/LineLength:
+  Exclude:
+    - 'config/initializers/devise.rb'
+    - 'config/initializers/formtastic.rb'
+
 Layout/ParameterAlignment:
   EnforcedStyle: with_fixed_indentation
 
@@ -19,11 +24,6 @@ Metrics/BlockLength:
   Exclude:
     - 'config/environments/production.rb'
     - 'spec/**/*_spec.rb'
-
-Metrics/LineLength:
-  Exclude:
-    - 'config/initializers/devise.rb'
-    - 'config/initializers/formtastic.rb'
 
 Metrics/MethodLength:
   Exclude:
