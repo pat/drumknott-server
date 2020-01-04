@@ -39,7 +39,7 @@ gem "rubocop",         "~> 0.78.0"
 gem "rubocop-performance"
 gem "rubocop-rails"
 gem "sliver-rails",    "~> 0.2.0"
-gem "stripe",          "~> 5.11.0"
+gem "stripe",          "~> 5.12.0"
 gem "stripe_event",    "~> 2.3.0"
 gem "thinking-sphinx", "~> 4.4"
 
