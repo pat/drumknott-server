@@ -2,23 +2,24 @@
 
 class Payments::Hooks::InvoiceUpdated
   def self.call(event)
-    new(event.data.object).call
+    new(event.data.object, event.type).call
   end
 
-  def initialize(object)
+  def initialize(object, type)
     @object = object
+    @type = type
   end
 
   def call
     invoice.data_will_change!
     invoice.update :data => object.to_hash
 
-    PaymentSucceededWorker.perform_async invoice.id if object.paid
+    PaymentSucceededWorker.perform_async invoice.id if paid?
   end
 
   private
 
-  attr_reader :object
+  attr_reader :object, :type
 
   def invoice
     @invoice ||= user.invoices.find_by(
@@ -27,6 +28,10 @@ class Payments::Hooks::InvoiceUpdated
       :stripe_invoice_id => object.id,
       :invoiced_at       => Time.zone.at(object.date)
     )
+  end
+
+  def paid?
+    type == "invoice.payment_succeeded" && object.paid
   end
 
   def user
