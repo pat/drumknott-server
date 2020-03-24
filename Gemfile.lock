@@ -286,7 +286,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    sidekiq (6.0.5)
+    sidekiq (6.0.6)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       rack-protection (>= 2.0.0)
@@ -390,7 +390,7 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   sass-rails (~> 6.0)
-  sidekiq (= 6.0.5)
+  sidekiq (= 6.0.6)
   sliver-rails (~> 0.2.0)
   spring
   stripe (~> 5.17.0)
