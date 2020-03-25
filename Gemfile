@@ -10,7 +10,7 @@ gem "rails", "6.0.2.2"
 # core
 gem "pg",      "~> 1.0"
 gem "puma",    "~> 4.0"
-gem "sidekiq", "6.0.5"
+gem "sidekiq", "6.0.6"
 
 # assets gems
 gem "coffee-rails", "~> 5.0.0"
