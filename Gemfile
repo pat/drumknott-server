@@ -56,7 +56,7 @@ group :development, :test do
 end
 
 group :test do
-  gem "capybara",  "3.32.0"
+  gem "capybara",  "3.32.1"
   gem "machinist", "~> 2.0",
     :git    => "https://github.com/pat/machinist.git",
     :branch => "master",
