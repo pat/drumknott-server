@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-ruby "2.6.5"
+ruby "2.7.1"
 
 # rails
 gem "rails", "6.0.3"
@@ -25,7 +25,10 @@ gem "country_select",  "~> 4.0.0"
 gem "decent_exposure", "~> 3.0"
 gem "devise",          "~> 4.4"
 gem "flying-sphinx",   "~> 2.0"
-gem "formtastic",      "~> 3.1.3"
+gem "formtastic",
+  :git    => "https://github.com/justinfrench/formtastic.git",
+  :branch => "master",
+  :ref    => "1805a115c2"
 gem "haml",            "5.1.2"
 gem "kaminari",        "~> 1.2.0"
 gem "mysql2",          "~> 0.5.0"
