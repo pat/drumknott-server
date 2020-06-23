@@ -72,3 +72,24 @@ Layout/EmptyLinesAroundAttributeAccessor:
 
 Style/SlicingWithRange:
   Enabled: true
+
+# 0.84
+
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+
+# 0.85
+
+Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+
+Style/RedundantRegexpEscape:
+  Enabled: true
+
+# 0.86
+
+Style/RedundantFetchBlock:
+  Enabled: true
