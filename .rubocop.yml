@@ -93,3 +93,14 @@ Style/RedundantRegexpEscape:
 
 Style/RedundantFetchBlock:
   Enabled: true
+
+# 0.87
+
+Style/AccessorGrouping:
+  Enabled: true
+
+Style/BisectedAttrAccessor:
+  Enabled: true
+
+Style/RedundantAssignment:
+  Enabled: true
