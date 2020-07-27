@@ -142,7 +142,7 @@ GEM
       temple (>= 0.8.0)
       tilt
     hashdiff (1.0.1)
-    i18n (1.8.4)
+    i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     i18n_data (0.10.0)
     innertube (1.1.0)
@@ -278,7 +278,7 @@ GEM
       parser (>= 2.7.0.1)
     rubocop-performance (1.7.1)
       rubocop (>= 0.82.0)
-    rubocop-rails (2.7.0)
+    rubocop-rails (2.7.1)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 0.87.0)
