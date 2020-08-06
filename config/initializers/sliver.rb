@@ -20,6 +20,8 @@ end
 
 module Sliver::Action
   def self.included(base)
+    super
+
     base.extend Sliver::Action::ClassMethods
     base.extend Sliver::NewRelic
   end
