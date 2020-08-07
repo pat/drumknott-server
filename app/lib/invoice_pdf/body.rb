@@ -54,17 +54,24 @@ class InvoicePdf::Body < InvoicePdf::Base
     table.columns(0).width    = 280
   end
 
+  def style_first_row(row)
+    row.border_width = 0.5
+    row.font_style   = :bold
+    row.border_color = "000000"
+  end
+
+  def style_last_row(row)
+    row.borders      = [:top]
+    row.border_width = 0.5
+    row.font_style   = :bold
+    row.border_color = "000000"
+  end
+
   def style_rows_in(table)
     table.rows(summary_rows).borders = []
 
-    table.row(0).border_width = 0.5
-    table.row(0).font_style   = :bold
-    table.row(0).border_color = "000000"
-
-    table.row(-1).borders      = [:top]
-    table.row(-1).border_width = 0.5
-    table.row(-1).font_style   = :bold
-    table.row(-1).border_color = "000000"
+    style_first_row(table.row(0))
+    style_last_row(table.row(-1))
   end
 
   def summary_rows

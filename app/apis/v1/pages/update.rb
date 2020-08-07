@@ -10,7 +10,6 @@ class V1::Pages::Update < Sliver::Rails::Action
   end
 
   def call
-    page                = site.pages.find_by_path page_params[:path]
     page.attributes     = page_params
     page.deactivated_at = nil
 
@@ -24,6 +23,10 @@ class V1::Pages::Update < Sliver::Rails::Action
   end
 
   private
+
+  def page
+    @page ||= site.pages.find_by_path page_params[:path]
+  end
 
   def page_params
     params.fetch(:page, {}).permit :name, :path, :content
