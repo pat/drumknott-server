@@ -6,7 +6,7 @@ class Page < ApplicationRecord
   validates :name, :presence => true
   validates :path, :presence => true, :uniqueness => {:scope => :site_id}
 
-  after_save ThinkingSphinx::RealTime.callback_for(:page)
+  ThinkingSphinx::Callbacks.append(self, :behaviours => [:real_time])
 
   scope :deactivated_long_ago, lambda {
     where "deactivated_at IS NOT NULL AND deactivated_at < ?", 1.day.ago
