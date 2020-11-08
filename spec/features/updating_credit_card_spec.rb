@@ -43,6 +43,8 @@ RSpec.describe "Updating credit card" do
       UpdateCardWorker.perform_async user.id,
         assistant.card_token("5555555555554444")
 
+      sleep 120 if assistant.recording?
+
       customer = Stripe::Customer.retrieve user.stripe_customer_id
       expect(customer.sources.first.last4).to eq("4444")
 

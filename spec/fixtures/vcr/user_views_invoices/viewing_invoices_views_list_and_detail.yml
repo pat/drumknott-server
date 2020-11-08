@@ -8,14 +8,14 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.0
+      - Stripe/v1 RubyBindings/5.28.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+      - '{"bindings_version":"5.28.0","lang":"ruby","lang_version":"2.7.2 p137 (2020-10-01)","platform":"x86_64-darwin19","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 19.6.0 Darwin Kernel Version 19.6.0: Mon Aug 31 22:12:52 PDT 2020; root:xnu-6153.141.2~1/RELEASE_X86_64
         x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -29,11 +29,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 10 Dec 2017 02:15:49 GMT
+      - Sun, 08 Nov 2020 03:53:01 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1695'
+      - '2332'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -43,15 +43,15 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
-      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_n3ZaXub68e0w2U
+      - req_bgB7ZE4KJOguX4
       Stripe-Version:
-      - '2017-08-15'
+      - '2017-12-14'
       Strict-Transport-Security:
       - max-age=31556926; includeSubDomains; preload
     body:
@@ -61,24 +61,39 @@ http_interactions:
           "object": "list",
           "data": [
             {
-              "id": "cus_BvAh4Y8biySxCj",
+              "id": "cus_FXaqbTLVbsoPUU",
               "object": "customer",
               "account_balance": 0,
-              "created": 1512872134,
+              "address": null,
+              "balance": 0,
+              "created": 1564632776,
               "currency": "usd",
-              "default_source": "card_BvAhDoV6kllgSf",
-              "delinquent": false,
+              "default_source": "card_FXaqhw6zPywEav",
+              "delinquent": true,
               "description": null,
               "discount": null,
-              "email": "search0015@drumknottsearch.com",
+              "email": "search0001@drumknottsearch.com",
+              "invoice_prefix": "55FF4ADA",
+              "invoice_settings": {
+                "custom_fields": null,
+                "default_payment_method": null,
+                "footer": null
+              },
               "livemode": false,
-              "metadata": {},
+              "metadata": {
+              },
+              "name": null,
+              "next_invoice_sequence": 3,
+              "phone": null,
+              "preferred_locales": [
+
+              ],
               "shipping": null,
               "sources": {
                 "object": "list",
                 "data": [
                   {
-                    "id": "card_BvAhDoV6kllgSf",
+                    "id": "card_FXaqhw6zPywEav",
                     "object": "card",
                     "address_city": null,
                     "address_country": null,
@@ -90,53 +105,69 @@ http_interactions:
                     "address_zip_check": null,
                     "brand": "Visa",
                     "country": "US",
-                    "customer": "cus_BvAh4Y8biySxCj",
+                    "customer": "cus_FXaqbTLVbsoPUU",
                     "cvc_check": "pass",
                     "dynamic_last4": null,
                     "exp_month": 1,
-                    "exp_year": 2019,
-                    "fingerprint": "DCZbB0jNI6O56OrA",
+                    "exp_year": 2021,
+                    "fingerprint": "22Vkbw4tr8xDhC2Q",
                     "funding": "credit",
-                    "last4": "4242",
-                    "metadata": {},
+                    "last4": "0341",
+                    "metadata": {
+                    },
                     "name": null,
                     "tokenization_method": null
                   }
                 ],
                 "has_more": false,
                 "total_count": 1,
-                "url": "/v1/customers/cus_BvAh4Y8biySxCj/sources"
+                "url": "/v1/customers/cus_FXaqbTLVbsoPUU/sources"
               },
               "subscriptions": {
                 "object": "list",
-                "data": [],
+                "data": [
+
+                ],
                 "has_more": false,
                 "total_count": 0,
-                "url": "/v1/customers/cus_BvAh4Y8biySxCj/subscriptions"
-              }
+                "url": "/v1/customers/cus_FXaqbTLVbsoPUU/subscriptions"
+              },
+              "tax_exempt": "none",
+              "tax_ids": {
+                "object": "list",
+                "data": [
+
+                ],
+                "has_more": false,
+                "total_count": 0,
+                "url": "/v1/customers/cus_FXaqbTLVbsoPUU/tax_ids"
+              },
+              "tax_info": null,
+              "tax_info_verification": null
             }
           ],
           "has_more": false,
           "url": "/v1/customers"
         }
-    http_version: 
-  recorded_at: Sun, 10 Dec 2017 02:15:49 GMT
+  recorded_at: Sun, 08 Nov 2020 03:53:01 GMT
 - request:
     method: delete
-    uri: https://api.stripe.com/v1/customers/cus_BvAh4Y8biySxCj
+    uri: https://api.stripe.com/v1/customers/cus_FXaqbTLVbsoPUU
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.0
+      - Stripe/v1 RubyBindings/5.28.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_bgB7ZE4KJOguX4","request_duration_ms":678}}'
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+      - '{"bindings_version":"5.28.0","lang":"ruby","lang_version":"2.7.2 p137 (2020-10-01)","platform":"x86_64-darwin19","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 19.6.0 Darwin Kernel Version 19.6.0: Mon Aug 31 22:12:52 PDT 2020; root:xnu-6153.141.2~1/RELEASE_X86_64
         x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -150,11 +181,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 10 Dec 2017 02:15:50 GMT
+      - Sun, 08 Nov 2020 03:53:02 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '52'
+      - '76'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -164,26 +195,26 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
-      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_O6gbf6joo8e7mn
+      - req_LQRXZiq4LbtPkf
       Stripe-Version:
-      - '2017-08-15'
+      - '2017-12-14'
       Strict-Transport-Security:
       - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
         {
-          "deleted": true,
-          "id": "cus_BvAh4Y8biySxCj"
+          "id": "cus_FXaqbTLVbsoPUU",
+          "object": "customer",
+          "deleted": true
         }
-    http_version: 
-  recorded_at: Sun, 10 Dec 2017 02:15:51 GMT
+  recorded_at: Sun, 08 Nov 2020 03:53:02 GMT
 - request:
     method: get
     uri: https://api.stripe.com/v1/coupons
@@ -192,14 +223,16 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.0
+      - Stripe/v1 RubyBindings/5.28.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_LQRXZiq4LbtPkf","request_duration_ms":556}}'
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+      - '{"bindings_version":"5.28.0","lang":"ruby","lang_version":"2.7.2 p137 (2020-10-01)","platform":"x86_64-darwin19","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 19.6.0 Darwin Kernel Version 19.6.0: Mon Aug 31 22:12:52 PDT 2020; root:xnu-6153.141.2~1/RELEASE_X86_64
         x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -213,11 +246,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 10 Dec 2017 02:15:52 GMT
+      - Sun, 08 Nov 2020 03:53:02 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '82'
+      - '86'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -227,15 +260,15 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
-      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_FyxT6TVs8dQ5Js
+      - req_L8yJmEqRarW8wB
       Stripe-Version:
-      - '2017-08-15'
+      - '2017-12-14'
       Strict-Transport-Security:
       - max-age=31556926; includeSubDomains; preload
     body:
@@ -243,12 +276,13 @@ http_interactions:
       string: |
         {
           "object": "list",
-          "data": [],
+          "data": [
+
+          ],
           "has_more": false,
           "url": "/v1/coupons"
         }
-    http_version: 
-  recorded_at: Sun, 10 Dec 2017 02:15:52 GMT
+  recorded_at: Sun, 08 Nov 2020 03:53:02 GMT
 - request:
     method: get
     uri: https://api.stripe.com/v1/plans
@@ -257,14 +291,16 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.0
+      - Stripe/v1 RubyBindings/5.28.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_L8yJmEqRarW8wB","request_duration_ms":391}}'
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+      - '{"bindings_version":"5.28.0","lang":"ruby","lang_version":"2.7.2 p137 (2020-10-01)","platform":"x86_64-darwin19","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 19.6.0 Darwin Kernel Version 19.6.0: Mon Aug 31 22:12:52 PDT 2020; root:xnu-6153.141.2~1/RELEASE_X86_64
         x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -278,11 +314,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 10 Dec 2017 02:15:53 GMT
+      - Sun, 08 Nov 2020 03:53:03 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '420'
+      - '721'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -292,15 +328,15 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
-      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_EgquGdq5vrqNWa
+      - req_nS8sTJp9NhLc5k
       Stripe-Version:
-      - '2017-08-15'
+      - '2017-12-14'
       Strict-Transport-Security:
       - max-age=31556926; includeSubDomains; preload
     body:
@@ -312,23 +348,33 @@ http_interactions:
             {
               "id": "drumknott",
               "object": "plan",
+              "active": true,
+              "aggregate_usage": null,
               "amount": 300,
-              "created": 1512872133,
+              "amount_decimal": "300",
+              "billing_scheme": "per_unit",
+              "created": 1564632776,
               "currency": "usd",
               "interval": "month",
               "interval_count": 1,
               "livemode": false,
-              "metadata": {},
+              "metadata": {
+              },
               "name": "Drumknott Test",
+              "nickname": null,
+              "product": "prod_FXaqOD5B0m76xZ",
               "statement_descriptor": null,
-              "trial_period_days": null
+              "tiers": null,
+              "tiers_mode": null,
+              "transform_usage": null,
+              "trial_period_days": null,
+              "usage_type": "licensed"
             }
           ],
           "has_more": false,
           "url": "/v1/plans"
         }
-    http_version: 
-  recorded_at: Sun, 10 Dec 2017 02:15:53 GMT
+  recorded_at: Sun, 08 Nov 2020 03:53:03 GMT
 - request:
     method: delete
     uri: https://api.stripe.com/v1/plans/drumknott
@@ -337,14 +383,16 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.0
+      - Stripe/v1 RubyBindings/5.28.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_nS8sTJp9NhLc5k","request_duration_ms":1137}}'
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+      - '{"bindings_version":"5.28.0","lang":"ruby","lang_version":"2.7.2 p137 (2020-10-01)","platform":"x86_64-darwin19","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 19.6.0 Darwin Kernel Version 19.6.0: Mon Aug 31 22:12:52 PDT 2020; root:xnu-6153.141.2~1/RELEASE_X86_64
         x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -358,11 +406,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 10 Dec 2017 02:15:54 GMT
+      - Sun, 08 Nov 2020 03:53:04 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '43'
+      - '63'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -372,78 +420,15 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
-      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_wiyJ7WEvrcxP2o
+      - req_Rxp4d4QgGkU82j
       Stripe-Version:
-      - '2017-08-15'
-      Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: |
-        {
-          "deleted": true,
-          "id": "drumknott"
-        }
-    http_version: 
-  recorded_at: Sun, 10 Dec 2017 02:15:55 GMT
-- request:
-    method: post
-    uri: https://api.stripe.com/v1/plans
-    body:
-      encoding: UTF-8
-      string: id=drumknott&amount=300&currency=USD&interval=month&interval_count=1&name=Drumknott+Test
-    headers:
-      User-Agent:
-      - Stripe/v1 RubyBindings/3.9.0
-      Authorization:
-      - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
-      Content-Type:
-      - application/x-www-form-urlencoded
-      X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
-        x86_64","hostname":"pat"}'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Sun, 10 Dec 2017 02:15:56 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '281'
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Methods:
-      - GET, POST, HEAD, OPTIONS, DELETE
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Expose-Headers:
-      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
-      Access-Control-Max-Age:
-      - '300'
-      Cache-Control:
-      - no-cache, no-store
-      Request-Id:
-      - req_bYJSKWyBSXPjJR
-      Stripe-Version:
-      - '2017-08-15'
+      - '2017-12-14'
       Strict-Transport-Security:
       - max-age=31556926; includeSubDomains; preload
     body:
@@ -452,35 +437,112 @@ http_interactions:
         {
           "id": "drumknott",
           "object": "plan",
+          "deleted": true
+        }
+  recorded_at: Sun, 08 Nov 2020 03:53:04 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/plans
+    body:
+      encoding: UTF-8
+      string: id=drumknott&amount=300&currency=USD&interval=month&interval_count=1&name=Drumknott+Test
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/5.28.0
+      Authorization:
+      - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_Rxp4d4QgGkU82j","request_duration_ms":461}}'
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"5.28.0","lang":"ruby","lang_version":"2.7.2 p137 (2020-10-01)","platform":"x86_64-darwin19","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 19.6.0 Darwin Kernel Version 19.6.0: Mon Aug 31 22:12:52 PDT 2020; root:xnu-6153.141.2~1/RELEASE_X86_64
+        x86_64","hostname":"pat"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 08 Nov 2020 03:53:04 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '538'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Request-Id:
+      - req_dd0vyaiYJB4w3A
+      Stripe-Version:
+      - '2017-12-14'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": "drumknott",
+          "object": "plan",
+          "active": true,
+          "aggregate_usage": null,
           "amount": 300,
-          "created": 1512872155,
+          "amount_decimal": "300",
+          "billing_scheme": "per_unit",
+          "created": 1604807584,
           "currency": "usd",
           "interval": "month",
           "interval_count": 1,
           "livemode": false,
-          "metadata": {},
+          "metadata": {
+          },
           "name": "Drumknott Test",
+          "nickname": null,
+          "product": "prod_ILmWcCw2aEuhNf",
           "statement_descriptor": null,
-          "trial_period_days": null
+          "tiers": null,
+          "tiers_mode": null,
+          "transform_usage": null,
+          "trial_period_days": null,
+          "usage_type": "licensed"
         }
-    http_version: 
-  recorded_at: Sun, 10 Dec 2017 02:15:56 GMT
+  recorded_at: Sun, 08 Nov 2020 03:53:04 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/customers
     body:
       encoding: UTF-8
-      string: email=search0016%40drumknottsearch.com
+      string: email=search0001%40drumknottsearch.com
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.0
+      - Stripe/v1 RubyBindings/5.28.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_dd0vyaiYJB4w3A","request_duration_ms":457}}'
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+      - '{"bindings_version":"5.28.0","lang":"ruby","lang_version":"2.7.2 p137 (2020-10-01)","platform":"x86_64-darwin19","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 19.6.0 Darwin Kernel Version 19.6.0: Mon Aug 31 22:12:52 PDT 2020; root:xnu-6153.141.2~1/RELEASE_X86_64
         x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -494,11 +556,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 10 Dec 2017 02:15:57 GMT
+      - Sun, 08 Nov 2020 03:53:05 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '648'
+      - '1175'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -508,67 +570,99 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
-      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_AlR8iP5t9G8KQu
+      - req_qcIXtgn7j4Mqqx
       Stripe-Version:
-      - '2017-08-15'
+      - '2017-12-14'
       Strict-Transport-Security:
       - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
         {
-          "id": "cus_BvAhXoSbaWMTTv",
+          "id": "cus_ILmWzwLceU7wPc",
           "object": "customer",
           "account_balance": 0,
-          "created": 1512872157,
+          "address": null,
+          "balance": 0,
+          "created": 1604807584,
           "currency": null,
           "default_source": null,
           "delinquent": false,
           "description": null,
           "discount": null,
-          "email": "search0016@drumknottsearch.com",
+          "email": "search0001@drumknottsearch.com",
+          "invoice_prefix": "952CD2FE",
+          "invoice_settings": {
+            "custom_fields": null,
+            "default_payment_method": null,
+            "footer": null
+          },
           "livemode": false,
-          "metadata": {},
+          "metadata": {
+          },
+          "name": null,
+          "next_invoice_sequence": 1,
+          "phone": null,
+          "preferred_locales": [
+
+          ],
           "shipping": null,
           "sources": {
             "object": "list",
-            "data": [],
+            "data": [
+
+            ],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/customers/cus_BvAhXoSbaWMTTv/sources"
+            "url": "/v1/customers/cus_ILmWzwLceU7wPc/sources"
           },
           "subscriptions": {
             "object": "list",
-            "data": [],
+            "data": [
+
+            ],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/customers/cus_BvAhXoSbaWMTTv/subscriptions"
-          }
+            "url": "/v1/customers/cus_ILmWzwLceU7wPc/subscriptions"
+          },
+          "tax_exempt": "none",
+          "tax_ids": {
+            "object": "list",
+            "data": [
+
+            ],
+            "has_more": false,
+            "total_count": 0,
+            "url": "/v1/customers/cus_ILmWzwLceU7wPc/tax_ids"
+          },
+          "tax_info": null,
+          "tax_info_verification": null
         }
-    http_version: 
-  recorded_at: Sun, 10 Dec 2017 02:15:57 GMT
+  recorded_at: Sun, 08 Nov 2020 03:53:05 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/tokens
     body:
       encoding: UTF-8
-      string: card[number]=4242424242424242&card[exp_month]=1&card[exp_year]=2019&card[cvc]=123
+      string: card[number]=4242424242424242&card[exp_month]=1&card[exp_year]=2022&card[cvc]=123
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.0
+      - Stripe/v1 RubyBindings/5.28.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_qcIXtgn7j4Mqqx","request_duration_ms":482}}'
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+      - '{"bindings_version":"5.28.0","lang":"ruby","lang_version":"2.7.2 p137 (2020-10-01)","platform":"x86_64-darwin19","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 19.6.0 Darwin Kernel Version 19.6.0: Mon Aug 31 22:12:52 PDT 2020; root:xnu-6153.141.2~1/RELEASE_X86_64
         x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -582,11 +676,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 10 Dec 2017 02:15:58 GMT
+      - Sun, 08 Nov 2020 03:53:05 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '759'
+      - '785'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -596,25 +690,25 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
-      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_MMWodDIxHqNUKK
+      - req_tEZT7n2rN4xTS3
       Stripe-Version:
-      - '2017-08-15'
+      - '2017-12-14'
       Strict-Transport-Security:
       - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_BvAhUcM7BM7pEL",
+          "id": "tok_0Hl4xhkKe4kFpYbdQXcoxUVT",
           "object": "token",
           "card": {
-            "id": "card_BvAhsRZ9YtFOeM",
+            "id": "card_0Hl4xhkKe4kFpYbdZqQDdzbn",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -629,38 +723,40 @@ http_interactions:
             "cvc_check": "unchecked",
             "dynamic_last4": null,
             "exp_month": 1,
-            "exp_year": 2019,
+            "exp_year": 2022,
             "fingerprint": "DCZbB0jNI6O56OrA",
             "funding": "credit",
             "last4": "4242",
-            "metadata": {},
+            "metadata": {
+            },
             "name": null,
             "tokenization_method": null
           },
-          "client_ip": "58.7.133.233",
-          "created": 1512872158,
+          "client_ip": "1.136.106.142",
+          "created": 1604807585,
           "livemode": false,
           "type": "card",
           "used": false
         }
-    http_version: 
-  recorded_at: Sun, 10 Dec 2017 02:15:59 GMT
+  recorded_at: Sun, 08 Nov 2020 03:53:05 GMT
 - request:
     method: post
-    uri: https://api.stripe.com/v1/customers/cus_BvAhXoSbaWMTTv/sources
+    uri: https://api.stripe.com/v1/customers/cus_ILmWzwLceU7wPc/sources
     body:
       encoding: UTF-8
-      string: source=tok_BvAhUcM7BM7pEL
+      string: source=tok_0Hl4xhkKe4kFpYbdQXcoxUVT
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.0
+      - Stripe/v1 RubyBindings/5.28.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_tEZT7n2rN4xTS3","request_duration_ms":543}}'
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+      - '{"bindings_version":"5.28.0","lang":"ruby","lang_version":"2.7.2 p137 (2020-10-01)","platform":"x86_64-darwin19","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 19.6.0 Darwin Kernel Version 19.6.0: Mon Aug 31 22:12:52 PDT 2020; root:xnu-6153.141.2~1/RELEASE_X86_64
         x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -674,11 +770,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 10 Dec 2017 02:16:00 GMT
+      - Sun, 08 Nov 2020 03:53:06 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '567'
+      - '580'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -688,22 +784,22 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
-      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_hT1DNzypjMo20v
+      - req_mHFlZyozyRNQ2J
       Stripe-Version:
-      - '2017-08-15'
+      - '2017-12-14'
       Strict-Transport-Security:
       - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
         {
-          "id": "card_BvAhsRZ9YtFOeM",
+          "id": "card_0Hl4xhkKe4kFpYbdZqQDdzbn",
           "object": "card",
           "address_city": null,
           "address_country": null,
@@ -715,36 +811,38 @@ http_interactions:
           "address_zip_check": null,
           "brand": "Visa",
           "country": "US",
-          "customer": "cus_BvAhXoSbaWMTTv",
+          "customer": "cus_ILmWzwLceU7wPc",
           "cvc_check": "pass",
           "dynamic_last4": null,
           "exp_month": 1,
-          "exp_year": 2019,
+          "exp_year": 2022,
           "fingerprint": "DCZbB0jNI6O56OrA",
           "funding": "credit",
           "last4": "4242",
-          "metadata": {},
+          "metadata": {
+          },
           "name": null,
           "tokenization_method": null
         }
-    http_version: 
-  recorded_at: Sun, 10 Dec 2017 02:16:00 GMT
+  recorded_at: Sun, 08 Nov 2020 03:53:06 GMT
 - request:
     method: get
-    uri: https://api.stripe.com/v1/customers/cus_BvAhXoSbaWMTTv
+    uri: https://api.stripe.com/v1/customers/cus_ILmWzwLceU7wPc
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.0
+      - Stripe/v1 RubyBindings/5.28.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_mHFlZyozyRNQ2J","request_duration_ms":638}}'
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+      - '{"bindings_version":"5.28.0","lang":"ruby","lang_version":"2.7.2 p137 (2020-10-01)","platform":"x86_64-darwin19","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 19.6.0 Darwin Kernel Version 19.6.0: Mon Aug 31 22:12:52 PDT 2020; root:xnu-6153.141.2~1/RELEASE_X86_64
         x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -758,11 +856,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 10 Dec 2017 02:16:02 GMT
+      - Sun, 08 Nov 2020 03:53:06 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1387'
+      - '1937'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -772,39 +870,54 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
-      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_DFe4umPtoJec0l
+      - req_fpEXuvuOgdU6gA
       Stripe-Version:
-      - '2017-08-15'
+      - '2017-12-14'
       Strict-Transport-Security:
       - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
         {
-          "id": "cus_BvAhXoSbaWMTTv",
+          "id": "cus_ILmWzwLceU7wPc",
           "object": "customer",
           "account_balance": 0,
-          "created": 1512872157,
+          "address": null,
+          "balance": 0,
+          "created": 1604807584,
           "currency": null,
-          "default_source": "card_BvAhsRZ9YtFOeM",
+          "default_source": "card_0Hl4xhkKe4kFpYbdZqQDdzbn",
           "delinquent": false,
           "description": null,
           "discount": null,
-          "email": "search0016@drumknottsearch.com",
+          "email": "search0001@drumknottsearch.com",
+          "invoice_prefix": "952CD2FE",
+          "invoice_settings": {
+            "custom_fields": null,
+            "default_payment_method": null,
+            "footer": null
+          },
           "livemode": false,
-          "metadata": {},
+          "metadata": {
+          },
+          "name": null,
+          "next_invoice_sequence": 1,
+          "phone": null,
+          "preferred_locales": [
+
+          ],
           "shipping": null,
           "sources": {
             "object": "list",
             "data": [
               {
-                "id": "card_BvAhsRZ9YtFOeM",
+                "id": "card_0Hl4xhkKe4kFpYbdZqQDdzbn",
                 "object": "card",
                 "address_city": null,
                 "address_country": null,
@@ -816,49 +929,65 @@ http_interactions:
                 "address_zip_check": null,
                 "brand": "Visa",
                 "country": "US",
-                "customer": "cus_BvAhXoSbaWMTTv",
+                "customer": "cus_ILmWzwLceU7wPc",
                 "cvc_check": "pass",
                 "dynamic_last4": null,
                 "exp_month": 1,
-                "exp_year": 2019,
+                "exp_year": 2022,
                 "fingerprint": "DCZbB0jNI6O56OrA",
                 "funding": "credit",
                 "last4": "4242",
-                "metadata": {},
+                "metadata": {
+                },
                 "name": null,
                 "tokenization_method": null
               }
             ],
             "has_more": false,
             "total_count": 1,
-            "url": "/v1/customers/cus_BvAhXoSbaWMTTv/sources"
+            "url": "/v1/customers/cus_ILmWzwLceU7wPc/sources"
           },
           "subscriptions": {
             "object": "list",
-            "data": [],
+            "data": [
+
+            ],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/customers/cus_BvAhXoSbaWMTTv/subscriptions"
-          }
+            "url": "/v1/customers/cus_ILmWzwLceU7wPc/subscriptions"
+          },
+          "tax_exempt": "none",
+          "tax_ids": {
+            "object": "list",
+            "data": [
+
+            ],
+            "has_more": false,
+            "total_count": 0,
+            "url": "/v1/customers/cus_ILmWzwLceU7wPc/tax_ids"
+          },
+          "tax_info": null,
+          "tax_info_verification": null
         }
-    http_version: 
-  recorded_at: Sun, 10 Dec 2017 02:16:02 GMT
+  recorded_at: Sun, 08 Nov 2020 03:53:06 GMT
 - request:
     method: get
-    uri: https://api.stripe.com/v1/customers/cus_BvAhXoSbaWMTTv
+    uri: https://api.stripe.com/v1/customers/cus_ILmWzwLceU7wPc
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.0
+      - Stripe/v1 RubyBindings/5.28.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_fpEXuvuOgdU6gA","request_duration_ms":458}}'
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+      - '{"bindings_version":"5.28.0","lang":"ruby","lang_version":"2.7.2 p137 (2020-10-01)","platform":"x86_64-darwin19","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 19.6.0 Darwin Kernel Version 19.6.0: Mon Aug 31 22:12:52 PDT 2020; root:xnu-6153.141.2~1/RELEASE_X86_64
         x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -872,11 +1001,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 10 Dec 2017 02:16:03 GMT
+      - Sun, 08 Nov 2020 03:53:07 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1387'
+      - '1937'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -886,39 +1015,54 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
-      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_wTBfR6YYKqcGJR
+      - req_PRSsvkgS0k7RYo
       Stripe-Version:
-      - '2017-08-15'
+      - '2017-12-14'
       Strict-Transport-Security:
       - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
         {
-          "id": "cus_BvAhXoSbaWMTTv",
+          "id": "cus_ILmWzwLceU7wPc",
           "object": "customer",
           "account_balance": 0,
-          "created": 1512872157,
+          "address": null,
+          "balance": 0,
+          "created": 1604807584,
           "currency": null,
-          "default_source": "card_BvAhsRZ9YtFOeM",
+          "default_source": "card_0Hl4xhkKe4kFpYbdZqQDdzbn",
           "delinquent": false,
           "description": null,
           "discount": null,
-          "email": "search0016@drumknottsearch.com",
+          "email": "search0001@drumknottsearch.com",
+          "invoice_prefix": "952CD2FE",
+          "invoice_settings": {
+            "custom_fields": null,
+            "default_payment_method": null,
+            "footer": null
+          },
           "livemode": false,
-          "metadata": {},
+          "metadata": {
+          },
+          "name": null,
+          "next_invoice_sequence": 1,
+          "phone": null,
+          "preferred_locales": [
+
+          ],
           "shipping": null,
           "sources": {
             "object": "list",
             "data": [
               {
-                "id": "card_BvAhsRZ9YtFOeM",
+                "id": "card_0Hl4xhkKe4kFpYbdZqQDdzbn",
                 "object": "card",
                 "address_city": null,
                 "address_country": null,
@@ -930,49 +1074,65 @@ http_interactions:
                 "address_zip_check": null,
                 "brand": "Visa",
                 "country": "US",
-                "customer": "cus_BvAhXoSbaWMTTv",
+                "customer": "cus_ILmWzwLceU7wPc",
                 "cvc_check": "pass",
                 "dynamic_last4": null,
                 "exp_month": 1,
-                "exp_year": 2019,
+                "exp_year": 2022,
                 "fingerprint": "DCZbB0jNI6O56OrA",
                 "funding": "credit",
                 "last4": "4242",
-                "metadata": {},
+                "metadata": {
+                },
                 "name": null,
                 "tokenization_method": null
               }
             ],
             "has_more": false,
             "total_count": 1,
-            "url": "/v1/customers/cus_BvAhXoSbaWMTTv/sources"
+            "url": "/v1/customers/cus_ILmWzwLceU7wPc/sources"
           },
           "subscriptions": {
             "object": "list",
-            "data": [],
+            "data": [
+
+            ],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/customers/cus_BvAhXoSbaWMTTv/subscriptions"
-          }
+            "url": "/v1/customers/cus_ILmWzwLceU7wPc/subscriptions"
+          },
+          "tax_exempt": "none",
+          "tax_ids": {
+            "object": "list",
+            "data": [
+
+            ],
+            "has_more": false,
+            "total_count": 0,
+            "url": "/v1/customers/cus_ILmWzwLceU7wPc/tax_ids"
+          },
+          "tax_info": null,
+          "tax_info_verification": null
         }
-    http_version: 
-  recorded_at: Sun, 10 Dec 2017 02:16:03 GMT
+  recorded_at: Sun, 08 Nov 2020 03:53:07 GMT
 - request:
     method: post
-    uri: https://api.stripe.com/v1/customers/cus_BvAhXoSbaWMTTv/subscriptions
+    uri: https://api.stripe.com/v1/customers/cus_ILmWzwLceU7wPc/subscriptions
     body:
       encoding: UTF-8
       string: plan=drumknott
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.0
+      - Stripe/v1 RubyBindings/5.28.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_PRSsvkgS0k7RYo","request_duration_ms":400}}'
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+      - '{"bindings_version":"5.28.0","lang":"ruby","lang_version":"2.7.2 p137 (2020-10-01)","platform":"x86_64-darwin19","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 19.6.0 Darwin Kernel Version 19.6.0: Mon Aug 31 22:12:52 PDT 2020; root:xnu-6153.141.2~1/RELEASE_X86_64
         x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -986,11 +1146,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 10 Dec 2017 02:16:05 GMT
+      - Sun, 08 Nov 2020 03:53:09 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1593'
+      - '3754'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -1000,87 +1160,163 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
-      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_QD9KoStBY82N80
+      - req_Ye9ChnQuxzci8H
       Stripe-Version:
-      - '2017-08-15'
+      - '2017-12-14'
       Strict-Transport-Security:
       - max-age=31556926; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: |
         {
-          "id": "sub_BvAhf026T3cQF5",
+          "id": "sub_ILmW83OMYxWyWF",
           "object": "subscription",
           "application_fee_percent": null,
           "billing": "charge_automatically",
+          "billing_cycle_anchor": 1604807587,
+          "billing_thresholds": null,
+          "cancel_at": null,
           "cancel_at_period_end": false,
           "canceled_at": null,
-          "created": 1512872164,
-          "current_period_end": 1515550564,
-          "current_period_start": 1512872164,
-          "customer": "cus_BvAhXoSbaWMTTv",
+          "collection_method": "charge_automatically",
+          "created": 1604807587,
+          "current_period_end": 1607399587,
+          "current_period_start": 1604807587,
+          "customer": "cus_ILmWzwLceU7wPc",
+          "days_until_due": null,
+          "default_payment_method": null,
+          "default_source": null,
+          "default_tax_rates": [
+
+          ],
           "discount": null,
           "ended_at": null,
+          "invoice_customer_balance_settings": {
+            "consume_applied_balance_on_void": true
+          },
           "items": {
             "object": "list",
             "data": [
               {
-                "id": "si_BvAhEApRerRCc6",
+                "id": "si_ILmWsr7gFlW1Zu",
                 "object": "subscription_item",
-                "created": 1512872165,
-                "metadata": {},
+                "billing_thresholds": null,
+                "created": 1604807588,
+                "metadata": {
+                },
                 "plan": {
                   "id": "drumknott",
                   "object": "plan",
+                  "active": true,
+                  "aggregate_usage": null,
                   "amount": 300,
-                  "created": 1512872155,
+                  "amount_decimal": "300",
+                  "billing_scheme": "per_unit",
+                  "created": 1604807584,
                   "currency": "usd",
                   "interval": "month",
                   "interval_count": 1,
                   "livemode": false,
-                  "metadata": {},
+                  "metadata": {
+                  },
                   "name": "Drumknott Test",
+                  "nickname": null,
+                  "product": "prod_ILmWcCw2aEuhNf",
                   "statement_descriptor": null,
-                  "trial_period_days": null
+                  "tiers": null,
+                  "tiers_mode": null,
+                  "transform_usage": null,
+                  "trial_period_days": null,
+                  "usage_type": "licensed"
                 },
-                "quantity": 1
+                "price": {
+                  "id": "drumknott",
+                  "object": "price",
+                  "active": true,
+                  "billing_scheme": "per_unit",
+                  "created": 1604807584,
+                  "currency": "usd",
+                  "livemode": false,
+                  "lookup_key": null,
+                  "metadata": {
+                  },
+                  "nickname": null,
+                  "product": "prod_ILmWcCw2aEuhNf",
+                  "recurring": {
+                    "aggregate_usage": null,
+                    "interval": "month",
+                    "interval_count": 1,
+                    "trial_period_days": null,
+                    "usage_type": "licensed"
+                  },
+                  "tiers_mode": null,
+                  "transform_quantity": null,
+                  "type": "recurring",
+                  "unit_amount": 300,
+                  "unit_amount_decimal": "300"
+                },
+                "quantity": 1,
+                "subscription": "sub_ILmW83OMYxWyWF",
+                "tax_rates": [
+
+                ]
               }
             ],
             "has_more": false,
             "total_count": 1,
-            "url": "/v1/subscription_items?subscription=sub_BvAhf026T3cQF5"
+            "url": "/v1/subscription_items?subscription=sub_ILmW83OMYxWyWF"
           },
+          "latest_invoice": "in_0Hl4xjkKe4kFpYbdFjaTACKY",
           "livemode": false,
-          "metadata": {},
+          "metadata": {
+          },
+          "next_pending_invoice_item_invoice": null,
+          "pause_collection": null,
+          "pending_invoice_item_interval": null,
+          "pending_setup_intent": null,
+          "pending_update": null,
           "plan": {
             "id": "drumknott",
             "object": "plan",
+            "active": true,
+            "aggregate_usage": null,
             "amount": 300,
-            "created": 1512872155,
+            "amount_decimal": "300",
+            "billing_scheme": "per_unit",
+            "created": 1604807584,
             "currency": "usd",
             "interval": "month",
             "interval_count": 1,
             "livemode": false,
-            "metadata": {},
+            "metadata": {
+            },
             "name": "Drumknott Test",
+            "nickname": null,
+            "product": "prod_ILmWcCw2aEuhNf",
             "statement_descriptor": null,
-            "trial_period_days": null
+            "tiers": null,
+            "tiers_mode": null,
+            "transform_usage": null,
+            "trial_period_days": null,
+            "usage_type": "licensed"
           },
           "quantity": 1,
-          "start": 1512872164,
+          "schedule": null,
+          "start": 1604807587,
+          "start_date": 1604807587,
           "status": "active",
           "tax_percent": null,
+          "transfer_data": null,
           "trial_end": null,
           "trial_start": null
         }
-    http_version: 
-  recorded_at: Sun, 10 Dec 2017 02:16:06 GMT
+  recorded_at: Sun, 08 Nov 2020 03:53:09 GMT
 - request:
     method: get
     uri: https://api.stripe.com/v1/events
@@ -1089,14 +1325,16 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Stripe/v1 RubyBindings/3.9.0
+      - Stripe/v1 RubyBindings/5.28.0
       Authorization:
       - Bearer aAcnj1rwUlr0eRc4MrHxFvsye3Dd4GXU
       Content-Type:
       - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_Ye9ChnQuxzci8H","request_duration_ms":1708}}'
       X-Stripe-Client-User-Agent:
-      - '{"bindings_version":"3.9.0","lang":"ruby","lang_version":"2.4.2 p198 (2017-09-14)","platform":"x86_64-darwin16","engine":"ruby","publisher":"stripe","uname":"Darwin
-        pat 16.7.0 Darwin Kernel Version 16.7.0: Wed Oct  4 00:17:00 PDT 2017; root:xnu-3789.71.6~1/RELEASE_X86_64
+      - '{"bindings_version":"5.28.0","lang":"ruby","lang_version":"2.7.2 p137 (2020-10-01)","platform":"x86_64-darwin19","engine":"ruby","publisher":"stripe","uname":"Darwin
+        pat 19.6.0 Darwin Kernel Version 19.6.0: Mon Aug 31 22:12:52 PDT 2020; root:xnu-6153.141.2~1/RELEASE_X86_64
         x86_64","hostname":"pat"}'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -1110,11 +1348,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 10 Dec 2017 02:16:06 GMT
+      - Sun, 08 Nov 2020 03:53:09 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '21753'
+      - '36045'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -1124,729 +1362,20 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
-      - X-Stripe-Privileged-Session-Required,stripe-manage-version,X-Stripe-External-Auth-Required
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
       Access-Control-Max-Age:
       - '300'
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_VHqAFoaoBMwBAU
+      - req_T5M6xsY7vTzTfE
       Stripe-Version:
-      - '2017-08-15'
+      - '2017-12-14'
       Strict-Transport-Security:
       - max-age=31556926; includeSubDomains; preload
     body:
-      encoding: UTF-8
-      string: |
-        {
-          "object": "list",
-          "data": [
-            {
-              "id": "evt_BvAhwuqPmt9two",
-              "object": "event",
-              "api_version": "2017-08-15",
-              "created": 1512872165,
-              "data": {
-                "object": {
-                  "id": "sub_BvAhf026T3cQF5",
-                  "object": "subscription",
-                  "application_fee_percent": null,
-                  "billing": "charge_automatically",
-                  "cancel_at_period_end": false,
-                  "canceled_at": null,
-                  "created": 1512872164,
-                  "current_period_end": 1515550564,
-                  "current_period_start": 1512872164,
-                  "customer": "cus_BvAhXoSbaWMTTv",
-                  "discount": null,
-                  "ended_at": null,
-                  "items": {
-                    "object": "list",
-                    "data": [
-                      {
-                        "id": "si_BvAhEApRerRCc6",
-                        "object": "subscription_item",
-                        "created": 1512872165,
-                        "metadata": {},
-                        "plan": {
-                          "id": "drumknott",
-                          "object": "plan",
-                          "amount": 300,
-                          "created": 1512872155,
-                          "currency": "usd",
-                          "interval": "month",
-                          "interval_count": 1,
-                          "livemode": false,
-                          "metadata": {},
-                          "name": "Drumknott Test",
-                          "statement_descriptor": null,
-                          "trial_period_days": null
-                        },
-                        "quantity": 1
-                      }
-                    ],
-                    "has_more": false,
-                    "total_count": 1,
-                    "url": "/v1/subscription_items?subscription=sub_BvAhf026T3cQF5"
-                  },
-                  "livemode": false,
-                  "metadata": {},
-                  "plan": {
-                    "id": "drumknott",
-                    "object": "plan",
-                    "amount": 300,
-                    "created": 1512872155,
-                    "currency": "usd",
-                    "interval": "month",
-                    "interval_count": 1,
-                    "livemode": false,
-                    "metadata": {},
-                    "name": "Drumknott Test",
-                    "statement_descriptor": null,
-                    "trial_period_days": null
-                  },
-                  "quantity": 1,
-                  "start": 1512872164,
-                  "status": "active",
-                  "tax_percent": null,
-                  "trial_end": null,
-                  "trial_start": null
-                }
-              },
-              "livemode": false,
-              "pending_webhooks": 0,
-              "request": {
-                "id": "req_QD9KoStBY82N80",
-                "idempotency_key": null
-              },
-              "type": "customer.subscription.created"
-            },
-            {
-              "id": "evt_BvAhQhDricUdg9",
-              "object": "event",
-              "api_version": "2017-08-15",
-              "created": 1512872165,
-              "data": {
-                "object": {
-                  "id": "ch_BvAhui0n0exZRH",
-                  "object": "charge",
-                  "amount": 300,
-                  "amount_refunded": 0,
-                  "application": null,
-                  "application_fee": null,
-                  "balance_transaction": "txn_BvAh0fiPKYRimZ",
-                  "captured": true,
-                  "created": 1512872164,
-                  "currency": "usd",
-                  "customer": "cus_BvAhXoSbaWMTTv",
-                  "description": null,
-                  "destination": null,
-                  "dispute": null,
-                  "failure_code": null,
-                  "failure_message": null,
-                  "fraud_details": {},
-                  "invoice": "in_BvAh6mvA3Uctzg",
-                  "livemode": false,
-                  "metadata": {},
-                  "on_behalf_of": null,
-                  "order": null,
-                  "outcome": {
-                    "network_status": "approved_by_network",
-                    "reason": null,
-                    "risk_level": "normal",
-                    "seller_message": "Payment complete.",
-                    "type": "authorized"
-                  },
-                  "paid": true,
-                  "receipt_email": null,
-                  "receipt_number": null,
-                  "refunded": false,
-                  "refunds": {
-                    "object": "list",
-                    "data": [],
-                    "has_more": false,
-                    "total_count": 0,
-                    "url": "/v1/charges/ch_BvAhui0n0exZRH/refunds"
-                  },
-                  "review": null,
-                  "shipping": null,
-                  "source": {
-                    "id": "card_BvAhsRZ9YtFOeM",
-                    "object": "card",
-                    "address_city": null,
-                    "address_country": null,
-                    "address_line1": null,
-                    "address_line1_check": null,
-                    "address_line2": null,
-                    "address_state": null,
-                    "address_zip": null,
-                    "address_zip_check": null,
-                    "brand": "Visa",
-                    "country": "US",
-                    "customer": "cus_BvAhXoSbaWMTTv",
-                    "cvc_check": "pass",
-                    "dynamic_last4": null,
-                    "exp_month": 1,
-                    "exp_year": 2019,
-                    "fingerprint": "DCZbB0jNI6O56OrA",
-                    "funding": "credit",
-                    "last4": "4242",
-                    "metadata": {},
-                    "name": null,
-                    "tokenization_method": null
-                  },
-                  "source_transfer": null,
-                  "statement_descriptor": null,
-                  "status": "succeeded",
-                  "transfer_group": null
-                }
-              },
-              "livemode": false,
-              "pending_webhooks": 0,
-              "request": {
-                "id": "req_QD9KoStBY82N80",
-                "idempotency_key": null
-              },
-              "type": "charge.succeeded"
-            },
-            {
-              "id": "evt_BvAhfMA3mvU4nR",
-              "object": "event",
-              "api_version": "2017-08-15",
-              "created": 1512872165,
-              "data": {
-                "object": {
-                  "id": "in_BvAh6mvA3Uctzg",
-                  "object": "invoice",
-                  "amount_due": 300,
-                  "application_fee": null,
-                  "attempt_count": 0,
-                  "attempted": true,
-                  "billing": "charge_automatically",
-                  "charge": "ch_BvAhui0n0exZRH",
-                  "closed": true,
-                  "currency": "usd",
-                  "customer": "cus_BvAhXoSbaWMTTv",
-                  "date": 1512872164,
-                  "description": null,
-                  "discount": null,
-                  "ending_balance": 0,
-                  "forgiven": false,
-                  "lines": {
-                    "object": "list",
-                    "data": [
-                      {
-                        "id": "sub_BvAhf026T3cQF5",
-                        "object": "line_item",
-                        "amount": 300,
-                        "currency": "usd",
-                        "description": null,
-                        "discountable": true,
-                        "livemode": false,
-                        "metadata": {},
-                        "period": {
-                          "start": 1512872164,
-                          "end": 1515550564
-                        },
-                        "plan": {
-                          "id": "drumknott",
-                          "object": "plan",
-                          "amount": 300,
-                          "created": 1512872155,
-                          "currency": "usd",
-                          "interval": "month",
-                          "interval_count": 1,
-                          "livemode": false,
-                          "metadata": {},
-                          "name": "Drumknott Test",
-                          "statement_descriptor": null,
-                          "trial_period_days": null
-                        },
-                        "proration": false,
-                        "quantity": 1,
-                        "subscription": null,
-                        "subscription_item": "si_BvAhEApRerRCc6",
-                        "type": "subscription"
-                      }
-                    ],
-                    "has_more": false,
-                    "total_count": 1,
-                    "url": "/v1/invoices/in_BvAh6mvA3Uctzg/lines"
-                  },
-                  "livemode": false,
-                  "metadata": {},
-                  "next_payment_attempt": null,
-                  "number": "0423e829c9-0001",
-                  "paid": true,
-                  "period_end": 1512872164,
-                  "period_start": 1512872164,
-                  "receipt_number": null,
-                  "starting_balance": 0,
-                  "statement_descriptor": null,
-                  "subscription": "sub_BvAhf026T3cQF5",
-                  "subtotal": 300,
-                  "tax": null,
-                  "tax_percent": null,
-                  "total": 300,
-                  "webhooks_delivered_at": null
-                }
-              },
-              "livemode": false,
-              "pending_webhooks": 0,
-              "request": {
-                "id": "req_QD9KoStBY82N80",
-                "idempotency_key": null
-              },
-              "type": "invoice.payment_succeeded"
-            },
-            {
-              "id": "evt_BvAhZ7nmLqSjsw",
-              "object": "event",
-              "api_version": "2017-08-15",
-              "created": 1512872165,
-              "data": {
-                "object": {
-                  "id": "in_BvAh6mvA3Uctzg",
-                  "object": "invoice",
-                  "amount_due": 300,
-                  "application_fee": null,
-                  "attempt_count": 0,
-                  "attempted": true,
-                  "billing": "charge_automatically",
-                  "charge": "ch_BvAhui0n0exZRH",
-                  "closed": true,
-                  "currency": "usd",
-                  "customer": "cus_BvAhXoSbaWMTTv",
-                  "date": 1512872164,
-                  "description": null,
-                  "discount": null,
-                  "ending_balance": 0,
-                  "forgiven": false,
-                  "lines": {
-                    "object": "list",
-                    "data": [
-                      {
-                        "id": "sub_BvAhf026T3cQF5",
-                        "object": "line_item",
-                        "amount": 300,
-                        "currency": "usd",
-                        "description": null,
-                        "discountable": true,
-                        "livemode": false,
-                        "metadata": {},
-                        "period": {
-                          "start": 1512872164,
-                          "end": 1515550564
-                        },
-                        "plan": {
-                          "id": "drumknott",
-                          "object": "plan",
-                          "amount": 300,
-                          "created": 1512872155,
-                          "currency": "usd",
-                          "interval": "month",
-                          "interval_count": 1,
-                          "livemode": false,
-                          "metadata": {},
-                          "name": "Drumknott Test",
-                          "statement_descriptor": null,
-                          "trial_period_days": null
-                        },
-                        "proration": false,
-                        "quantity": 1,
-                        "subscription": null,
-                        "subscription_item": "si_BvAhEApRerRCc6",
-                        "type": "subscription"
-                      }
-                    ],
-                    "has_more": false,
-                    "total_count": 1,
-                    "url": "/v1/invoices/in_BvAh6mvA3Uctzg/lines"
-                  },
-                  "livemode": false,
-                  "metadata": {},
-                  "next_payment_attempt": null,
-                  "number": "0423e829c9-0001",
-                  "paid": true,
-                  "period_end": 1512872164,
-                  "period_start": 1512872164,
-                  "receipt_number": null,
-                  "starting_balance": 0,
-                  "statement_descriptor": null,
-                  "subscription": "sub_BvAhf026T3cQF5",
-                  "subtotal": 300,
-                  "tax": null,
-                  "tax_percent": null,
-                  "total": 300,
-                  "webhooks_delivered_at": null
-                }
-              },
-              "livemode": false,
-              "pending_webhooks": 0,
-              "request": {
-                "id": "req_QD9KoStBY82N80",
-                "idempotency_key": null
-              },
-              "type": "invoice.created"
-            },
-            {
-              "id": "evt_BvAh8ATY5sWTLC",
-              "object": "event",
-              "api_version": "2017-08-15",
-              "created": 1512872165,
-              "data": {
-                "object": {
-                  "id": "cus_BvAhXoSbaWMTTv",
-                  "object": "customer",
-                  "account_balance": 0,
-                  "created": 1512872157,
-                  "currency": "usd",
-                  "default_source": "card_BvAhsRZ9YtFOeM",
-                  "delinquent": false,
-                  "description": null,
-                  "discount": null,
-                  "email": "search0016@drumknottsearch.com",
-                  "livemode": false,
-                  "metadata": {},
-                  "shipping": null,
-                  "sources": {
-                    "object": "list",
-                    "data": [
-                      {
-                        "id": "card_BvAhsRZ9YtFOeM",
-                        "object": "card",
-                        "address_city": null,
-                        "address_country": null,
-                        "address_line1": null,
-                        "address_line1_check": null,
-                        "address_line2": null,
-                        "address_state": null,
-                        "address_zip": null,
-                        "address_zip_check": null,
-                        "brand": "Visa",
-                        "country": "US",
-                        "customer": "cus_BvAhXoSbaWMTTv",
-                        "cvc_check": "pass",
-                        "dynamic_last4": null,
-                        "exp_month": 1,
-                        "exp_year": 2019,
-                        "fingerprint": "DCZbB0jNI6O56OrA",
-                        "funding": "credit",
-                        "last4": "4242",
-                        "metadata": {},
-                        "name": null,
-                        "tokenization_method": null
-                      }
-                    ],
-                    "has_more": false,
-                    "total_count": 1,
-                    "url": "/v1/customers/cus_BvAhXoSbaWMTTv/sources"
-                  },
-                  "subscriptions": {
-                    "object": "list",
-                    "data": [
-                      {
-                        "id": "sub_BvAhf026T3cQF5",
-                        "object": "subscription",
-                        "application_fee_percent": null,
-                        "billing": "charge_automatically",
-                        "cancel_at_period_end": false,
-                        "canceled_at": null,
-                        "created": 1512872164,
-                        "current_period_end": 1515550564,
-                        "current_period_start": 1512872164,
-                        "customer": "cus_BvAhXoSbaWMTTv",
-                        "discount": null,
-                        "ended_at": null,
-                        "items": {
-                          "object": "list",
-                          "data": [
-                            {
-                              "id": "si_BvAhEApRerRCc6",
-                              "object": "subscription_item",
-                              "created": 1512872165,
-                              "metadata": {},
-                              "plan": {
-                                "id": "drumknott",
-                                "object": "plan",
-                                "amount": 300,
-                                "created": 1512872155,
-                                "currency": "usd",
-                                "interval": "month",
-                                "interval_count": 1,
-                                "livemode": false,
-                                "metadata": {},
-                                "name": "Drumknott Test",
-                                "statement_descriptor": null,
-                                "trial_period_days": null
-                              },
-                              "quantity": 1
-                            }
-                          ],
-                          "has_more": false,
-                          "total_count": 1,
-                          "url": "/v1/subscription_items?subscription=sub_BvAhf026T3cQF5"
-                        },
-                        "livemode": false,
-                        "metadata": {},
-                        "plan": {
-                          "id": "drumknott",
-                          "object": "plan",
-                          "amount": 300,
-                          "created": 1512872155,
-                          "currency": "usd",
-                          "interval": "month",
-                          "interval_count": 1,
-                          "livemode": false,
-                          "metadata": {},
-                          "name": "Drumknott Test",
-                          "statement_descriptor": null,
-                          "trial_period_days": null
-                        },
-                        "quantity": 1,
-                        "start": 1512872164,
-                        "status": "active",
-                        "tax_percent": null,
-                        "trial_end": null,
-                        "trial_start": null
-                      }
-                    ],
-                    "has_more": false,
-                    "total_count": 1,
-                    "url": "/v1/customers/cus_BvAhXoSbaWMTTv/subscriptions"
-                  }
-                },
-                "previous_attributes": {
-                  "currency": null
-                }
-              },
-              "livemode": false,
-              "pending_webhooks": 0,
-              "request": {
-                "id": "req_QD9KoStBY82N80",
-                "idempotency_key": null
-              },
-              "type": "customer.updated"
-            },
-            {
-              "id": "evt_BvAhETyIjzsPQO",
-              "object": "event",
-              "api_version": "2017-08-15",
-              "created": 1512872160,
-              "data": {
-                "object": {
-                  "id": "card_BvAhsRZ9YtFOeM",
-                  "object": "card",
-                  "address_city": null,
-                  "address_country": null,
-                  "address_line1": null,
-                  "address_line1_check": null,
-                  "address_line2": null,
-                  "address_state": null,
-                  "address_zip": null,
-                  "address_zip_check": null,
-                  "brand": "Visa",
-                  "country": "US",
-                  "customer": "cus_BvAhXoSbaWMTTv",
-                  "cvc_check": "pass",
-                  "dynamic_last4": null,
-                  "exp_month": 1,
-                  "exp_year": 2019,
-                  "fingerprint": "DCZbB0jNI6O56OrA",
-                  "funding": "credit",
-                  "last4": "4242",
-                  "metadata": {},
-                  "name": null,
-                  "tokenization_method": null
-                }
-              },
-              "livemode": false,
-              "pending_webhooks": 0,
-              "request": {
-                "id": "req_hT1DNzypjMo20v",
-                "idempotency_key": null
-              },
-              "type": "customer.source.created"
-            },
-            {
-              "id": "evt_BvAhzW9mjfmQ9r",
-              "object": "event",
-              "api_version": "2017-08-15",
-              "created": 1512872160,
-              "data": {
-                "object": {
-                  "id": "cus_BvAhXoSbaWMTTv",
-                  "object": "customer",
-                  "account_balance": 0,
-                  "created": 1512872157,
-                  "currency": null,
-                  "default_source": "card_BvAhsRZ9YtFOeM",
-                  "delinquent": false,
-                  "description": null,
-                  "discount": null,
-                  "email": "search0016@drumknottsearch.com",
-                  "livemode": false,
-                  "metadata": {},
-                  "shipping": null,
-                  "sources": {
-                    "object": "list",
-                    "data": [
-                      {
-                        "id": "card_BvAhsRZ9YtFOeM",
-                        "object": "card",
-                        "address_city": null,
-                        "address_country": null,
-                        "address_line1": null,
-                        "address_line1_check": null,
-                        "address_line2": null,
-                        "address_state": null,
-                        "address_zip": null,
-                        "address_zip_check": null,
-                        "brand": "Visa",
-                        "country": "US",
-                        "customer": "cus_BvAhXoSbaWMTTv",
-                        "cvc_check": "pass",
-                        "dynamic_last4": null,
-                        "exp_month": 1,
-                        "exp_year": 2019,
-                        "fingerprint": "DCZbB0jNI6O56OrA",
-                        "funding": "credit",
-                        "last4": "4242",
-                        "metadata": {},
-                        "name": null,
-                        "tokenization_method": null
-                      }
-                    ],
-                    "has_more": false,
-                    "total_count": 1,
-                    "url": "/v1/customers/cus_BvAhXoSbaWMTTv/sources"
-                  },
-                  "subscriptions": {
-                    "object": "list",
-                    "data": [],
-                    "has_more": false,
-                    "total_count": 0,
-                    "url": "/v1/customers/cus_BvAhXoSbaWMTTv/subscriptions"
-                  }
-                },
-                "previous_attributes": {
-                  "default_source": null
-                }
-              },
-              "livemode": false,
-              "pending_webhooks": 0,
-              "request": {
-                "id": "req_hT1DNzypjMo20v",
-                "idempotency_key": null
-              },
-              "type": "customer.updated"
-            },
-            {
-              "id": "evt_BvAhRfLASBWhlT",
-              "object": "event",
-              "api_version": "2017-08-15",
-              "created": 1512872157,
-              "data": {
-                "object": {
-                  "id": "cus_BvAhXoSbaWMTTv",
-                  "object": "customer",
-                  "account_balance": 0,
-                  "created": 1512872157,
-                  "currency": null,
-                  "default_source": null,
-                  "delinquent": false,
-                  "description": null,
-                  "discount": null,
-                  "email": "search0016@drumknottsearch.com",
-                  "livemode": false,
-                  "metadata": {},
-                  "shipping": null,
-                  "sources": {
-                    "object": "list",
-                    "data": [],
-                    "has_more": false,
-                    "total_count": 0,
-                    "url": "/v1/customers/cus_BvAhXoSbaWMTTv/sources"
-                  },
-                  "subscriptions": {
-                    "object": "list",
-                    "data": [],
-                    "has_more": false,
-                    "total_count": 0,
-                    "url": "/v1/customers/cus_BvAhXoSbaWMTTv/subscriptions"
-                  }
-                }
-              },
-              "livemode": false,
-              "pending_webhooks": 0,
-              "request": {
-                "id": "req_AlR8iP5t9G8KQu",
-                "idempotency_key": null
-              },
-              "type": "customer.created"
-            },
-            {
-              "id": "evt_BvAh2mYISadEb8",
-              "object": "event",
-              "api_version": "2017-08-15",
-              "created": 1512872155,
-              "data": {
-                "object": {
-                  "id": "drumknott",
-                  "object": "plan",
-                  "amount": 300,
-                  "created": 1512872155,
-                  "currency": "usd",
-                  "interval": "month",
-                  "interval_count": 1,
-                  "livemode": false,
-                  "metadata": {},
-                  "name": "Drumknott Test",
-                  "statement_descriptor": null,
-                  "trial_period_days": null
-                }
-              },
-              "livemode": false,
-              "pending_webhooks": 0,
-              "request": {
-                "id": "req_bYJSKWyBSXPjJR",
-                "idempotency_key": null
-              },
-              "type": "plan.created"
-            },
-            {
-              "id": "evt_BvAhvrU7elsbJs",
-              "object": "event",
-              "api_version": "2017-08-15",
-              "created": 1512872154,
-              "data": {
-                "object": {
-                  "id": "drumknott",
-                  "object": "plan",
-                  "amount": 300,
-                  "created": 1512872133,
-                  "currency": "usd",
-                  "interval": "month",
-                  "interval_count": 1,
-                  "livemode": false,
-                  "metadata": {},
-                  "name": "Drumknott Test",
-                  "statement_descriptor": null,
-                  "trial_period_days": null
-                }
-              },
-              "livemode": false,
-              "pending_webhooks": 0,
-              "request": {
-                "id": "req_wiyJ7WEvrcxP2o",
-                "idempotency_key": null
-              },
-              "type": "plan.deleted"
-            }
-          ],
-          "has_more": true,
-          "url": "/v1/events"
-        }
-    http_version: 
-  recorded_at: Sun, 10 Dec 2017 02:16:07 GMT
-recorded_with: VCR 3.0.3
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogICJvYmplY3QiOiAibGlzdCIsCiAgImRhdGEiOiBbCiAgICB7CiAgICAgICJpZCI6ICJldnRfMEhsNHhsa0tlNGtGcFliZFlPVlNDTzk2IiwKICAgICAgIm9iamVjdCI6ICJldmVudCIsCiAgICAgICJhcGlfdmVyc2lvbiI6ICIyMDE3LTEyLTE0IiwKICAgICAgImNyZWF0ZWQiOiAxNjA0ODA3NTg4LAogICAgICAiZGF0YSI6IHsKICAgICAgICAib2JqZWN0IjogewogICAgICAgICAgImlkIjogImluXzBIbDR4amtLZTRrRnBZYmRGamFUQUNLWSIsCiAgICAgICAgICAib2JqZWN0IjogImludm9pY2UiLAogICAgICAgICAgImFjY291bnRfY291bnRyeSI6ICJBVSIsCiAgICAgICAgICAiYWNjb3VudF9uYW1lIjogIkRydW1rbm90dCBTZWFyY2giLAogICAgICAgICAgImFjY291bnRfdGF4X2lkcyI6IG51bGwsCiAgICAgICAgICAiYW1vdW50X2R1ZSI6IDMwMCwKICAgICAgICAgICJhbW91bnRfcGFpZCI6IDMwMCwKICAgICAgICAgICJhbW91bnRfcmVtYWluaW5nIjogMCwKICAgICAgICAgICJhcHBsaWNhdGlvbl9mZWUiOiBudWxsLAogICAgICAgICAgImF0dGVtcHRfY291bnQiOiAxLAogICAgICAgICAgImF0dGVtcHRlZCI6IHRydWUsCiAgICAgICAgICAiYXV0b19hZHZhbmNlIjogZmFsc2UsCiAgICAgICAgICAiYmlsbGluZyI6ICJjaGFyZ2VfYXV0b21hdGljYWxseSIsCiAgICAgICAgICAiYmlsbGluZ19yZWFzb24iOiAic3Vic2NyaXB0aW9uX3VwZGF0ZSIsCiAgICAgICAgICAiY2hhcmdlIjogImNoXzBIbDR4a2tLZTRrRnBZYmRlUHJPdFYzMyIsCiAgICAgICAgICAiY2xvc2VkIjogdHJ1ZSwKICAgICAgICAgICJjb2xsZWN0aW9uX21ldGhvZCI6ICJjaGFyZ2VfYXV0b21hdGljYWxseSIsCiAgICAgICAgICAiY3JlYXRlZCI6IDE2MDQ4MDc1ODcsCiAgICAgICAgICAiY3VycmVuY3kiOiAidXNkIiwKICAgICAgICAgICJjdXN0b21fZmllbGRzIjogbnVsbCwKICAgICAgICAgICJjdXN0b21lciI6ICJjdXNfSUxtV3p3TGNlVTd3UGMiLAogICAgICAgICAgImN1c3RvbWVyX2FkZHJlc3MiOiBudWxsLAogICAgICAgICAgImN1c3RvbWVyX2VtYWlsIjogInNlYXJjaDAwMDFAZHJ1bWtub3R0c2VhcmNoLmNvbSIsCiAgICAgICAgICAiY3VzdG9tZXJfbmFtZSI6IG51bGwsCiAgICAgICAgICAiY3VzdG9tZXJfcGhvbmUiOiBudWxsLAogICAgICAgICAgImN1c3RvbWVyX3NoaXBwaW5nIjogbnVsbCwKICAgICAgICAgICJjdXN0b21lcl90YXhfZXhlbXB0IjogIm5vbmUiLAogICAgICAgICAgImN1c3RvbWVyX3RheF9pZHMiOiBbCgogICAgICAgICAgXSwKICAgICAgICAgICJkYXRlIjogMTYwNDgwNzU4NywKICAgICAgICAgICJkZWZhdWx0X3BheW1lbnRfbWV0aG9kIjogbnVsbCwKICAgICAgICAgICJkZWZhdWx0X3NvdXJjZSI6IG51bGwsCiAgICAgICAgICAiZGVmYXVsdF90YXhfcmF0ZXMiOiBbCgogICAgICAgICAgXSwKICAgICAgICAgICJkZXNjcmlwdGlvbiI6IG51bGwsCiAgICAgICAgICAiZGlzY291bnQiOiBudWxsLAogICAgICAgICAgImRpc2NvdW50cyI6IFsKCiAgICAgICAgICBdLAogICAgICAgICAgImR1ZV9kYXRlIjogbnVsbCwKICAgICAgICAgICJlbmRpbmdfYmFsYW5jZSI6IDAsCiAgICAgICAgICAiZmluYWxpemVkX2F0IjogMTYwNDgwNzU4NywKICAgICAgICAgICJmb290ZXIiOiBudWxsLAogICAgICAgICAgImZvcmdpdmVuIjogZmFsc2UsCiAgICAgICAgICAiaG9zdGVkX2ludm9pY2VfdXJsIjogImh0dHBzOi8vcGF5LnN0cmlwZS5jb20vaW52b2ljZS9rS2U0a0ZwWWJkTDZ1UkY3MVRsSHZzT1F6aWJUWVJVMC9pbnZzdF9JTG1XcnlvUmNVYjEwOTNmYktINDJ0QnNCbDlidnV5IiwKICAgICAgICAgICJpbnZvaWNlX3BkZiI6ICJodHRwczovL3BheS5zdHJpcGUuY29tL2ludm9pY2Uva0tlNGtGcFliZEw2dVJGNzFUbEh2c09RemliVFlSVTAvaW52c3RfSUxtV3J5b1JjVWIxMDkzZmJLSDQydEJzQmw5YnZ1eS9wZGYiLAogICAgICAgICAgImxpbmVzIjogewogICAgICAgICAgICAib2JqZWN0IjogImxpc3QiLAogICAgICAgICAgICAiZGF0YSI6IFsKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiaWQiOiAic3ViX0lMbVc4M09NWXhXeVdGIiwKICAgICAgICAgICAgICAgICJvYmplY3QiOiAibGluZV9pdGVtIiwKICAgICAgICAgICAgICAgICJhbW91bnQiOiAzMDAsCiAgICAgICAgICAgICAgICAiY3VycmVuY3kiOiAidXNkIiwKICAgICAgICAgICAgICAgICJkZXNjcmlwdGlvbiI6ICIxIMOXIERydW1rbm90dCBUZXN0IChhdCAkMy4wMCAvIG1vbnRoKSIsCiAgICAgICAgICAgICAgICAiZGlzY291bnRfYW1vdW50cyI6IFsKCiAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgImRpc2NvdW50YWJsZSI6IHRydWUsCiAgICAgICAgICAgICAgICAiZGlzY291bnRzIjogWwoKICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICAibGl2ZW1vZGUiOiBmYWxzZSwKICAgICAgICAgICAgICAgICJtZXRhZGF0YSI6IHsKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAicGVyaW9kIjogewogICAgICAgICAgICAgICAgICAiZW5kIjogMTYwNzM5OTU4NywKICAgICAgICAgICAgICAgICAgInN0YXJ0IjogMTYwNDgwNzU4NwogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICJwbGFuIjogewogICAgICAgICAgICAgICAgICAiaWQiOiAiZHJ1bWtub3R0IiwKICAgICAgICAgICAgICAgICAgIm9iamVjdCI6ICJwbGFuIiwKICAgICAgICAgICAgICAgICAgImFjdGl2ZSI6IHRydWUsCiAgICAgICAgICAgICAgICAgICJhZ2dyZWdhdGVfdXNhZ2UiOiBudWxsLAogICAgICAgICAgICAgICAgICAiYW1vdW50IjogMzAwLAogICAgICAgICAgICAgICAgICAiYW1vdW50X2RlY2ltYWwiOiAiMzAwIiwKICAgICAgICAgICAgICAgICAgImJpbGxpbmdfc2NoZW1lIjogInBlcl91bml0IiwKICAgICAgICAgICAgICAgICAgImNyZWF0ZWQiOiAxNjA0ODA3NTg0LAogICAgICAgICAgICAgICAgICAiY3VycmVuY3kiOiAidXNkIiwKICAgICAgICAgICAgICAgICAgImludGVydmFsIjogIm1vbnRoIiwKICAgICAgICAgICAgICAgICAgImludGVydmFsX2NvdW50IjogMSwKICAgICAgICAgICAgICAgICAgImxpdmVtb2RlIjogZmFsc2UsCiAgICAgICAgICAgICAgICAgICJtZXRhZGF0YSI6IHsKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgIm5hbWUiOiAiRHJ1bWtub3R0IFRlc3QiLAogICAgICAgICAgICAgICAgICAibmlja25hbWUiOiBudWxsLAogICAgICAgICAgICAgICAgICAicHJvZHVjdCI6ICJwcm9kX0lMbVdjQ3cyYUV1aE5mIiwKICAgICAgICAgICAgICAgICAgInN0YXRlbWVudF9kZXNjcmlwdG9yIjogbnVsbCwKICAgICAgICAgICAgICAgICAgInRpZXJzIjogbnVsbCwKICAgICAgICAgICAgICAgICAgInRpZXJzX21vZGUiOiBudWxsLAogICAgICAgICAgICAgICAgICAidHJhbnNmb3JtX3VzYWdlIjogbnVsbCwKICAgICAgICAgICAgICAgICAgInRyaWFsX3BlcmlvZF9kYXlzIjogbnVsbCwKICAgICAgICAgICAgICAgICAgInVzYWdlX3R5cGUiOiAibGljZW5zZWQiCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgInByaWNlIjogewogICAgICAgICAgICAgICAgICAiaWQiOiAiZHJ1bWtub3R0IiwKICAgICAgICAgICAgICAgICAgIm9iamVjdCI6ICJwcmljZSIsCiAgICAgICAgICAgICAgICAgICJhY3RpdmUiOiB0cnVlLAogICAgICAgICAgICAgICAgICAiYmlsbGluZ19zY2hlbWUiOiAicGVyX3VuaXQiLAogICAgICAgICAgICAgICAgICAiY3JlYXRlZCI6IDE2MDQ4MDc1ODQsCiAgICAgICAgICAgICAgICAgICJjdXJyZW5jeSI6ICJ1c2QiLAogICAgICAgICAgICAgICAgICAibGl2ZW1vZGUiOiBmYWxzZSwKICAgICAgICAgICAgICAgICAgImxvb2t1cF9rZXkiOiBudWxsLAogICAgICAgICAgICAgICAgICAibWV0YWRhdGEiOiB7CiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICJuaWNrbmFtZSI6IG51bGwsCiAgICAgICAgICAgICAgICAgICJwcm9kdWN0IjogInByb2RfSUxtV2NDdzJhRXVoTmYiLAogICAgICAgICAgICAgICAgICAicmVjdXJyaW5nIjogewogICAgICAgICAgICAgICAgICAgICJhZ2dyZWdhdGVfdXNhZ2UiOiBudWxsLAogICAgICAgICAgICAgICAgICAgICJpbnRlcnZhbCI6ICJtb250aCIsCiAgICAgICAgICAgICAgICAgICAgImludGVydmFsX2NvdW50IjogMSwKICAgICAgICAgICAgICAgICAgICAidHJpYWxfcGVyaW9kX2RheXMiOiBudWxsLAogICAgICAgICAgICAgICAgICAgICJ1c2FnZV90eXBlIjogImxpY2Vuc2VkIgogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAidGllcnNfbW9kZSI6IG51bGwsCiAgICAgICAgICAgICAgICAgICJ0cmFuc2Zvcm1fcXVhbnRpdHkiOiBudWxsLAogICAgICAgICAgICAgICAgICAidHlwZSI6ICJyZWN1cnJpbmciLAogICAgICAgICAgICAgICAgICAidW5pdF9hbW91bnQiOiAzMDAsCiAgICAgICAgICAgICAgICAgICJ1bml0X2Ftb3VudF9kZWNpbWFsIjogIjMwMCIKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAicHJvcmF0aW9uIjogZmFsc2UsCiAgICAgICAgICAgICAgICAicXVhbnRpdHkiOiAxLAogICAgICAgICAgICAgICAgInN1YnNjcmlwdGlvbiI6IG51bGwsCiAgICAgICAgICAgICAgICAic3Vic2NyaXB0aW9uX2l0ZW0iOiAic2lfSUxtV3NyN2dGbFcxWnUiLAogICAgICAgICAgICAgICAgInRheF9hbW91bnRzIjogWwoKICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICAidGF4X3JhdGVzIjogWwoKICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICAidHlwZSI6ICJzdWJzY3JpcHRpb24iLAogICAgICAgICAgICAgICAgInVuaXF1ZV9pZCI6ICJpbF8wSGw0eGprS2U0a0ZwWWJkbkMzQ2tJZVEiLAogICAgICAgICAgICAgICAgInVuaXF1ZV9saW5lX2l0ZW1faWQiOiAic2xpXzBjODNhZjdmMGJiMzEzIgogICAgICAgICAgICAgIH0KICAgICAgICAgICAgXSwKICAgICAgICAgICAgImhhc19tb3JlIjogZmFsc2UsCiAgICAgICAgICAgICJ0b3RhbF9jb3VudCI6IDEsCiAgICAgICAgICAgICJ1cmwiOiAiL3YxL2ludm9pY2VzL2luXzBIbDR4amtLZTRrRnBZYmRGamFUQUNLWS9saW5lcyIKICAgICAgICAgIH0sCiAgICAgICAgICAibGl2ZW1vZGUiOiBmYWxzZSwKICAgICAgICAgICJtZXRhZGF0YSI6IHsKICAgICAgICAgIH0sCiAgICAgICAgICAibmV4dF9wYXltZW50X2F0dGVtcHQiOiBudWxsLAogICAgICAgICAgIm51bWJlciI6ICI5NTJDRDJGRS0wMDAxIiwKICAgICAgICAgICJwYWlkIjogdHJ1ZSwKICAgICAgICAgICJwYXltZW50X2ludGVudCI6ICJwaV8wSGw0eGprS2U0a0ZwWWJkd1YxWWg2MkQiLAogICAgICAgICAgInBlcmlvZF9lbmQiOiAxNjA0ODA3NTg3LAogICAgICAgICAgInBlcmlvZF9zdGFydCI6IDE2MDQ4MDc1ODcsCiAgICAgICAgICAicG9zdF9wYXltZW50X2NyZWRpdF9ub3Rlc19hbW91bnQiOiAwLAogICAgICAgICAgInByZV9wYXltZW50X2NyZWRpdF9ub3Rlc19hbW91bnQiOiAwLAogICAgICAgICAgInJlY2VpcHRfbnVtYmVyIjogbnVsbCwKICAgICAgICAgICJzdGFydGluZ19iYWxhbmNlIjogMCwKICAgICAgICAgICJzdGF0ZW1lbnRfZGVzY3JpcHRvciI6IG51bGwsCiAgICAgICAgICAic3RhdHVzIjogInBhaWQiLAogICAgICAgICAgInN0YXR1c190cmFuc2l0aW9ucyI6IHsKICAgICAgICAgICAgImZpbmFsaXplZF9hdCI6IDE2MDQ4MDc1ODcsCiAgICAgICAgICAgICJtYXJrZWRfdW5jb2xsZWN0aWJsZV9hdCI6IG51bGwsCiAgICAgICAgICAgICJwYWlkX2F0IjogMTYwNDgwNzU4NywKICAgICAgICAgICAgInZvaWRlZF9hdCI6IG51bGwKICAgICAgICAgIH0sCiAgICAgICAgICAic3Vic2NyaXB0aW9uIjogInN1Yl9JTG1XODNPTVl4V3lXRiIsCiAgICAgICAgICAic3VidG90YWwiOiAzMDAsCiAgICAgICAgICAidGF4IjogbnVsbCwKICAgICAgICAgICJ0YXhfcGVyY2VudCI6IG51bGwsCiAgICAgICAgICAidG90YWwiOiAzMDAsCiAgICAgICAgICAidG90YWxfZGlzY291bnRfYW1vdW50cyI6IFsKCiAgICAgICAgICBdLAogICAgICAgICAgInRvdGFsX3RheF9hbW91bnRzIjogWwoKICAgICAgICAgIF0sCiAgICAgICAgICAidHJhbnNmZXJfZGF0YSI6IG51bGwsCiAgICAgICAgICAid2ViaG9va3NfZGVsaXZlcmVkX2F0IjogMTYwNDgwNzU4NwogICAgICAgIH0KICAgICAgfSwKICAgICAgImxpdmVtb2RlIjogZmFsc2UsCiAgICAgICJwZW5kaW5nX3dlYmhvb2tzIjogMCwKICAgICAgInJlcXVlc3QiOiB7CiAgICAgICAgImlkIjogInJlcV9ZZTlDaG5RdXh6Y2k4SCIsCiAgICAgICAgImlkZW1wb3RlbmN5X2tleSI6IG51bGwKICAgICAgfSwKICAgICAgInR5cGUiOiAiaW52b2ljZS5maW5hbGl6ZWQiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZXZ0XzBIbDR4bGtLZTRrRnBZYmRoT1A5M3lHRiIsCiAgICAgICJvYmplY3QiOiAiZXZlbnQiLAogICAgICAiYXBpX3ZlcnNpb24iOiAiMjAxNy0xMi0xNCIsCiAgICAgICJjcmVhdGVkIjogMTYwNDgwNzU4OCwKICAgICAgImRhdGEiOiB7CiAgICAgICAgIm9iamVjdCI6IHsKICAgICAgICAgICJpZCI6ICJpbl8wSGw0eGprS2U0a0ZwWWJkRmphVEFDS1kiLAogICAgICAgICAgIm9iamVjdCI6ICJpbnZvaWNlIiwKICAgICAgICAgICJhY2NvdW50X2NvdW50cnkiOiAiQVUiLAogICAgICAgICAgImFjY291bnRfbmFtZSI6ICJEcnVta25vdHQgU2VhcmNoIiwKICAgICAgICAgICJhY2NvdW50X3RheF9pZHMiOiBudWxsLAogICAgICAgICAgImFtb3VudF9kdWUiOiAzMDAsCiAgICAgICAgICAiYW1vdW50X3BhaWQiOiAzMDAsCiAgICAgICAgICAiYW1vdW50X3JlbWFpbmluZyI6IDAsCiAgICAgICAgICAiYXBwbGljYXRpb25fZmVlIjogbnVsbCwKICAgICAgICAgICJhdHRlbXB0X2NvdW50IjogMSwKICAgICAgICAgICJhdHRlbXB0ZWQiOiB0cnVlLAogICAgICAgICAgImF1dG9fYWR2YW5jZSI6IGZhbHNlLAogICAgICAgICAgImJpbGxpbmciOiAiY2hhcmdlX2F1dG9tYXRpY2FsbHkiLAogICAgICAgICAgImJpbGxpbmdfcmVhc29uIjogInN1YnNjcmlwdGlvbl91cGRhdGUiLAogICAgICAgICAgImNoYXJnZSI6ICJjaF8wSGw0eGtrS2U0a0ZwWWJkZVByT3RWMzMiLAogICAgICAgICAgImNsb3NlZCI6IHRydWUsCiAgICAgICAgICAiY29sbGVjdGlvbl9tZXRob2QiOiAiY2hhcmdlX2F1dG9tYXRpY2FsbHkiLAogICAgICAgICAgImNyZWF0ZWQiOiAxNjA0ODA3NTg3LAogICAgICAgICAgImN1cnJlbmN5IjogInVzZCIsCiAgICAgICAgICAiY3VzdG9tX2ZpZWxkcyI6IG51bGwsCiAgICAgICAgICAiY3VzdG9tZXIiOiAiY3VzX0lMbVd6d0xjZVU3d1BjIiwKICAgICAgICAgICJjdXN0b21lcl9hZGRyZXNzIjogbnVsbCwKICAgICAgICAgICJjdXN0b21lcl9lbWFpbCI6ICJzZWFyY2gwMDAxQGRydW1rbm90dHNlYXJjaC5jb20iLAogICAgICAgICAgImN1c3RvbWVyX25hbWUiOiBudWxsLAogICAgICAgICAgImN1c3RvbWVyX3Bob25lIjogbnVsbCwKICAgICAgICAgICJjdXN0b21lcl9zaGlwcGluZyI6IG51bGwsCiAgICAgICAgICAiY3VzdG9tZXJfdGF4X2V4ZW1wdCI6ICJub25lIiwKICAgICAgICAgICJjdXN0b21lcl90YXhfaWRzIjogWwoKICAgICAgICAgIF0sCiAgICAgICAgICAiZGF0ZSI6IDE2MDQ4MDc1ODcsCiAgICAgICAgICAiZGVmYXVsdF9wYXltZW50X21ldGhvZCI6IG51bGwsCiAgICAgICAgICAiZGVmYXVsdF9zb3VyY2UiOiBudWxsLAogICAgICAgICAgImRlZmF1bHRfdGF4X3JhdGVzIjogWwoKICAgICAgICAgIF0sCiAgICAgICAgICAiZGVzY3JpcHRpb24iOiBudWxsLAogICAgICAgICAgImRpc2NvdW50IjogbnVsbCwKICAgICAgICAgICJkaXNjb3VudHMiOiBbCgogICAgICAgICAgXSwKICAgICAgICAgICJkdWVfZGF0ZSI6IG51bGwsCiAgICAgICAgICAiZW5kaW5nX2JhbGFuY2UiOiAwLAogICAgICAgICAgImZpbmFsaXplZF9hdCI6IDE2MDQ4MDc1ODcsCiAgICAgICAgICAiZm9vdGVyIjogbnVsbCwKICAgICAgICAgICJmb3JnaXZlbiI6IGZhbHNlLAogICAgICAgICAgImhvc3RlZF9pbnZvaWNlX3VybCI6ICJodHRwczovL3BheS5zdHJpcGUuY29tL2ludm9pY2Uva0tlNGtGcFliZEw2dVJGNzFUbEh2c09RemliVFlSVTAvaW52c3RfSUxtV3J5b1JjVWIxMDkzZmJLSDQydEJzQmw5YnZ1eSIsCiAgICAgICAgICAiaW52b2ljZV9wZGYiOiAiaHR0cHM6Ly9wYXkuc3RyaXBlLmNvbS9pbnZvaWNlL2tLZTRrRnBZYmRMNnVSRjcxVGxIdnNPUXppYlRZUlUwL2ludnN0X0lMbVdyeW9SY1ViMTA5M2ZiS0g0MnRCc0JsOWJ2dXkvcGRmIiwKICAgICAgICAgICJsaW5lcyI6IHsKICAgICAgICAgICAgIm9iamVjdCI6ICJsaXN0IiwKICAgICAgICAgICAgImRhdGEiOiBbCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgImlkIjogInN1Yl9JTG1XODNPTVl4V3lXRiIsCiAgICAgICAgICAgICAgICAib2JqZWN0IjogImxpbmVfaXRlbSIsCiAgICAgICAgICAgICAgICAiYW1vdW50IjogMzAwLAogICAgICAgICAgICAgICAgImN1cnJlbmN5IjogInVzZCIsCiAgICAgICAgICAgICAgICAiZGVzY3JpcHRpb24iOiAiMSDDlyBEcnVta25vdHQgVGVzdCAoYXQgJDMuMDAgLyBtb250aCkiLAogICAgICAgICAgICAgICAgImRpc2NvdW50X2Ftb3VudHMiOiBbCgogICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgICJkaXNjb3VudGFibGUiOiB0cnVlLAogICAgICAgICAgICAgICAgImRpc2NvdW50cyI6IFsKCiAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgImxpdmVtb2RlIjogZmFsc2UsCiAgICAgICAgICAgICAgICAibWV0YWRhdGEiOiB7CiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgInBlcmlvZCI6IHsKICAgICAgICAgICAgICAgICAgImVuZCI6IDE2MDczOTk1ODcsCiAgICAgICAgICAgICAgICAgICJzdGFydCI6IDE2MDQ4MDc1ODcKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAicGxhbiI6IHsKICAgICAgICAgICAgICAgICAgImlkIjogImRydW1rbm90dCIsCiAgICAgICAgICAgICAgICAgICJvYmplY3QiOiAicGxhbiIsCiAgICAgICAgICAgICAgICAgICJhY3RpdmUiOiB0cnVlLAogICAgICAgICAgICAgICAgICAiYWdncmVnYXRlX3VzYWdlIjogbnVsbCwKICAgICAgICAgICAgICAgICAgImFtb3VudCI6IDMwMCwKICAgICAgICAgICAgICAgICAgImFtb3VudF9kZWNpbWFsIjogIjMwMCIsCiAgICAgICAgICAgICAgICAgICJiaWxsaW5nX3NjaGVtZSI6ICJwZXJfdW5pdCIsCiAgICAgICAgICAgICAgICAgICJjcmVhdGVkIjogMTYwNDgwNzU4NCwKICAgICAgICAgICAgICAgICAgImN1cnJlbmN5IjogInVzZCIsCiAgICAgICAgICAgICAgICAgICJpbnRlcnZhbCI6ICJtb250aCIsCiAgICAgICAgICAgICAgICAgICJpbnRlcnZhbF9jb3VudCI6IDEsCiAgICAgICAgICAgICAgICAgICJsaXZlbW9kZSI6IGZhbHNlLAogICAgICAgICAgICAgICAgICAibWV0YWRhdGEiOiB7CiAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICJuYW1lIjogIkRydW1rbm90dCBUZXN0IiwKICAgICAgICAgICAgICAgICAgIm5pY2tuYW1lIjogbnVsbCwKICAgICAgICAgICAgICAgICAgInByb2R1Y3QiOiAicHJvZF9JTG1XY0N3MmFFdWhOZiIsCiAgICAgICAgICAgICAgICAgICJzdGF0ZW1lbnRfZGVzY3JpcHRvciI6IG51bGwsCiAgICAgICAgICAgICAgICAgICJ0aWVycyI6IG51bGwsCiAgICAgICAgICAgICAgICAgICJ0aWVyc19tb2RlIjogbnVsbCwKICAgICAgICAgICAgICAgICAgInRyYW5zZm9ybV91c2FnZSI6IG51bGwsCiAgICAgICAgICAgICAgICAgICJ0cmlhbF9wZXJpb2RfZGF5cyI6IG51bGwsCiAgICAgICAgICAgICAgICAgICJ1c2FnZV90eXBlIjogImxpY2Vuc2VkIgogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICJwcmljZSI6IHsKICAgICAgICAgICAgICAgICAgImlkIjogImRydW1rbm90dCIsCiAgICAgICAgICAgICAgICAgICJvYmplY3QiOiAicHJpY2UiLAogICAgICAgICAgICAgICAgICAiYWN0aXZlIjogdHJ1ZSwKICAgICAgICAgICAgICAgICAgImJpbGxpbmdfc2NoZW1lIjogInBlcl91bml0IiwKICAgICAgICAgICAgICAgICAgImNyZWF0ZWQiOiAxNjA0ODA3NTg0LAogICAgICAgICAgICAgICAgICAiY3VycmVuY3kiOiAidXNkIiwKICAgICAgICAgICAgICAgICAgImxpdmVtb2RlIjogZmFsc2UsCiAgICAgICAgICAgICAgICAgICJsb29rdXBfa2V5IjogbnVsbCwKICAgICAgICAgICAgICAgICAgIm1ldGFkYXRhIjogewogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAibmlja25hbWUiOiBudWxsLAogICAgICAgICAgICAgICAgICAicHJvZHVjdCI6ICJwcm9kX0lMbVdjQ3cyYUV1aE5mIiwKICAgICAgICAgICAgICAgICAgInJlY3VycmluZyI6IHsKICAgICAgICAgICAgICAgICAgICAiYWdncmVnYXRlX3VzYWdlIjogbnVsbCwKICAgICAgICAgICAgICAgICAgICAiaW50ZXJ2YWwiOiAibW9udGgiLAogICAgICAgICAgICAgICAgICAgICJpbnRlcnZhbF9jb3VudCI6IDEsCiAgICAgICAgICAgICAgICAgICAgInRyaWFsX3BlcmlvZF9kYXlzIjogbnVsbCwKICAgICAgICAgICAgICAgICAgICAidXNhZ2VfdHlwZSI6ICJsaWNlbnNlZCIKICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgInRpZXJzX21vZGUiOiBudWxsLAogICAgICAgICAgICAgICAgICAidHJhbnNmb3JtX3F1YW50aXR5IjogbnVsbCwKICAgICAgICAgICAgICAgICAgInR5cGUiOiAicmVjdXJyaW5nIiwKICAgICAgICAgICAgICAgICAgInVuaXRfYW1vdW50IjogMzAwLAogICAgICAgICAgICAgICAgICAidW5pdF9hbW91bnRfZGVjaW1hbCI6ICIzMDAiCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgInByb3JhdGlvbiI6IGZhbHNlLAogICAgICAgICAgICAgICAgInF1YW50aXR5IjogMSwKICAgICAgICAgICAgICAgICJzdWJzY3JpcHRpb24iOiBudWxsLAogICAgICAgICAgICAgICAgInN1YnNjcmlwdGlvbl9pdGVtIjogInNpX0lMbVdzcjdnRmxXMVp1IiwKICAgICAgICAgICAgICAgICJ0YXhfYW1vdW50cyI6IFsKCiAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgInRheF9yYXRlcyI6IFsKCiAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgInR5cGUiOiAic3Vic2NyaXB0aW9uIiwKICAgICAgICAgICAgICAgICJ1bmlxdWVfaWQiOiAiaWxfMEhsNHhqa0tlNGtGcFliZG5DM0NrSWVRIiwKICAgICAgICAgICAgICAgICJ1bmlxdWVfbGluZV9pdGVtX2lkIjogInNsaV8wYzgzYWY3ZjBiYjMxMyIKICAgICAgICAgICAgICB9CiAgICAgICAgICAgIF0sCiAgICAgICAgICAgICJoYXNfbW9yZSI6IGZhbHNlLAogICAgICAgICAgICAidG90YWxfY291bnQiOiAxLAogICAgICAgICAgICAidXJsIjogIi92MS9pbnZvaWNlcy9pbl8wSGw0eGprS2U0a0ZwWWJkRmphVEFDS1kvbGluZXMiCiAgICAgICAgICB9LAogICAgICAgICAgImxpdmVtb2RlIjogZmFsc2UsCiAgICAgICAgICAibWV0YWRhdGEiOiB7CiAgICAgICAgICB9LAogICAgICAgICAgIm5leHRfcGF5bWVudF9hdHRlbXB0IjogbnVsbCwKICAgICAgICAgICJudW1iZXIiOiAiOTUyQ0QyRkUtMDAwMSIsCiAgICAgICAgICAicGFpZCI6IHRydWUsCiAgICAgICAgICAicGF5bWVudF9pbnRlbnQiOiAicGlfMEhsNHhqa0tlNGtGcFliZHdWMVloNjJEIiwKICAgICAgICAgICJwZXJpb2RfZW5kIjogMTYwNDgwNzU4NywKICAgICAgICAgICJwZXJpb2Rfc3RhcnQiOiAxNjA0ODA3NTg3LAogICAgICAgICAgInBvc3RfcGF5bWVudF9jcmVkaXRfbm90ZXNfYW1vdW50IjogMCwKICAgICAgICAgICJwcmVfcGF5bWVudF9jcmVkaXRfbm90ZXNfYW1vdW50IjogMCwKICAgICAgICAgICJyZWNlaXB0X251bWJlciI6IG51bGwsCiAgICAgICAgICAic3RhcnRpbmdfYmFsYW5jZSI6IDAsCiAgICAgICAgICAic3RhdGVtZW50X2Rlc2NyaXB0b3IiOiBudWxsLAogICAgICAgICAgInN0YXR1cyI6ICJwYWlkIiwKICAgICAgICAgICJzdGF0dXNfdHJhbnNpdGlvbnMiOiB7CiAgICAgICAgICAgICJmaW5hbGl6ZWRfYXQiOiAxNjA0ODA3NTg3LAogICAgICAgICAgICAibWFya2VkX3VuY29sbGVjdGlibGVfYXQiOiBudWxsLAogICAgICAgICAgICAicGFpZF9hdCI6IDE2MDQ4MDc1ODcsCiAgICAgICAgICAgICJ2b2lkZWRfYXQiOiBudWxsCiAgICAgICAgICB9LAogICAgICAgICAgInN1YnNjcmlwdGlvbiI6ICJzdWJfSUxtVzgzT01ZeFd5V0YiLAogICAgICAgICAgInN1YnRvdGFsIjogMzAwLAogICAgICAgICAgInRheCI6IG51bGwsCiAgICAgICAgICAidGF4X3BlcmNlbnQiOiBudWxsLAogICAgICAgICAgInRvdGFsIjogMzAwLAogICAgICAgICAgInRvdGFsX2Rpc2NvdW50X2Ftb3VudHMiOiBbCgogICAgICAgICAgXSwKICAgICAgICAgICJ0b3RhbF90YXhfYW1vdW50cyI6IFsKCiAgICAgICAgICBdLAogICAgICAgICAgInRyYW5zZmVyX2RhdGEiOiBudWxsLAogICAgICAgICAgIndlYmhvb2tzX2RlbGl2ZXJlZF9hdCI6IDE2MDQ4MDc1ODcKICAgICAgICB9CiAgICAgIH0sCiAgICAgICJsaXZlbW9kZSI6IGZhbHNlLAogICAgICAicGVuZGluZ193ZWJob29rcyI6IDAsCiAgICAgICJyZXF1ZXN0IjogewogICAgICAgICJpZCI6ICJyZXFfWWU5Q2huUXV4emNpOEgiLAogICAgICAgICJpZGVtcG90ZW5jeV9rZXkiOiBudWxsCiAgICAgIH0sCiAgICAgICJ0eXBlIjogImludm9pY2UuY3JlYXRlZCIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJldnRfMEhsNHhsa0tlNGtGcFliZHFpb1U4UlJsIiwKICAgICAgIm9iamVjdCI6ICJldmVudCIsCiAgICAgICJhcGlfdmVyc2lvbiI6ICIyMDE3LTEyLTE0IiwKICAgICAgImNyZWF0ZWQiOiAxNjA0ODA3NTg4LAogICAgICAiZGF0YSI6IHsKICAgICAgICAib2JqZWN0IjogewogICAgICAgICAgImlkIjogImN1c19JTG1XendMY2VVN3dQYyIsCiAgICAgICAgICAib2JqZWN0IjogImN1c3RvbWVyIiwKICAgICAgICAgICJhY2NvdW50X2JhbGFuY2UiOiAwLAogICAgICAgICAgImFkZHJlc3MiOiBudWxsLAogICAgICAgICAgImJhbGFuY2UiOiAwLAogICAgICAgICAgImNyZWF0ZWQiOiAxNjA0ODA3NTg0LAogICAgICAgICAgImN1cnJlbmN5IjogInVzZCIsCiAgICAgICAgICAiZGVmYXVsdF9zb3VyY2UiOiAiY2FyZF8wSGw0eGhrS2U0a0ZwWWJkWnFRRGR6Ym4iLAogICAgICAgICAgImRlbGlucXVlbnQiOiBmYWxzZSwKICAgICAgICAgICJkZXNjcmlwdGlvbiI6IG51bGwsCiAgICAgICAgICAiZGlzY291bnQiOiBudWxsLAogICAgICAgICAgImVtYWlsIjogInNlYXJjaDAwMDFAZHJ1bWtub3R0c2VhcmNoLmNvbSIsCiAgICAgICAgICAiaW52b2ljZV9wcmVmaXgiOiAiOTUyQ0QyRkUiLAogICAgICAgICAgImludm9pY2Vfc2V0dGluZ3MiOiB7CiAgICAgICAgICAgICJjdXN0b21fZmllbGRzIjogbnVsbCwKICAgICAgICAgICAgImRlZmF1bHRfcGF5bWVudF9tZXRob2QiOiBudWxsLAogICAgICAgICAgICAiZm9vdGVyIjogbnVsbAogICAgICAgICAgfSwKICAgICAgICAgICJsaXZlbW9kZSI6IGZhbHNlLAogICAgICAgICAgIm1ldGFkYXRhIjogewogICAgICAgICAgfSwKICAgICAgICAgICJuYW1lIjogbnVsbCwKICAgICAgICAgICJuZXh0X2ludm9pY2Vfc2VxdWVuY2UiOiAyLAogICAgICAgICAgInBob25lIjogbnVsbCwKICAgICAgICAgICJwcmVmZXJyZWRfbG9jYWxlcyI6IFsKCiAgICAgICAgICBdLAogICAgICAgICAgInNoaXBwaW5nIjogbnVsbCwKICAgICAgICAgICJzb3VyY2VzIjogewogICAgICAgICAgICAib2JqZWN0IjogImxpc3QiLAogICAgICAgICAgICAiZGF0YSI6IFsKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiaWQiOiAiY2FyZF8wSGw0eGhrS2U0a0ZwWWJkWnFRRGR6Ym4iLAogICAgICAgICAgICAgICAgIm9iamVjdCI6ICJjYXJkIiwKICAgICAgICAgICAgICAgICJhZGRyZXNzX2NpdHkiOiBudWxsLAogICAgICAgICAgICAgICAgImFkZHJlc3NfY291bnRyeSI6IG51bGwsCiAgICAgICAgICAgICAgICAiYWRkcmVzc19saW5lMSI6IG51bGwsCiAgICAgICAgICAgICAgICAiYWRkcmVzc19saW5lMV9jaGVjayI6IG51bGwsCiAgICAgICAgICAgICAgICAiYWRkcmVzc19saW5lMiI6IG51bGwsCiAgICAgICAgICAgICAgICAiYWRkcmVzc19zdGF0ZSI6IG51bGwsCiAgICAgICAgICAgICAgICAiYWRkcmVzc196aXAiOiBudWxsLAogICAgICAgICAgICAgICAgImFkZHJlc3NfemlwX2NoZWNrIjogbnVsbCwKICAgICAgICAgICAgICAgICJicmFuZCI6ICJWaXNhIiwKICAgICAgICAgICAgICAgICJjb3VudHJ5IjogIlVTIiwKICAgICAgICAgICAgICAgICJjdXN0b21lciI6ICJjdXNfSUxtV3p3TGNlVTd3UGMiLAogICAgICAgICAgICAgICAgImN2Y19jaGVjayI6ICJwYXNzIiwKICAgICAgICAgICAgICAgICJkeW5hbWljX2xhc3Q0IjogbnVsbCwKICAgICAgICAgICAgICAgICJleHBfbW9udGgiOiAxLAogICAgICAgICAgICAgICAgImV4cF95ZWFyIjogMjAyMiwKICAgICAgICAgICAgICAgICJmaW5nZXJwcmludCI6ICJEQ1piQjBqTkk2TzU2T3JBIiwKICAgICAgICAgICAgICAgICJmdW5kaW5nIjogImNyZWRpdCIsCiAgICAgICAgICAgICAgICAibGFzdDQiOiAiNDI0MiIsCiAgICAgICAgICAgICAgICAibWV0YWRhdGEiOiB7CiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgIm5hbWUiOiBudWxsLAogICAgICAgICAgICAgICAgInRva2VuaXphdGlvbl9tZXRob2QiOiBudWxsCiAgICAgICAgICAgICAgfQogICAgICAgICAgICBdLAogICAgICAgICAgICAiaGFzX21vcmUiOiBmYWxzZSwKICAgICAgICAgICAgInRvdGFsX2NvdW50IjogMSwKICAgICAgICAgICAgInVybCI6ICIvdjEvY3VzdG9tZXJzL2N1c19JTG1XendMY2VVN3dQYy9zb3VyY2VzIgogICAgICAgICAgfSwKICAgICAgICAgICJzdWJzY3JpcHRpb25zIjogewogICAgICAgICAgICAib2JqZWN0IjogImxpc3QiLAogICAgICAgICAgICAiZGF0YSI6IFsKICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiaWQiOiAic3ViX0lMbVc4M09NWXhXeVdGIiwKICAgICAgICAgICAgICAgICJvYmplY3QiOiAic3Vic2NyaXB0aW9uIiwKICAgICAgICAgICAgICAgICJhcHBsaWNhdGlvbl9mZWVfcGVyY2VudCI6IG51bGwsCiAgICAgICAgICAgICAgICAiYmlsbGluZyI6ICJjaGFyZ2VfYXV0b21hdGljYWxseSIsCiAgICAgICAgICAgICAgICAiYmlsbGluZ19jeWNsZV9hbmNob3IiOiAxNjA0ODA3NTg3LAogICAgICAgICAgICAgICAgImJpbGxpbmdfdGhyZXNob2xkcyI6IG51bGwsCiAgICAgICAgICAgICAgICAiY2FuY2VsX2F0IjogbnVsbCwKICAgICAgICAgICAgICAgICJjYW5jZWxfYXRfcGVyaW9kX2VuZCI6IGZhbHNlLAogICAgICAgICAgICAgICAgImNhbmNlbGVkX2F0IjogbnVsbCwKICAgICAgICAgICAgICAgICJjb2xsZWN0aW9uX21ldGhvZCI6ICJjaGFyZ2VfYXV0b21hdGljYWxseSIsCiAgICAgICAgICAgICAgICAiY3JlYXRlZCI6IDE2MDQ4MDc1ODcsCiAgICAgICAgICAgICAgICAiY3VycmVudF9wZXJpb2RfZW5kIjogMTYwNzM5OTU4NywKICAgICAgICAgICAgICAgICJjdXJyZW50X3BlcmlvZF9zdGFydCI6IDE2MDQ4MDc1ODcsCiAgICAgICAgICAgICAgICAiY3VzdG9tZXIiOiAiY3VzX0lMbVd6d0xjZVU3d1BjIiwKICAgICAgICAgICAgICAgICJkYXlzX3VudGlsX2R1ZSI6IG51bGwsCiAgICAgICAgICAgICAgICAiZGVmYXVsdF9wYXltZW50X21ldGhvZCI6IG51bGwsCiAgICAgICAgICAgICAgICAiZGVmYXVsdF9zb3VyY2UiOiBudWxsLAogICAgICAgICAgICAgICAgImRlZmF1bHRfdGF4X3JhdGVzIjogWwoKICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICAiZGlzY291bnQiOiBudWxsLAogICAgICAgICAgICAgICAgImVuZGVkX2F0IjogbnVsbCwKICAgICAgICAgICAgICAgICJpbnZvaWNlX2N1c3RvbWVyX2JhbGFuY2Vfc2V0dGluZ3MiOiB7CiAgICAgICAgICAgICAgICAgICJjb25zdW1lX2FwcGxpZWRfYmFsYW5jZV9vbl92b2lkIjogdHJ1ZQogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICJpdGVtcyI6IHsKICAgICAgICAgICAgICAgICAgIm9iamVjdCI6ICJsaXN0IiwKICAgICAgICAgICAgICAgICAgImRhdGEiOiBbCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgImlkIjogInNpX0lMbVdzcjdnRmxXMVp1IiwKICAgICAgICAgICAgICAgICAgICAgICJvYmplY3QiOiAic3Vic2NyaXB0aW9uX2l0ZW0iLAogICAgICAgICAgICAgICAgICAgICAgImJpbGxpbmdfdGhyZXNob2xkcyI6IG51bGwsCiAgICAgICAgICAgICAgICAgICAgICAiY3JlYXRlZCI6IDE2MDQ4MDc1ODgsCiAgICAgICAgICAgICAgICAgICAgICAibWV0YWRhdGEiOiB7CiAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgInBsYW4iOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICJpZCI6ICJkcnVta25vdHQiLAogICAgICAgICAgICAgICAgICAgICAgICAib2JqZWN0IjogInBsYW4iLAogICAgICAgICAgICAgICAgICAgICAgICAiYWN0aXZlIjogdHJ1ZSwKICAgICAgICAgICAgICAgICAgICAgICAgImFnZ3JlZ2F0ZV91c2FnZSI6IG51bGwsCiAgICAgICAgICAgICAgICAgICAgICAgICJhbW91bnQiOiAzMDAsCiAgICAgICAgICAgICAgICAgICAgICAgICJhbW91bnRfZGVjaW1hbCI6ICIzMDAiLAogICAgICAgICAgICAgICAgICAgICAgICAiYmlsbGluZ19zY2hlbWUiOiAicGVyX3VuaXQiLAogICAgICAgICAgICAgICAgICAgICAgICAiY3JlYXRlZCI6IDE2MDQ4MDc1ODQsCiAgICAgICAgICAgICAgICAgICAgICAgICJjdXJyZW5jeSI6ICJ1c2QiLAogICAgICAgICAgICAgICAgICAgICAgICAiaW50ZXJ2YWwiOiAibW9udGgiLAogICAgICAgICAgICAgICAgICAgICAgICAiaW50ZXJ2YWxfY291bnQiOiAxLAogICAgICAgICAgICAgICAgICAgICAgICAibGl2ZW1vZGUiOiBmYWxzZSwKICAgICAgICAgICAgICAgICAgICAgICAgIm1ldGFkYXRhIjogewogICAgICAgICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgICAgICAibmFtZSI6ICJEcnVta25vdHQgVGVzdCIsCiAgICAgICAgICAgICAgICAgICAgICAgICJuaWNrbmFtZSI6IG51bGwsCiAgICAgICAgICAgICAgICAgICAgICAgICJwcm9kdWN0IjogInByb2RfSUxtV2NDdzJhRXVoTmYiLAogICAgICAgICAgICAgICAgICAgICAgICAic3RhdGVtZW50X2Rlc2NyaXB0b3IiOiBudWxsLAogICAgICAgICAgICAgICAgICAgICAgICAidGllcnMiOiBudWxsLAogICAgICAgICAgICAgICAgICAgICAgICAidGllcnNfbW9kZSI6IG51bGwsCiAgICAgICAgICAgICAgICAgICAgICAgICJ0cmFuc2Zvcm1fdXNhZ2UiOiBudWxsLAogICAgICAgICAgICAgICAgICAgICAgICAidHJpYWxfcGVyaW9kX2RheXMiOiBudWxsLAogICAgICAgICAgICAgICAgICAgICAgICAidXNhZ2VfdHlwZSI6ICJsaWNlbnNlZCIKICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAicHJpY2UiOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICJpZCI6ICJkcnVta25vdHQiLAogICAgICAgICAgICAgICAgICAgICAgICAib2JqZWN0IjogInByaWNlIiwKICAgICAgICAgICAgICAgICAgICAgICAgImFjdGl2ZSI6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgICAgICJiaWxsaW5nX3NjaGVtZSI6ICJwZXJfdW5pdCIsCiAgICAgICAgICAgICAgICAgICAgICAgICJjcmVhdGVkIjogMTYwNDgwNzU4NCwKICAgICAgICAgICAgICAgICAgICAgICAgImN1cnJlbmN5IjogInVzZCIsCiAgICAgICAgICAgICAgICAgICAgICAgICJsaXZlbW9kZSI6IGZhbHNlLAogICAgICAgICAgICAgICAgICAgICAgICAibG9va3VwX2tleSI6IG51bGwsCiAgICAgICAgICAgICAgICAgICAgICAgICJtZXRhZGF0YSI6IHsKICAgICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICAgIm5pY2tuYW1lIjogbnVsbCwKICAgICAgICAgICAgICAgICAgICAgICAgInByb2R1Y3QiOiAicHJvZF9JTG1XY0N3MmFFdWhOZiIsCiAgICAgICAgICAgICAgICAgICAgICAgICJyZWN1cnJpbmciOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgImFnZ3JlZ2F0ZV91c2FnZSI6IG51bGwsCiAgICAgICAgICAgICAgICAgICAgICAgICAgImludGVydmFsIjogIm1vbnRoIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAiaW50ZXJ2YWxfY291bnQiOiAxLAogICAgICAgICAgICAgICAgICAgICAgICAgICJ0cmlhbF9wZXJpb2RfZGF5cyI6IG51bGwsCiAgICAgICAgICAgICAgICAgICAgICAgICAgInVzYWdlX3R5cGUiOiAibGljZW5zZWQiCiAgICAgICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgICAgICJ0aWVyc19tb2RlIjogbnVsbCwKICAgICAgICAgICAgICAgICAgICAgICAgInRyYW5zZm9ybV9xdWFudGl0eSI6IG51bGwsCiAgICAgICAgICAgICAgICAgICAgICAgICJ0eXBlIjogInJlY3VycmluZyIsCiAgICAgICAgICAgICAgICAgICAgICAgICJ1bml0X2Ftb3VudCI6IDMwMCwKICAgICAgICAgICAgICAgICAgICAgICAgInVuaXRfYW1vdW50X2RlY2ltYWwiOiAiMzAwIgogICAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAgICJxdWFudGl0eSI6IDEsCiAgICAgICAgICAgICAgICAgICAgICAic3Vic2NyaXB0aW9uIjogInN1Yl9JTG1XODNPTVl4V3lXRiIsCiAgICAgICAgICAgICAgICAgICAgICAidGF4X3JhdGVzIjogWwoKICAgICAgICAgICAgICAgICAgICAgIF0KICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICAgICJoYXNfbW9yZSI6IGZhbHNlLAogICAgICAgICAgICAgICAgICAidG90YWxfY291bnQiOiAxLAogICAgICAgICAgICAgICAgICAidXJsIjogIi92MS9zdWJzY3JpcHRpb25faXRlbXM/c3Vic2NyaXB0aW9uPXN1Yl9JTG1XODNPTVl4V3lXRiIKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAibGF0ZXN0X2ludm9pY2UiOiAiaW5fMEhsNHhqa0tlNGtGcFliZEZqYVRBQ0tZIiwKICAgICAgICAgICAgICAgICJsaXZlbW9kZSI6IGZhbHNlLAogICAgICAgICAgICAgICAgIm1ldGFkYXRhIjogewogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICJuZXh0X3BlbmRpbmdfaW52b2ljZV9pdGVtX2ludm9pY2UiOiBudWxsLAogICAgICAgICAgICAgICAgInBhdXNlX2NvbGxlY3Rpb24iOiBudWxsLAogICAgICAgICAgICAgICAgInBlbmRpbmdfaW52b2ljZV9pdGVtX2ludGVydmFsIjogbnVsbCwKICAgICAgICAgICAgICAgICJwZW5kaW5nX3NldHVwX2ludGVudCI6IG51bGwsCiAgICAgICAgICAgICAgICAicGVuZGluZ191cGRhdGUiOiBudWxsLAogICAgICAgICAgICAgICAgInBsYW4iOiB7CiAgICAgICAgICAgICAgICAgICJpZCI6ICJkcnVta25vdHQiLAogICAgICAgICAgICAgICAgICAib2JqZWN0IjogInBsYW4iLAogICAgICAgICAgICAgICAgICAiYWN0aXZlIjogdHJ1ZSwKICAgICAgICAgICAgICAgICAgImFnZ3JlZ2F0ZV91c2FnZSI6IG51bGwsCiAgICAgICAgICAgICAgICAgICJhbW91bnQiOiAzMDAsCiAgICAgICAgICAgICAgICAgICJhbW91bnRfZGVjaW1hbCI6ICIzMDAiLAogICAgICAgICAgICAgICAgICAiYmlsbGluZ19zY2hlbWUiOiAicGVyX3VuaXQiLAogICAgICAgICAgICAgICAgICAiY3JlYXRlZCI6IDE2MDQ4MDc1ODQsCiAgICAgICAgICAgICAgICAgICJjdXJyZW5jeSI6ICJ1c2QiLAogICAgICAgICAgICAgICAgICAiaW50ZXJ2YWwiOiAibW9udGgiLAogICAgICAgICAgICAgICAgICAiaW50ZXJ2YWxfY291bnQiOiAxLAogICAgICAgICAgICAgICAgICAibGl2ZW1vZGUiOiBmYWxzZSwKICAgICAgICAgICAgICAgICAgIm1ldGFkYXRhIjogewogICAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAibmFtZSI6ICJEcnVta25vdHQgVGVzdCIsCiAgICAgICAgICAgICAgICAgICJuaWNrbmFtZSI6IG51bGwsCiAgICAgICAgICAgICAgICAgICJwcm9kdWN0IjogInByb2RfSUxtV2NDdzJhRXVoTmYiLAogICAgICAgICAgICAgICAgICAic3RhdGVtZW50X2Rlc2NyaXB0b3IiOiBudWxsLAogICAgICAgICAgICAgICAgICAidGllcnMiOiBudWxsLAogICAgICAgICAgICAgICAgICAidGllcnNfbW9kZSI6IG51bGwsCiAgICAgICAgICAgICAgICAgICJ0cmFuc2Zvcm1fdXNhZ2UiOiBudWxsLAogICAgICAgICAgICAgICAgICAidHJpYWxfcGVyaW9kX2RheXMiOiBudWxsLAogICAgICAgICAgICAgICAgICAidXNhZ2VfdHlwZSI6ICJsaWNlbnNlZCIKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAicXVhbnRpdHkiOiAxLAogICAgICAgICAgICAgICAgInNjaGVkdWxlIjogbnVsbCwKICAgICAgICAgICAgICAgICJzdGFydCI6IDE2MDQ4MDc1ODcsCiAgICAgICAgICAgICAgICAic3RhcnRfZGF0ZSI6IDE2MDQ4MDc1ODcsCiAgICAgICAgICAgICAgICAic3RhdHVzIjogImFjdGl2ZSIsCiAgICAgICAgICAgICAgICAidGF4X3BlcmNlbnQiOiBudWxsLAogICAgICAgICAgICAgICAgInRyYW5zZmVyX2RhdGEiOiBudWxsLAogICAgICAgICAgICAgICAgInRyaWFsX2VuZCI6IG51bGwsCiAgICAgICAgICAgICAgICAidHJpYWxfc3RhcnQiOiBudWxsCiAgICAgICAgICAgICAgfQogICAgICAgICAgICBdLAogICAgICAgICAgICAiaGFzX21vcmUiOiBmYWxzZSwKICAgICAgICAgICAgInRvdGFsX2NvdW50IjogMSwKICAgICAgICAgICAgInVybCI6ICIvdjEvY3VzdG9tZXJzL2N1c19JTG1XendMY2VVN3dQYy9zdWJzY3JpcHRpb25zIgogICAgICAgICAgfSwKICAgICAgICAgICJ0YXhfZXhlbXB0IjogIm5vbmUiLAogICAgICAgICAgInRheF9pZHMiOiB7CiAgICAgICAgICAgICJvYmplY3QiOiAibGlzdCIsCiAgICAgICAgICAgICJkYXRhIjogWwoKICAgICAgICAgICAgXSwKICAgICAgICAgICAgImhhc19tb3JlIjogZmFsc2UsCiAgICAgICAgICAgICJ0b3RhbF9jb3VudCI6IDAsCiAgICAgICAgICAgICJ1cmwiOiAiL3YxL2N1c3RvbWVycy9jdXNfSUxtV3p3TGNlVTd3UGMvdGF4X2lkcyIKICAgICAgICAgIH0sCiAgICAgICAgICAidGF4X2luZm8iOiBudWxsLAogICAgICAgICAgInRheF9pbmZvX3ZlcmlmaWNhdGlvbiI6IG51bGwKICAgICAgICB9LAogICAgICAgICJwcmV2aW91c19hdHRyaWJ1dGVzIjogewogICAgICAgICAgImN1cnJlbmN5IjogbnVsbAogICAgICAgIH0KICAgICAgfSwKICAgICAgImxpdmVtb2RlIjogZmFsc2UsCiAgICAgICJwZW5kaW5nX3dlYmhvb2tzIjogMCwKICAgICAgInJlcXVlc3QiOiB7CiAgICAgICAgImlkIjogInJlcV9ZZTlDaG5RdXh6Y2k4SCIsCiAgICAgICAgImlkZW1wb3RlbmN5X2tleSI6IG51bGwKICAgICAgfSwKICAgICAgInR5cGUiOiAiY3VzdG9tZXIudXBkYXRlZCIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJldnRfMEhsNHhsa0tlNGtGcFliZFNMVDdidjgxIiwKICAgICAgIm9iamVjdCI6ICJldmVudCIsCiAgICAgICJhcGlfdmVyc2lvbiI6ICIyMDE3LTEyLTE0IiwKICAgICAgImNyZWF0ZWQiOiAxNjA0ODA3NTg4LAogICAgICAiZGF0YSI6IHsKICAgICAgICAib2JqZWN0IjogewogICAgICAgICAgImlkIjogImNoXzBIbDR4a2tLZTRrRnBZYmRlUHJPdFYzMyIsCiAgICAgICAgICAib2JqZWN0IjogImNoYXJnZSIsCiAgICAgICAgICAiYW1vdW50IjogMzAwLAogICAgICAgICAgImFtb3VudF9jYXB0dXJlZCI6IDMwMCwKICAgICAgICAgICJhbW91bnRfcmVmdW5kZWQiOiAwLAogICAgICAgICAgImFwcGxpY2F0aW9uIjogbnVsbCwKICAgICAgICAgICJhcHBsaWNhdGlvbl9mZWUiOiBudWxsLAogICAgICAgICAgImFwcGxpY2F0aW9uX2ZlZV9hbW91bnQiOiBudWxsLAogICAgICAgICAgImJhbGFuY2VfdHJhbnNhY3Rpb24iOiAidHhuXzBIbDR4a2tLZTRrRnBZYmRVd01BYVpFMyIsCiAgICAgICAgICAiYmlsbGluZ19kZXRhaWxzIjogewogICAgICAgICAgICAiYWRkcmVzcyI6IHsKICAgICAgICAgICAgICAiY2l0eSI6IG51bGwsCiAgICAgICAgICAgICAgImNvdW50cnkiOiBudWxsLAogICAgICAgICAgICAgICJsaW5lMSI6IG51bGwsCiAgICAgICAgICAgICAgImxpbmUyIjogbnVsbCwKICAgICAgICAgICAgICAicG9zdGFsX2NvZGUiOiBudWxsLAogICAgICAgICAgICAgICJzdGF0ZSI6IG51bGwKICAgICAgICAgICAgfSwKICAgICAgICAgICAgImVtYWlsIjogbnVsbCwKICAgICAgICAgICAgIm5hbWUiOiBudWxsLAogICAgICAgICAgICAicGhvbmUiOiBudWxsCiAgICAgICAgICB9LAogICAgICAgICAgImNhbGN1bGF0ZWRfc3RhdGVtZW50X2Rlc2NyaXB0b3IiOiAiRFJVTUtOT1RUIiwKICAgICAgICAgICJjYXB0dXJlZCI6IHRydWUsCiAgICAgICAgICAiY3JlYXRlZCI6IDE2MDQ4MDc1ODgsCiAgICAgICAgICAiY3VycmVuY3kiOiAidXNkIiwKICAgICAgICAgICJjdXN0b21lciI6ICJjdXNfSUxtV3p3TGNlVTd3UGMiLAogICAgICAgICAgImRlc2NyaXB0aW9uIjogIlN1YnNjcmlwdGlvbiBjcmVhdGlvbiIsCiAgICAgICAgICAiZGVzdGluYXRpb24iOiBudWxsLAogICAgICAgICAgImRpc3B1dGUiOiBudWxsLAogICAgICAgICAgImRpc3B1dGVkIjogZmFsc2UsCiAgICAgICAgICAiZmFpbHVyZV9jb2RlIjogbnVsbCwKICAgICAgICAgICJmYWlsdXJlX21lc3NhZ2UiOiBudWxsLAogICAgICAgICAgImZyYXVkX2RldGFpbHMiOiB7CiAgICAgICAgICB9LAogICAgICAgICAgImludm9pY2UiOiAiaW5fMEhsNHhqa0tlNGtGcFliZEZqYVRBQ0tZIiwKICAgICAgICAgICJsaXZlbW9kZSI6IGZhbHNlLAogICAgICAgICAgIm1ldGFkYXRhIjogewogICAgICAgICAgfSwKICAgICAgICAgICJvbl9iZWhhbGZfb2YiOiBudWxsLAogICAgICAgICAgIm9yZGVyIjogbnVsbCwKICAgICAgICAgICJvdXRjb21lIjogewogICAgICAgICAgICAibmV0d29ya19zdGF0dXMiOiAiYXBwcm92ZWRfYnlfbmV0d29yayIsCiAgICAgICAgICAgICJyZWFzb24iOiBudWxsLAogICAgICAgICAgICAicmlza19sZXZlbCI6ICJub3JtYWwiLAogICAgICAgICAgICAicmlza19zY29yZSI6IDYyLAogICAgICAgICAgICAic2VsbGVyX21lc3NhZ2UiOiAiUGF5bWVudCBjb21wbGV0ZS4iLAogICAgICAgICAgICAidHlwZSI6ICJhdXRob3JpemVkIgogICAgICAgICAgfSwKICAgICAgICAgICJwYWlkIjogdHJ1ZSwKICAgICAgICAgICJwYXltZW50X2ludGVudCI6ICJwaV8wSGw0eGprS2U0a0ZwWWJkd1YxWWg2MkQiLAogICAgICAgICAgInBheW1lbnRfbWV0aG9kIjogImNhcmRfMEhsNHhoa0tlNGtGcFliZFpxUURkemJuIiwKICAgICAgICAgICJwYXltZW50X21ldGhvZF9kZXRhaWxzIjogewogICAgICAgICAgICAiY2FyZCI6IHsKICAgICAgICAgICAgICAiYnJhbmQiOiAidmlzYSIsCiAgICAgICAgICAgICAgImNoZWNrcyI6IHsKICAgICAgICAgICAgICAgICJhZGRyZXNzX2xpbmUxX2NoZWNrIjogbnVsbCwKICAgICAgICAgICAgICAgICJhZGRyZXNzX3Bvc3RhbF9jb2RlX2NoZWNrIjogbnVsbCwKICAgICAgICAgICAgICAgICJjdmNfY2hlY2siOiAicGFzcyIKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICJjb3VudHJ5IjogIlVTIiwKICAgICAgICAgICAgICAiZXhwX21vbnRoIjogMSwKICAgICAgICAgICAgICAiZXhwX3llYXIiOiAyMDIyLAogICAgICAgICAgICAgICJmaW5nZXJwcmludCI6ICJEQ1piQjBqTkk2TzU2T3JBIiwKICAgICAgICAgICAgICAiZnVuZGluZyI6ICJjcmVkaXQiLAogICAgICAgICAgICAgICJpbnN0YWxsbWVudHMiOiBudWxsLAogICAgICAgICAgICAgICJsYXN0NCI6ICI0MjQyIiwKICAgICAgICAgICAgICAibmV0d29yayI6ICJ2aXNhIiwKICAgICAgICAgICAgICAidGhyZWVfZF9zZWN1cmUiOiBudWxsLAogICAgICAgICAgICAgICJ3YWxsZXQiOiBudWxsCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgICJ0eXBlIjogImNhcmQiCiAgICAgICAgICB9LAogICAgICAgICAgInJlY2VpcHRfZW1haWwiOiBudWxsLAogICAgICAgICAgInJlY2VpcHRfbnVtYmVyIjogbnVsbCwKICAgICAgICAgICJyZWNlaXB0X3VybCI6ICJodHRwczovL3BheS5zdHJpcGUuY29tL3JlY2VpcHRzL2tLZTRrRnBZYmRMNnVSRjcxVGxIdnNPUXppYlRZUlUwL2NoXzBIbDR4a2tLZTRrRnBZYmRlUHJPdFYzMy9yY3B0X0lMbVdrRWJNMTRXOWJya1BtMjhKWjZmMUpwRlhVOHEiLAogICAgICAgICAgInJlZnVuZGVkIjogZmFsc2UsCiAgICAgICAgICAicmVmdW5kcyI6IHsKICAgICAgICAgICAgIm9iamVjdCI6ICJsaXN0IiwKICAgICAgICAgICAgImRhdGEiOiBbCgogICAgICAgICAgICBdLAogICAgICAgICAgICAiaGFzX21vcmUiOiBmYWxzZSwKICAgICAgICAgICAgInRvdGFsX2NvdW50IjogMCwKICAgICAgICAgICAgInVybCI6ICIvdjEvY2hhcmdlcy9jaF8wSGw0eGtrS2U0a0ZwWWJkZVByT3RWMzMvcmVmdW5kcyIKICAgICAgICAgIH0sCiAgICAgICAgICAicmV2aWV3IjogbnVsbCwKICAgICAgICAgICJzaGlwcGluZyI6IG51bGwsCiAgICAgICAgICAic291cmNlIjogewogICAgICAgICAgICAiaWQiOiAiY2FyZF8wSGw0eGhrS2U0a0ZwWWJkWnFRRGR6Ym4iLAogICAgICAgICAgICAib2JqZWN0IjogImNhcmQiLAogICAgICAgICAgICAiYWRkcmVzc19jaXR5IjogbnVsbCwKICAgICAgICAgICAgImFkZHJlc3NfY291bnRyeSI6IG51bGwsCiAgICAgICAgICAgICJhZGRyZXNzX2xpbmUxIjogbnVsbCwKICAgICAgICAgICAgImFkZHJlc3NfbGluZTFfY2hlY2siOiBudWxsLAogICAgICAgICAgICAiYWRkcmVzc19saW5lMiI6IG51bGwsCiAgICAgICAgICAgICJhZGRyZXNzX3N0YXRlIjogbnVsbCwKICAgICAgICAgICAgImFkZHJlc3NfemlwIjogbnVsbCwKICAgICAgICAgICAgImFkZHJlc3NfemlwX2NoZWNrIjogbnVsbCwKICAgICAgICAgICAgImJyYW5kIjogIlZpc2EiLAogICAgICAgICAgICAiY291bnRyeSI6ICJVUyIsCiAgICAgICAgICAgICJjdXN0b21lciI6ICJjdXNfSUxtV3p3TGNlVTd3UGMiLAogICAgICAgICAgICAiY3ZjX2NoZWNrIjogInBhc3MiLAogICAgICAgICAgICAiZHluYW1pY19sYXN0NCI6IG51bGwsCiAgICAgICAgICAgICJleHBfbW9udGgiOiAxLAogICAgICAgICAgICAiZXhwX3llYXIiOiAyMDIyLAogICAgICAgICAgICAiZmluZ2VycHJpbnQiOiAiRENaYkIwak5JNk81Nk9yQSIsCiAgICAgICAgICAgICJmdW5kaW5nIjogImNyZWRpdCIsCiAgICAgICAgICAgICJsYXN0NCI6ICI0MjQyIiwKICAgICAgICAgICAgIm1ldGFkYXRhIjogewogICAgICAgICAgICB9LAogICAgICAgICAgICAibmFtZSI6IG51bGwsCiAgICAgICAgICAgICJ0b2tlbml6YXRpb25fbWV0aG9kIjogbnVsbAogICAgICAgICAgfSwKICAgICAgICAgICJzb3VyY2VfdHJhbnNmZXIiOiBudWxsLAogICAgICAgICAgInN0YXRlbWVudF9kZXNjcmlwdG9yIjogbnVsbCwKICAgICAgICAgICJzdGF0ZW1lbnRfZGVzY3JpcHRvcl9zdWZmaXgiOiBudWxsLAogICAgICAgICAgInN0YXR1cyI6ICJzdWNjZWVkZWQiLAogICAgICAgICAgInRyYW5zZmVyX2RhdGEiOiBudWxsLAogICAgICAgICAgInRyYW5zZmVyX2dyb3VwIjogbnVsbAogICAgICAgIH0KICAgICAgfSwKICAgICAgImxpdmVtb2RlIjogZmFsc2UsCiAgICAgICJwZW5kaW5nX3dlYmhvb2tzIjogMCwKICAgICAgInJlcXVlc3QiOiB7CiAgICAgICAgImlkIjogInJlcV9ZZTlDaG5RdXh6Y2k4SCIsCiAgICAgICAgImlkZW1wb3RlbmN5X2tleSI6IG51bGwKICAgICAgfSwKICAgICAgInR5cGUiOiAiY2hhcmdlLnN1Y2NlZWRlZCIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJldnRfMEhsNHhpa0tlNGtGcFliZGRsT2hHcDg1IiwKICAgICAgIm9iamVjdCI6ICJldmVudCIsCiAgICAgICJhcGlfdmVyc2lvbiI6ICIyMDE3LTEyLTE0IiwKICAgICAgImNyZWF0ZWQiOiAxNjA0ODA3NTg2LAogICAgICAiZGF0YSI6IHsKICAgICAgICAib2JqZWN0IjogewogICAgICAgICAgImlkIjogImNhcmRfMEhsNHhoa0tlNGtGcFliZFpxUURkemJuIiwKICAgICAgICAgICJvYmplY3QiOiAiY2FyZCIsCiAgICAgICAgICAiYWRkcmVzc19jaXR5IjogbnVsbCwKICAgICAgICAgICJhZGRyZXNzX2NvdW50cnkiOiBudWxsLAogICAgICAgICAgImFkZHJlc3NfbGluZTEiOiBudWxsLAogICAgICAgICAgImFkZHJlc3NfbGluZTFfY2hlY2siOiBudWxsLAogICAgICAgICAgImFkZHJlc3NfbGluZTIiOiBudWxsLAogICAgICAgICAgImFkZHJlc3Nfc3RhdGUiOiBudWxsLAogICAgICAgICAgImFkZHJlc3NfemlwIjogbnVsbCwKICAgICAgICAgICJhZGRyZXNzX3ppcF9jaGVjayI6IG51bGwsCiAgICAgICAgICAiYnJhbmQiOiAiVmlzYSIsCiAgICAgICAgICAiY291bnRyeSI6ICJVUyIsCiAgICAgICAgICAiY3VzdG9tZXIiOiAiY3VzX0lMbVd6d0xjZVU3d1BjIiwKICAgICAgICAgICJjdmNfY2hlY2siOiAicGFzcyIsCiAgICAgICAgICAiZHluYW1pY19sYXN0NCI6IG51bGwsCiAgICAgICAgICAiZXhwX21vbnRoIjogMSwKICAgICAgICAgICJleHBfeWVhciI6IDIwMjIsCiAgICAgICAgICAiZmluZ2VycHJpbnQiOiAiRENaYkIwak5JNk81Nk9yQSIsCiAgICAgICAgICAiZnVuZGluZyI6ICJjcmVkaXQiLAogICAgICAgICAgImxhc3Q0IjogIjQyNDIiLAogICAgICAgICAgIm1ldGFkYXRhIjogewogICAgICAgICAgfSwKICAgICAgICAgICJuYW1lIjogbnVsbCwKICAgICAgICAgICJ0b2tlbml6YXRpb25fbWV0aG9kIjogbnVsbAogICAgICAgIH0KICAgICAgfSwKICAgICAgImxpdmVtb2RlIjogZmFsc2UsCiAgICAgICJwZW5kaW5nX3dlYmhvb2tzIjogMCwKICAgICAgInJlcXVlc3QiOiB7CiAgICAgICAgImlkIjogInJlcV9tSEZsWnlvenlSTlEySiIsCiAgICAgICAgImlkZW1wb3RlbmN5X2tleSI6IG51bGwKICAgICAgfSwKICAgICAgInR5cGUiOiAiY3VzdG9tZXIuc291cmNlLmNyZWF0ZWQiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZXZ0XzBIbDR4aWtLZTRrRnBZYmRHMkR5VmxSTCIsCiAgICAgICJvYmplY3QiOiAiZXZlbnQiLAogICAgICAiYXBpX3ZlcnNpb24iOiAiMjAxNy0xMi0xNCIsCiAgICAgICJjcmVhdGVkIjogMTYwNDgwNzU4NiwKICAgICAgImRhdGEiOiB7CiAgICAgICAgIm9iamVjdCI6IHsKICAgICAgICAgICJpZCI6ICJjYXJkXzBIbDR4aGtLZTRrRnBZYmRacVFEZHpibiIsCiAgICAgICAgICAib2JqZWN0IjogInBheW1lbnRfbWV0aG9kIiwKICAgICAgICAgICJiaWxsaW5nX2RldGFpbHMiOiB7CiAgICAgICAgICAgICJhZGRyZXNzIjogewogICAgICAgICAgICAgICJjaXR5IjogbnVsbCwKICAgICAgICAgICAgICAiY291bnRyeSI6IG51bGwsCiAgICAgICAgICAgICAgImxpbmUxIjogbnVsbCwKICAgICAgICAgICAgICAibGluZTIiOiBudWxsLAogICAgICAgICAgICAgICJwb3N0YWxfY29kZSI6IG51bGwsCiAgICAgICAgICAgICAgInN0YXRlIjogbnVsbAogICAgICAgICAgICB9LAogICAgICAgICAgICAiZW1haWwiOiBudWxsLAogICAgICAgICAgICAibmFtZSI6IG51bGwsCiAgICAgICAgICAgICJwaG9uZSI6IG51bGwKICAgICAgICAgIH0sCiAgICAgICAgICAiY2FyZCI6IHsKICAgICAgICAgICAgImJyYW5kIjogInZpc2EiLAogICAgICAgICAgICAiY2hlY2tzIjogewogICAgICAgICAgICAgICJhZGRyZXNzX2xpbmUxX2NoZWNrIjogbnVsbCwKICAgICAgICAgICAgICAiYWRkcmVzc19wb3N0YWxfY29kZV9jaGVjayI6IG51bGwsCiAgICAgICAgICAgICAgImN2Y19jaGVjayI6ICJwYXNzIgogICAgICAgICAgICB9LAogICAgICAgICAgICAiY291bnRyeSI6ICJVUyIsCiAgICAgICAgICAgICJleHBfbW9udGgiOiAxLAogICAgICAgICAgICAiZXhwX3llYXIiOiAyMDIyLAogICAgICAgICAgICAiZmluZ2VycHJpbnQiOiAiRENaYkIwak5JNk81Nk9yQSIsCiAgICAgICAgICAgICJmdW5kaW5nIjogImNyZWRpdCIsCiAgICAgICAgICAgICJnZW5lcmF0ZWRfZnJvbSI6IG51bGwsCiAgICAgICAgICAgICJsYXN0NCI6ICI0MjQyIiwKICAgICAgICAgICAgIm5ldHdvcmtzIjogewogICAgICAgICAgICAgICJhdmFpbGFibGUiOiBbCiAgICAgICAgICAgICAgICAidmlzYSIKICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICJwcmVmZXJyZWQiOiBudWxsCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgICJ0aHJlZV9kX3NlY3VyZV91c2FnZSI6IHsKICAgICAgICAgICAgICAic3VwcG9ydGVkIjogdHJ1ZQogICAgICAgICAgICB9LAogICAgICAgICAgICAid2FsbGV0IjogbnVsbAogICAgICAgICAgfSwKICAgICAgICAgICJjcmVhdGVkIjogMTYwNDgwNzU4NSwKICAgICAgICAgICJjdXN0b21lciI6ICJjdXNfSUxtV3p3TGNlVTd3UGMiLAogICAgICAgICAgImxpdmVtb2RlIjogZmFsc2UsCiAgICAgICAgICAibWV0YWRhdGEiOiB7CiAgICAgICAgICB9LAogICAgICAgICAgInR5cGUiOiAiY2FyZCIKICAgICAgICB9CiAgICAgIH0sCiAgICAgICJsaXZlbW9kZSI6IGZhbHNlLAogICAgICAicGVuZGluZ193ZWJob29rcyI6IDAsCiAgICAgICJyZXF1ZXN0IjogewogICAgICAgICJpZCI6ICJyZXFfbUhGbFp5b3p5Uk5RMkoiLAogICAgICAgICJpZGVtcG90ZW5jeV9rZXkiOiBudWxsCiAgICAgIH0sCiAgICAgICJ0eXBlIjogInBheW1lbnRfbWV0aG9kLmF0dGFjaGVkIgogICAgfSwKICAgIHsKICAgICAgImlkIjogImV2dF8wSGw0eGlrS2U0a0ZwWWJkQThTMXRqcGYiLAogICAgICAib2JqZWN0IjogImV2ZW50IiwKICAgICAgImFwaV92ZXJzaW9uIjogIjIwMTctMTItMTQiLAogICAgICAiY3JlYXRlZCI6IDE2MDQ4MDc1ODYsCiAgICAgICJkYXRhIjogewogICAgICAgICJvYmplY3QiOiB7CiAgICAgICAgICAiaWQiOiAiY3VzX0lMbVd6d0xjZVU3d1BjIiwKICAgICAgICAgICJvYmplY3QiOiAiY3VzdG9tZXIiLAogICAgICAgICAgImFjY291bnRfYmFsYW5jZSI6IDAsCiAgICAgICAgICAiYWRkcmVzcyI6IG51bGwsCiAgICAgICAgICAiYmFsYW5jZSI6IDAsCiAgICAgICAgICAiY3JlYXRlZCI6IDE2MDQ4MDc1ODQsCiAgICAgICAgICAiY3VycmVuY3kiOiBudWxsLAogICAgICAgICAgImRlZmF1bHRfc291cmNlIjogImNhcmRfMEhsNHhoa0tlNGtGcFliZFpxUURkemJuIiwKICAgICAgICAgICJkZWxpbnF1ZW50IjogZmFsc2UsCiAgICAgICAgICAiZGVzY3JpcHRpb24iOiBudWxsLAogICAgICAgICAgImRpc2NvdW50IjogbnVsbCwKICAgICAgICAgICJlbWFpbCI6ICJzZWFyY2gwMDAxQGRydW1rbm90dHNlYXJjaC5jb20iLAogICAgICAgICAgImludm9pY2VfcHJlZml4IjogIjk1MkNEMkZFIiwKICAgICAgICAgICJpbnZvaWNlX3NldHRpbmdzIjogewogICAgICAgICAgICAiY3VzdG9tX2ZpZWxkcyI6IG51bGwsCiAgICAgICAgICAgICJkZWZhdWx0X3BheW1lbnRfbWV0aG9kIjogbnVsbCwKICAgICAgICAgICAgImZvb3RlciI6IG51bGwKICAgICAgICAgIH0sCiAgICAgICAgICAibGl2ZW1vZGUiOiBmYWxzZSwKICAgICAgICAgICJtZXRhZGF0YSI6IHsKICAgICAgICAgIH0sCiAgICAgICAgICAibmFtZSI6IG51bGwsCiAgICAgICAgICAibmV4dF9pbnZvaWNlX3NlcXVlbmNlIjogMSwKICAgICAgICAgICJwaG9uZSI6IG51bGwsCiAgICAgICAgICAicHJlZmVycmVkX2xvY2FsZXMiOiBbCgogICAgICAgICAgXSwKICAgICAgICAgICJzaGlwcGluZyI6IG51bGwsCiAgICAgICAgICAic291cmNlcyI6IHsKICAgICAgICAgICAgIm9iamVjdCI6ICJsaXN0IiwKICAgICAgICAgICAgImRhdGEiOiBbCiAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgImlkIjogImNhcmRfMEhsNHhoa0tlNGtGcFliZFpxUURkemJuIiwKICAgICAgICAgICAgICAgICJvYmplY3QiOiAiY2FyZCIsCiAgICAgICAgICAgICAgICAiYWRkcmVzc19jaXR5IjogbnVsbCwKICAgICAgICAgICAgICAgICJhZGRyZXNzX2NvdW50cnkiOiBudWxsLAogICAgICAgICAgICAgICAgImFkZHJlc3NfbGluZTEiOiBudWxsLAogICAgICAgICAgICAgICAgImFkZHJlc3NfbGluZTFfY2hlY2siOiBudWxsLAogICAgICAgICAgICAgICAgImFkZHJlc3NfbGluZTIiOiBudWxsLAogICAgICAgICAgICAgICAgImFkZHJlc3Nfc3RhdGUiOiBudWxsLAogICAgICAgICAgICAgICAgImFkZHJlc3NfemlwIjogbnVsbCwKICAgICAgICAgICAgICAgICJhZGRyZXNzX3ppcF9jaGVjayI6IG51bGwsCiAgICAgICAgICAgICAgICAiYnJhbmQiOiAiVmlzYSIsCiAgICAgICAgICAgICAgICAiY291bnRyeSI6ICJVUyIsCiAgICAgICAgICAgICAgICAiY3VzdG9tZXIiOiAiY3VzX0lMbVd6d0xjZVU3d1BjIiwKICAgICAgICAgICAgICAgICJjdmNfY2hlY2siOiAicGFzcyIsCiAgICAgICAgICAgICAgICAiZHluYW1pY19sYXN0NCI6IG51bGwsCiAgICAgICAgICAgICAgICAiZXhwX21vbnRoIjogMSwKICAgICAgICAgICAgICAgICJleHBfeWVhciI6IDIwMjIsCiAgICAgICAgICAgICAgICAiZmluZ2VycHJpbnQiOiAiRENaYkIwak5JNk81Nk9yQSIsCiAgICAgICAgICAgICAgICAiZnVuZGluZyI6ICJjcmVkaXQiLAogICAgICAgICAgICAgICAgImxhc3Q0IjogIjQyNDIiLAogICAgICAgICAgICAgICAgIm1ldGFkYXRhIjogewogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICJuYW1lIjogbnVsbCwKICAgICAgICAgICAgICAgICJ0b2tlbml6YXRpb25fbWV0aG9kIjogbnVsbAogICAgICAgICAgICAgIH0KICAgICAgICAgICAgXSwKICAgICAgICAgICAgImhhc19tb3JlIjogZmFsc2UsCiAgICAgICAgICAgICJ0b3RhbF9jb3VudCI6IDEsCiAgICAgICAgICAgICJ1cmwiOiAiL3YxL2N1c3RvbWVycy9jdXNfSUxtV3p3TGNlVTd3UGMvc291cmNlcyIKICAgICAgICAgIH0sCiAgICAgICAgICAic3Vic2NyaXB0aW9ucyI6IHsKICAgICAgICAgICAgIm9iamVjdCI6ICJsaXN0IiwKICAgICAgICAgICAgImRhdGEiOiBbCgogICAgICAgICAgICBdLAogICAgICAgICAgICAiaGFzX21vcmUiOiBmYWxzZSwKICAgICAgICAgICAgInRvdGFsX2NvdW50IjogMCwKICAgICAgICAgICAgInVybCI6ICIvdjEvY3VzdG9tZXJzL2N1c19JTG1XendMY2VVN3dQYy9zdWJzY3JpcHRpb25zIgogICAgICAgICAgfSwKICAgICAgICAgICJ0YXhfZXhlbXB0IjogIm5vbmUiLAogICAgICAgICAgInRheF9pZHMiOiB7CiAgICAgICAgICAgICJvYmplY3QiOiAibGlzdCIsCiAgICAgICAgICAgICJkYXRhIjogWwoKICAgICAgICAgICAgXSwKICAgICAgICAgICAgImhhc19tb3JlIjogZmFsc2UsCiAgICAgICAgICAgICJ0b3RhbF9jb3VudCI6IDAsCiAgICAgICAgICAgICJ1cmwiOiAiL3YxL2N1c3RvbWVycy9jdXNfSUxtV3p3TGNlVTd3UGMvdGF4X2lkcyIKICAgICAgICAgIH0sCiAgICAgICAgICAidGF4X2luZm8iOiBudWxsLAogICAgICAgICAgInRheF9pbmZvX3ZlcmlmaWNhdGlvbiI6IG51bGwKICAgICAgICB9LAogICAgICAgICJwcmV2aW91c19hdHRyaWJ1dGVzIjogewogICAgICAgICAgImRlZmF1bHRfc291cmNlIjogbnVsbAogICAgICAgIH0KICAgICAgfSwKICAgICAgImxpdmVtb2RlIjogZmFsc2UsCiAgICAgICJwZW5kaW5nX3dlYmhvb2tzIjogMCwKICAgICAgInJlcXVlc3QiOiB7CiAgICAgICAgImlkIjogInJlcV9tSEZsWnlvenlSTlEySiIsCiAgICAgICAgImlkZW1wb3RlbmN5X2tleSI6IG51bGwKICAgICAgfSwKICAgICAgInR5cGUiOiAiY3VzdG9tZXIudXBkYXRlZCIKICAgIH0sCiAgICB7CiAgICAgICJpZCI6ICJldnRfMEhsNHhoa0tlNGtGcFliZHFDNkNmZU0xIiwKICAgICAgIm9iamVjdCI6ICJldmVudCIsCiAgICAgICJhcGlfdmVyc2lvbiI6ICIyMDE3LTEyLTE0IiwKICAgICAgImNyZWF0ZWQiOiAxNjA0ODA3NTg1LAogICAgICAiZGF0YSI6IHsKICAgICAgICAib2JqZWN0IjogewogICAgICAgICAgImlkIjogImN1c19JTG1XendMY2VVN3dQYyIsCiAgICAgICAgICAib2JqZWN0IjogImN1c3RvbWVyIiwKICAgICAgICAgICJhY2NvdW50X2JhbGFuY2UiOiAwLAogICAgICAgICAgImFkZHJlc3MiOiBudWxsLAogICAgICAgICAgImJhbGFuY2UiOiAwLAogICAgICAgICAgImNyZWF0ZWQiOiAxNjA0ODA3NTg0LAogICAgICAgICAgImN1cnJlbmN5IjogbnVsbCwKICAgICAgICAgICJkZWZhdWx0X3NvdXJjZSI6IG51bGwsCiAgICAgICAgICAiZGVsaW5xdWVudCI6IGZhbHNlLAogICAgICAgICAgImRlc2NyaXB0aW9uIjogbnVsbCwKICAgICAgICAgICJkaXNjb3VudCI6IG51bGwsCiAgICAgICAgICAiZW1haWwiOiAic2VhcmNoMDAwMUBkcnVta25vdHRzZWFyY2guY29tIiwKICAgICAgICAgICJpbnZvaWNlX3ByZWZpeCI6ICI5NTJDRDJGRSIsCiAgICAgICAgICAiaW52b2ljZV9zZXR0aW5ncyI6IHsKICAgICAgICAgICAgImN1c3RvbV9maWVsZHMiOiBudWxsLAogICAgICAgICAgICAiZGVmYXVsdF9wYXltZW50X21ldGhvZCI6IG51bGwsCiAgICAgICAgICAgICJmb290ZXIiOiBudWxsCiAgICAgICAgICB9LAogICAgICAgICAgImxpdmVtb2RlIjogZmFsc2UsCiAgICAgICAgICAibWV0YWRhdGEiOiB7CiAgICAgICAgICB9LAogICAgICAgICAgIm5hbWUiOiBudWxsLAogICAgICAgICAgIm5leHRfaW52b2ljZV9zZXF1ZW5jZSI6IDEsCiAgICAgICAgICAicGhvbmUiOiBudWxsLAogICAgICAgICAgInByZWZlcnJlZF9sb2NhbGVzIjogWwoKICAgICAgICAgIF0sCiAgICAgICAgICAic2hpcHBpbmciOiBudWxsLAogICAgICAgICAgInNvdXJjZXMiOiB7CiAgICAgICAgICAgICJvYmplY3QiOiAibGlzdCIsCiAgICAgICAgICAgICJkYXRhIjogWwoKICAgICAgICAgICAgXSwKICAgICAgICAgICAgImhhc19tb3JlIjogZmFsc2UsCiAgICAgICAgICAgICJ0b3RhbF9jb3VudCI6IDAsCiAgICAgICAgICAgICJ1cmwiOiAiL3YxL2N1c3RvbWVycy9jdXNfSUxtV3p3TGNlVTd3UGMvc291cmNlcyIKICAgICAgICAgIH0sCiAgICAgICAgICAic3Vic2NyaXB0aW9ucyI6IHsKICAgICAgICAgICAgIm9iamVjdCI6ICJsaXN0IiwKICAgICAgICAgICAgImRhdGEiOiBbCgogICAgICAgICAgICBdLAogICAgICAgICAgICAiaGFzX21vcmUiOiBmYWxzZSwKICAgICAgICAgICAgInRvdGFsX2NvdW50IjogMCwKICAgICAgICAgICAgInVybCI6ICIvdjEvY3VzdG9tZXJzL2N1c19JTG1XendMY2VVN3dQYy9zdWJzY3JpcHRpb25zIgogICAgICAgICAgfSwKICAgICAgICAgICJ0YXhfZXhlbXB0IjogIm5vbmUiLAogICAgICAgICAgInRheF9pZHMiOiB7CiAgICAgICAgICAgICJvYmplY3QiOiAibGlzdCIsCiAgICAgICAgICAgICJkYXRhIjogWwoKICAgICAgICAgICAgXSwKICAgICAgICAgICAgImhhc19tb3JlIjogZmFsc2UsCiAgICAgICAgICAgICJ0b3RhbF9jb3VudCI6IDAsCiAgICAgICAgICAgICJ1cmwiOiAiL3YxL2N1c3RvbWVycy9jdXNfSUxtV3p3TGNlVTd3UGMvdGF4X2lkcyIKICAgICAgICAgIH0sCiAgICAgICAgICAidGF4X2luZm8iOiBudWxsLAogICAgICAgICAgInRheF9pbmZvX3ZlcmlmaWNhdGlvbiI6IG51bGwKICAgICAgICB9CiAgICAgIH0sCiAgICAgICJsaXZlbW9kZSI6IGZhbHNlLAogICAgICAicGVuZGluZ193ZWJob29rcyI6IDAsCiAgICAgICJyZXF1ZXN0IjogewogICAgICAgICJpZCI6ICJyZXFfcWNJWHRnbjdqNE1xcXgiLAogICAgICAgICJpZGVtcG90ZW5jeV9rZXkiOiBudWxsCiAgICAgIH0sCiAgICAgICJ0eXBlIjogImN1c3RvbWVyLmNyZWF0ZWQiCiAgICB9LAogICAgewogICAgICAiaWQiOiAiZXZ0XzBIbDR4Z2tLZTRrRnBZYmRhVzFZcU9mViIsCiAgICAgICJvYmplY3QiOiAiZXZlbnQiLAogICAgICAiYXBpX3ZlcnNpb24iOiAiMjAxNy0xMi0xNCIsCiAgICAgICJjcmVhdGVkIjogMTYwNDgwNzU4NCwKICAgICAgImRhdGEiOiB7CiAgICAgICAgIm9iamVjdCI6IHsKICAgICAgICAgICJpZCI6ICJkcnVta25vdHQiLAogICAgICAgICAgIm9iamVjdCI6ICJwcmljZSIsCiAgICAgICAgICAiYWN0aXZlIjogdHJ1ZSwKICAgICAgICAgICJiaWxsaW5nX3NjaGVtZSI6ICJwZXJfdW5pdCIsCiAgICAgICAgICAiY3JlYXRlZCI6IDE2MDQ4MDc1ODQsCiAgICAgICAgICAiY3VycmVuY3kiOiAidXNkIiwKICAgICAgICAgICJsaXZlbW9kZSI6IGZhbHNlLAogICAgICAgICAgImxvb2t1cF9rZXkiOiBudWxsLAogICAgICAgICAgIm1ldGFkYXRhIjogewogICAgICAgICAgfSwKICAgICAgICAgICJuaWNrbmFtZSI6IG51bGwsCiAgICAgICAgICAicHJvZHVjdCI6ICJwcm9kX0lMbVdjQ3cyYUV1aE5mIiwKICAgICAgICAgICJyZWN1cnJpbmciOiB7CiAgICAgICAgICAgICJhZ2dyZWdhdGVfdXNhZ2UiOiBudWxsLAogICAgICAgICAgICAiaW50ZXJ2YWwiOiAibW9udGgiLAogICAgICAgICAgICAiaW50ZXJ2YWxfY291bnQiOiAxLAogICAgICAgICAgICAidHJpYWxfcGVyaW9kX2RheXMiOiBudWxsLAogICAgICAgICAgICAidXNhZ2VfdHlwZSI6ICJsaWNlbnNlZCIKICAgICAgICAgIH0sCiAgICAgICAgICAidGllcnNfbW9kZSI6IG51bGwsCiAgICAgICAgICAidHJhbnNmb3JtX3F1YW50aXR5IjogbnVsbCwKICAgICAgICAgICJ0eXBlIjogInJlY3VycmluZyIsCiAgICAgICAgICAidW5pdF9hbW91bnQiOiAzMDAsCiAgICAgICAgICAidW5pdF9hbW91bnRfZGVjaW1hbCI6ICIzMDAiCiAgICAgICAgfQogICAgICB9LAogICAgICAibGl2ZW1vZGUiOiBmYWxzZSwKICAgICAgInBlbmRpbmdfd2ViaG9va3MiOiAwLAogICAgICAicmVxdWVzdCI6IHsKICAgICAgICAiaWQiOiAicmVxX2RkMHZ5YWlZSkI0dzNBIiwKICAgICAgICAiaWRlbXBvdGVuY3lfa2V5IjogbnVsbAogICAgICB9LAogICAgICAidHlwZSI6ICJwcmljZS5jcmVhdGVkIgogICAgfSwKICAgIHsKICAgICAgImlkIjogImV2dF8wSGw0eGdrS2U0a0ZwWWJkTHlQY2pMQlYiLAogICAgICAib2JqZWN0IjogImV2ZW50IiwKICAgICAgImFwaV92ZXJzaW9uIjogIjIwMTctMTItMTQiLAogICAgICAiY3JlYXRlZCI6IDE2MDQ4MDc1ODQsCiAgICAgICJkYXRhIjogewogICAgICAgICJvYmplY3QiOiB7CiAgICAgICAgICAiaWQiOiAiZHJ1bWtub3R0IiwKICAgICAgICAgICJvYmplY3QiOiAicGxhbiIsCiAgICAgICAgICAiYWN0aXZlIjogdHJ1ZSwKICAgICAgICAgICJhZ2dyZWdhdGVfdXNhZ2UiOiBudWxsLAogICAgICAgICAgImFtb3VudCI6IDMwMCwKICAgICAgICAgICJhbW91bnRfZGVjaW1hbCI6ICIzMDAiLAogICAgICAgICAgImJpbGxpbmdfc2NoZW1lIjogInBlcl91bml0IiwKICAgICAgICAgICJjcmVhdGVkIjogMTYwNDgwNzU4NCwKICAgICAgICAgICJjdXJyZW5jeSI6ICJ1c2QiLAogICAgICAgICAgImludGVydmFsIjogIm1vbnRoIiwKICAgICAgICAgICJpbnRlcnZhbF9jb3VudCI6IDEsCiAgICAgICAgICAibGl2ZW1vZGUiOiBmYWxzZSwKICAgICAgICAgICJtZXRhZGF0YSI6IHsKICAgICAgICAgIH0sCiAgICAgICAgICAibmFtZSI6ICJEcnVta25vdHQgVGVzdCIsCiAgICAgICAgICAibmlja25hbWUiOiBudWxsLAogICAgICAgICAgInByb2R1Y3QiOiAicHJvZF9JTG1XY0N3MmFFdWhOZiIsCiAgICAgICAgICAic3RhdGVtZW50X2Rlc2NyaXB0b3IiOiBudWxsLAogICAgICAgICAgInRpZXJzIjogbnVsbCwKICAgICAgICAgICJ0aWVyc19tb2RlIjogbnVsbCwKICAgICAgICAgICJ0cmFuc2Zvcm1fdXNhZ2UiOiBudWxsLAogICAgICAgICAgInRyaWFsX3BlcmlvZF9kYXlzIjogbnVsbCwKICAgICAgICAgICJ1c2FnZV90eXBlIjogImxpY2Vuc2VkIgogICAgICAgIH0KICAgICAgfSwKICAgICAgImxpdmVtb2RlIjogZmFsc2UsCiAgICAgICJwZW5kaW5nX3dlYmhvb2tzIjogMCwKICAgICAgInJlcXVlc3QiOiB7CiAgICAgICAgImlkIjogInJlcV9kZDB2eWFpWUpCNHczQSIsCiAgICAgICAgImlkZW1wb3RlbmN5X2tleSI6IG51bGwKICAgICAgfSwKICAgICAgInR5cGUiOiAicGxhbi5jcmVhdGVkIgogICAgfQogIF0sCiAgImhhc19tb3JlIjogdHJ1ZSwKICAidXJsIjogIi92MS9ldmVudHMiCn0K
+  recorded_at: Sun, 08 Nov 2020 03:53:09 GMT
+recorded_with: VCR 6.0.0
