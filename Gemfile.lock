@@ -90,6 +90,9 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
+    capybara-email (3.0.2)
+      capybara (>= 2.4, < 4.0)
+      mail
     coffee-rails (5.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 5.2.0)
@@ -371,6 +374,7 @@ DEPENDENCIES
   bugsnag (~> 6.18.0)
   byebug
   capybara (= 3.33.0)
+  capybara-email
   coffee-rails (~> 5.0.0)
   country_select (~> 4.0.0)
   decent_exposure (~> 3.0)

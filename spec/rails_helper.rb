@@ -10,6 +10,7 @@ require "rspec/rails"
 require "sidekiq/testing/inline"
 require "webmock/rspec"
 require "vcr_assistant/rspec"
+require "capybara/email/rspec"
 
 Dir[Rails.root.join("spec/support/**/*.rb")].sort.each do |file|
   require file
