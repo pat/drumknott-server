@@ -15,6 +15,13 @@ RSpec.describe "Update user details", :type => :feature do
     fill_in "Email", :with => "pat@drumknottsearch.com"
     click_button "Update"
 
+    email = emails_sent_to("pat@drumknottsearch.com").detect do |mail|
+      mail.subject == "Confirmation instructions"
+    end
+    expect(email).to be_present
+
+    email.click_link "Confirm my account"
+
     user.reload
     expect(user.email).to eq("pat@drumknottsearch.com")
   end
@@ -26,6 +33,13 @@ RSpec.describe "Update user details", :type => :feature do
 
       fill_in "Email", :with => "pat@drumknottsearch.com"
       click_button "Update"
+
+      email = emails_sent_to("pat@drumknottsearch.com").detect do |mail|
+        mail.subject == "Confirmation instructions"
+      end
+      expect(email).to be_present
+
+      email.click_link "Confirm my account"
 
       user.reload
       expect(user.email).to eq("pat@drumknottsearch.com")

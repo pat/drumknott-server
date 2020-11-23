@@ -4,7 +4,11 @@ require "rails_helper"
 
 RSpec.describe "Signing in", :type => :feature do
   let(:user) do
-    User.create! :email => "pat@tuckerapp.com", :password => "mysecret"
+    User.create!(
+      :email        => "pat@tuckerapp.com",
+      :password     => "mysecret",
+      :confirmed_at => 1.second.ago
+    )
   end
 
   it "via email and password" do

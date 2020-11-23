@@ -12,4 +12,5 @@ User.blueprint do
   email                 { "search#{sn}@drumknottsearch.com" }
   password              { "password" }
   password_confirmation { object.password }
+  confirmed_at          { 1.second.ago }
 end
