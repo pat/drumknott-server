@@ -42,7 +42,7 @@
     - if invoice.data['discount']
       %tr.subtotal
         %td
-        %td Discount: #{ number_to_currency(invoice.data['discount']['coupon']['percent_off'].to_i / 100.0) }
+        %td Discount: #{ number_to_currency(invoice.data['discount']['coupon']['percent_off'].to_i * invoice.data['subtotal'] / 10000.0) }
 
     %tr.total
       %td
