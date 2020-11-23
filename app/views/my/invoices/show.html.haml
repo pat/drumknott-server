@@ -39,10 +39,10 @@
       %td
       %td Subtotal: #{ number_to_currency(invoice.data['subtotal'] / 100.0) }
 
-    - if invoice.data['discount'].to_i > 0
+    - if invoice.data['discount']
       %tr.subtotal
         %td
-        %td Discount: #{ number_to_currency(invoice.data['discount'].to_i / 100.0) }
+        %td Discount: #{ number_to_currency(invoice.data['discount']['coupon']['percent_off'].to_i / 100.0) }
 
     %tr.total
       %td
