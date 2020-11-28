@@ -1,0 +1,40 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:10
+        env:
+          POSTGRES_USER: drumknott
+          POSTGRES_PASSWORD: drumknott
+          POSTGRES_DB: drumknott_test
+        ports:
+          - 5432/tcp
+        # needed because the postgres container does not provide a healthcheck
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Set up ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          bundler-cache: true
+      - name: Set up Sphinx
+        run: "./bin/loadsphinx 2.2.11 sphinx"
+      - name: Rubocop
+        run: bundle exec rubocop
+      - name: Test
+        env:
+          DATABASE_URL: postgres://drumknott:drumknott@127.0.0.1:${{ job.services.postgres.ports[5432] }}/drumknott_test
+          INVOICE_FROM: Invoice CI
+          STRIPE_PLAN_ID: ${{ secrets.STRIPE_PLAN_ID }}
+          STRIPE_PUBLISHABLE_KEY: ${{ secrets.STRIPE_PUBLISHABLE_KEY }}
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+        run: "bundle exec rspec"
