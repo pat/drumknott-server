@@ -29,7 +29,7 @@ gem "formtastic",
   :git    => "https://github.com/justinfrench/formtastic.git",
   :branch => "master",
   :ref    => "1805a115c2"
-gem "haml",            "5.2.0"
+gem "haml",            "5.2.1"
 gem "kaminari",        "~> 1.2.0"
 gem "mysql2",          "~> 0.5.0"
 gem "newrelic_rpm",    "~> 6.0"
