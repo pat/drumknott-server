@@ -15,6 +15,7 @@ RSpec.describe "Signing up", :type => :feature do
     select "Cambodia",          :from => "Country"
     fill_in "user_password",    :with => "mysecret"
     fill_in "Confirm Password", :with => "mysecret"
+    fill_in "Human?",           :with => "Drumknott"
     click_button "Sign up"
 
     expect(page).to have_content(
