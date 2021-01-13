@@ -116,7 +116,7 @@ GEM
     crack (0.4.5)
       rexml
     crass (1.0.6)
-    decent_exposure (3.0.2)
+    decent_exposure (3.0.4)
       activesupport (>= 4.0)
     devise (4.7.3)
       bcrypt (~> 3.0)
