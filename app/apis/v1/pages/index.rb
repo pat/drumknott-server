@@ -48,8 +48,6 @@ class V1::Pages::Index < Sliver::Rails::Action
   def pages
     return [] if error?
 
-    require "mysql2"
-
     @pages ||= site.pages.search query,
       :with     => {:deactivated_at => 0},
       :page     => page,

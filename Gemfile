@@ -31,7 +31,7 @@ gem "formtastic",
   :ref    => "1805a115c2"
 gem "haml",            "5.2.1"
 gem "kaminari",        "~> 1.2.0"
-gem "mysql2",          "~> 0.5.0", :require => false
+gem "mysql2",          "~> 0.5.0"
 gem "newrelic_rpm",    "~> 6.0"
 gem "prawn",           "~> 2.0"
 gem "prawn-table",     "~> 0.2.2"
