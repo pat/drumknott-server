@@ -110,9 +110,9 @@ GEM
       i18n_data (~> 0.10.0)
       sixarm_ruby_unaccent (~> 1.1)
       unicode_utils (~> 1.4)
-    country_select (4.0.0)
+    country_select (5.0.0)
       countries (~> 3.0)
-      sort_alphabetical (~> 1.0)
+      sort_alphabetical (~> 1.1)
     crack (0.4.5)
       rexml
     crass (1.0.6)
@@ -384,7 +384,7 @@ DEPENDENCIES
   capybara (= 3.35.3)
   capybara-email
   coffee-rails (~> 5.0.0)
-  country_select (~> 4.0.0)
+  country_select (~> 5.0.0)
   decent_exposure (~> 3.0)
   devise (~> 4.4)
   dotenv-rails (~> 2.7.0)
