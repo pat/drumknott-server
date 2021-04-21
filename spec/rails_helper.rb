@@ -12,7 +12,7 @@ require "webmock/rspec"
 require "vcr_assistant/rspec"
 require "capybara/email/rspec"
 
-Dir[Rails.root.join("spec/support/**/*.rb")].sort.each do |file|
+Dir[Rails.root.join("spec/support/**/*.rb")].each do |file|
   require file
 end
 

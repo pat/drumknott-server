@@ -1,13 +1,4 @@
 GIT
-  remote: https://github.com/justinfrench/formtastic.git
-  revision: 1805a115c24dc936b9d4acbdf0022fab16eb3f79
-  ref: 1805a115c2
-  branch: master
-  specs:
-    formtastic (3.2.0.pre)
-      actionpack (>= 5.2.0)
-
-GIT
   remote: https://github.com/pat/machinist.git
   revision: ff04f1a92d211a0dcefcc08b400602e542e586b8
   ref: ff04f1a92d
@@ -145,6 +136,8 @@ GEM
       multi_json (>= 1.3.0)
       pusher-client (~> 0.3)
       thinking-sphinx (>= 4.0.0)
+    formtastic (4.0.0)
+      actionpack (>= 5.2.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     gzipped_tar (0.1.2)
@@ -152,7 +145,7 @@ GEM
       temple (>= 0.8.0)
       tilt
     hashdiff (1.0.1)
-    i18n (1.8.9)
+    i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     i18n_data (0.10.0)
     innertube (1.1.0)
@@ -175,7 +168,7 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
-    loofah (2.9.0)
+    loofah (2.9.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -191,7 +184,7 @@ GEM
     mysql2 (0.5.3)
     newrelic_rpm (6.15.0)
     nio4r (2.5.7)
-    nokogiri (1.11.2)
+    nokogiri (1.11.3)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -387,7 +380,7 @@ DEPENDENCIES
   devise (~> 4.4)
   dotenv-rails (~> 2.7.0)
   flying-sphinx (~> 2.0)
-  formtastic!
+  formtastic (~> 4.0)
   haml (= 5.2.1)
   jquery-rails
   kaminari (~> 1.2.0)
@@ -423,7 +416,7 @@ DEPENDENCIES
   webmock (~> 3.12.0)
 
 RUBY VERSION
-   ruby 2.7.3p183
+   ruby 3.0.1
 
 BUNDLED WITH
-   2.1.4
+   2.2.15
