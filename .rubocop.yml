@@ -40,6 +40,9 @@ Rails/DynamicFindBy:
   Whitelist:
     - 'find_by_path'
 
+Rails/EnvironmentVariableAccess:
+  AllowReads: true
+
 Style/ClassAndModuleChildren:
   Enabled: false
 
