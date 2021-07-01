@@ -22,7 +22,7 @@ class My::AccountsController < My::ApplicationController
 
     redirect_to root_path,
       :notice => "We are now cancelling your subscriptions and deleting your " \
-        "data, and will email you once it is done."
+                 "data, and will email you once it is done."
   end
 
   def change_card
