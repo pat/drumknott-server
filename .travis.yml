@@ -1,5 +1,5 @@
 language: ruby
-rvm: 3.0.1
+rvm: 3.0.2
 addons:
   postgresql: '10'
   apt:
