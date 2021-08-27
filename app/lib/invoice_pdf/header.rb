@@ -3,7 +3,7 @@
 class InvoicePdf::Header < InvoicePdf::Base
   include InvoicesHelper
 
-  FROM_ADDRESS = <<~TEXT
+  FROM_ADDRESS = <<~TEXT.freeze
     Invoice From:
     #{ENV["INVOICE_FROM"]}
   TEXT
