@@ -29,7 +29,7 @@ Lint/UselessAccessModifier:
 
 Metrics/BlockLength:
   Exclude:
-    - 'config/environments/production.rb'
+    - 'config/environments/*.rb'
     - 'spec/**/*_spec.rb'
 
 Metrics/MethodLength:
