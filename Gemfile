@@ -5,7 +5,8 @@ source "https://rubygems.org"
 ruby "3.0.3"
 
 # rails
-gem "rails", "~> 6.0"
+gem "rails", "~> 7.0"
+gem "sprockets-rails"
 
 # core
 gem "pg",      "~> 1.0"
@@ -51,7 +52,6 @@ end
 group :development, :test do
   gem "dotenv-rails", "~> 2.7.0"
   gem "rspec-rails"
-  gem "spring"
   gem "thinking-sphinx-ports", "~> 0.1.0"
 end
 
