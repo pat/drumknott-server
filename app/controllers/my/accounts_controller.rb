@@ -8,8 +8,7 @@ class My::AccountsController < My::ApplicationController
     if current_user.save
       UpdateCustomerWorker.perform_async current_user.id if email_changed
 
-      redirect_to my_dashboard_path,
-        :notice => "Your account details have been updated."
+      redirect_to my_dashboard_path, :notice => t(".success")
     else
       render "edit"
     end
@@ -20,16 +19,13 @@ class My::AccountsController < My::ApplicationController
 
     sign_out :user
 
-    redirect_to root_path,
-      :notice => "We are now cancelling your subscriptions and deleting your " \
-                 "data, and will email you once it is done."
+    redirect_to root_path, :notice => t(".success")
   end
 
   def change_card
     UpdateCardWorker.perform_async current_user.id, params[:stripeToken]
 
-    redirect_to my_dashboard_path,
-      :notice => "Your credit card is being updated."
+    redirect_to my_dashboard_path, :notice => t(".success")
   end
 
   private

@@ -2,9 +2,6 @@
 
 class UserMailer < ApplicationMailer
   def deleted(email)
-    mail(
-      :to      => email,
-      :subject => "Drumknott: Account Closed"
-    )
+    mail(:to => email)
   end
 end

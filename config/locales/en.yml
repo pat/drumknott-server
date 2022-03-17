@@ -3,3 +3,27 @@ en:
     label:
       user:
         password_confirmation: 'Confirm Password'
+  my:
+    accounts:
+      change_card:
+        success: "Your credit card is being updated."
+      destroy:
+        success: "We are now cancelling your subscriptions and deleting your data, and will email you once it is done."
+      update:
+        success: "Your account details have been updated."
+    sites:
+      regenerate:
+        success: "Your site's API key has been regenerated. Please update any stored credentials accordingly."
+      update:
+        success: "The site details have been updated successfully."
+  registrations:
+    confirm_human:
+      failure: "Something wasn't quite right."
+  subscription_mailer:
+    payment_failed:
+      subject: "Drumknott: Payment for your subscription failed"
+    payment_succeeded:
+      subject: "Drumknott: Payment for your subscription succeeded"
+  user_mailer:
+    deleted:
+      subject: "Drumknott: Account Closed"

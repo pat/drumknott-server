@@ -12,7 +12,7 @@ class RegistrationsController < Devise::RegistrationsController
 
     build_resource(sign_up_params)
 
-    flash[:alert] = "Something wasn't quite right."
+    flash[:alert] = t("registrations.confirm_human.failure")
     render :new
   end
 end
