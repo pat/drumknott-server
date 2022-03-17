@@ -10,10 +10,7 @@ class SubscriptionMailer < ::ActionMailer::Base
     @user    = invoice.user
     @site    = invoice.site
 
-    mail(
-      :to      => @user.email,
-      :subject => "Drumknott: Payment for your subscription failed"
-    )
+    mail(:to => @user.email)
   end
 
   def payment_succeeded(invoice)
@@ -24,9 +21,6 @@ class SubscriptionMailer < ::ActionMailer::Base
     pdf = InvoiceAsPdf.new invoice
     attachments["Drumknott-#{invoice_number invoice}.pdf"] = pdf.render
 
-    mail(
-      :to      => @user.email,
-      :subject => "Drumknott: Payment for your subscription succeeded"
-    )
+    mail(:to => @user.email)
   end
 end

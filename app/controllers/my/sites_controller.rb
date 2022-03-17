@@ -17,8 +17,7 @@ class My::SitesController < My::ApplicationController
 
   def update
     if site.update site_params
-      redirect_to my_site_path(site),
-        :notice => "The site details have been updated successfully."
+      redirect_to my_site_path(site), :notice => t(".success")
     else
       render :edit
     end
@@ -34,9 +33,7 @@ class My::SitesController < My::ApplicationController
   def regenerate
     site.reset_key!
 
-    redirect_to my_site_path(site),
-      :notice => "Your site's API key has been regenerated. Please update " \
-                 "any stored credentials accordingly."
+    redirect_to my_site_path(site), :notice => t(".success")
   end
 
   private
