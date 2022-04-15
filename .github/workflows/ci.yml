@@ -1,6 +1,6 @@
 name: CI
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   build:
@@ -24,7 +24,7 @@ jobs:
       - name: Set up ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0.3
+          ruby-version: 3.0.4
           bundler-cache: true
       - name: Set up Sphinx
         run: "./bin/loadsphinx 2.2.11 sphinx"
