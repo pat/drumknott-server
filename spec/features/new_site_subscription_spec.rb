@@ -15,7 +15,7 @@ RSpec.describe "Creating a new site subscription", :type => :feature do
       subscription = customer.subscriptions.retrieve site.stripe_subscription_id
 
       expect(subscription).to be_present
-      expect(subscription.plan.id).to eq(ENV["STRIPE_PLAN_ID"])
+      expect(subscription.plan.id).to eq(ENV.fetch("STRIPE_PLAN_ID"))
       expect(site.status).to eq("active")
 
       site.user.reload
@@ -56,7 +56,7 @@ RSpec.describe "Creating a new site subscription", :type => :feature do
       customer     = Stripe::Customer.retrieve user.stripe_customer_id
       subscription = customer.subscriptions.retrieve site.stripe_subscription_id
       expect(subscription).to be_present
-      expect(subscription.plan.id).to eq(ENV["STRIPE_PLAN_ID"])
+      expect(subscription.plan.id).to eq(ENV.fetch("STRIPE_PLAN_ID"))
     end
   end
 end

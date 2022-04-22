@@ -5,7 +5,7 @@ class InvoicePdf::Header < InvoicePdf::Base
 
   FROM_ADDRESS = <<~TEXT.freeze
     Invoice From:
-    #{ENV["INVOICE_FROM"]}
+    #{ENV.fetch("INVOICE_FROM", nil)}
   TEXT
 
   def call

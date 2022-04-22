@@ -22,11 +22,11 @@ module Drumknott
     config.middleware.insert 0, Rack::Rewrite do
       r301(
         /.*/,
-        "https://#{ENV["DOMAIN_NAME"]}$&",
+        "https://#{ENV.fetch("DOMAIN_NAME")}$&",
         :if => lambda { |rack_env|
-          rack_env["SERVER_NAME"] == "www.#{ENV["DOMAIN_NAME"]}"
+          rack_env["SERVER_NAME"] == "www.#{ENV.fetch("DOMAIN_NAME")}"
         }
       )
-    end if ENV["DOMAIN_NAME"]
+    end if ENV.key?("DOMAIN_NAME")
   end
 end

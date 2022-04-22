@@ -49,7 +49,7 @@ class Payments::Subscribe
 
   def subscription
     @subscription ||= customer.subscriptions.create(
-      :plan => ENV["STRIPE_PLAN_ID"]
+      :plan => ENV.fetch("STRIPE_PLAN_ID", nil)
     )
   end
 
