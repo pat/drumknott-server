@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
-Stripe.api_key             = ENV["STRIPE_SECRET_KEY"]
-StripeEvent.signing_secret = ENV["STRIPE_SIGNING_SECRET"] || "test-placeholder"
+Stripe.api_key             = ENV.fetch("STRIPE_SECRET_KEY", nil)
+StripeEvent.signing_secret = ENV.fetch(
+  "STRIPE_SIGNING_SECRET", "test-placeholder"
+)
 
 Rails.application.config.to_prepare do
   StripeEvent.configure do |events|

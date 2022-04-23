@@ -2,7 +2,7 @@
 
 class InvoicePdf::Footer < InvoicePdf::Base
   def call
-    text "#{ENV["INVOICE_REFERENCE_LABEL"]}: #{ENV["INVOICE_REFERENCE"]}"
+    text invoice_reference
     text "All dollar values listed are in #{invoice.data["currency"].upcase}."
     if invoice.user.country == "AU"
       text "Total amount listed includes 10% GST for Australian customers."
@@ -16,4 +16,9 @@ class InvoicePdf::Footer < InvoicePdf::Base
   private
 
   delegate :text, :to => :document
+
+  def invoice_reference
+    "#{ENV.fetch("INVOICE_REFERENCE_LABEL", nil)}: " \
+      "#{ENV.fetch("INVOICE_REFERENCE", nil)}"
+  end
 end

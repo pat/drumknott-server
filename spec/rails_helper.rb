@@ -18,8 +18,9 @@ end
 
 ActiveRecord::Migration.maintain_test_schema!
 
-if ENV["SPHINX_BIN"]
-  ThinkingSphinx::Configuration.instance.controller.bin_path = ENV["SPHINX_BIN"]
+if ENV.key?("SPHINX_BIN")
+  ThinkingSphinx::Configuration.instance.controller.bin_path =
+    ENV.fetch("SPHINX_BIN")
 end
 
 RSpec.configure do |config|

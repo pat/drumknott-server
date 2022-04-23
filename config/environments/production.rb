@@ -26,7 +26,7 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
+  config.public_file_server.enabled = ENV.key?("RAILS_SERVE_STATIC_FILES")
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = Uglifier.new(:harmony => true)
@@ -91,9 +91,9 @@ Rails.application.configure do
   config.action_mailer.default_url_options = {:host => "drumknottsearch.com"}
   ActionMailer::Base.smtp_settings = {
     :port                 => "25",
-    :address              => ENV["POSTMARK_SMTP_SERVER"],
-    :user_name            => ENV["POSTMARK_API_TOKEN"],
-    :password             => ENV["POSTMARK_API_TOKEN"],
+    :address              => ENV.fetch("POSTMARK_SMTP_SERVER"),
+    :user_name            => ENV.fetch("POSTMARK_API_TOKEN"),
+    :password             => ENV.fetch("POSTMARK_API_TOKEN"),
     :domain               => "drumknottsearch.com",
     :authentication       => :cram_md5,
     :enable_starttls_auto => true
@@ -116,7 +116,7 @@ Rails.application.configure do
   #   Syslog::Logger.new "app-name"
   # )
 
-  if ENV["RAILS_LOG_TO_STDOUT"].present?
+  if ENV.key?("RAILS_LOG_TO_STDOUT")
     logger           = ActiveSupport::Logger.new($stdout)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)

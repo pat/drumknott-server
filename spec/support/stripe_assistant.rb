@@ -25,7 +25,7 @@ class StripeAssistant
 
     customer     = Stripe::Customer.retrieve site.user.stripe_customer_id
     subscription = customer.subscriptions.create(
-      {:plan => ENV["STRIPE_PLAN_ID"]}.merge(subscription_attributes)
+      {:plan => ENV.fetch("STRIPE_PLAN_ID")}.merge(subscription_attributes)
     )
 
     site.update! :stripe_subscription_id => subscription.id
@@ -57,7 +57,7 @@ class StripeAssistant
 
   def create_plan
     Stripe::Plan.create(
-      :id             => ENV["STRIPE_PLAN_ID"],
+      :id             => ENV.fetch("STRIPE_PLAN_ID"),
       :amount         => 3_00,
       :currency       => "USD",
       :interval       => "month",
