@@ -192,7 +192,7 @@ GEM
     minitest (5.15.0)
     multi_json (1.15.0)
     multipart-post (2.1.1)
-    mysql2 (0.5.3)
+    mysql2 (0.5.4)
     net-imap (0.2.3)
       digest
       net-protocol
