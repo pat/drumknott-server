@@ -35,7 +35,7 @@ class InvoicePdf::Header < InvoicePdf::Base
   def metadata
     <<~TEXT
       Invoice #: #{invoice_number invoice}
-      Created: #{invoice.invoiced_at.to_formatted_s :date_only}
+      Created: #{invoice.invoiced_at.to_fs :date_only}
       For #{invoice.user.email}
       Status: #{invoice.data["paid"] ? "Paid" : "Due"}
     TEXT
