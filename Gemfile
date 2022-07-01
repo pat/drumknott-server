@@ -22,7 +22,7 @@ gem "uglifier", ">= 1.3.0"
 
 # everything else
 gem "bugsnag",         "~> 6.24.0"
-gem "country_select",  "~> 7.0.0"
+gem "country_select",  "~> 8.0.0"
 gem "decent_exposure", "~> 3.0"
 gem "devise",          "~> 4.4"
 gem "flying-sphinx",   "~> 3.0"
