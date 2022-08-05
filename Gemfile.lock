@@ -265,7 +265,7 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
-    redis (4.6.0)
+    redis (4.7.1)
     regexp_parser (2.5.0)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -320,10 +320,10 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    sidekiq (6.5.1)
+    sidekiq (6.5.3)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
-      redis (>= 4.2.0)
+      redis (>= 4.5.0)
     sixarm_ruby_unaccent (1.2.0)
     sliver (0.2.4)
       rack (>= 1.5.2)
@@ -421,7 +421,7 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   sass-rails (~> 6.0)
-  sidekiq (= 6.5.1)
+  sidekiq (= 6.5.3)
   sliver-rails (~> 0.2.0)
   sprockets-rails
   stripe (~> 6.5.0)
