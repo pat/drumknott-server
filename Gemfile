@@ -11,7 +11,7 @@ gem "sprockets-rails"
 # core
 gem "pg",      "~> 1.0"
 gem "puma",    "~> 5.6"
-gem "sidekiq", "6.5.1"
+gem "sidekiq", "6.5.3"
 
 # assets gems
 gem "coffee-rails", "~> 5.0.0"
