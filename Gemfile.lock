@@ -148,8 +148,9 @@ GEM
     globalid (1.0.0)
       activesupport (>= 5.0)
     gzipped_tar (0.1.2)
-    haml (5.2.2)
-      temple (>= 0.8.0)
+    haml (6.0.0)
+      temple (>= 0.8.2)
+      thor
       tilt
     hashdiff (1.0.1)
     i18n (1.12.0)
@@ -353,7 +354,7 @@ GEM
       railties
       thinking-sphinx (>= 3.0, < 6.0)
     thor (1.2.1)
-    tilt (2.0.10)
+    tilt (2.0.11)
     timeout (0.3.0)
     ttfunk (1.7.0)
     turbolinks (5.2.1)
@@ -401,7 +402,7 @@ DEPENDENCIES
   dotenv-rails (~> 2.8.1)
   flying-sphinx (~> 3.0)
   formtastic (~> 4.0)
-  haml (= 5.2.2)
+  haml (= 6.0.0)
   jquery-rails
   kaminari (~> 1.2.0)
   machinist (~> 2.0)!

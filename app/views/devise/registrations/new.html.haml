@@ -15,7 +15,8 @@
       %p.inline-hints Please enter the word '<strong>drumknott</strong>' so we know you're not a spambot.
 
     %li.input
-      %p.inline-hints By signing up for an account, you agree to our #{ link_to 'Terms of Service', terms_path } and #{ link_to 'Privacy Policy', privacy_path }.
+      %p.inline-hints
+        ! By signing up for an account, you agree to our #{ link_to 'Terms of Service', terms_path } and #{ link_to 'Privacy Policy', privacy_path }.
 
   = form.actions do
     = form.action :submit, :as => :button, :label => 'Sign up', :button_html => {:class => 'button primary'}

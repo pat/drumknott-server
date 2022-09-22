@@ -68,7 +68,8 @@
         drumknott keys SITE_NAME SITE_KEY INCLUDE_PAGES
         drumknott refresh
 
-%p The first two arguments for the <code>keys</code> command are your site's name (when you registered it here at #{ link_to 'drumknottsearch.com', my_sites_path }), and the generated API key. The third argument, <code>INCLUDE_PAGES</code>, should be either <code>yes</code> or <code>no</code> - it's a flag to indicate whether you want non-blog-post pages to be uploaded as well.
+%p
+  ! The first two arguments for the <code>keys</code> command are your site's name (when you registered it here at #{ link_to 'drumknottsearch.com', my_sites_path }), and the generated API key. The third argument, <code>INCLUDE_PAGES</code>, should be either <code>yes</code> or <code>no</code> - it's a flag to indicate whether you want non-blog-post pages to be uploaded as well.
 
 %p The <code>keys</code> command will save your credentials in a file named <code>.drumknott</code> file to your current directory. Do <em>not</em> commit this file to source control. If you'd rather not have those credentials saved, you can supply them when running the refresh command as environment variables:
 

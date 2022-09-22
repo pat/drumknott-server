@@ -10,13 +10,17 @@
             %td.title
               %h2 Drumknott
             %td
-              Invoice #: #{ invoice_number invoice }
+              Invoice #:
+              = invoice_number invoice
               %br/
-              Created: #{ invoice.invoiced_at.to_formatted_s :date_only }
+              Created:
+              = invoice.invoiced_at.to_formatted_s :date_only
               %br/
-              For #{ invoice.user.email }
+              For
+              = invoice.user.email
               %br/
-              Status: #{ invoice.data['paid'] ? 'Paid' : 'Due' }
+              Status:
+              = invoice.data['paid'] ? 'Paid' : 'Due'
 
     %tr.information
       %td{:colspan => 2}
@@ -58,4 +62,4 @@
           - if current_user.country == 'AU'
             Total amount listed includes 10% GST for Australian customers.
             %br/
-          For questions, support and feedback, please email #{ link_to 'hello@drumknottsearch.com', 'mailto:hello@drumknottsearch.com' }.
+          ! For questions, support and feedback, please email #{ link_to 'hello@drumknottsearch.com', 'mailto:hello@drumknottsearch.com' }.
