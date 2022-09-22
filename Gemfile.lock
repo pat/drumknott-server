@@ -103,7 +103,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.10)
-    connection_pool (2.2.5)
+    connection_pool (2.3.0)
     countries (5.1.0)
       sixarm_ruby_unaccent (~> 1.1)
     country_select (8.0.0)
@@ -320,7 +320,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    sidekiq (6.5.6)
+    sidekiq (6.5.7)
       connection_pool (>= 2.2.5)
       rack (~> 2.0)
       redis (>= 4.5.0, < 5)
@@ -421,7 +421,7 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   sass-rails (~> 6.0)
-  sidekiq (= 6.5.6)
+  sidekiq (= 6.5.7)
   sliver-rails (~> 0.2.0)
   sprockets-rails
   stripe (~> 7.1.0)
