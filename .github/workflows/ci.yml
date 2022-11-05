@@ -12,7 +12,7 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.0.4
+        ruby-version: 3.1.2
         bundler-cache: true
 
     - name: Rubocop
@@ -46,7 +46,7 @@ jobs:
       - name: Set up ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0.4
+          ruby-version: 3.1.2
           bundler-cache: true
 
       - name: Set up Sphinx
