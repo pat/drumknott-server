@@ -62,6 +62,8 @@ group :test do
     :git    => "https://github.com/pat/machinist.git",
     :branch => "master",
     :ref    => "ff04f1a92d"
+  gem "rspec-github", :require => false
+  gem "rubocop-github-annotations-formatter", :require => false
   gem "vcr",           "~> 6.0"
   gem "vcr_assistant", "~> 1.0"
   gem "webmock",       "~> 3.18.1"

@@ -3,12 +3,27 @@ name: CI
 on: [push]
 
 jobs:
-  build:
+  rubocop:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.0.4
+        bundler-cache: true
+
+    - name: Rubocop
+      run: "bundle exec rubocop --format progress --format RubocopGithubAnnotationFormatter::AnnotationFormatter"
+
+  rspec:
     runs-on: ubuntu-18.04
 
     services:
       postgres:
-        image: postgres:10
+        image: postgres:13
         env:
           POSTGRES_USER: drumknott
           POSTGRES_PASSWORD: drumknott
@@ -18,33 +33,41 @@ jobs:
         # needed because the postgres container does not provide a healthcheck
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
+      redis:
+        image: redis
+        ports:
+          - 6379/tcp
+        options: --entrypoint redis-server
+
     steps:
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
       - name: Set up ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.0.4
           bundler-cache: true
+
       - name: Set up Sphinx
         run: "./bin/loadsphinx 2.2.11 sphinx"
-      - name: Rubocop
-        run: bundle exec rubocop
+
       - name: Test
         env:
           DATABASE_URL: postgres://drumknott:drumknott@127.0.0.1:${{ job.services.postgres.ports[5432] }}/drumknott_test
           INVOICE_FROM: Invoice CI
+          REDIS_URL: "redis://127.0.0.1:${{ job.services.redis.ports[6379] }}/0"
           STRIPE_PLAN_ID: ${{ secrets.STRIPE_PLAN_ID }}
           STRIPE_PUBLISHABLE_KEY: ${{ secrets.STRIPE_PUBLISHABLE_KEY }}
           STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
-        run: "bundle exec rspec"
+        run: "bundle exec rspec --format RSpec::Github::Formatter"
 
   deploy:
     runs-on: ubuntu-latest
-    needs: build
+    needs: [rspec, rubocop]
     if: github.ref == 'refs/heads/main'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: akhileshns/heroku-deploy@v3.6.8 # This is the action
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
