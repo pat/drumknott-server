@@ -27,7 +27,7 @@ gem "decent_exposure", "~> 3.0"
 gem "devise",          "~> 4.4"
 gem "flying-sphinx",   "~> 3.0"
 gem "formtastic",      "~> 4.0"
-gem "haml",            "6.0.7"
+gem "haml",            "6.0.8"
 gem "kaminari",        "~> 1.2.0"
 gem "mysql2",          "~> 0.5.0"
 gem "newrelic_rpm",    "~> 8.0"
@@ -56,7 +56,7 @@ group :development, :test do
 end
 
 group :test do
-  gem "capybara", "3.37.1"
+  gem "capybara", "3.38.0"
   gem "capybara-email"
   gem "machinist", "~> 2.0",
     :git    => "https://github.com/pat/machinist.git",
