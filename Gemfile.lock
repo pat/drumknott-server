@@ -412,6 +412,7 @@ DEPENDENCIES
   jquery-rails
   kaminari (~> 1.2.0)
   machinist (~> 2.0)!
+  matrix
   mysql2 (~> 0.5.0)
   newrelic_rpm (~> 8.0)
   pg (~> 1.0)
