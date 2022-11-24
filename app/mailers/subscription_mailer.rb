@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-class SubscriptionMailer < ::ActionMailer::Base
+class SubscriptionMailer < ApplicationMailer
   include InvoicesHelper
-
-  default :from => "Drumknott <hello@drumknottsearch.com>"
 
   def payment_failed(invoice)
     @invoice = invoice
