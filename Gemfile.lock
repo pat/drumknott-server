@@ -344,9 +344,9 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     stripe (7.1.0)
-    stripe_event (2.6.0)
+    stripe_event (2.7.0)
       activesupport (>= 3.1)
-      stripe (>= 2.8, < 8)
+      stripe (>= 2.8, < 9)
     strscan (3.0.4)
     temple (0.9.1)
     thinking-sphinx (5.4.0)
@@ -435,7 +435,7 @@ DEPENDENCIES
   sliver-rails (~> 0.2.0)
   sprockets-rails
   stripe (~> 7.1.0)
-  stripe_event (~> 2.6.0)
+  stripe_event (~> 2.7.0)
   thinking-sphinx (~> 5.0)
   thinking-sphinx-ports (~> 0.1.0)
   turbolinks
