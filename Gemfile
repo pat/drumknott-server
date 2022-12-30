@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-ruby "3.1.3"
+ruby "3.2.0"
 
 # rails
 gem "rails", "~> 7.0"
@@ -32,6 +32,7 @@ gem "kaminari",        "~> 1.2.0"
 gem "matrix"
 gem "mysql2",          "~> 0.5.0"
 gem "newrelic_rpm",    "~> 8.0"
+gem "nokogiri",        "~> 1.14.0.rc1"
 gem "prawn",           "~> 2.0"
 gem "prawn-table",     "~> 0.2.2"
 gem "rack-pratchett",  "~> 0.1.1"
