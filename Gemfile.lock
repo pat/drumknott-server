@@ -227,7 +227,7 @@ GEM
       json
       websocket (~> 1.0)
     racc (1.6.2)
-    rack (2.2.4)
+    rack (2.2.5)
     rack-pratchett (0.1.1)
     rack-rewrite (1.5.1)
     rack-test (2.0.2)
@@ -266,7 +266,7 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
-    redis-client (0.11.2)
+    redis-client (0.12.0)
       connection_pool
     regexp_parser (2.6.1)
     responders (3.0.1)
@@ -326,7 +326,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    sidekiq (7.0.2)
+    sidekiq (7.0.3)
       concurrent-ruby (< 2)
       connection_pool (>= 2.3.0)
       rack (>= 2.2.4)
@@ -432,7 +432,7 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   sass-rails (~> 6.0)
-  sidekiq (= 7.0.2)
+  sidekiq (= 7.0.3)
   sliver-rails (~> 0.2.0)
   sprockets-rails
   stripe (~> 7.1.0)
