@@ -12,7 +12,7 @@ class Payments::Cancel
   def call
     return unless active_subscription?
 
-    subscription.delete
+    subscription.cancel
   end
 
   private

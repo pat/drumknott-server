@@ -7,8 +7,6 @@ class UpdateCustomerWorker
     user = User.find user_id
     return if user.stripe_customer_id.blank?
 
-    customer = Stripe::Customer.retrieve user.stripe_customer_id
-    customer.email = user.email
-    customer.save
+    Stripe::Customer.update(user.stripe_customer_id, :email => user.email)
   end
 end

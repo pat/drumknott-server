@@ -10,4 +10,14 @@ class User < ApplicationRecord
   has_many :invoices, :dependent => :destroy
 
   validates :country, :presence => true
+
+  after_update :update_stripe
+
+  private
+
+  def update_stripe
+    return unless unconfirmed_email_previously_changed?(:to => nil)
+
+    UpdateCustomerWorker.perform_async(id)
+  end
 end
