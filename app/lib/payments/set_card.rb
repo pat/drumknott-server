@@ -11,10 +11,9 @@ class Payments::SetCard
   end
 
   def call
-    customer.source = token
-    customer.save
+    Stripe::Customer.update(customer.id, :source => token)
 
-    UpdateUserCache.call user, customer
+    UpdateUserCache.call user, Stripe::Customer.retrieve(customer.id)
   end
 
   private

@@ -29,7 +29,7 @@ RSpec.describe "Stripe Webhooks", :type => :request do
 
       customer     = Stripe::Customer.retrieve user.stripe_customer_id
       subscription = customer.subscriptions.retrieve site.stripe_subscription_id
-      subscription.delete :at_period_end => true
+      subscription.cancel :at_period_end => true
 
       update_event = Stripe::Event.list.detect do |event|
         event.data.object.id == subscription.id &&
@@ -53,7 +53,7 @@ RSpec.describe "Stripe Webhooks", :type => :request do
 
       customer     = Stripe::Customer.retrieve user.stripe_customer_id
       subscription = customer.subscriptions.retrieve site.stripe_subscription_id
-      subscription.delete
+      subscription.cancel
 
       delete_event = Stripe::Event.list.detect do |event|
         event.data.object.id == subscription.id &&

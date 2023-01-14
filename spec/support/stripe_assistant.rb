@@ -42,7 +42,6 @@ class StripeAssistant
 
   def setup
     clear
-    create_plan
   end
 
   private
@@ -52,17 +51,5 @@ class StripeAssistant
   def clear
     Stripe::Customer.list.each(&:delete)
     Stripe::Coupon.list.each(&:delete)
-    Stripe::Plan.list.each(&:delete)
-  end
-
-  def create_plan
-    Stripe::Plan.create(
-      :id             => ENV.fetch("STRIPE_PLAN_ID"),
-      :amount         => 3_00,
-      :currency       => "USD",
-      :interval       => "month",
-      :interval_count => 1,
-      :name           => "Drumknott Test"
-    )
   end
 end
