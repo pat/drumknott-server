@@ -266,7 +266,7 @@ GEM
     rake (13.0.6)
     redis-client (0.14.0)
       connection_pool
-    regexp_parser (2.7.0)
+    regexp_parser (2.8.0)
     responders (3.1.0)
       actionpack (>= 5.2)
       railties (>= 5.2)
@@ -291,7 +291,7 @@ GEM
       rspec-mocks (~> 3.11)
       rspec-support (~> 3.11)
     rspec-support (3.11.1)
-    rubocop (1.50.1)
+    rubocop (1.50.2)
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.2.0.0)
