@@ -204,8 +204,8 @@ GEM
       net-protocol
     newrelic_rpm (9.2.2)
     nio4r (2.5.9)
-    nokogiri (1.14.4)
-      mini_portile2 (~> 2.8.0)
+    nokogiri (1.15.0)
+      mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.23.0)
@@ -412,7 +412,7 @@ DEPENDENCIES
   matrix
   mysql2 (~> 0.5.0)
   newrelic_rpm (~> 9.0)
-  nokogiri (~> 1.14.0.rc1)
+  nokogiri (~> 1.15.0)
   pg (~> 1.0)
   prawn (~> 2.0)
   prawn-table (~> 0.2.2)
