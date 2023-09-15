@@ -5,6 +5,6 @@ namespace :users do
     User.
       where(:confirmed_at => nil).
       where("created_at < ?", 1.week.ago).
-      each(&:destroy)
+      find_each(&:destroy)
   end
 end
