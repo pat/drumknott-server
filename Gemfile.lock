@@ -149,7 +149,7 @@ GEM
     globalid (1.2.1)
       activesupport (>= 6.1)
     gzipped_tar (0.1.2)
-    haml (6.2.0)
+    haml (6.2.3)
       temple (>= 0.8.2)
       thor
       tilt
@@ -351,7 +351,7 @@ GEM
     stripe_event (2.7.0)
       activesupport (>= 3.1)
       stripe (>= 2.8, < 9)
-    temple (0.10.2)
+    temple (0.10.3)
     thinking-sphinx (5.5.1)
       activerecord (>= 4.2.0)
       builder (>= 2.1.2)
@@ -412,7 +412,7 @@ DEPENDENCIES
   dotenv-rails (~> 2.8.1)
   flying-sphinx (~> 3.0)
   formtastic (~> 4.0)
-  haml (= 6.2.0)
+  haml (= 6.2.3)
   jquery-rails
   kaminari (~> 1.2.0)
   machinist (~> 2.0)!
