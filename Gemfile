@@ -17,8 +17,8 @@ gem "sidekiq", "7.1.5"
 gem "coffee-rails", "~> 5.0.0"
 gem "jquery-rails"
 gem "sass-rails", "~> 6.0"
+gem "terser"
 gem "turbolinks"
-gem "uglifier", ">= 1.3.0"
 
 # everything else
 gem "bugsnag",         "~> 6.26.0"
