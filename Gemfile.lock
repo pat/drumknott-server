@@ -138,7 +138,7 @@ GEM
     drb (2.1.1)
       ruby2_keywords
     erubi (1.12.0)
-    execjs (2.8.1)
+    execjs (2.9.1)
     ey-hmac (2.4.0)
     faraday (2.2.0)
       faraday-net_http (~> 2.0)
@@ -380,7 +380,7 @@ GEM
       activesupport (>= 3.1)
       stripe (>= 2.8, < 9)
     temple (0.10.3)
-    terser (1.1.18)
+    terser (1.1.19)
       execjs (>= 0.3.0, < 3)
     thinking-sphinx (5.5.1)
       activerecord (>= 4.2.0)
