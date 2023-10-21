@@ -1,0 +1,2 @@
+postgres: postgres -D data/postgres -p ${POSTGRES_PORT:-5432}
+redis: redis-server --save 300 1 --dir data/redis --port ${REDIS_PORT:-6379} --loglevel warning --always-show-logo no

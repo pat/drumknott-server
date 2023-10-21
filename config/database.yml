@@ -1,9 +1,10 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: 5
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS", 5 ) %>
+  <% if ENV['DATABASE_URL'].nil? %>
+  port: <%= ENV.fetch("POSTGRES_PORT", 5432) %>
+  <% end %>
 
 development:
   <<: *default
@@ -14,7 +15,7 @@ test:
   <% if ENV['DATABASE_URL'] %>
   url: <%= ENV['DATABASE_URL'] %>
   <% else %>
-  database: support_act_test
+  database: drumknott_test
   <% end %>
 
 production:
