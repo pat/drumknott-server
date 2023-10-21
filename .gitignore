@@ -18,6 +18,7 @@ config/*.sphinx.conf
 db/sphinx
 
 /data
+/public/assets
 .env.test
 .overmind.env
 .rubocop-*-yml
