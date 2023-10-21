@@ -8,15 +8,15 @@ RSpec.describe "Stripe Webhooks", :type => :request do
 
   def post_webhook(event)
     timestamp = Time.current.to_i.to_s
-    data      = event.to_json
     signature = OpenSSL::HMAC.hexdigest(
       OpenSSL::Digest.new("sha256"),
       StripeEvent.signing_secret,
-      "#{timestamp}.#{data}"
+      "#{timestamp}.#{event.to_json}"
     )
 
     post "/hooks/stripe",
-      :params  => data,
+      :params  => event,
+      :as      => :json,
       :headers => {"Stripe-Signature" => "t=#{timestamp}, v1=#{signature}"}
   end
 
