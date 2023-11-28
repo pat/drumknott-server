@@ -383,7 +383,7 @@ GEM
       activesupport (>= 3.1)
       stripe (>= 2.8, < 9)
     temple (0.10.3)
-    terser (1.1.19)
+    terser (1.1.20)
       execjs (>= 0.3.0, < 3)
     thinking-sphinx (5.5.1)
       activerecord (>= 4.2.0)
