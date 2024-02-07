@@ -68,7 +68,7 @@ group :test do
   gem "rubocop-github-annotations-formatter", :require => false
   gem "vcr",           "~> 6.0"
   gem "vcr_assistant", "~> 1.0"
-  gem "webmock",       "~> 3.19.0"
+  gem "webmock",       "~> 3.20.0"
 end
 
 group :production do
