@@ -52,7 +52,7 @@ group :development do
 end
 
 group :development, :test do
-  gem "dotenv-rails", "~> 2.8.1"
+  gem "dotenv-rails", "~> 3.0.0"
   gem "rspec-rails"
   gem "thinking-sphinx-ports", "~> 0.1.0"
 end

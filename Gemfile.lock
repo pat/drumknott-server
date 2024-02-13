@@ -133,10 +133,10 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
-    dotenv (2.8.1)
-    dotenv-rails (2.8.1)
-      dotenv (= 2.8.1)
-      railties (>= 3.2)
+    dotenv (3.0.0)
+    dotenv-rails (3.0.0)
+      dotenv (= 3.0.0)
+      railties (>= 6.1)
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
@@ -172,7 +172,7 @@ GEM
       concurrent-ruby (~> 1.0)
     innertube (1.1.0)
     io-console (0.7.2)
-    irb (1.11.1)
+    irb (1.11.2)
       rdoc
       reline (>= 0.4.2)
     joiner (0.6.0)
@@ -208,7 +208,7 @@ GEM
     middleware (0.1.0)
     mini_mime (1.1.5)
     mini_portile2 (2.8.5)
-    minitest (5.21.2)
+    minitest (5.22.2)
     multi_json (1.15.0)
     multipart-post (2.3.0)
     mutex_m (0.2.0)
@@ -248,7 +248,7 @@ GEM
       json
       websocket (~> 1.0)
     racc (1.7.3)
-    rack (3.0.8)
+    rack (3.0.9)
     rack-pratchett (0.1.1)
     rack-rewrite (1.5.1)
     rack-session (2.0.0)
@@ -427,7 +427,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.12)
+    zeitwerk (2.6.13)
 
 PLATFORMS
   ruby
@@ -441,7 +441,7 @@ DEPENDENCIES
   country_select (~> 8.0.0)
   decent_exposure (~> 3.0)
   devise (~> 4.4)
-  dotenv-rails (~> 2.8.1)
+  dotenv-rails (~> 3.0.0)
   flying-sphinx (~> 3.0)
   formtastic (~> 5.0)
   haml (= 6.3.0)
