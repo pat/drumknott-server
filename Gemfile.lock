@@ -119,7 +119,7 @@ GEM
       unaccent (~> 0.3)
     country_select (8.0.3)
       countries (~> 5.0)
-    crack (0.4.6)
+    crack (1.0.0)
       bigdecimal
       rexml
     crass (1.0.6)
@@ -416,7 +416,7 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webmock (3.20.0)
+    webmock (3.22.0)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
@@ -480,7 +480,7 @@ DEPENDENCIES
   vcr (~> 6.0)
   vcr_assistant (~> 1.0)
   web-console (~> 4.0)
-  webmock (~> 3.20.0)
+  webmock (~> 3.22.0)
 
 RUBY VERSION
    ruby 3.2.3
