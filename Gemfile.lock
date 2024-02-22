@@ -115,10 +115,10 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
-    countries (5.7.0)
+    countries (6.0.0)
       unaccent (~> 0.3)
-    country_select (8.0.3)
-      countries (~> 5.0)
+    country_select (9.0.0)
+      countries (> 5.0, < 7.0)
     crack (1.0.0)
       bigdecimal
       rexml
@@ -438,7 +438,7 @@ DEPENDENCIES
   capybara (= 3.40.0)
   capybara-email
   coffee-rails (~> 5.0.0)
-  country_select (~> 8.0.0)
+  country_select (~> 9.0.0)
   decent_exposure (~> 3.0)
   devise (~> 4.4)
   dotenv-rails (~> 3.0.0)
