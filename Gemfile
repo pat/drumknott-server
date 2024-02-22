@@ -22,7 +22,7 @@ gem "turbolinks"
 
 # everything else
 gem "bugsnag",         "~> 6.26.0"
-gem "country_select",  "~> 8.0.0"
+gem "country_select",  "~> 9.0.0"
 gem "decent_exposure", "~> 3.0"
 gem "devise",          "~> 4.4"
 gem "flying-sphinx",   "~> 3.0"
