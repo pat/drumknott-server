@@ -5,7 +5,7 @@
 
   = form.inputs do
     = form.input :email
-    = form.input :country, :as => :country, :priority_countries => [], :hint => 'Required to handle billing correctly.'
+    = form.input :country, as: :country, priority_countries: [], hint: 'Required to handle billing correctly.'
     = form.input :password
     = form.input :password_confirmation
 

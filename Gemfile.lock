@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/leoarnold/formtastic.git
+  revision: 17143b9770e45e1d4f260a4554a266fef6efe552
+  ref: 17143b97
+  branch: leoarnold/fix/country_input
+  specs:
+    formtastic (5.0.0)
+      actionpack (>= 6.0.0)
+
+GIT
   remote: https://github.com/pat/machinist.git
   revision: ff04f1a92d211a0dcefcc08b400602e542e586b8
   ref: ff04f1a92d
@@ -158,8 +167,6 @@ GEM
       multi_json (>= 1.3.0)
       pusher-client (~> 0.6)
       thinking-sphinx (>= 4.0.0)
-    formtastic (5.0.0)
-      actionpack (>= 6.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     gzipped_tar (0.1.2)
@@ -443,7 +450,7 @@ DEPENDENCIES
   devise (~> 4.4)
   dotenv-rails (~> 3.0.0)
   flying-sphinx (~> 3.0)
-  formtastic (~> 5.0)
+  formtastic (~> 5.0)!
   haml (= 6.3.0)
   jquery-rails
   kaminari (~> 1.2.0)
