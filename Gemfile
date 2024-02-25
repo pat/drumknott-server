@@ -26,7 +26,10 @@ gem "country_select",  "~> 9.0.0"
 gem "decent_exposure", "~> 3.0"
 gem "devise",          "~> 4.4"
 gem "flying-sphinx",   "~> 3.0"
-gem "formtastic",      "~> 5.0"
+gem "formtastic",      "~> 5.0",
+  :git    => "https://github.com/leoarnold/formtastic.git",
+  :branch => "leoarnold/fix/country_input",
+  :ref    => "17143b97"
 gem "haml",            "6.3.0"
 gem "kaminari",        "~> 1.2.0"
 gem "matrix"
