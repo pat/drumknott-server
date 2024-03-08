@@ -26,7 +26,7 @@ class Payments::Hooks::InvoiceUpdated
       :stripe_invoice_id => object.id
     ) || user.invoices.create(
       :stripe_invoice_id => object.id,
-      :invoiced_at       => Time.zone.at(object.date)
+      :invoiced_at       => Time.zone.at(object.created)
     )
   end
 
