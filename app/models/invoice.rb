@@ -14,7 +14,7 @@ class Invoice < ApplicationRecord
 
   def site
     @site ||= user.sites.find_by(
-      :stripe_subscription_id => data["lines"]["data"].first["id"]
+      :stripe_subscription_id => data["lines"]["data"].first["subscription"]
     )
   end
 end
