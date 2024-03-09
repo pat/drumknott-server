@@ -27,9 +27,12 @@ RSpec.describe "Stripe Webhooks", :type => :request do
       assistant.set_up_user user
       assistant.set_up_site site
 
-      customer     = Stripe::Customer.retrieve user.stripe_customer_id
-      subscription = customer.subscriptions.retrieve site.stripe_subscription_id
-      subscription.cancel :at_period_end => true
+      Stripe::Subscription.update(
+        site.stripe_subscription_id,
+        :cancel_at_period_end => true
+      )
+
+      subscription = Stripe::Subscription.retrieve(site.stripe_subscription_id)
 
       update_event = Stripe::Event.list.detect do |event|
         event.data.object.id == subscription.id &&
@@ -51,8 +54,7 @@ RSpec.describe "Stripe Webhooks", :type => :request do
       assistant.set_up_user user
       assistant.set_up_site site
 
-      customer     = Stripe::Customer.retrieve user.stripe_customer_id
-      subscription = customer.subscriptions.retrieve site.stripe_subscription_id
+      subscription = Stripe::Subscription.retrieve site.stripe_subscription_id
       subscription.cancel
 
       delete_event = Stripe::Event.list.detect do |event|
@@ -71,6 +73,8 @@ RSpec.describe "Stripe Webhooks", :type => :request do
     assisted_cassette(example) do |assistant|
       assistant.set_up_user user
       assistant.set_up_site site
+
+      sleep 5 if assistant.recording?
 
       creation_event = Stripe::Event.list.detect do |event|
         event.type == "invoice.created"
@@ -128,6 +132,8 @@ RSpec.describe "Stripe Webhooks", :type => :request do
       unpaid_invoice = Stripe::Invoice.list(:customer => customer.id).
         detect { |invoice| invoice.total > 0 }
       expect { unpaid_invoice.pay }.to raise_error(Stripe::CardError)
+
+      sleep 5 if assistant.recording?
 
       failure_event = Stripe::Event.list.detect do |event|
         event.type == "invoice.payment_failed"

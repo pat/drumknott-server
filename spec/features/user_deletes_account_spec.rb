@@ -20,8 +20,10 @@ RSpec.describe "Deleting account", :type => :feature do
       visit my_dashboard_path
       click_link "Close"
 
-      customer = Stripe::Customer.retrieve user.stripe_customer_id
-      expect(customer.subscriptions.count).to be_zero
+      subscriptions = Stripe::Subscription.list(
+        :customer => user.stripe_customer_id
+      )
+      expect(subscriptions.count).to be_zero
       expect(User.find_by(:id => user.id)).to be_nil
       expect(ActionMailer::Base.deliveries.length).to eq(1)
     end

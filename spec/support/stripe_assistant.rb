@@ -24,8 +24,11 @@ class StripeAssistant
     site.reload # so user is up-to-date.
 
     customer     = Stripe::Customer.retrieve site.user.stripe_customer_id
-    subscription = customer.subscriptions.create(
-      {:plan => ENV.fetch("STRIPE_PLAN_ID")}.merge(subscription_attributes)
+    subscription = Stripe::Subscription.create(
+      {
+        :customer => customer.id,
+        :plan     => ENV.fetch("STRIPE_PLAN_ID")
+      }.merge(subscription_attributes)
     )
 
     site.update! :stripe_subscription_id => subscription.id
@@ -34,7 +37,10 @@ class StripeAssistant
   def set_up_user(user, card = "4242424242424242")
     customer = Stripe::Customer.create :email => user.email
 
-    customer.sources.create :source => card_token(card)
+    Stripe::Customer.create_source(
+      customer.id, :source => card_token(card)
+    )
+
     user.update! :stripe_customer_id => customer.id
 
     UpdateUserCache.call user, customer.refresh

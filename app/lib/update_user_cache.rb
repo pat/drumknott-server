@@ -14,7 +14,7 @@ class UpdateUserCache
 
   def call
     user.cache_will_change!
-    user.cache["card"] = customer.sources.first.to_hash.slice(*CACHED_KEYS)
+    user.cache["card"] = source.to_hash.slice(*CACHED_KEYS)
     user.save!
   end
 
@@ -23,6 +23,10 @@ class UpdateUserCache
   attr_reader :user
 
   def customer
-    @customer ||= Stripe::Customer.retrieve user.stripe_customer_id
+    @customer ||= Stripe::Customer.retrieve(user.stripe_customer_id)
+  end
+
+  def source
+    Stripe::Customer.retrieve_source(customer.id, customer.default_source)
   end
 end

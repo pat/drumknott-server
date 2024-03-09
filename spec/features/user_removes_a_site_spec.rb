@@ -18,8 +18,10 @@ RSpec.describe "Removing sites", :type => :feature do
       visit my_site_path(site)
       click_link "Cancel and Delete"
 
-      customer = Stripe::Customer.retrieve user.stripe_customer_id
-      expect(customer.subscriptions.count).to be_zero
+      subscriptions = Stripe::Subscription.list(
+        :customer => user.stripe_customer_id
+      )
+      expect(subscriptions.count).to be_zero
     end
   end
 end

@@ -48,8 +48,9 @@ class Payments::Subscribe
   end
 
   def subscription
-    @subscription ||= customer.subscriptions.create(
-      :plan => ENV.fetch("STRIPE_PLAN_ID", nil)
+    @subscription ||= Stripe::Subscription.create(
+      :customer => customer.id,
+      :plan     => ENV.fetch("STRIPE_PLAN_ID", nil)
     )
   end
 

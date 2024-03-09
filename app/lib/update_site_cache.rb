@@ -22,12 +22,8 @@ class UpdateSiteCache
 
   attr_reader :site
 
-  def customer
-    Stripe::Customer.retrieve site.user.stripe_customer_id
-  end
-
   def subscription
-    @subscription ||= customer.subscriptions.retrieve(
+    @subscription ||= Stripe::Subscription.retrieve(
       site.stripe_subscription_id
     )
   end

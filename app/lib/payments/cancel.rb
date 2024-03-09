@@ -23,12 +23,8 @@ class Payments::Cancel
     subscription.status == "active" || subscription.status == "past_due"
   end
 
-  def customer
-    Payments::GetCustomer.call site.user
-  end
-
   def subscription
-    @subscription ||= customer.subscriptions.retrieve(
+    @subscription ||= Stripe::Subscription.retrieve(
       site.stripe_subscription_id
     )
   end
