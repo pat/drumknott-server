@@ -46,10 +46,7 @@ gem "rubocop-performance"
 gem "rubocop-rails"
 gem "sliver-rails",    "~> 0.2.0"
 gem "stripe",          "~> 10.13.0"
-gem "stripe_event",    "~> 2.7.0",
-  :git    => "https://github.com/oboxodo/stripe_event.git",
-  :branch => "stripe10",
-  :ref    => "c734d4ae"
+gem "stripe_event",    "~> 2.8.0"
 gem "thinking-sphinx", "~> 5.0"
 
 group :development do

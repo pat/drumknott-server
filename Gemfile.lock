@@ -8,16 +8,6 @@ GIT
       actionpack (>= 6.0.0)
 
 GIT
-  remote: https://github.com/oboxodo/stripe_event.git
-  revision: c734d4ae234603be9625f7678c69593ad21f9a01
-  ref: c734d4ae
-  branch: stripe10
-  specs:
-    stripe_event (2.7.0)
-      activesupport (>= 3.1)
-      stripe (>= 2.8, < 11)
-
-GIT
   remote: https://github.com/pat/machinist.git
   revision: ff04f1a92d211a0dcefcc08b400602e542e586b8
   ref: ff04f1a92d
@@ -396,6 +386,9 @@ GEM
       sprockets (>= 3.0.0)
     stringio (3.1.0)
     stripe (10.13.0)
+    stripe_event (2.8.0)
+      activesupport (>= 3.1)
+      stripe (>= 2.8, < 11)
     temple (0.10.3)
     terser (1.2.0)
       execjs (>= 0.3.0, < 3)
@@ -488,7 +481,7 @@ DEPENDENCIES
   sliver-rails (~> 0.2.0)
   sprockets-rails
   stripe (~> 10.13.0)
-  stripe_event (~> 2.7.0)!
+  stripe_event (~> 2.8.0)
   terser
   thinking-sphinx (~> 5.0)
   thinking-sphinx-ports (~> 0.1.0)
