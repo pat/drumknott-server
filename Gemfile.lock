@@ -8,6 +8,14 @@ GIT
       actionpack (>= 6.0.0)
 
 GIT
+  remote: https://github.com/mitchellhenke/rack-timeout.git
+  revision: c0845b3704e75ea6415e678994e93a58d81af2e6
+  ref: c0845b37
+  branch: ensure-mutable-string
+  specs:
+    rack-timeout (0.6.3)
+
+GIT
   remote: https://github.com/pat/machinist.git
   revision: ff04f1a92d211a0dcefcc08b400602e542e586b8
   ref: ff04f1a92d
@@ -263,7 +271,6 @@ GEM
       rack (>= 3.0.0)
     rack-test (2.1.0)
       rack (>= 1.3)
-    rack-timeout (0.6.3)
     rackup (2.1.0)
       rack (>= 3)
       webrick (~> 1.8)
@@ -467,7 +474,7 @@ DEPENDENCIES
   puma (~> 6.0)
   rack-pratchett (~> 0.1.1)
   rack-rewrite (~> 1.5.1)
-  rack-timeout (~> 0.3)
+  rack-timeout (~> 0.3)!
   rails (~> 7.0)
   rails_12factor
   rspec-github

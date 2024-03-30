@@ -40,7 +40,10 @@ gem "prawn",           "~> 2.0"
 gem "prawn-table",     "~> 0.2.2"
 gem "rack-pratchett",  "~> 0.1.1"
 gem "rack-rewrite",    "~> 1.5.1"
-gem "rack-timeout",    "~> 0.3"
+gem "rack-timeout",    "~> 0.3",
+  :git    => "https://github.com/mitchellhenke/rack-timeout.git",
+  :branch => "ensure-mutable-string",
+  :ref    => "c0845b37"
 gem "rubocop",         "~> 1.7"
 gem "rubocop-performance"
 gem "rubocop-rails"
