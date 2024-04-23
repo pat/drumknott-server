@@ -393,9 +393,9 @@ GEM
       sprockets (>= 3.0.0)
     stringio (3.1.0)
     stripe (10.15.0)
-    stripe_event (2.8.0)
+    stripe_event (2.9.0)
       activesupport (>= 3.1)
-      stripe (>= 2.8, < 11)
+      stripe (>= 2.8, < 12)
     temple (0.10.3)
     terser (1.2.2)
       execjs (>= 0.3.0, < 3)
@@ -488,7 +488,7 @@ DEPENDENCIES
   sliver-rails (~> 0.2.0)
   sprockets-rails
   stripe (~> 10.15.0)
-  stripe_event (~> 2.8.0)
+  stripe_event (~> 2.9.0)
   terser
   thinking-sphinx (~> 5.0)
   thinking-sphinx-ports (~> 0.1.0)
