@@ -33,7 +33,9 @@ gem "formtastic",      "~> 5.0",
 gem "haml",            "6.3.0"
 gem "kaminari",        "~> 1.2.0"
 gem "matrix"
-gem "mysql2",          "~> 0.5.0"
+gem "mysql2",          "~> 0.5.0",
+  :git    => "https://github.com/pat/mysql2.git",
+  :branch => "frozen-string-builds"
 gem "newrelic_rpm",    "~> 9.0"
 gem "nokogiri",        "~> 1.16.0"
 gem "prawn",           "~> 2.0"
