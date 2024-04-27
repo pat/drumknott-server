@@ -15,7 +15,6 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.2.3
         bundler-cache: true
 
     - name: Rubocop
@@ -52,7 +51,6 @@ jobs:
       - name: Set up ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2.3
           bundler-cache: true
 
       - name: Test
