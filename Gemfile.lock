@@ -432,7 +432,8 @@ GEM
     unaccent (0.4.0)
     unicode-display_width (2.5.0)
     uri (0.13.0)
-    vcr (6.2.0)
+    vcr (6.3.1)
+      base64
     vcr_assistant (1.0.1)
       vcr (>= 3.0)
     warden (1.2.9)
