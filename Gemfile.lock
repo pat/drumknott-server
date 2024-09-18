@@ -357,7 +357,7 @@ GEM
       parser (>= 3.3.1.0)
     rubocop-github-annotations-formatter (0.1.0)
       rubocop
-    rubocop-performance (1.21.1)
+    rubocop-performance (1.22.1)
       rubocop (>= 1.48.1, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
     rubocop-rails (2.26.1)
@@ -423,7 +423,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unaccent (0.4.0)
-    unicode-display_width (2.5.0)
+    unicode-display_width (2.6.0)
     uri (0.13.0)
     useragent (0.16.10)
     vcr (6.3.1)
