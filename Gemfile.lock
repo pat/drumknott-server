@@ -260,7 +260,7 @@ GEM
     psych (5.1.2)
       stringio
     public_suffix (5.0.5)
-    puma (6.4.2)
+    puma (6.4.3)
       nio4r (~> 2.0)
     pusher-client (0.6.2)
       json
@@ -476,7 +476,7 @@ DEPENDENCIES
   pg (~> 1.0)
   prawn (~> 2.0)
   prawn-table (~> 0.2.2)
-  puma (~> 6.0)
+  puma (~> 6.4)
   rack-pratchett (~> 0.1.1)
   rack-rewrite (~> 1.5.1)
   rack-timeout (~> 0.3)!
