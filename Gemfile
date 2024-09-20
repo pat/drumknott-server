@@ -10,7 +10,7 @@ gem "sprockets-rails"
 
 # core
 gem "pg",      "~> 1.0"
-gem "puma",    "~> 6.0"
+gem "puma",    "~> 6.4"
 gem "sidekiq", "7.3.2"
 
 # assets gems
