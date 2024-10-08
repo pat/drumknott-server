@@ -400,7 +400,7 @@ GEM
       activesupport (>= 3.1)
       stripe (>= 2.8, < 14)
     temple (0.10.3)
-    terser (1.2.3)
+    terser (1.2.4)
       execjs (>= 0.3.0, < 3)
     thinking-sphinx (5.6.0)
       activerecord (>= 4.2.0)
