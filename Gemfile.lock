@@ -395,7 +395,7 @@ GEM
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
     stringio (3.1.1)
-    stripe (12.6.0)
+    stripe (13.0.1)
     stripe_event (2.11.0)
       activesupport (>= 3.1)
       stripe (>= 2.8, < 14)
@@ -492,7 +492,7 @@ DEPENDENCIES
   sidekiq (= 7.3.2)
   sliver-rails (~> 0.2.0)
   sprockets-rails
-  stripe (~> 12.6.0)
+  stripe (~> 13.0.1)
   stripe_event (~> 2.11.0)
   terser
   thinking-sphinx (~> 5.0)
