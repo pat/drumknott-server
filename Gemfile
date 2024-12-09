@@ -5,7 +5,7 @@ source "https://rubygems.org"
 ruby :file => ".tool-versions"
 
 # rails
-gem "rails", "~> 7.0"
+gem "rails", "~> 8.0"
 gem "sprockets-rails"
 
 # core
