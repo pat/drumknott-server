@@ -37,7 +37,7 @@ gem "mysql2",          "~> 0.5.0",
   :git    => "https://github.com/pat/mysql2.git",
   :branch => "frozen-string-builds"
 gem "newrelic_rpm",    "~> 9.0"
-gem "nokogiri",        "~> 1.17.0"
+gem "nokogiri",        "~> 1.18.0"
 gem "prawn",           "~> 2.0"
 gem "prawn-table",     "~> 0.2.2"
 gem "rack-pratchett",  "~> 0.1.1"
