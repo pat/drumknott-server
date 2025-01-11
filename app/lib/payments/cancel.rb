@@ -20,7 +20,7 @@ class Payments::Cancel
   attr_reader :site
 
   def active_subscription?
-    subscription.status == "active" || subscription.status == "past_due"
+    %w[active past_due].include?(subscription.status)
   end
 
   def subscription
