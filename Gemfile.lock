@@ -396,7 +396,7 @@ GEM
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
     stringio (3.1.2)
-    stripe (13.3.0)
+    stripe (13.3.1)
     stripe_event (2.11.0)
       activesupport (>= 3.1)
       stripe (>= 2.8, < 14)
