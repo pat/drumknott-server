@@ -316,7 +316,7 @@ GEM
     rake (13.2.1)
     rdoc (6.10.0)
       psych (>= 4.0.0)
-    redis-client (0.23.0)
+    redis-client (0.23.2)
       connection_pool
     regexp_parser (2.10.0)
     reline (0.6.0)
@@ -379,7 +379,8 @@ GEM
       sprockets-rails
       tilt
     securerandom (0.4.1)
-    sidekiq (7.3.7)
+    sidekiq (7.3.8)
+      base64
       connection_pool (>= 2.3.0)
       logger
       rack (>= 2.2.4)
@@ -491,7 +492,7 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   sass-rails (~> 6.0)
-  sidekiq (= 7.3.7)
+  sidekiq (= 7.3.8)
   sliver-rails (~> 0.2.0)
   sprockets-rails
   stripe (~> 13.3.0)
