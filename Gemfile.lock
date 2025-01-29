@@ -163,12 +163,14 @@ GEM
     erubi (1.13.0)
     execjs (2.10.0)
     ey-hmac (2.4.0)
-    faraday (2.9.0)
-      faraday-net_http (>= 2.0, < 3.2)
+    faraday (2.12.2)
+      faraday-net_http (>= 2.0, < 3.5)
+      json
+      logger
     faraday-multipart (1.0.4)
       multipart-post (~> 2)
-    faraday-net_http (3.1.0)
-      net-http
+    faraday-net_http (3.4.0)
+      net-http (>= 0.5.0)
     ffi (1.16.3)
     flying-sphinx (3.0.0)
       ey-hmac (~> 2.4)
@@ -230,7 +232,7 @@ GEM
     minitest (5.25.4)
     multi_json (1.15.0)
     multipart-post (2.4.0)
-    net-http (0.4.1)
+    net-http (0.6.0)
       uri
     net-imap (0.5.1)
       date
