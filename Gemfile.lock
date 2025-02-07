@@ -187,7 +187,7 @@ GEM
       temple (>= 0.8.2)
       thor
       tilt
-    hashdiff (1.1.1)
+    hashdiff (1.1.2)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     innertube (1.1.0)
@@ -331,7 +331,7 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    rexml (3.3.9)
+    rexml (3.4.0)
     riddle (2.4.3)
     rspec-core (3.13.3)
       rspec-support (~> 3.13.0)
@@ -448,7 +448,7 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webmock (3.24.0)
+    webmock (3.25.0)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
@@ -511,7 +511,7 @@ DEPENDENCIES
   vcr (~> 6.0)
   vcr_assistant (~> 1.0)
   web-console (~> 4.0)
-  webmock (~> 3.24.0)
+  webmock (~> 3.25.0)
 
 RUBY VERSION
    ruby 3.4.1
