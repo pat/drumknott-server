@@ -10,6 +10,8 @@ class Payments::Hooks::SubscriptionUpdated
   end
 
   def call
+    return if site.nil?
+
     site.update! :status => subscription.status
 
     UpdateSiteCache.call site, subscription
