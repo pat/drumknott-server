@@ -1,5 +1,13 @@
 ## Drumknott
 
+**April 13th 2025**
+
+Sorry folks, Drumknott is no more - it was a nice little service, but never earned enough to pay for its own hosting. That's not terrible, but after coming across [Pagefind](https://pagefind.app), I realised I could just encourage migration to that, and save both myself and customers a little bit of money.
+
+Stay safe out there, and look after each other! 🇵🇸🇱🇧🏳️‍⚧️🏳️‍🌈
+
+---
+
 [![Build Status](https://travis-ci.org/pat/drumknott-server.svg?branch=master)](https://travis-ci.org/pat/drumknott-server)
 [![Depfu](https://badges.depfu.com/badges/70c52fad3cc57dd77b43ea85f962df65/overview.svg)](https://depfu.com/github/pat/drumknott-server)
 
